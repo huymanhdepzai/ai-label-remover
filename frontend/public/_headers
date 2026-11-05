@@ -1,0 +1,12 @@
+# Cloudflare static assets: tệp trong /assets/ có mã băm trong tên → cache lâu dài (tăng tốc lần truy cập sau, Core Web Vitals).
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/og/*
+  Cache-Control: public, max-age=86400
+
+# Bảo mật cơ bản cho mọi trang.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

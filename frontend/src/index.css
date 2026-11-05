@@ -1,0 +1,434 @@
+/*
+ * AI Label Remover — giao diện "Light table / Cyanotype".
+ * Bảng màu là token ngữ nghĩa (paper, sheet, ink, cobalt…), chế độ tối chỉ việc ghi đè các biến này trên .dark.
+ * Ảnh minh họa SVG cũng dùng var(--color-<token>) nên tự đổi theo chế độ Sáng/Tối.
+ */
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans:
+    'Be Vietnam Pro', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Arabic',
+    'Noto Sans Hebrew', 'Noto Sans Devanagari', 'Noto Sans Thai', 'Noto Sans CJK SC', 'Noto Sans CJK TC', 'Noto Sans CJK JP',
+    'Noto Sans CJK KR', sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  /* Nền & chữ */
+  --color-paper: #eef2f6; /* mặt bàn soi phim */
+  --color-sheet: #ffffff; /* tờ giấy/khung nội dung */
+  --color-wash: #e2e8f1; /* nền phụ rất nhạt */
+  --color-line: #d3dae6; /* đường viền */
+  --color-ink: #10172e; /* chữ chính */
+  --color-ink-2: #4a5372; /* chữ phụ */
+  --color-ink-3: #7d87a6; /* chữ mờ */
+
+  /* Màu thương hiệu: xanh mòng két #007595 (tên token "cobalt" giữ nguyên để không phải đổi lớp CSS khắp nơi) */
+  --color-cobalt: #007595;
+  --color-cobalt-deep: #005a73;
+  --color-cobalt-soft: #ddf1f6;
+  --color-on-cobalt: #ffffff;
+
+  /* Tín hiệu */
+  --color-amber: #9a6a00;
+  --color-amber-soft: #fcefc7;
+  --color-rose: #c21f55;
+  --color-rose-soft: #fbe0e9;
+  --color-fix: #0b7a53;
+  --color-fix-soft: #d7f2e6;
+  --color-sky: #1f6fa8;
+  --color-sky-soft: #dceefa;
+
+  /* Dải phim (luôn tối) */
+  --color-film: #141a3a;
+  --color-film-hole: #eef2f6;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-paper: #0b1029;
+  --color-sheet: #121939;
+  --color-wash: #1a2250;
+  --color-line: #28326a;
+  --color-ink: #e7ecfa;
+  --color-ink-2: #a9b2d3;
+  --color-ink-3: #6f7aa3;
+
+  --color-cobalt: #3fc1dd;
+  --color-cobalt-deep: #8bdcee;
+  --color-cobalt-soft: #0c3846;
+  --color-on-cobalt: #032029;
+
+  --color-amber: #f5c842;
+  --color-amber-soft: #3a3112;
+  --color-rose: #ff6b97;
+  --color-rose-soft: #42162a;
+  --color-fix: #4fd6a0;
+  --color-fix-soft: #0f3a2c;
+  --color-sky: #6cc0ff;
+  --color-sky-soft: #11304a;
+
+  --color-film: #05081a;
+  --color-film-hole: #1a2250;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  @apply bg-paper text-ink antialiased;
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 2px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/*
+ * Lỗ răng cưa của dải phim (khung thả ảnh, ảnh thu nhỏ). Vẽ bằng gradient lặp nên không cần ảnh ngoài.
+ * Dùng: <div class="sprockets" /> ở mép trên và dưới của khung.
+ */
+.sprockets {
+  height: 18px;
+  background-color: var(--color-film);
+  background-image: linear-gradient(90deg, transparent 6px, var(--color-film-hole) 6px, var(--color-film-hole) 16px, transparent 16px);
+  background-size: 22px 8px;
+  background-repeat: repeat-x;
+  background-position: 0 center;
+}
+
+/*
+ * Bàn làm việc xử lý ảnh (src/components/bench/Workbench.tsx).
+ * Mặt bàn là tấm thảm cắt: lưới ô nhỏ + đường kẻ đậm mỗi 5 ô. Ảnh thả vào khay vào rơi xuống khay,
+ * ảnh đang làm sạch nằm trên cảnh bàn isometric (DeskScene), ảnh sạch trượt vào khay ra.
+ */
+.bench-mat {
+  background-color: var(--color-wash);
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--color-cobalt) 14%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-cobalt) 14%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in oklab, var(--color-cobalt) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-cobalt) 6%, transparent) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+/*
+ * ---- Khay vào / khay ra: cùng chất liệu với tấm bệ trong cảnh bàn isometric ----
+ * Mặt gỗ be, mép dưới lộ các lớp gỗ xếp chồng (vẽ bằng chuỗi box-shadow không nhòe), bóng đổ mềm.
+ * Màu cố định ở cả chế độ Sáng/Tối (giống tấm bệ), nên chữ và nút bên trong cũng dùng màu riêng của khay.
+ */
+.bench-tray {
+  --tray-ink: #1f3a43;
+  --tray-muted: #6b5e4b;
+  --tray-line: #d9c9ae;
+  --tray-teal: #0b6e8a;
+  position: relative;
+  color: var(--tray-ink);
+  background: linear-gradient(160deg, #f6efe3 0%, #ebe0cc 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.75),
+    inset 0 0 0 1px #dccbaf,
+    0 3px 0 #e9c995,
+    0 4px 0 #cf9f5c,
+    0 7px 0 #e9c995,
+    0 8px 0 #cf9f5c,
+    0 11px 0 #ddb377,
+    0 24px 30px -14px rgb(74 58 34 / 0.4);
+  margin-bottom: 11px;
+}
+/* Nhãn khay: pill teal như badge "JPG" trong cảnh */
+.bench-plate {
+  background: var(--tray-teal);
+  color: #ffffff;
+  box-shadow: 0 2px 6px -2px rgb(11 110 138 / 0.55);
+}
+.bench-tray-count {
+  color: var(--tray-muted);
+}
+.bench-tray-divider {
+  border-top: 1px solid var(--tray-line);
+}
+/* Ô trống trong khay (chỗ thả ảnh / chỗ ảnh sạch sẽ nằm) */
+.bench-slot-empty {
+  border: 2px dashed #cdb995;
+  background: rgb(255 255 255 / 0.32);
+}
+.bench-slot-empty[data-active='true'] {
+  border-color: var(--tray-teal);
+  background: rgb(189 240 247 / 0.4);
+}
+
+/* Nút trong khay: teal đặc / trắng viền / chữ trơn */
+.tray-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 2rem;
+  padding-inline: 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s, box-shadow 0.15s, opacity 0.15s;
+}
+.tray-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.tray-btn-primary {
+  background: var(--tray-teal);
+  color: #ffffff;
+  box-shadow: 0 4px 10px -4px rgb(11 110 138 / 0.6);
+}
+.tray-btn-primary:hover:not(:disabled) {
+  background: #095a71;
+}
+.tray-btn-soft {
+  background: #ffffff;
+  color: var(--tray-teal);
+  box-shadow: inset 0 0 0 1px var(--tray-line), 0 1px 2px rgb(74 58 34 / 0.12);
+}
+.tray-btn-soft:hover:not(:disabled) {
+  background: #f0fafc;
+}
+.tray-btn-ghost {
+  color: var(--tray-muted);
+}
+.tray-btn-ghost:hover:not(:disabled) {
+  background: rgb(255 255 255 / 0.6);
+  color: var(--tray-ink);
+}
+.tray-btn-lg {
+  height: 2.5rem;
+  padding-inline: 1.25rem;
+  font-size: 0.875rem;
+}
+
+/* ---- Ảnh in: viền trắng, mép dưới dày hơn, bóng đổ xuống mặt khay (giữ màu giấy ở cả chế độ tối) ---- */
+.bench-print {
+  background: #fdfdfb;
+  color: #3b4256;
+  padding: 5px 5px 6px;
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px rgb(16 23 46 / 0.06),
+    0 1px 1px rgb(16 23 46 / 0.12),
+    0 10px 18px -12px rgb(16 23 46 / 0.6);
+}
+.bench-print img {
+  filter: saturate(1.04) contrast(1.02);
+}
+/* Nhãn metadata dán trên ảnh như sticker */
+.bench-sticker {
+  transform: rotate(var(--r, 0deg));
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.25), 0 2px 5px -2px rgb(0 0 0 / 0.35);
+}
+
+.bench-in {
+  transform: rotate(var(--tilt, 0deg));
+  animation: bench-drop 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15) both;
+}
+.bench-out {
+  animation: bench-slide 0.55s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+@keyframes bench-drop {
+  0% { opacity: 0; transform: translateY(-18px) scale(1.08) rotate(calc(var(--tilt, 0deg) * -2)); }
+  70% { opacity: 1; transform: translateY(1px) scale(0.995) rotate(var(--tilt, 0deg)); }
+  100% { opacity: 1; transform: rotate(var(--tilt, 0deg)); }
+}
+@keyframes bench-slide {
+  from { opacity: 0; transform: translateX(calc(-28px * var(--dir, 1))) rotate(-2deg) scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+
+/*
+ * Cảnh bàn làm việc isometric (src/components/bench/DeskScene.tsx).
+ * Mọi chuyển động lặp mượt; nút tạm dừng thêm .scene-paused để dừng toàn bộ.
+ */
+
+/* ---- Vật thể trôi nổi lên xuống, lệch pha nhau ---- */
+.scene-float {
+  animation: scene-float var(--dur, 6s) ease-in-out var(--delay, 0s) infinite;
+}
+@keyframes scene-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ---- Bút chạy dọc dòng metadata đang highlight, nhấc lên khi quay về ---- */
+.scene-pen {
+  animation: scene-pen 8s ease-in-out infinite;
+}
+@keyframes scene-pen {
+  0%, 8% { transform: translate(0, 0); }
+  42%, 52% { transform: translate(48px, -16.5px); }
+  66% { transform: translate(24px, -20px); }
+  80%, 100% { transform: translate(0, 0); }
+}
+
+/* ---- Dòng đang sửa: bị xóa dần theo đầu bút, rồi hiện lại (cùng chu kỳ với bút) ---- */
+.scene-erase {
+  transform-box: fill-box;
+  transform-origin: right center;
+  animation: scene-erase 8s ease-in-out infinite;
+}
+@keyframes scene-erase {
+  0%, 8% { transform: scaleX(1); opacity: 1; }
+  42% { transform: scaleX(0.04); opacity: 1; }
+  66% { transform: scaleX(0.04); opacity: 0; }
+  70% { transform: scaleX(1); opacity: 0; }
+  84%, 100% { transform: scaleX(1); opacity: 1; }
+}
+
+/* ---- Kính lúp quét chậm qua ảnh chính ---- */
+.scene-sweep {
+  animation: scene-sweep 10s ease-in-out infinite;
+}
+@keyframes scene-sweep {
+  0%, 100% { transform: translate(0, 0); }
+  45%, 55% { transform: translate(-170px, -38px); }
+}
+
+/* ---- Ngôi sao trong màn hình ngắm nhấp nháy ---- */
+.scene-twinkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: scene-twinkle 1.8s ease-in-out infinite;
+}
+@keyframes scene-twinkle {
+  0%, 100% { transform: scale(0.65) rotate(0deg); opacity: 0.45; }
+  50% { transform: scale(1.1) rotate(20deg); opacity: 1; }
+}
+
+/* ---- Ảnh thật của người dùng được đặt xuống tấm kính ---- */
+.scene-arrive {
+  animation: scene-arrive 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.15) both;
+}
+@keyframes scene-arrive {
+  from { opacity: 0; transform: translateY(-26px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---- Chip: lần lượt 3 bước, mỗi bước 3s, thanh tiến độ chạy đầy theo từng bước ---- */
+.scene-chip-text {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation: scene-chip-text 9s ease-in-out var(--delay, 0s) infinite;
+}
+@keyframes scene-chip-text {
+  0% { opacity: 0; transform: translateY(6px); }
+  3%, 30% { opacity: 1; transform: none; }
+  33.33%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+.scene-bar {
+  transform-origin: left;
+  animation: scene-bar 3s linear infinite;
+}
+.scene-bar-live {
+  transform-origin: left;
+  animation: scene-bar var(--dwell) linear both;
+}
+@keyframes scene-bar {
+  0% { transform: scaleX(0); }
+  90%, 100% { transform: scaleX(1); }
+}
+
+/* ---- Nút tạm dừng: dừng toàn bộ chuyển động của cảnh ---- */
+.scene-paused *,
+.scene-paused *::before,
+.scene-paused *::after {
+  animation-play-state: paused !important;
+}
+
+/* ---- Giảm chuyển động: cảnh đứng yên, chip hiện bước đầu, ẩn nút tạm dừng ---- */
+@media (prefers-reduced-motion: reduce) {
+  .scene * {
+    animation: none !important;
+  }
+  .scene-chip-text:first-child {
+    opacity: 1;
+  }
+  .scene-toggle {
+    display: none;
+  }
+}
+
+/*
+ * ---- Logo trên header / chân trang (src/components/layout/Shell.tsx) ----
+ * Dấu thương hiệu có quầng sáng cobalt, nghiêng nhẹ khi rê chuột; tên web có vệt sáng lướt qua chữ mỗi ~7s.
+ */
+.logo-mark {
+  filter: drop-shadow(0 4px 10px color-mix(in oklab, var(--color-cobalt) 45%, transparent));
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.4), filter 0.3s;
+}
+.logo:hover .logo-mark,
+.logo:focus-visible .logo-mark {
+  transform: rotate(-8deg) scale(1.07);
+  filter: drop-shadow(0 6px 14px color-mix(in oklab, var(--color-cobalt) 60%, transparent));
+}
+.logo-name {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-ink) 0%,
+    var(--color-ink) 40%,
+    var(--color-cobalt) 46%,
+    #5fe0f5 50%,
+    var(--color-cobalt) 54%,
+    var(--color-ink) 60%,
+    var(--color-ink) 100%
+  );
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: logo-shine 7s ease-in-out infinite;
+}
+@keyframes logo-shine {
+  0%, 60% { background-position: 100% 0; }
+  88%, 100% { background-position: 0% 0; }
+}
+
+/* ---- Menu thả xuống trên header: bật ra nhẹ, các mục hiện lần lượt ---- */
+/* Bảng menu trải ngang hết thanh header: bật ra từ giữa. */
+.menu-pop {
+  transform-origin: top center;
+  animation: menu-pop 0.18s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+.menu-item {
+  animation: menu-item 0.22s ease-out both;
+}
+@keyframes menu-pop {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes menu-item {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-name {
+    animation: none;
+    background-position: 100% 0;
+  }
+}

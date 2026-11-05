@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ailabelremover",
+  "compatibility_date": "2026-10-12",
+  // Tên miền riêng: Cloudflare tự tạo bản ghi DNS khi deploy (zone ailabelremover.work phải nằm trong cùng tài khoản).
+  "routes": [{ "pattern": "ailabelremover.work", "custom_domain": true }],
+  // Worker nhỏ chỉ để tự chọn ngôn ngữ ở trang gốc "/"; mọi trang khác là tệp tĩnh đã prerender trong dist/.
+  "main": "worker/index.ts",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/"],
+    // URL không tồn tại → dist/404.html với mã 404 thật (thay vì trả trang chủ với mã 200 = "soft 404").
+    "not_found_handling": "404-page"
+  }
+}

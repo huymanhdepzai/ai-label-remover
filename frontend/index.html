@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#007595" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!--
+      Thẻ SEO theo trang/ngôn ngữ (title, description, canonical, hreflang, Open Graph) được chèn vào đây
+      lúc prerender (scripts/prerender.mjs) và cập nhật phía client khi điều hướng (src/seo/head.ts).
+      Tên miền lấy từ SITE.origin trong src/content/seo.ts.
+    -->
+    <!--app-head-->
+
+    <!-- Áp dụng chế độ Sáng/Tối trước khi vẽ trang để tránh nháy nền trắng (logic đầy đủ ở src/theme.ts). -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var dark = t === 'dark' || ((!t || t === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Font tự lưu (src/main.tsx, gói @fontsource). Schema WebApplication theo trang/ngôn ngữ: src/components/seo/StructuredData.tsx. -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      AI Label Remover runs entirely in your browser, so it needs JavaScript to read and wash metadata out of your images.
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

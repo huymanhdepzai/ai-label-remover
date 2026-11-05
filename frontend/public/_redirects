@@ -1,0 +1,5 @@
+# Trang đã gộp: /remove-ai-metadata/ → /ai-tag-cleaner/ (mọi ngôn ngữ). Xem LEGACY_TOOL_SLUGS trong src/content/seo.ts.
+/remove-ai-metadata /ai-tag-cleaner/ 301
+/remove-ai-metadata/ /ai-tag-cleaner/ 301
+/:lang/remove-ai-metadata /:lang/ai-tag-cleaner/ 301
+/:lang/remove-ai-metadata/ /:lang/ai-tag-cleaner/ 301
