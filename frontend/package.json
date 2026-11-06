@@ -23,6 +23,7 @@
     "zustand": "^5.0.5"
   },
   "devDependencies": {
+    "@fontsource/bricolage-grotesque": "^5.2.10",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.1.8",
     "@types/matter-js": "^0.19.8",

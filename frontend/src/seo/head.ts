@@ -100,7 +100,13 @@ export function buildHead({ lang, m, articles, pages }: LanguageBundle, route: R
 
   // hreflang chỉ liệt kê ngôn ngữ thật sự có trang này (bài mở rộng chỉ có ở một số ngôn ngữ).
   const langs = languagesFor(route);
-  const guideTitle = route.name === 'guide' ? guideContent({ m, articles }, route.slug)?.title : undefined;
+  // Mô tả ảnh chia sẻ theo ngôn ngữ trang: tiêu đề bài / H1 trang công cụ, còn lại là tiêu đề trang chủ.
+  const imageAlt =
+    route.name === 'guide'
+      ? guideContent({ m, articles }, route.slug)?.title
+      : route.name === 'tool'
+        ? pages?.tools[route.slug]?.h1
+        : m.meta.title;
   return {
     lang,
     dir: isRtl(lang) ? 'rtl' : 'ltr',
@@ -110,7 +116,7 @@ export function buildHead({ lang, m, articles, pages }: LanguageBundle, route: R
     ogType: route.name === 'guide' ? 'article' : 'website',
     ogLocale: findLanguage(lang)?.og ?? 'en_US',
     image: absoluteUrl(ogImagePath(route)),
-    imageAlt: guideTitle ?? SITE.name,
+    imageAlt: imageAlt ?? SITE.name,
     alternates: [
       ...langs.map((l) => ({ hreflang: l.code, href: absoluteUrl(pathFor(l.code, route)) })),
       ...(langs.some((l) => l.code === DEFAULT_LANG)
@@ -133,6 +139,7 @@ function metaTags(h: HeadData): [attr: 'name' | 'property', key: string, value: 
     ['property', 'og:title', h.title],
     ['property', 'og:description', h.description],
     ['property', 'og:image', h.image],
+    ['property', 'og:image:type', 'image/png'],
     ['property', 'og:image:width', String(OG_SIZE.width)],
     ['property', 'og:image:height', String(OG_SIZE.height)],
     ['property', 'og:image:alt', h.imageAlt],
@@ -140,6 +147,7 @@ function metaTags(h: HeadData): [attr: 'name' | 'property', key: string, value: 
     ['name', 'twitter:title', h.title],
     ['name', 'twitter:description', h.description],
     ['name', 'twitter:image', h.image],
+    ['name', 'twitter:image:alt', h.imageAlt],
   ];
 }
 
