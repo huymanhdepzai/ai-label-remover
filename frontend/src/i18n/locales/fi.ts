@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const fi: Messages = {
   meta: {
-    title: 'Poista metatiedot kuvista – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – Poista metatiedot kuvista – EXIF, C2PA',
     description:
       'Poista EXIF, GPS-sijainti, Content Credentials (C2PA) ja tekoälykehotteet JPG-, PNG-, HEIC- ja WebP-kuvista ilmaiseksi selaimessa ilman latausta.',
   },
@@ -12,7 +12,7 @@ const fi: Messages = {
     nav: { tool: 'Pese kuvat', how: 'Työnkulku', formats: 'Tiedostotyypit', guides: 'Artikkelit', faq: 'Kysymykset' },
   },
   hero: {
-    kicker: 'Poista metatiedot kuvista — EXIF, GPS, C2PA ja tekoälykehotteet',
+    kicker: 'AI Label Remover — Poista metatiedot kuvista — EXIF, GPS, C2PA ja tekoälykehotteet',
     eyebrow: 'Lukee C2PA · EXIF · XMP · IPTC · kehotteet',
     title: 'Sijainti, laite, tekoälyn jäljet – kaikki on kuvissasi.',
     titleAccent: 'Poista ne yhdellä napsautuksella.',

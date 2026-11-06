@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const zhTW: Messages = {
   meta: {
-    title: '移除圖片中繼資料 – EXIF、GPS、C2PA | AI Label Remover',
+    title: 'AI Label Remover – 移除圖片中繼資料 – EXIF、GPS、C2PA',
     description:
       '在瀏覽器中免費移除照片的 EXIF、GPS 位置、C2PA 內容憑證與 AI 提示詞。支援 JPG、PNG、HEIC、WebP，無需上傳，畫質不變。',
   },
@@ -12,7 +12,7 @@ const zhTW: Messages = {
     nav: { tool: '清洗圖片', how: '流程', formats: '檔案類型', guides: '文章', faq: '常見問題' },
   },
   hero: {
-    kicker: '移除圖片中繼資料 — EXIF、GPS、C2PA 與 AI 提示詞',
+    kicker: 'AI Label Remover — 移除圖片中繼資料 — EXIF、GPS、C2PA 與 AI 提示詞',
     eyebrow: '讀取 C2PA · EXIF · XMP · IPTC · 提示詞',
     title: '位置、裝置、AI 痕跡——全都藏在照片裡。',
     titleAccent: '一鍵即可清除。',

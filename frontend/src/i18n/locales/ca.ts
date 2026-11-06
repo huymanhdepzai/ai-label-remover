@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const ca: Messages = {
   meta: {
-    title: 'Eliminar metadades de fotos – EXIF, C2PA, IA | AI Label Remover',
+    title: 'AI Label Remover – Eliminar metadades de fotos – EXIF, C2PA',
     description:
       'Elimina gratis EXIF, GPS, Content Credentials (C2PA) i prompts d’IA de JPG, PNG, HEIC i WebP directament al navegador, sense pujar res.',
   },
@@ -12,7 +12,7 @@ const ca: Messages = {
     nav: { tool: 'Netejar imatges', how: 'Procés', formats: 'Tipus de fitxer', guides: 'Articles', faq: 'Preguntes' },
   },
   hero: {
-    kicker: 'Eliminar metadades de fotos — EXIF, GPS, C2PA i prompts d’IA',
+    kicker: 'AI Label Remover — Eliminar metadades de fotos — EXIF, GPS, C2PA i prompts d’IA',
     eyebrow: 'Llegeix C2PA · EXIF · XMP · IPTC · prompts',
     title: 'Ubicació, dispositiu, rastres d’IA: tot és dins de les teves fotos.',
     titleAccent: 'Elimina-ho amb un clic.',

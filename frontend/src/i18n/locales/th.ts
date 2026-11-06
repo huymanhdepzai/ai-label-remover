@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const th: Messages = {
   meta: {
-    title: 'ลบเมทาดาทารูปภาพ – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – ลบเมทาดาทารูปภาพ – EXIF, GPS, C2PA',
     description:
       'ลบ EXIF, ตำแหน่ง GPS, C2PA และพรอมต์ AI ออกจากไฟล์ JPG, PNG, HEIC และ WebP ฟรีในเบราว์เซอร์ ไม่ต้องอัปโหลด คุณภาพภาพไม่ลดลง',
   },
@@ -12,7 +12,7 @@ const th: Messages = {
     nav: { tool: 'ล้างรูปภาพ', how: 'ขั้นตอน', formats: 'ประเภทไฟล์', guides: 'บทความ', faq: 'คำถาม' },
   },
   hero: {
-    kicker: 'ลบเมทาดาทารูปภาพ — EXIF, GPS, C2PA และพรอมต์ AI',
+    kicker: 'AI Label Remover — ลบเมทาดาทารูปภาพ — EXIF, GPS, C2PA และพรอมต์ AI',
     eyebrow: 'อ่าน C2PA · EXIF · XMP · IPTC · พรอมต์',
     title: 'ตำแหน่ง อุปกรณ์ ร่องรอย AI — ทั้งหมดซ่อนอยู่ในรูปของคุณ',
     titleAccent: 'ลบออกได้ในคลิกเดียว',

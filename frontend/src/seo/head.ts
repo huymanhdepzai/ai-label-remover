@@ -46,8 +46,12 @@ export function clip(s: string, max: number): string {
   return `${out.replace(/[\s,;:.–—-]+$/, '')}…`;
 }
 
-/** Thêm hậu tố tên trang khi còn chỗ; tiêu đề quá dài thì bỏ hậu tố và rút gọn. */
+/**
+ * Thêm hậu tố tên trang khi còn chỗ; tiêu đề quá dài thì bỏ hậu tố và rút gọn.
+ * Tiêu đề đã chứa tên trang (vd. "Privacy Policy – AI Label Remover") thì không thêm nữa — tránh lặp thương hiệu.
+ */
 const withSiteName = (title: string) => {
+  if (title.toLowerCase().includes(SITE.name.toLowerCase())) return clip(title, TITLE_LIMIT);
   const full = `${title} | ${SITE.name}`;
   return displayWidth(full) <= TITLE_LIMIT ? full : clip(title, TITLE_LIMIT);
 };

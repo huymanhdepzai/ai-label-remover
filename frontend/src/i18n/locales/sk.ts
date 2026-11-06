@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const sk: Messages = {
   meta: {
-    title: 'Odstránenie metadát z fotiek – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – Odstránenie metadát z fotiek – EXIF, C2PA',
     description:
       'Zadarmo odstráňte EXIF, polohu GPS, Content Credentials (C2PA) a AI prompty z JPG, PNG, HEIC a WebP priamo v prehliadači, bez nahrávania.',
   },
@@ -12,7 +12,7 @@ const sk: Messages = {
     nav: { tool: 'Vyprať obrázky', how: 'Postup', formats: 'Typy súborov', guides: 'Články', faq: 'Otázky' },
   },
   hero: {
-    kicker: 'Odstránenie metadát z fotiek — EXIF, GPS, C2PA a AI prompty',
+    kicker: 'AI Label Remover — Odstránenie metadát z fotiek — EXIF, GPS, C2PA a AI prompty',
     eyebrow: 'Číta C2PA · EXIF · XMP · IPTC · prompty',
     title: 'Poloha, zariadenie, stopy AI — všetko je vo vašich fotkách.',
     titleAccent: 'Odstráňte to jedným kliknutím.',

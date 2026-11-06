@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const hi: Messages = {
   meta: {
-    title: 'फ़ोटो से मेटाडेटा हटाएँ – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – फ़ोटो से मेटाडेटा हटाएँ – EXIF, C2PA',
     description:
       'JPG, PNG, HEIC और WebP फ़ोटो से EXIF, GPS लोकेशन, C2PA और AI प्रॉम्प्ट मुफ़्त में हटाएँ — सीधे ब्राउज़र में, बिना कुछ अपलोड किए।',
   },
@@ -12,7 +12,7 @@ const hi: Messages = {
     nav: { tool: 'इमेज धोएँ', how: 'प्रक्रिया', formats: 'फ़ाइल प्रकार', guides: 'लेख', faq: 'सवाल' },
   },
   hero: {
-    kicker: 'फ़ोटो से मेटाडेटा हटाएँ — EXIF, GPS, C2PA और AI प्रॉम्प्ट',
+    kicker: 'AI Label Remover — फ़ोटो से मेटाडेटा हटाएँ — EXIF, GPS, C2PA और AI प्रॉम्प्ट',
     eyebrow: 'C2PA · EXIF · XMP · IPTC · प्रॉम्प्ट पढ़ता है',
     title: 'लोकेशन, डिवाइस, AI के निशान — सब कुछ आपकी फ़ोटो में छिपा है।',
     titleAccent: 'एक क्लिक में हटाएँ।',

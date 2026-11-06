@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const nl: Messages = {
   meta: {
-    title: 'Metadata uit foto’s verwijderen – EXIF, C2PA, AI | AI Label Remover',
+    title: 'AI Label Remover – Metadata uit foto’s verwijderen – C2PA, AI',
     description:
       'Verwijder gratis EXIF, GPS, Content Credentials (C2PA) en AI-prompts uit JPG, PNG, HEIC en WebP, rechtstreeks in je browser en zonder upload.',
   },
@@ -12,7 +12,7 @@ const nl: Messages = {
     nav: { tool: 'Afbeeldingen wassen', how: 'Werkwijze', formats: 'Bestandstypen', guides: 'Artikelen', faq: 'Vragen' },
   },
   hero: {
-    kicker: 'Metadata uit foto’s verwijderen — EXIF, GPS, C2PA en AI-prompts',
+    kicker: 'AI Label Remover — Metadata uit foto’s verwijderen — EXIF, GPS, C2PA en AI-prompts',
     eyebrow: 'Leest C2PA · EXIF · XMP · IPTC · prompts',
     title: 'Locatie, apparaat, AI-sporen — het zit allemaal in je foto’s.',
     titleAccent: 'Verwijder het met één klik.',

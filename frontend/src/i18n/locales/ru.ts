@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const ru: Messages = {
   meta: {
-    title: 'Удалить метаданные с фото – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – Удалить метаданные с фото – EXIF, C2PA',
     description:
       'Бесплатно удаляйте EXIF, GPS-координаты, C2PA и промпты ИИ из JPG, PNG, HEIC и WebP прямо в браузере — без загрузки на сервер и потери качества.',
   },
@@ -12,7 +12,7 @@ const ru: Messages = {
     nav: { tool: 'Очистить фото', how: 'Порядок работы', formats: 'Типы файлов', guides: 'Статьи', faq: 'Вопросы' },
   },
   hero: {
-    kicker: 'Удалить метаданные с фото — EXIF, GPS, C2PA и промпты ИИ',
+    kicker: 'AI Label Remover — Удалить метаданные с фото — EXIF, GPS, C2PA и промпты ИИ',
     eyebrow: 'Читает C2PA · EXIF · XMP · IPTC · промпты',
     title: 'Местоположение, устройство, следы ИИ — всё это внутри ваших фото.',
     titleAccent: 'Удалите одним щелчком.',

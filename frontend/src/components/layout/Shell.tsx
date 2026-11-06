@@ -2,7 +2,7 @@ import { useEffect, useId, useState, type ReactNode } from 'react';
 import { MARK_SVG_BODY } from '../../brand/mark';
 import { useGuideContent } from '../../content/guideContent';
 import { plainText } from '../../content/richText';
-import { availableGuides, CHECK_GUIDES, hasPages, HOME_SECTIONS, INFO_SLUGS, NAV, SITE, TOOL_SLUGS, type GuideSlug } from '../../content/seo';
+import { availableGuides, CHECK_GUIDES, hasPages, isGuideAvailable, HOME_SECTIONS, INFO_SLUGS, NAV, SITE, TOOL_SLUGS, type GuideSlug } from '../../content/seo';
 import { fmt, rememberLanguage, useI18n, useT } from '../../i18n';
 import { DEFAULT_LANG, LANGUAGES } from '../../i18n/languages';
 import { GUIDES_INDEX, HOME, localizeRoute, pathFor, useHref, useRouter } from '../../router';
@@ -152,14 +152,19 @@ function useNavGroups(): NavGroup[] | null {
         })),
       ],
     },
-    {
-      title: nav.check,
-      icon: 'search',
-      items: [
-        { to: pathFor(lang, { name: 'guide', slug: CHECK_GUIDES.viewer }), label: nav.viewer, on: isGuide(CHECK_GUIDES.viewer), icon: 'search', desc: viewer?.summary[0] },
-        { to: pathFor(lang, { name: 'guide', slug: CHECK_GUIDES.aiCheck }), label: nav.aiCheck, on: isGuide(CHECK_GUIDES.aiCheck), icon: 'sparkles', desc: aiCheck?.summary[0] },
-      ],
-    },
+    // Nhóm "Xem & kiểm tra" trỏ tới hai bài mở rộng — chỉ hiện ở ngôn ngữ đã có các bài đó.
+    ...(isGuideAvailable(CHECK_GUIDES.viewer, lang) && isGuideAvailable(CHECK_GUIDES.aiCheck, lang)
+      ? [
+          {
+            title: nav.check,
+            icon: 'search' as const,
+            items: [
+              { to: pathFor(lang, { name: 'guide', slug: CHECK_GUIDES.viewer }), label: nav.viewer, on: isGuide(CHECK_GUIDES.viewer), icon: 'search' as const, desc: viewer?.summary[0] },
+              { to: pathFor(lang, { name: 'guide', slug: CHECK_GUIDES.aiCheck }), label: nav.aiCheck, on: isGuide(CHECK_GUIDES.aiCheck), icon: 'sparkles' as const, desc: aiCheck?.summary[0] },
+            ],
+          },
+        ]
+      : []),
     {
       title: nav.learn,
       icon: 'document',

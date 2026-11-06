@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const ko: Messages = {
   meta: {
-    title: '사진 메타데이터 삭제 – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – 사진 메타데이터 삭제 – EXIF, GPS, C2PA',
     description:
       'JPG, PNG, HEIC, WebP 사진의 EXIF, GPS 위치, C2PA 콘텐츠 자격 증명, AI 프롬프트를 브라우저에서 무료로 삭제하세요. 업로드 없음, 화질 그대로.',
   },
@@ -12,7 +12,7 @@ const ko: Messages = {
     nav: { tool: '이미지 세척', how: '진행 순서', formats: '파일 형식', guides: '글', faq: '질문' },
   },
   hero: {
-    kicker: '사진 메타데이터 삭제 — EXIF, GPS, C2PA, AI 프롬프트',
+    kicker: 'AI Label Remover — 사진 메타데이터 삭제 — EXIF, GPS, C2PA, AI 프롬프트',
     eyebrow: 'C2PA · EXIF · XMP · IPTC · 프롬프트 판독',
     title: '위치, 기기, AI 흔적 — 모두 사진 속에 담겨 있습니다.',
     titleAccent: '클릭 한 번으로 지우세요.',

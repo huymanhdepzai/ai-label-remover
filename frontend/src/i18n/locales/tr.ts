@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const tr: Messages = {
   meta: {
-    title: 'Fotoğraftan Meta Veri Silme – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – Fotoğraftan Meta Veri Silme – EXIF, C2PA',
     description:
       'JPG, PNG, HEIC ve WebP dosyalarındaki EXIF, GPS konumu, C2PA ve yapay zekâ istemlerini tarayıcıda ücretsiz silin; yükleme yok, kalite kaybı yok.',
   },
@@ -12,7 +12,7 @@ const tr: Messages = {
     nav: { tool: 'Görselleri yıka', how: 'İşleyiş', formats: 'Dosya türleri', guides: 'Yazılar', faq: 'Sorular' },
   },
   hero: {
-    kicker: 'Fotoğraflardan meta verileri silin — EXIF, GPS, C2PA ve yapay zekâ istemleri',
+    kicker: 'AI Label Remover — Fotoğraflardan meta verileri silin — EXIF, GPS, C2PA ve yapay zekâ istemleri',
     eyebrow: 'C2PA · EXIF · XMP · IPTC · istemleri okur',
     title: 'Konum, cihaz, yapay zekâ izleri — hepsi fotoğraflarınızın içinde.',
     titleAccent: 'Tek tıkla silin.',

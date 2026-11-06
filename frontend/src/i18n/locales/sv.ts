@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const sv: Messages = {
   meta: {
-    title: 'Ta bort metadata från bilder – EXIF, C2PA, AI | AI Label Remover',
+    title: 'AI Label Remover – Ta bort metadata från bilder – EXIF, C2PA',
     description:
       'Ta bort EXIF, GPS-position, Content Credentials (C2PA) och AI-promptar från JPG, PNG, HEIC och WebP gratis – direkt i webbläsaren, utan uppladdning.',
   },
@@ -12,7 +12,7 @@ const sv: Messages = {
     nav: { tool: 'Tvätta bilder', how: 'Så går det till', formats: 'Filtyper', guides: 'Artiklar', faq: 'Frågor' },
   },
   hero: {
-    kicker: 'Ta bort metadata från bilder — EXIF, GPS, C2PA och AI-promptar',
+    kicker: 'AI Label Remover — Ta bort metadata från bilder — EXIF, GPS, C2PA och AI-promptar',
     eyebrow: 'Läser C2PA · EXIF · XMP · IPTC · promptar',
     title: 'Plats, enhet, AI-spår – allt finns i dina bilder.',
     titleAccent: 'Ta bort det med ett klick.',

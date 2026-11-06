@@ -23,12 +23,15 @@ export const SITE = {
   contactEmail: '',
 };
 
+/** Ngôn ngữ có bản dịch đầy đủ của bài viết mở rộng (src/content/articles/<mã>.ts). */
+export const ARTICLE_LANGS: readonly LangCode[] = ['en', 'vi', 'es', 'pt-BR', 'de', 'fr', 'ja', 'id'];
+
 /**
- * Ngôn ngữ thị trường chính: có trang công cụ theo từng nhu cầu, trang Giới thiệu / Quyền riêng tư
- * (src/content/pages/<mã>.ts) và bản dịch đầy đủ của bài viết mở rộng. Ngôn ngữ khác dùng bản tiếng Anh của
- * trang Giới thiệu / Quyền riêng tư (liên kết ở chân trang).
+ * Ngôn ngữ thị trường chính: có trang công cụ theo từng nhu cầu và trang Giới thiệu / Quyền riêng tư
+ * (src/content/pages/<mã>.ts) — trang chủ đủ mọi mục. Ngôn ngữ khác dùng nội dung trang chủ rút gọn
+ * (src/content/home/<mã>.ts) và bản tiếng Anh của trang Giới thiệu / Quyền riêng tư (liên kết ở chân trang).
  */
-export const PRIORITY_LANGS: readonly LangCode[] = ['en', 'vi', 'es', 'pt-BR', 'de', 'fr', 'ja', 'id'];
+export const PRIORITY_LANGS: readonly LangCode[] = [...ARTICLE_LANGS, 'it', 'ko', 'zh-CN', 'zh-TW', 'ru', 'tr', 'pl', 'nl'];
 
 /**
  * Trang công cụ theo nhu cầu tìm kiếm: mỗi trang nhắm một cụm từ khóa, có công cụ dùng ngay ở đầu trang.
@@ -216,19 +219,19 @@ export type ExtraGuideSlug = (typeof EXTRA_GUIDE_SLUGS)[number];
  * Dịch thêm một bài sang ngôn ngữ mới: thêm bài vào tệp ngôn ngữ đó rồi thêm mã ngôn ngữ vào đây.
  */
 export const GUIDE_LANGS: Record<ExtraGuideSlug, readonly LangCode[]> = {
-  'chatgpt-gemini-image-metadata': PRIORITY_LANGS,
-  'remove-metadata-windows-mac': PRIORITY_LANGS,
-  'image-metadata-viewer-online': PRIORITY_LANGS,
-  'iptc-digitalsourcetype-ai': PRIORITY_LANGS,
-  'remove-metadata-without-losing-quality': PRIORITY_LANGS,
-  'how-to-check-if-image-is-ai-generated': PRIORITY_LANGS,
-  'which-platforms-label-ai-images': PRIORITY_LANGS,
-  'what-metadata-ai-image-generators-add': PRIORITY_LANGS,
-  'synthid-invisible-ai-watermarks': PRIORITY_LANGS,
-  'turn-off-content-credentials-photoshop-lightroom': PRIORITY_LANGS,
-  'which-platforms-strip-photo-metadata': PRIORITY_LANGS,
-  'view-remove-metadata-iphone-android': PRIORITY_LANGS,
-  'what-is-exif-data': PRIORITY_LANGS,
+  'chatgpt-gemini-image-metadata': ARTICLE_LANGS,
+  'remove-metadata-windows-mac': ARTICLE_LANGS,
+  'image-metadata-viewer-online': ARTICLE_LANGS,
+  'iptc-digitalsourcetype-ai': ARTICLE_LANGS,
+  'remove-metadata-without-losing-quality': ARTICLE_LANGS,
+  'how-to-check-if-image-is-ai-generated': ARTICLE_LANGS,
+  'which-platforms-label-ai-images': ARTICLE_LANGS,
+  'what-metadata-ai-image-generators-add': ARTICLE_LANGS,
+  'synthid-invisible-ai-watermarks': ARTICLE_LANGS,
+  'turn-off-content-credentials-photoshop-lightroom': ARTICLE_LANGS,
+  'which-platforms-strip-photo-metadata': ARTICLE_LANGS,
+  'view-remove-metadata-iphone-android': ARTICLE_LANGS,
+  'what-is-exif-data': ARTICLE_LANGS,
 };
 
 /** Thẻ chủ đề (tag đỏ) trên thẻ bài viết — dùng tên riêng / thuật ngữ kỹ thuật nên giống nhau ở mọi ngôn ngữ. */

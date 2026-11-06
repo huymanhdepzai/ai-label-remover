@@ -61,7 +61,7 @@ export function GuidesIndexPage({ page }: { page: number }) {
             (slug) =>
               slug && (
                 <li key={slug}>
-                  <GuideCard slug={slug} withSummary />
+                  <GuideCard slug={slug} withSummary level={2} />
                 </li>
               ),
           )}

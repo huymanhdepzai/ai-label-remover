@@ -34,7 +34,7 @@ const en: Articles = {
       {
         heading: 'Wash the copy you post',
         paragraphs: [
-          'Press “Wash all images”. AI Label Remover cuts the C2PA store, XMP, IPTC and EXIF blocks out of the byte stream while leaving pixel data, size, rotation and color profile as they were. The washed file is read again, so you can see the AI traces are gone before saving. The [AI metadata remover](ai-tag-cleaner) page lists every trace it handles.',
+          'Press “Wash all images”. AI Label Remover cuts the C2PA store, XMP, IPTC and EXIF blocks out of the byte stream while leaving pixel data, size, rotation and color profile as they were. The washed file is read again, so you can see the AI traces are gone before saving. The [AI tag cleaner](ai-tag-cleaner) page lists every trace it handles.',
           'Re-saving as a new JPEG would also drop the metadata, but [it re-compresses the picture every time](remove-metadata-without-losing-quality). Cutting blocks avoids that loss entirely.',
         ],
       },
@@ -153,7 +153,7 @@ const en: Articles = {
       {
         heading: 'Look first, then wash',
         paragraphs: [
-          'Lay the image on the table and read the report. Rows tagged “AI” hold prompts, generator names and source declarations; rows tagged “People” hold authors, descriptions and identifiers. Press “Wash all images” and save the clean file — or save the whole batch as a ZIP. The [AI metadata remover](ai-tag-cleaner) page explains each kind of trace.',
+          'Lay the image on the table and read the report. Rows tagged “AI” hold prompts, generator names and source declarations; rows tagged “People” hold authors, descriptions and identifiers. Press “Wash all images” and save the clean file — or save the whole batch as a ZIP. The [AI tag cleaner](ai-tag-cleaner) page explains each kind of trace.',
           'All of this runs in your browser, so the prompts you are protecting are not handed to yet another service along the way.',
         ],
       },
@@ -461,7 +461,7 @@ const en: Articles = {
       },
       {
         heading: 'What washing removes — and what stays',
-        paragraphs: ['Pressing “Wash all images” — or using the dedicated [AI metadata remover](ai-tag-cleaner) — cuts the metadata out of the byte stream without redrawing the picture. In practice:'],
+        paragraphs: ['Pressing “Wash all images” — or using the dedicated [AI tag cleaner](ai-tag-cleaner) — cuts the metadata out of the byte stream without redrawing the picture. In practice:'],
         bullets: [
           'Removed: the C2PA manifest, XMP and IPTC fields, EXIF and any text that names the tool or holds a prompt.',
           'Kept: pixel data, dimensions, rotation and the ICC color profile — so the image looks identical.',
@@ -739,7 +739,7 @@ const en: Articles = {
       {
         heading: 'Finding and removing it',
         paragraphs: [
-          'Lay the image in AI Label Remover. In “AI traces” the field appears as “XMP · Iptc4xmpExt › DigitalSourceType” with its value; the same term inside a C2PA manifest is listed under C2PA. Pressing “Wash all images” removes the whole XMP packet and C2PA store, which takes the field with it, along with EXIF and other identifying data. The [AI metadata remover](ai-tag-cleaner) page covers the other AI fields too.',
+          'Lay the image in AI Label Remover. In “AI traces” the field appears as “XMP · Iptc4xmpExt › DigitalSourceType” with its value; the same term inside a C2PA manifest is listed under C2PA. Pressing “Wash all images” removes the whole XMP packet and C2PA store, which takes the field with it, along with EXIF and other identifying data. The [AI tag cleaner](ai-tag-cleaner) page covers the other AI fields too.',
           'If you need to remove only this one field and keep the rest of your XMP, a command-line tool can do it: exiftool -XMP-iptcExt:DigitalSourceType= photo.jpg. Remember that a matching value may also sit in a C2PA manifest.',
         ],
       },
@@ -895,7 +895,7 @@ const en: Articles = {
       {
         heading: 'Checking if an image is AI-generated',
         paragraphs: [
-          'Lay the file on the table at the top of this page. The “AI traces” tab gives one of three verdicts — AI traces found, worth a second look, or no AI traces — and lists each signal with its source. “Raw metadata” shows the underlying values. Nothing is uploaded. To remove what it finds, use the [AI metadata remover](ai-tag-cleaner).',
+          'Lay the file on the table at the top of this page. The “AI traces” tab gives one of three verdicts — AI traces found, worth a second look, or no AI traces — and lists each signal with its source. “Raw metadata” shows the underlying values. Nothing is uploaded. To remove what it finds, use the [AI tag cleaner](ai-tag-cleaner).',
         ],
       },
       {
@@ -1048,7 +1048,7 @@ const en: Articles = {
         heading: 'Local generators: Stable Diffusion front-ends and ComfyUI',
         paragraphs: [
           'Local tools sign nothing, yet they often store the most detail: A1111 and Forge write a “parameters” text chunk, and [ComfyUI embeds its whole prompt and workflow graphs](remove-stable-diffusion-comfyui-metadata) as JSON. These options can usually be switched off — for new images only.',
-          'Generators change their output between versions, so the reliable approach is to open the file itself: lay it on the table in AI Label Remover to see each field, then wash out whatever you would rather not share with the [AI metadata remover](ai-tag-cleaner).',
+          'Generators change their output between versions, so the reliable approach is to open the file itself: lay it on the table in AI Label Remover to see each field, then wash out whatever you would rather not share with the [AI tag cleaner](ai-tag-cleaner).',
         ],
       },
     ],
@@ -1111,7 +1111,7 @@ const en: Articles = {
       {
         heading: 'In practice',
         paragraphs: [
-          'Washing metadata with the [AI metadata remover](ai-tag-cleaner) is the right move for privacy and for removing prompts, locations and provenance you do not want to share. It does not make an AI image undetectable. When posting realistic AI content, follow the platform’s disclosure rules.',
+          'Washing metadata with the [AI tag cleaner](ai-tag-cleaner) is the right move for privacy and for removing prompts, locations and provenance you do not want to share. It does not make an AI image undetectable. When posting realistic AI content, follow the platform’s disclosure rules.',
         ],
       },
       {

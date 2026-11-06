@@ -29,7 +29,7 @@
 
 | Từ khóa | Trang | Vị trí từ khóa |
 | --- | --- | --- |
-| **AI Label Remover** | `/` (trang chủ, mọi ngôn ngữ) | Tên thương hiệu (`SITE.name`), đầu `<title>` và H1 (`hero.kicker`) ở 8 ngôn ngữ chính, cuối `<title>` ở các ngôn ngữ còn lại |
+| **AI Label Remover** | `/` (trang chủ, mọi ngôn ngữ) | Tên thương hiệu (`SITE.name`), đầu `<title>` và H1 (`hero.kicker`) ở toàn bộ 32 ngôn ngữ |
 | **AI Tag Cleaner** | `/ai-tag-cleaner/` | `metaTitle`, H1, description; `WebSite.alternateName`. Đã gộp trang cũ `/remove-ai-metadata/` vào đây (trùng phạm vi, tranh từ khóa): 301 trong `public/_redirects`, alias `LEGACY_TOOL_SLUGS` cho router |
 | **No AI Tag** | `/no-ai-tag/` | `metaTitle`, H1, description; `WebSite.alternateName` |
 

@@ -94,7 +94,7 @@ const vi: Pages = {
   tools: {
     'ai-tag-cleaner': {
       metaTitle: 'AI Tag Cleaner – Xóa tag AI khỏi metadata ảnh',
-      description: 'Xóa tag AI khỏi ảnh: thẻ IPTC “tạo bằng AI”, C2PA, tên công cụ AI trong XMP và prompt. Không giảm chất lượng, miễn phí, trong trình duyệt, không tải ảnh lên.',
+      description: 'AI Tag Cleaner xóa tag AI khỏi ảnh: thẻ IPTC “tạo bằng AI”, C2PA, tên công cụ AI trong XMP và prompt. Không giảm chất lượng, miễn phí, không tải ảnh lên.',
       navLabel: 'Xóa tag AI',
       h1: 'AI Tag Cleaner — xóa tag AI khỏi ảnh',
       lead: 'Công cụ tạo ảnh AI và trình chỉnh sửa có AI đều gắn tag vào tệp: loại nguồn “tạo bằng AI”, bản ghi C2PA có chữ ký, tên ứng dụng, đôi khi cả prompt. Thả ảnh vào bên dưới để xem mọi tag AI trong tệp, rồi xóa sạch mà không mã hóa lại điểm ảnh nào.',
@@ -145,7 +145,7 @@ const vi: Pages = {
     },
     'no-ai-tag': {
       metaTitle: 'No AI Tag – Đăng ảnh thật không bị gắn nhãn AI',
-      description: 'Ảnh thật bị gắn nhãn “Thông tin AI”? Xóa dữ liệu C2PA và IPTC gây ra nhãn và đăng ảnh không còn tag AI. Không giảm chất lượng, miễn phí, ngay trong trình duyệt.',
+      description: 'Ảnh thật bị gắn nhãn “Thông tin AI”? Xóa dữ liệu C2PA và IPTC gây ra nhãn để đăng ảnh No AI Tag. Không giảm chất lượng, miễn phí, ngay trong trình duyệt.',
       navLabel: 'No AI Tag',
       h1: 'No AI Tag — ảnh thật không bị gắn tag AI',
       lead: 'Chỉ một chỉnh sửa nhỏ bằng tính năng AI trong Photoshop hay ứng dụng điện thoại cũng đủ để Instagram, Facebook hoặc Threads gắn nhãn “Thông tin AI” cho ảnh thật. Thả tệp vào bên dưới để xem dữ liệu nào gây ra nhãn, rồi chia sẻ bản sạch không còn tag AI trong metadata.',

@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const el: Messages = {
   meta: {
-    title: 'Αφαίρεση μεταδεδομένων φωτογραφιών – EXIF, C2PA | AI Label Remover',
+    title: 'AI Label Remover – Αφαίρεση μεταδεδομένων – EXIF, C2PA',
     description:
       'Αφαιρέστε δωρεάν EXIF, θέση GPS, C2PA και prompts AI από JPG, PNG, HEIC και WebP απευθείας στο πρόγραμμα περιήγησης, χωρίς μεταφόρτωση.',
   },
@@ -12,7 +12,7 @@ const el: Messages = {
     nav: { tool: 'Πλύσιμο εικόνων', how: 'Διαδικασία', formats: 'Τύποι αρχείων', guides: 'Άρθρα', faq: 'Ερωτήσεις' },
   },
   hero: {
-    kicker: 'Αφαίρεση μεταδεδομένων από φωτογραφίες — EXIF, GPS, C2PA και prompts AI',
+    kicker: 'AI Label Remover — Αφαίρεση μεταδεδομένων από φωτογραφίες — EXIF, GPS, C2PA και prompts AI',
     eyebrow: 'Διαβάζει C2PA · EXIF · XMP · IPTC · προτροπές',
     title: 'Τοποθεσία, συσκευή, ίχνη AI — όλα βρίσκονται μέσα στις φωτογραφίες σας.',
     titleAccent: 'Αφαιρέστε τα με ένα κλικ.',

@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const he: Messages = {
   meta: {
-    title: 'הסרת מטא־דאטה מתמונות – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – הסרת מטא־דאטה מתמונות – EXIF, C2PA',
     description:
       'הסירו בחינם EXIF, מיקום GPS, אישורי תוכן C2PA והנחיות AI מקובצי JPG, PNG, HEIC ו־WebP ישירות בדפדפן, בלי להעלות דבר.',
   },
@@ -12,7 +12,7 @@ const he: Messages = {
     nav: { tool: 'שטיפת תמונות', how: 'איך זה עובד', formats: 'סוגי קבצים', guides: 'מאמרים', faq: 'שאלות' },
   },
   hero: {
-    kicker: 'הסרת מטא־דאטה מתמונות — EXIF, GPS, C2PA והנחיות AI',
+    kicker: 'AI Label Remover — הסרת מטא־דאטה מתמונות — EXIF, GPS, C2PA והנחיות AI',
     eyebrow: 'קורא C2PA · EXIF · XMP · IPTC · הנחיות',
     title: 'מיקום, מכשיר, עקבות AI — הכול נמצא בתוך התמונות שלכם.',
     titleAccent: 'הסירו בלחיצה אחת.',

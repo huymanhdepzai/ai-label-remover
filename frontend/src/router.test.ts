@@ -8,6 +8,7 @@ import {
   guidePageCount,
   guidesOnPage,
   INFO_SLUGS,
+  ARTICLE_LANGS,
   PRIORITY_LANGS,
   TOOL_SLUGS,
 } from './content/seo';
@@ -30,7 +31,7 @@ describe('Phân trang bài viết', () => {
 
   it('mỗi ngôn ngữ có đủ bài nền tảng; bài mở rộng chỉ ở ngôn ngữ đã khai báo', () => {
     expect(availableGuides('ko')).toEqual([...BASE_GUIDE_SLUGS]);
-    for (const lang of PRIORITY_LANGS) expect(availableGuides(lang)).toHaveLength(BASE_GUIDE_SLUGS.length + EXTRA_GUIDE_SLUGS.length);
+    for (const lang of ARTICLE_LANGS) expect(availableGuides(lang)).toHaveLength(BASE_GUIDE_SLUGS.length + EXTRA_GUIDE_SLUGS.length);
   });
 });
 
@@ -67,7 +68,7 @@ describe('Đường dẫn trang tổng hợp và bài viết', () => {
     expect(parsePath(`/ko/guides/${EXTRA_GUIDE_SLUGS[0]}/`)).toMatchObject({ lang: 'ko', route: GUIDES_INDEX, known: false });
     expect(localizeRoute('ko', extra)).toEqual(GUIDES_INDEX);
     expect(localizeRoute('vi', extra)).toEqual(extra);
-    expect(languagesFor(extra).map((l) => l.code)).toEqual(LANGUAGES.filter((l) => PRIORITY_LANGS.includes(l.code)).map((l) => l.code));
+    expect(languagesFor(extra).map((l) => l.code)).toEqual(LANGUAGES.filter((l) => ARTICLE_LANGS.includes(l.code)).map((l) => l.code));
     expect(localizeRoute('ko', { name: 'guides', page: 3 })).toEqual({ name: 'guides', page: indexPageCount('ko') });
   });
 
@@ -76,7 +77,7 @@ describe('Đường dẫn trang tổng hợp và bài viết', () => {
     expect(pathFor('pt-BR', { name: 'info', slug: 'privacy' })).toBe('/pt-br/privacy/');
     expect(parsePath(`/vi/${TOOL_SLUGS[0]}/`)).toMatchObject({ lang: 'vi', route: { name: 'tool', slug: TOOL_SLUGS[0] }, known: true });
     expect(parsePath('/about/')).toMatchObject({ lang: 'en', route: { name: 'info', slug: 'about' }, known: true });
-    expect(parsePath(`/ko/${TOOL_SLUGS[0]}/`)).toMatchObject({ lang: 'ko', route: HOME, known: false });
+    expect(parsePath(`/ar/${TOOL_SLUGS[0]}/`)).toMatchObject({ lang: 'ar', route: HOME, known: false });
   });
 
   it('trang công cụ đã gộp: slug cũ mở trang thay thế', () => {

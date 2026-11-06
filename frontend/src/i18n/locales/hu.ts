@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const hu: Messages = {
   meta: {
-    title: 'Metaadatok törlése fotókról – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – Metaadatok törlése fotókról – EXIF, C2PA',
     description:
       'Töröld ingyen az EXIF-et, a GPS-helyet, a C2PA-t és az AI-promptokat JPG, PNG, HEIC és WebP fájlokból, közvetlenül a böngészőben, feltöltés nélkül.',
   },
@@ -12,7 +12,7 @@ const hu: Messages = {
     nav: { tool: 'Képek mosása', how: 'Menete', formats: 'Fájltípusok', guides: 'Cikkek', faq: 'Kérdések' },
   },
   hero: {
-    kicker: 'Metaadatok törlése fotókról — EXIF, GPS, C2PA és AI-promptok',
+    kicker: 'AI Label Remover — Metaadatok törlése fotókról — EXIF, GPS, C2PA és AI-promptok',
     eyebrow: 'Olvassa: C2PA · EXIF · XMP · IPTC · promptok',
     title: 'Hely, eszköz, AI-nyomok – mind ott van a fotóidban.',
     titleAccent: 'Töröld egyetlen kattintással.',

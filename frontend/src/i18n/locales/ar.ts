@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const ar: Messages = {
   meta: {
-    title: 'إزالة البيانات الوصفية من الصور – EXIF وC2PA | AI Label Remover',
+    title: 'AI Label Remover – إزالة البيانات الوصفية – EXIF وC2PA',
     description:
       'أزل مجانًا بيانات EXIF وموقع GPS وبيانات C2PA وأوامر الذكاء الاصطناعي من صور JPG وPNG وHEIC وWebP داخل المتصفح دون رفع أي ملف.',
   },
@@ -12,7 +12,7 @@ const ar: Messages = {
     nav: { tool: 'غسل الصور', how: 'الخطوات', formats: 'أنواع الملفات', guides: 'مقالات', faq: 'أسئلة' },
   },
   hero: {
-    kicker: 'إزالة البيانات الوصفية من الصور — EXIF وGPS وC2PA وأوامر الذكاء الاصطناعي',
+    kicker: 'AI Label Remover — إزالة البيانات الوصفية من الصور — EXIF وGPS وC2PA وأوامر الذكاء الاصطناعي',
     eyebrow: 'يقرأ C2PA · EXIF · XMP · IPTC · الأوامر',
     title: 'الموقع والجهاز وآثار الذكاء الاصطناعي — كلها داخل صورك.',
     titleAccent: 'أزلها بنقرة واحدة.',

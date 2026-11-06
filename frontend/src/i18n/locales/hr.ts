@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const hr: Messages = {
   meta: {
-    title: 'Ukloni metapodatke s fotografija – EXIF, C2PA | AI Label Remover',
+    title: 'AI Label Remover – Ukloni metapodatke s fotografija – C2PA',
     description:
       'Besplatno uklonite EXIF, GPS lokaciju, Content Credentials (C2PA) i AI promptove iz JPG, PNG, HEIC i WebP datoteka u pregledniku, bez prijenosa.',
   },
@@ -12,7 +12,7 @@ const hr: Messages = {
     nav: { tool: 'Isperi slike', how: 'Postupak', formats: 'Vrste datoteka', guides: 'Članci', faq: 'Pitanja' },
   },
   hero: {
-    kicker: 'Ukloni metapodatke s fotografija — EXIF, GPS, C2PA i AI promptovi',
+    kicker: 'AI Label Remover — Ukloni metapodatke s fotografija — EXIF, GPS, C2PA i AI promptovi',
     eyebrow: 'Čita C2PA · EXIF · XMP · IPTC · promptove',
     title: 'Lokacija, uređaj, tragovi AI-ja — sve je u vašim fotografijama.',
     titleAccent: 'Uklonite to jednim klikom.',

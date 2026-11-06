@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const ro: Messages = {
   meta: {
-    title: 'Elimină metadatele din poze – EXIF, GPS, C2PA | AI Label Remover',
+    title: 'AI Label Remover – Elimină metadatele din poze – EXIF, C2PA',
     description:
       'Elimină gratuit EXIF, locația GPS, Content Credentials (C2PA) și prompturile AI din JPG, PNG, HEIC și WebP direct în browser, fără încărcare.',
   },
@@ -12,7 +12,7 @@ const ro: Messages = {
     nav: { tool: 'Spală imagini', how: 'Cum funcționează', formats: 'Tipuri de fișiere', guides: 'Articole', faq: 'Întrebări' },
   },
   hero: {
-    kicker: 'Elimină metadatele din poze — EXIF, GPS, C2PA și prompturi AI',
+    kicker: 'AI Label Remover — Elimină metadatele din poze — EXIF, GPS, C2PA și prompturi AI',
     eyebrow: 'Citește C2PA · EXIF · XMP · IPTC · prompturi',
     title: 'Locație, dispozitiv, urme AI — totul se află în fotografiile tale.',
     titleAccent: 'Elimină-le cu un singur clic.',

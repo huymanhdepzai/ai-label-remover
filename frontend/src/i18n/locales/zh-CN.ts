@@ -2,7 +2,7 @@ import type { Messages } from './en';
 
 const zhCN: Messages = {
   meta: {
-    title: '删除图片元数据 – EXIF、GPS、C2PA | AI Label Remover',
+    title: 'AI Label Remover – 删除图片元数据 – EXIF、GPS、C2PA',
     description:
       '在浏览器中免费删除照片的 EXIF、GPS 位置、C2PA 内容凭证和 AI 提示词。支持 JPG、PNG、HEIC、WebP，无需上传，画质不变。',
   },
@@ -12,7 +12,7 @@ const zhCN: Messages = {
     nav: { tool: '清洗图片', how: '流程', formats: '文件类型', guides: '文章', faq: '常见问题' },
   },
   hero: {
-    kicker: '删除图片元数据 — EXIF、GPS、C2PA 和 AI 提示词',
+    kicker: 'AI Label Remover — 删除图片元数据 — EXIF、GPS、C2PA 和 AI 提示词',
     eyebrow: '读取 C2PA · EXIF · XMP · IPTC · 提示词',
     title: '位置、设备、AI 痕迹——全都藏在照片里。',
     titleAccent: '一键即可清除。',

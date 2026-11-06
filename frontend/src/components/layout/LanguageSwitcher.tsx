@@ -7,12 +7,16 @@ import { Icon, Spinner } from '../ui';
 import { FLAGS } from './flags';
 import { usePopover } from './usePopover';
 
-/** Cờ 4:3, viền mảnh để cờ nền trắng (Nhật, Phần Lan…) không lẫn vào nền. Trang trí thuần → alt rỗng. */
-function Flag({ code, className = '' }: { code: LangCode; className?: string }) {
+/**
+ * Cờ 4:3, viền mảnh để cờ nền trắng (Nhật, Phần Lan…) không lẫn vào nền.
+ * `label`: alt mô tả (tên ngôn ngữ) khi cờ đứng một mình — vd. nút trên header ở màn hình hẹp chỉ hiện cờ.
+ * Bỏ trống khi ngay cạnh đã có tên ngôn ngữ dạng chữ → alt rỗng để trình đọc màn hình không đọc lặp.
+ */
+function Flag({ code, label, className = '' }: { code: LangCode; label?: string; className?: string }) {
   return (
     <img
       src={FLAGS[code]}
-      alt=""
+      alt={label ?? ''}
       width={20}
       height={15}
       loading="lazy"
@@ -50,7 +54,7 @@ export function LanguageSwitcher({ placement = 'down' }: { placement?: 'up' | 'd
         aria-label={t.header.language}
         className="inline-flex h-8 items-center gap-2 rounded-full bg-wash ps-2 pe-2.5 text-sm font-medium text-ink hover:bg-cobalt-soft"
       >
-        <Flag code={lang} />
+        <Flag code={lang} label={findLanguage(lang)?.name ?? lang} />
         {/* Màn hình rất hẹp: chỉ hiện cờ để thanh trên cùng không tràn ngang (nút vẫn có aria-label "Ngôn ngữ"). */}
         <span className="hidden max-w-28 truncate min-[420px]:inline">{findLanguage(lang)?.name}</span>
         <Icon name="chevron" className={`h-3.5 w-3.5 text-ink-3 transition-transform ${placement === 'up' ? (open ? '' : 'rotate-180') : open ? 'rotate-180' : ''}`} />

@@ -15,6 +15,7 @@ import {
 import { fmt, useI18n, useT } from '../../i18n';
 import { GUIDES_INDEX, useHref } from '../../router';
 import { Link } from '../Link';
+import { MARK_SVG_BODY } from '../../brand/mark';
 import { buttonClass, Icon, type IconName } from '../ui';
 import { GuideIllustration } from './GuideIllustration';
 import { FaqList } from './Prose';
@@ -89,11 +90,16 @@ export function GuideRow({ slug, withSummary = false }: { slug: GuideSlug; withS
   );
 }
 
-/** Thẻ bài dạng dọc: ảnh 16:9 ở trên, chủ đề + tiêu đề (+ tóm tắt) bên dưới — dùng cho lưới bài viết. */
-export function GuideCard({ slug, withSummary = false }: { slug: GuideSlug; withSummary?: boolean }) {
+/**
+ * Thẻ bài dạng dọc: ảnh 16:9 ở trên, chủ đề + tiêu đề (+ tóm tắt) bên dưới — dùng cho lưới bài viết.
+ * `level`: cấp tiêu đề — mặc định h3 (lưới nằm dưới một h2 của mục); trang tổng hợp /guides/ dùng h2
+ * vì lưới nằm thẳng dưới H1 (tránh nhảy cấp h1 → h3 ở trang 2, 3…).
+ */
+export function GuideCard({ slug, withSummary = false, level = 3 }: { slug: GuideSlug; withSummary?: boolean; level?: 2 | 3 }) {
   const guide = useGuideContent(slug);
   const href = useHref({ name: 'guide', slug });
   if (!guide) return null;
+  const Heading = level === 2 ? 'h2' : 'h3';
   return (
     <article className="group relative flex h-full flex-col">
       <div className="overflow-hidden rounded-lg border border-line bg-sheet transition-shadow group-hover:shadow-md">
@@ -102,11 +108,11 @@ export function GuideCard({ slug, withSummary = false }: { slug: GuideSlug; with
       <p className="mt-4 text-xs font-semibold text-rose" dir="ltr">
         {GUIDE_TAGS[slug]}
       </p>
-      <h3 className="mt-1.5 line-clamp-3 font-display text-lg leading-snug font-bold text-ink">
+      <Heading className="mt-1.5 line-clamp-3 font-display text-lg leading-snug font-bold text-ink">
         <Link to={href} className="decoration-cobalt decoration-2 underline-offset-4 group-hover:underline after:absolute after:inset-0">
           {guide.title}
         </Link>
-      </h3>
+      </Heading>
       {withSummary && <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-ink-2">{guide.summary[0]}</p>}
     </article>
   );
@@ -204,49 +210,36 @@ const MARKS: Record<Support, { path: string; tone: string }> = {
   no: { path: 'M7 17L17 7M7 7l10 10', tone: 'bg-rose-soft text-rose' },
 };
 
-function SupportMark({ value, label }: { value: Support; label: string }) {
-  const { path, tone } = MARKS[value];
-  return (
-    <span className="inline-flex items-center gap-2 text-sm font-semibold text-ink-2">
-      <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-full ${tone}`}>
-        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" aria-hidden="true">
-          <path d={path} fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </span>
-      <span>{label}</span>
-    </span>
-  );
-}
-
 /** Điểm của một cột: số tiêu chí đạt "Có" trên tổng số, kèm thanh tiến độ. */
-function Score({ column, highlight }: { column: number; highlight: boolean }) {
+function Score({ column, dark = false }: { column: number; dark?: boolean }) {
   const yes = WHY_ROWS.filter((r) => r[column] === 'yes').length;
   const total = WHY_ROWS.length;
   return (
-    <div className="mt-2">
-      <p className={`font-display text-2xl font-extrabold tabular-nums ${highlight ? 'text-cobalt' : 'text-ink-2'}`} dir="ltr">
+    <div className="mt-5">
+      <p className={`font-display text-4xl leading-none font-extrabold tabular-nums ${dark ? 'text-white' : 'text-ink-2'}`} dir="ltr">
         {yes}
-        <span className="text-base font-bold text-ink-3">/{total}</span>
+        <span className={`text-xl font-bold ${dark ? 'text-white/50' : 'text-ink-3'}`}>/{total}</span>
       </p>
-      <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-wash" aria-hidden="true">
-        <div className={`h-full rounded-full ${highlight ? 'bg-cobalt' : 'bg-ink-3'}`} style={{ width: `${(yes / total) * 100}%` }} />
+      <div className={`mt-3 h-1.5 overflow-hidden rounded-full ${dark ? 'bg-white/15' : 'bg-wash'}`} aria-hidden="true">
+        <div className={`h-full rounded-full ${dark ? 'bg-[#5fd3ec]' : 'bg-ink-3'}`} style={{ width: `${(yes / total) * 100}%` }} />
       </div>
     </div>
   );
 }
 
+/** Biểu tượng đầu thẻ của hai cách làm khác: tải lên công cụ online, chụp màn hình / lưu lại. */
+const OTHER_ICONS: IconName[] = ['upload', 'desktop'];
+
 /**
- * So sánh: tiêu đề + đoạn dẫn ở trên, bảng rộng toàn khung bên dưới.
- * Cột của sản phẩm được nâng lên thành "thẻ" viền xanh chạy suốt chiều cao bảng; mỗi cột có điểm x/7.
- * Điện thoại: dải điểm ở trên, rồi mỗi tiêu chí một thẻ nhỏ.
+ * So sánh dạng ba thẻ đặt cạnh nhau (kiểu bảng giá): thẻ của sản phẩm nền tối, nổi lên; hai thẻ còn lại nhạt hơn,
+ * tiêu chí "Không" bị gạch mờ, "Tùy" có nhãn vàng. Màn hình lớn: các dòng thẳng hàng giữa ba thẻ nhờ subgrid
+ * (1 hàng đầu thẻ + 7 hàng tiêu chí). Điện thoại: ba thẻ xếp chồng, thẻ sản phẩm lên đầu.
+ * Mỗi ô có nhãn ẩn (Có / Tùy / Không) cho trình đọc màn hình — không phân biệt chỉ bằng màu.
  */
 export function WhyChoose() {
   const { why } = useT().seo;
   const cols = [SITE.name, why.columns.online, why.columns.screenshot];
-  const last = WHY_ROWS.length - 1;
-  // Ô thuộc cột nổi bật: nền xanh nhạt + viền hai bên; ô đầu/cuối bo góc và có viền trên/dưới.
-  const hl = (pos: 'head' | 'body' | 'end') =>
-    `bg-cobalt-soft/45 border-x-2 border-cobalt ${pos === 'head' ? 'border-t-2 rounded-t-xl' : ''} ${pos === 'end' ? 'border-b-2 rounded-b-xl' : 'shadow-[inset_0_-1px_0_var(--color-line)]'}`;
+  const rows = WHY_ROWS.length;
 
   return (
     <section id={HOME_SECTIONS.why} className="scroll-mt-28 border-b border-line bg-sheet py-16 sm:py-20">
@@ -259,82 +252,77 @@ export function WhyChoose() {
           <p className="mt-4 leading-relaxed text-ink-2">{why.text}</p>
         </div>
 
-        {/* Điện thoại */}
-        <div className="mt-10 md:hidden">
-          <dl className="grid grid-cols-3 gap-2">
-            {cols.map((label, c) => (
-              <div key={c} className={`rounded-lg p-3 ${c === 0 ? 'bg-cobalt-soft/45 ring-2 ring-cobalt' : 'bg-paper ring-1 ring-line'}`}>
-                <dt className={`text-xs leading-snug font-semibold ${c === 0 ? 'text-cobalt' : 'text-ink-2'}`}>{label}</dt>
-                <dd>
-                  <Score column={c} highlight={c === 0} />
-                </dd>
-              </div>
-            ))}
-          </dl>
-          <ul className="mt-6 space-y-3">
-            {WHY_ROWS.map((cells, i) => (
-              <li key={i} className="rounded-lg bg-paper p-4 ring-1 ring-line">
-                <p className="font-semibold text-ink">{why.rows[i]}</p>
-                <dl className="mt-3 space-y-2">
-                  {cols.map((label, c) => (
-                    <div key={c} className="flex items-center justify-between gap-3 text-sm">
-                      <dt className={c === 0 ? 'font-semibold text-cobalt' : 'text-ink-2'}>{label}</dt>
-                      <dd>
-                        <SupportMark value={cells[c]} label={why.legend[cells[c]]} />
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-12 grid gap-5 lg:grid-cols-[1.12fr_1fr_1fr] lg:grid-rows-[auto_repeat(7,auto)] lg:gap-x-5 lg:gap-y-0">
+          {cols.map((label, c) => {
+            const ours = c === 0;
+            return (
+              <article
+                key={c}
+                aria-label={label}
+                className={`flex flex-col rounded-2xl lg:row-span-8 lg:grid lg:grid-rows-subgrid ${
+                  ours
+                    ? 'relative z-10 bg-[linear-gradient(165deg,#0b5468_0%,#0b2a44_45%,#0b1730_100%)] text-white shadow-[0_28px_56px_-28px_rgb(0_117_149/0.75)] ring-2 ring-[#5fd3ec]/70 lg:-my-4'
+                    : 'bg-paper ring-1 ring-line'
+                }`}
+              >
+                <header className={ours ? 'p-6 lg:pt-8' : 'p-6'}>
+                  <div className="flex items-center gap-3">
+                    {ours ? (
+                      <svg viewBox="0 0 32 32" className="h-10 w-10 shrink-0" aria-hidden="true" dangerouslySetInnerHTML={{ __html: MARK_SVG_BODY }} />
+                    ) : (
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-wash text-ink-2">
+                        <Icon name={OTHER_ICONS[c - 1]} className="h-5 w-5" />
+                      </span>
+                    )}
+                    <h3 className={`leading-snug font-bold ${ours ? 'font-display text-xl' : 'text-base text-ink-2'}`}>{label}</h3>
+                  </div>
+                  <Score column={c} dark={ours} />
+                </header>
+                <ul role="list" className="contents">
+                  {WHY_ROWS.map((cells, i) => {
+                    const v = cells[c];
+                    return (
+                      <li
+                        key={i}
+                        className={`flex items-start gap-3 border-t px-6 py-3.5 text-[0.95rem] leading-snug ${
+                          ours ? 'border-white/10' : 'border-line'
+                        } ${i === rows - 1 ? (ours ? 'pb-6 lg:pb-8' : 'pb-6') : ''}`}
+                      >
+                        <span
+                          className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${ours ? 'bg-[#5fd3ec]/15 text-[#5fd3ec]' : MARKS[v].tone}`}
+                          aria-hidden="true"
+                        >
+                          <svg viewBox="0 0 24 24" className="h-3 w-3">
+                            <path d={MARKS[v].path} fill="none" stroke="currentColor" strokeWidth={3.2} strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                        <span
+                          className={
+                            ours
+                              ? 'text-white/90'
+                              : v === 'yes'
+                                ? 'text-ink'
+                                : v === 'no'
+                                  ? 'text-ink-3 line-through decoration-ink-3/40'
+                                  : 'text-ink-2'
+                          }
+                        >
+                          <span className="sr-only">{why.legend[v]}: </span>
+                          {why.rows[i]}
+                          {v === 'partial' && (
+                            <span className="ms-2 inline-block rounded bg-amber-soft px-1.5 py-px align-[1px] text-[0.7rem] font-semibold text-amber no-underline" aria-hidden="true">
+                              {why.legend.partial}
+                            </span>
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </article>
+            );
+          })}
         </div>
-
-        {/* Máy tính bảng / máy tính */}
-        <table className="mt-12 hidden w-full border-separate border-spacing-0 text-start md:table">
-          <colgroup>
-            <col className="w-[34%]" />
-            <col className="w-[22%]" />
-            <col className="w-[22%]" />
-            <col className="w-[22%]" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th scope="col" className="border-b-2 border-ink pe-4 pb-4 align-bottom text-start text-sm font-semibold text-ink-2">
-                {why.columns.feature}
-              </th>
-              {cols.map((label, c) => (
-                <th
-                  key={c}
-                  scope="col"
-                  className={`px-5 pt-5 pb-4 align-bottom text-start ${c === 0 ? hl('head') : 'border-b-2 border-ink'}`}
-                >
-                  <span className={`block leading-snug font-semibold ${c === 0 ? 'font-display text-lg text-cobalt' : 'text-sm text-ink-2'}`}>
-                    {label}
-                  </span>
-                  <Score column={c} highlight={c === 0} />
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {WHY_ROWS.map((cells, i) => (
-              <tr key={i} className="group">
-                <th scope="row" className="border-b border-line py-4 pe-4 text-start font-medium text-ink group-hover:bg-paper/60">
-                  {why.rows[i]}
-                </th>
-                {cells.map((v, c) => (
-                  <td
-                    key={c}
-                    className={`px-5 py-4 ${c === 0 ? hl(i === last ? 'end' : 'body') : 'border-b border-line group-hover:bg-paper/60'}`}
-                  >
-                    <SupportMark value={v} label={why.legend[v]} />
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </div>
     </section>
   );
