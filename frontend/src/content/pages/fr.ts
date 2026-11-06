@@ -22,6 +22,64 @@ const fr: Pages = {
       aiCheck: 'Vérifier si c’est de l’IA',
       whatIs: 'Que sont les métadonnées ?',
     },
+    learn: {
+      what: {
+        title: 'Que sont les métadonnées ?',
+        paragraphs: [
+          'Les métadonnées sont des « données sur les données » : des notes stockées dans un fichier image qui n’apparaissent jamais sur la photo elle-même. Appareils photo, smartphones, logiciels de retouche et générateurs d’images IA en ajoutent automatiquement, le plus souvent sans vous prévenir.',
+          'Pour les photos, les métadonnées se répartissent en cinq grandes familles. Chacune répond à une question différente sur l’image — et sur la personne qui l’a prise ou créée.',
+        ],
+        types: [
+          { name: 'Descriptives', text: 'Titre, légende, mots-clés, noms des personnes photographiées.', example: 'IPTC Caption, XMP dc:title' },
+          { name: 'Techniques', text: 'Marque et modèle de l’appareil, objectif, ouverture, vitesse, ISO, numéro de série.', example: 'EXIF Make, Model, BodySerialNumber' },
+          { name: 'Lieu et date', text: 'Coordonnées GPS, altitude, date de prise de vue et fuseau horaire.', example: 'EXIF GPSLatitude, DateTimeOriginal' },
+          { name: 'Droits et gestion', text: 'Auteur, propriétaire, copyright, dernier logiciel de retouche.', example: 'EXIF Artist, Copyright, Software' },
+          { name: 'Provenance et IA', text: 'Content Credentials, étiquettes « créé avec l’IA », prompts et workflows.', example: 'C2PA manifest, IPTC DigitalSourceType' },
+        ],
+        synonyms:
+          'Vous croiserez beaucoup de noms pour la même chose — « suppresseur de métadonnées », « effacer l’EXIF », « nettoyeur de métadonnées », « supprimer les infos d’une photo » : tous désignent le fait de retirer les notes cachées d’un fichier sans modifier l’image. De même, une « visionneuse », un « lecteur » ou un « vérificateur de métadonnées » montre ce que contient le fichier. AI Label Remover fait les deux.',
+      },
+      why: {
+        title: 'Pourquoi consulter et supprimer les métadonnées avant de partager une photo ?',
+        paragraphs: [
+          'Un champ de métadonnées isolé est généralement anodin, mais ensemble ils en disent long sur vous. Une photo prise chez vous et publiée sur un site de petites annonces peut contenir des coordonnées GPS précises à quelques mètres ; les images envoyées par e-mail ou lien cloud gardent tout ce que l’appareil a écrit. Voyez [comment le GPS des photos peut révéler votre adresse](remove-gps-location-from-photos).',
+          'Pour les images créées ou retouchées avec l’IA, les métadonnées décident aussi si une plateforme affiche l’étiquette « Créé avec l’IA », et peuvent dévoiler le prompt complet que vous avez écrit.',
+        ],
+        bullets: [
+          'Révéler où vous habitez, travaillez ou voyagez grâce aux coordonnées GPS.',
+          'Relier de nombreuses photos à une même personne via le numéro de série de l’appareil ou le nom du propriétaire.',
+          'Exposer prompts, seeds, modèles et workflows que vous vouliez garder privés.',
+          'Recevoir une étiquette IA d’une plateforme à cause des données C2PA ou IPTC jointes.',
+        ],
+      },
+      standards: {
+        title: 'Les standards de métadonnées photo courants',
+        lead: 'Un même fichier image peut contenir plusieurs « compartiments » de métadonnées, chacun suivant un standard différent. AI Label Remover lit et supprime tous ceux ci-dessous.',
+        items: [
+          { name: 'EXIF', text: 'Écrit par les appareils photo et smartphones : réglages d’exposition, appareil, horodatage, GPS, vignettes. [Tout savoir sur l’EXIF](what-is-exif-data).' },
+          { name: 'XMP', text: 'Le format XML d’Adobe pour l’historique de retouche, les notes, les mots-clés et de nombreuses propriétés liées à l’IA.' },
+          { name: 'IPTC', text: 'Le standard des rédactions : légende, auteur, copyright et la balise [DigitalSourceType](iptc-digitalsourcetype-ai) qui déclare les images IA.' },
+          { name: 'C2PA', text: 'Des Content Credentials signées cryptographiquement qui enregistrent comment un fichier a été créé et modifié. [Qu’est-ce que C2PA](what-is-c2pa-content-credentials).' },
+          { name: 'PNG text', text: 'Les chunks tEXt, iTXt et zTXt où [Stable Diffusion et ComfyUI](remove-stable-diffusion-comfyui-metadata) stockent prompts et workflows.' },
+        ],
+      },
+    },
+    security: {
+      title: 'Vos photos restent en sécurité',
+      lead: 'Avec tout outil qui manipule des fichiers personnels, la première question est « où vont mes photos ? ». La réponse d’AI Label Remover : nulle part.',
+      items: [
+        { title: '100 % sur votre appareil', text: 'La lecture et le nettoyage s’exécutent dans un Web Worker, dans l’onglet de votre navigateur. Aucun serveur ne reçoit vos fichiers.' },
+        { title: 'Rien de stocké, pas d’entraînement IA', text: 'Comme les photos ne sont jamais envoyées, il n’existe aucune copie à stocker, à divulguer ou à utiliser pour entraîner un modèle.' },
+        { title: 'Fonctionne hors ligne', text: 'Chargez la page, coupez le Wi-Fi et nettoyez un fichier : ça marche toujours. L’onglet Réseau des DevTools ne montre aucune donnée d’image qui sort.' },
+        { title: 'Ni compte, ni pistage', text: 'Pas d’inscription, pas d’analytique, de publicité ni de pixels tiers. Le site ne retient que la langue et le thème que vous choisissez.' },
+      ],
+    },
+    faq: [
+      { q: 'Quelle est la différence entre EXIF et métadonnées ?', a: 'L’EXIF est un type de métadonnées — celui qu’écrivent les appareils photo et smartphones. « Métadonnées » est le terme général, qui couvre aussi XMP, IPTC, C2PA et les chunks texte du PNG. Voyez [ce que sont les données EXIF](what-is-exif-data).' },
+      { q: 'Les métadonnées peuvent-elles montrer où une photo a été prise ?', a: 'Oui, si l’image contient des balises GPS. Les smartphones enregistrent généralement latitude, longitude et altitude quand la localisation est activée pour l’appareil photo. Le [suppresseur d’EXIF](remove-exif-data) retire ces balises sans toucher à la qualité.' },
+      { q: 'Comment supprimer les métadonnées IA d’une image ?', a: 'Déposez l’image dans la zone en haut de cette page et cliquez sur « Nettoyer toutes les images », ou utilisez le [nettoyeur de tags IA](ai-tag-cleaner) pour d’abord voir les données C2PA, IPTC et le prompt.' },
+      { q: 'Est-il sûr d’envoyer mes photos ici ?', a: 'Vos photos ne sont pas envoyées du tout. AI Label Remover ouvre les fichiers dans votre navigateur, les traite dans la mémoire de l’onglet et enregistre la copie propre directement sur votre appareil. Une fois la page chargée, vous pouvez passer hors ligne : elle continue de fonctionner.' },
+    ],
   },
   labels: {
     tools: 'Autres outils de métadonnées',

@@ -62,6 +62,12 @@ export interface HomeContent {
   faq?: { q: string; a: string }[];
 }
 
+/**
+ * Phần trang chủ hiển thị được ở mọi ngôn ngữ: ngôn ngữ chính lấy từ `pages.home`, ngôn ngữ còn lại từ
+ * src/content/home/<mã>.ts (không có mục/menu dẫn tới trang công cụ vì các trang đó chưa có ở ngôn ngữ ấy).
+ */
+export type HomeBasics = Pick<HomeContent, 'reassure' | 'sources' | 'learn' | 'security' | 'faq'>;
+
 export interface Pages {
   home: HomeContent;
   /** Nhãn giao diện dùng trên các trang này. */

@@ -22,6 +22,64 @@ const de: Pages = {
       aiCheck: 'KI-Bild erkennen',
       whatIs: 'Was sind Metadaten?',
     },
+    learn: {
+      what: {
+        title: 'Was sind Metadaten?',
+        paragraphs: [
+          'Metadaten sind „Daten über Daten“: Notizen in einer Bilddatei, die im Bild selbst nie zu sehen sind. Kameras, Smartphones, Bildbearbeitungen und KI-Bildgeneratoren schreiben sie automatisch hinein – meist ohne Hinweis.',
+          'Bei Fotos lassen sich Metadaten in fünf große Gruppen einteilen. Jede beantwortet eine andere Frage über das Bild – und über die Person, die es aufgenommen oder erstellt hat.',
+        ],
+        types: [
+          { name: 'Beschreibend', text: 'Titel, Bildunterschrift, Stichwörter, Namen der abgebildeten Personen.', example: 'IPTC Caption, XMP dc:title' },
+          { name: 'Technisch', text: 'Kamerahersteller und -modell, Objektiv, Blende, Belichtungszeit, ISO, Seriennummer.', example: 'EXIF Make, Model, BodySerialNumber' },
+          { name: 'Ort & Zeit', text: 'GPS-Koordinaten, Höhe, Aufnahmedatum und Zeitzone.', example: 'EXIF GPSLatitude, DateTimeOriginal' },
+          { name: 'Rechte & Verwaltung', text: 'Urheber, Eigentümer, Copyright, zuletzt verwendete Software.', example: 'EXIF Artist, Copyright, Software' },
+          { name: 'Herkunft & KI', text: 'Content Credentials, „Mit KI erstellt“-Labels, Prompts und Workflows.', example: 'C2PA manifest, IPTC DigitalSourceType' },
+        ],
+        synonyms:
+          'Für dieselbe Aufgabe gibt es viele Namen – „Metadaten-Entferner“, „EXIF-Entferner“, „Metadaten löschen“, „Fotoinfos entfernen“. Gemeint ist immer, die versteckten Notizen aus der Datei zu nehmen, ohne das Bild zu verändern. Ein „Metadaten-Viewer“, „-Reader“ oder „-Checker“ zeigt dagegen, was in der Datei steckt. AI Label Remover kann beides.',
+      },
+      why: {
+        title: 'Warum Metadaten vor dem Teilen ansehen und entfernen?',
+        paragraphs: [
+          'Ein einzelnes Metadatenfeld ist meist harmlos, zusammen verraten sie aber viel über Sie. Ein zu Hause aufgenommenes Foto auf einem Kleinanzeigenportal kann GPS-Koordinaten mit wenigen Metern Genauigkeit enthalten; per E-Mail oder Cloud-Link verschickte Bilder behalten alles, was die Kamera geschrieben hat. Lesen Sie, [wie GPS in Fotos Ihre Wohnadresse verraten kann](remove-gps-location-from-photos).',
+          'Bei mit KI erstellten oder bearbeiteten Bildern entscheiden Metadaten außerdem, ob eine Plattform ein „Mit KI erstellt“-Label anzeigt – und sie können Ihren vollständigen Prompt offenlegen.',
+        ],
+        bullets: [
+          'Wohnort, Arbeitsplatz oder Reisewege werden über GPS-Koordinaten sichtbar.',
+          'Viele Fotos lassen sich über Seriennummer oder Besitzernamen einer Person zuordnen.',
+          'Prompts, Seeds, Modelle und Workflows, die privat bleiben sollten, werden offengelegt.',
+          'Eine Plattform vergibt wegen angehängter C2PA- oder IPTC-Daten ein KI-Label.',
+        ],
+      },
+      standards: {
+        title: 'Gängige Metadaten-Standards bei Fotos',
+        lead: 'Eine Bilddatei kann gleichzeitig mehrere Metadaten-„Fächer“ enthalten, die jeweils einem anderen Standard folgen. AI Label Remover liest und entfernt alle unten genannten.',
+        items: [
+          { name: 'EXIF', text: 'Von Kameras und Smartphones geschrieben: Belichtung, Gerät, Zeitstempel, GPS, Vorschaubilder. [Mehr über EXIF](what-is-exif-data).' },
+          { name: 'XMP', text: 'Adobes XML-Format für Bearbeitungsverlauf, Bewertungen, Stichwörter und viele KI-bezogene Eigenschaften.' },
+          { name: 'IPTC', text: 'Der Standard der Nachrichtenbranche: Bildunterschrift, Urheber, Copyright und das Feld [DigitalSourceType](iptc-digitalsourcetype-ai), das KI-Bilder kennzeichnet.' },
+          { name: 'C2PA', text: 'Kryptografisch signierte Content Credentials, die festhalten, wie eine Datei erstellt und bearbeitet wurde. [Was ist C2PA](what-is-c2pa-content-credentials).' },
+          { name: 'PNG text', text: 'tEXt-, iTXt- und zTXt-Chunks, in denen [Stable Diffusion und ComfyUI](remove-stable-diffusion-comfyui-metadata) Prompts und Workflows speichern.' },
+        ],
+      },
+    },
+    security: {
+      title: 'Ihre Fotos bleiben sicher',
+      lead: 'Bei jedem Tool für persönliche Dateien lautet die erste Frage: „Wohin gehen meine Fotos?“ Die Antwort von AI Label Remover: nirgendwohin.',
+      items: [
+        { title: '100 % auf Ihrem Gerät', text: 'Lesen und Bereinigen laufen in einem Web Worker in Ihrem Browser-Tab. Kein Server erhält jemals Ihre Dateien.' },
+        { title: 'Keine Speicherung, kein KI-Training', text: 'Da Fotos nirgendwohin gesendet werden, gibt es keine Kopie, die gespeichert, geleakt oder zum Trainieren eines Modells genutzt werden könnte.' },
+        { title: 'Funktioniert offline', text: 'Seite laden, WLAN ausschalten und eine Datei waschen – es funktioniert trotzdem. Der Netzwerk-Tab der DevTools zeigt keine Bilddaten, die das Gerät verlassen.' },
+        { title: 'Kein Konto, kein Tracking', text: 'Keine Anmeldung, keine Analyse, keine Werbung, keine Drittanbieter-Pixel. Die Seite merkt sich nur die gewählte Sprache und das Farbschema.' },
+      ],
+    },
+    faq: [
+      { q: 'Was ist der Unterschied zwischen EXIF und Metadaten?', a: 'EXIF ist eine Art von Metadaten – die, die Kameras und Smartphones schreiben. „Metadaten“ ist der Oberbegriff und umfasst auch XMP, IPTC, C2PA und PNG-Text-Chunks. Siehe [was EXIF-Daten sind](what-is-exif-data).' },
+      { q: 'Können Metadaten zeigen, wo ein Foto aufgenommen wurde?', a: 'Ja, wenn das Bild GPS-Tags enthält. Smartphones speichern meist Breite, Länge und Höhe, wenn die Kamera auf den Standort zugreifen darf. Der [EXIF-Entferner](remove-exif-data) löscht diese Tags, ohne die Bildqualität anzutasten.' },
+      { q: 'Wie entferne ich KI-Metadaten aus einem Bild?', a: 'Ziehen Sie das Bild in das Feld oben auf dieser Seite und klicken Sie auf „Alle Bilder waschen“, oder nutzen Sie den [KI-Tag-Cleaner](ai-tag-cleaner), um C2PA-, IPTC- und Prompt-Daten vorher anzusehen.' },
+      { q: 'Ist es sicher, meine Fotos hier hochzuladen?', a: 'Ihre Fotos werden gar nicht hochgeladen. AI Label Remover öffnet Dateien in Ihrem Browser, verarbeitet sie im Speicher des Tabs und speichert die saubere Kopie direkt auf Ihrem Gerät. Sobald die Seite geladen ist, funktioniert sie auch offline.' },
+    ],
   },
   labels: {
     tools: 'Weitere Metadaten-Werkzeuge',

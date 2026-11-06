@@ -22,6 +22,64 @@ const ptBR: Pages = {
       aiCheck: 'Verificar se é IA',
       whatIs: 'O que são metadados?',
     },
+    learn: {
+      what: {
+        title: 'O que são metadados?',
+        paragraphs: [
+          'Metadados são “dados sobre dados”: anotações guardadas dentro de um arquivo de imagem que nunca aparecem na foto. Câmeras, celulares, editores de imagem e geradores de imagens com IA adicionam essas informações automaticamente, quase sempre sem avisar.',
+          'Nas fotos, os metadados se dividem em cinco grandes grupos. Cada um responde a uma pergunta diferente sobre a imagem — e sobre quem a tirou ou criou.',
+        ],
+        types: [
+          { name: 'Descritivos', text: 'Título, legenda, palavras-chave, nomes das pessoas na foto.', example: 'IPTC Caption, XMP dc:title' },
+          { name: 'Técnicos', text: 'Marca e modelo da câmera, lente, abertura, velocidade, ISO, número de série.', example: 'EXIF Make, Model, BodySerialNumber' },
+          { name: 'Local e horário', text: 'Coordenadas GPS, altitude, data da captura e fuso horário.', example: 'EXIF GPSLatitude, DateTimeOriginal' },
+          { name: 'Direitos e gestão', text: 'Autor, proprietário, copyright, último software de edição.', example: 'EXIF Artist, Copyright, Software' },
+          { name: 'Procedência e IA', text: 'Content Credentials, rótulos “feito com IA”, prompts e workflows.', example: 'C2PA manifest, IPTC DigitalSourceType' },
+        ],
+        synonyms:
+          'Você vai ver vários nomes para a mesma tarefa — “removedor de metadados”, “apagar EXIF”, “limpador de metadados”, “tirar informações da foto” —, e todos significam retirar as anotações ocultas do arquivo sem mudar a imagem. Da mesma forma, um “visualizador”, “leitor” ou “verificador de metadados” mostra o que há dentro do arquivo. O AI Label Remover faz as duas coisas.',
+      },
+      why: {
+        title: 'Por que ver e remover metadados antes de compartilhar uma foto?',
+        paragraphs: [
+          'Um único campo de metadados costuma ser inofensivo, mas juntos eles dizem muito sobre você. Uma foto tirada em casa e publicada em um site de classificados pode levar coordenadas GPS com precisão de poucos metros; imagens enviadas por e-mail ou link na nuvem mantêm tudo o que a câmera gravou. Veja [como o GPS das fotos pode revelar seu endereço](remove-gps-location-from-photos).',
+          'Em imagens criadas ou editadas com IA, os metadados também decidem se uma plataforma exibe o rótulo “Feito com IA” e podem expor o prompt completo que você escreveu.',
+        ],
+        bullets: [
+          'Revelar onde você mora, trabalha ou viaja pelas coordenadas GPS.',
+          'Ligar várias fotos à mesma pessoa pelo número de série da câmera ou nome do proprietário.',
+          'Expor prompts, seeds, modelos e workflows que você queria manter em sigilo.',
+          'Receber um rótulo de IA de uma plataforma por causa de dados C2PA ou IPTC anexados.',
+        ],
+      },
+      standards: {
+        title: 'Padrões de metadados mais comuns em fotos',
+        lead: 'Um mesmo arquivo de imagem pode guardar vários “compartimentos” de metadados ao mesmo tempo, cada um seguindo um padrão diferente. O AI Label Remover lê e remove todos os listados abaixo.',
+        items: [
+          { name: 'EXIF', text: 'Gravado por câmeras e celulares: configurações de exposição, aparelho, data e hora, GPS, miniaturas. [Entenda o EXIF](what-is-exif-data).' },
+          { name: 'XMP', text: 'Formato XML da Adobe para histórico de edição, classificações, palavras-chave e muitas propriedades ligadas à IA.' },
+          { name: 'IPTC', text: 'O padrão das redações: legenda, autor, copyright e a tag [DigitalSourceType](iptc-digitalsourcetype-ai), que declara imagens de IA.' },
+          { name: 'C2PA', text: 'Content Credentials assinadas criptograficamente que registram como um arquivo foi criado e editado. [O que é C2PA](what-is-c2pa-content-credentials).' },
+          { name: 'PNG text', text: 'Chunks tEXt, iTXt e zTXt onde o [Stable Diffusion e o ComfyUI](remove-stable-diffusion-comfyui-metadata) guardam prompts e workflows.' },
+        ],
+      },
+    },
+    security: {
+      title: 'Suas fotos continuam seguras',
+      lead: 'Em qualquer ferramenta que lida com arquivos pessoais, a primeira pergunta é “para onde vão minhas fotos?”. A resposta do AI Label Remover: para lugar nenhum.',
+      items: [
+        { title: '100% no seu dispositivo', text: 'A leitura e a limpeza rodam em um Web Worker dentro da aba do navegador. Nenhum servidor recebe seus arquivos.' },
+        { title: 'Nada armazenado, sem treinar IA', text: 'Como as fotos nunca são enviadas, não existe cópia para armazenar, vazar ou usar no treino de um modelo.' },
+        { title: 'Funciona offline', text: 'Carregue a página, desligue o Wi-Fi e limpe um arquivo — continua funcionando. A aba Rede do DevTools não mostra nenhum dado de imagem saindo.' },
+        { title: 'Sem conta, sem rastreamento', text: 'Sem cadastro, sem analytics, anúncios ou pixels de terceiros. O site só lembra o idioma e o tema que você escolher.' },
+      ],
+    },
+    faq: [
+      { q: 'Qual a diferença entre EXIF e metadados?', a: 'EXIF é um tipo de metadado — o que câmeras e celulares gravam. “Metadados” é o termo mais amplo e inclui também XMP, IPTC, C2PA e os chunks de texto do PNG. Veja [o que são dados EXIF](what-is-exif-data).' },
+      { q: 'Os metadados podem mostrar onde uma foto foi tirada?', a: 'Sim, se a imagem tiver tags de GPS. Os celulares costumam gravar latitude, longitude e altitude quando a câmera tem acesso à localização. O [removedor de EXIF](remove-exif-data) apaga essas tags sem mexer na qualidade.' },
+      { q: 'Como remover metadados de IA de uma imagem?', a: 'Solte a imagem na caixa no topo desta página e clique em “Limpar todas as imagens”, ou use o [limpador de tags de IA](ai-tag-cleaner) para ver antes os dados C2PA, IPTC e o prompt.' },
+      { q: 'É seguro enviar minhas fotos aqui?', a: 'Suas fotos não são enviadas. O AI Label Remover abre os arquivos no navegador, processa tudo na memória da aba e salva a cópia limpa direto no seu dispositivo. Depois que a página carrega, você pode ficar offline e ela continua funcionando.' },
+    ],
   },
   labels: {
     tools: 'Mais ferramentas de metadados',

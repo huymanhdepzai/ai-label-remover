@@ -1,6 +1,6 @@
 import { create } from '../store/create';
 import type { Articles } from '../content/articles/types';
-import type { Pages } from '../content/pages/types';
+import type { HomeBasics, Pages } from '../content/pages/types';
 import type { Msg } from '../types';
 import { LANG_COOKIE } from './detect';
 import { DEFAULT_LANG, findLanguage, LANGUAGES, matchLanguage, type LangCode } from './languages';
@@ -14,6 +14,8 @@ const messageLoaders = import.meta.glob<{ default: Messages }>(['./locales/*.ts'
 const articleLoaders = import.meta.glob<{ default: Articles }>(['../content/articles/*.ts', '!../content/articles/types.ts']);
 /** Trang công cụ + trang thông tin — chỉ có ở các ngôn ngữ thị trường chính (PRIORITY_LANGS). */
 const pageLoaders = import.meta.glob<{ default: Pages }>(['../content/pages/*.ts', '!../content/pages/types.ts']);
+/** Nội dung trang chủ cho các ngôn ngữ chưa có `pages` (ngôn ngữ chính đã có sẵn trong `pages.home`). */
+const homeLoaders = import.meta.glob<{ default: HomeBasics }>(['../content/home/*.ts', '!../content/home/*.test.ts']);
 
 const STORAGE_KEY = 'lang';
 
@@ -22,23 +24,27 @@ export interface LanguageBundle {
   m: Messages;
   articles: Articles | null;
   pages: Pages | null;
+  /** Các mục trang chủ dùng chung (dải nguồn ảnh, phần giáo dục, bảo mật, hỏi đáp bổ sung). */
+  home: HomeBasics | null;
 }
 
 export async function loadBundle(lang: LangCode): Promise<LanguageBundle> {
   const msgLoader = messageLoaders[`./locales/${lang}.ts`];
   const artLoader = articleLoaders[`../content/articles/${lang}.ts`];
   const pageLoader = pageLoaders[`../content/pages/${lang}.ts`];
-  const [m, articles, pages] = await Promise.all([
+  const homeLoader = homeLoaders[`../content/home/${lang}.ts`];
+  const [m, articles, pages, home] = await Promise.all([
     lang === 'en' || !msgLoader ? en : msgLoader().then((mod) => mod.default),
     artLoader ? artLoader().then((mod) => mod.default) : null,
     pageLoader ? pageLoader().then((mod) => mod.default) : null,
+    !pageLoader && homeLoader ? homeLoader().then((mod) => mod.default) : null,
   ]);
-  return { lang, m, articles, pages };
+  return { lang, m, articles, pages, home: pages?.home ?? home };
 }
 
 interface I18nState extends LanguageBundle {}
 
-export const useI18n = create<I18nState>()(() => ({ lang: DEFAULT_LANG, m: en, articles: null, pages: null }));
+export const useI18n = create<I18nState>()(() => ({ lang: DEFAULT_LANG, m: en, articles: null, pages: null, home: null }));
 
 /** Hook lấy bộ thông điệp của ngôn ngữ hiện tại. */
 export const useT = () => useI18n((s) => s.m);

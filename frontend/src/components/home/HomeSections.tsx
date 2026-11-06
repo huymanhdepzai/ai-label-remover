@@ -1,17 +1,19 @@
-import type { ReactNode } from 'react';
+import { useRef, type ReactNode } from 'react';
 import { FEATURED_TOOL, HOME_SECTIONS, IMAGE_SOURCES, TOOL_FORMATS, TOOL_SLUGS, type ToolSlug } from '../../content/seo';
-import { useI18n } from '../../i18n';
+import { useI18n, useT } from '../../i18n';
 import { useHref } from '../../router';
 import { Link } from '../Link';
+import { Gravity, MatterBody, type GravityHandle } from '../physics/Gravity';
 import { Icon, type IconName } from '../ui';
 import { RichText } from '../seo/RichText';
 import { Section, TOOL_ICONS } from '../seo/SeoSections';
 
 /**
- * Các mục riêng của trang chủ ở ngôn ngữ chính (nội dung trong `pages.home`, src/content/pages/<mã>.ts).
- * Ngôn ngữ không có `pages` → mọi mục ở đây trả về null và trang chủ chỉ còn các mục chung.
+ * Các mục riêng của trang chủ: ngôn ngữ chính lấy từ `pages.home` (src/content/pages/<mã>.ts), ngôn ngữ còn lại từ
+ * src/content/home/<mã>.ts. Mục "Bắt đầu với tệp bạn đang có" cần trang công cụ nên chỉ hiện ở ngôn ngữ chính.
  */
-const useHome = () => useI18n((s) => s.pages?.home);
+const useHome = () => useI18n((s) => s.home);
+const useToolsHome = () => useI18n((s) => s.pages?.home);
 
 const H2 = 'font-display text-3xl leading-tight font-extrabold tracking-[-0.025em] text-balance text-ink sm:text-[2.4rem]';
 
@@ -45,7 +47,7 @@ export function SourcesStrip() {
 // ---------- Bắt đầu với tệp bạn đang có ----------
 
 function ToolTile({ slug, featured = false }: { slug: ToolSlug; featured?: boolean }) {
-  const home = useHome();
+  const home = useToolsHome();
   const href = useHref({ name: 'tool', slug });
   const page = useI18n((s) => s.pages?.tools[slug]);
   if (!page || !home) return null;
@@ -91,7 +93,7 @@ function ToolTile({ slug, featured = false }: { slug: ToolSlug; featured?: boole
 
 /** Công cụ đề xuất ở ô lớn bên trái, các công cụ còn lại xếp lưới 2×2 bên phải. */
 export function StartWithFile() {
-  const home = useHome();
+  const home = useToolsHome();
   if (!home) return null;
   const rest = TOOL_SLUGS.filter((s) => s !== FEATURED_TOOL);
   return (
@@ -184,8 +186,13 @@ function Art({ children }: { children: ReactNode }) {
 
 const TYPE_ICONS: IconName[] = ['document', 'photo', 'mapPin', 'user', 'sparkles'];
 
+/** Góc nghiêng ban đầu (độ) của các thẻ trước khi rơi. */
+const TYPE_TILTS = [-7, 5, -3, 8, -5];
+
 export function LearnMetadata() {
+  const t = useT();
   const learn = useHome()?.learn;
+  const gravity = useRef<GravityHandle>(null);
   if (!learn) return null;
   const { what, why, standards } = learn;
   return (
@@ -207,18 +214,42 @@ export function LearnMetadata() {
               </Art>
             </div>
           </div>
-          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {what.types.map((type, i) => (
-              <li key={type.name} className="rounded-xl bg-paper p-5 ring-1 ring-line">
-                <Icon name={TYPE_ICONS[i % TYPE_ICONS.length]} className="h-6 w-6 text-cobalt" />
-                <h3 className="mt-3 font-display text-lg font-bold text-ink">{type.name}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-2">{type.text}</p>
-                <p className="mt-3 font-mono text-[0.7rem] leading-relaxed text-ink-3" dir="ltr">
-                  {type.example}
-                </p>
-              </li>
-            ))}
-          </ul>
+          {/* Năm nhóm metadata rơi xuống như những tấm thẻ (kéo / ném được bằng chuột); màn hình hẹp: lưới tĩnh. */}
+          <div className="relative mt-12">
+            <Gravity ref={gravity} role="list" className="h-[30rem] rounded-2xl bg-paper ring-1 ring-line lg:h-[26rem]">
+              {what.types.map((type, i) => (
+                <MatterBody
+                  key={type.name}
+                  role="listitem"
+                  x={`${11 + i * 19.5}%`}
+                  y={`${22 + (i % 2) * 18}%`}
+                  angle={TYPE_TILTS[i % TYPE_TILTS.length]}
+                  matterBodyOptions={{ friction: 0.4, restitution: 0.35, density: 0.0015 }}
+                >
+                  <article className="w-[12.5rem] rounded-xl bg-sheet p-4 shadow-[0_10px_24px_-14px_rgb(16_23_46/0.45)] ring-1 ring-line">
+                    <span className="grid h-9 w-9 place-items-center rounded-lg bg-cobalt-soft text-cobalt">
+                      <Icon name={TYPE_ICONS[i % TYPE_ICONS.length]} className="h-5 w-5" />
+                    </span>
+                    <h3 className="mt-3 font-display text-lg font-bold text-ink">{type.name}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink-2">{type.text}</p>
+                    <p className="mt-2.5 font-mono text-[0.68rem] leading-relaxed text-ink-3" dir="ltr">
+                      {type.example}
+                    </p>
+                  </article>
+                </MatterBody>
+              ))}
+            </Gravity>
+            {/* Thả lại các thẻ từ trên xuống */}
+            <button
+              type="button"
+              onClick={() => gravity.current?.reset()}
+              title={t.file.retry}
+              aria-label={t.file.retry}
+              className="gravity-reset absolute end-3 top-3 z-10 grid h-9 w-9 place-items-center rounded-full bg-sheet text-cobalt shadow-sm ring-1 ring-line transition-transform hover:rotate-[-30deg]"
+            >
+              <Icon name="retry" className="h-4 w-4" />
+            </button>
+          </div>
           <p className="mt-8 rounded-xl border-s-4 border-cobalt bg-cobalt-soft/50 px-5 py-4 leading-relaxed text-ink">
             <RichText text={what.synonyms} />
           </p>

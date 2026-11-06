@@ -22,6 +22,64 @@ const id: Pages = {
       aiCheck: 'Cek gambar AI',
       whatIs: 'Apa itu metadata?',
     },
+    learn: {
+      what: {
+        title: 'Apa itu metadata?',
+        paragraphs: [
+          'Metadata adalah “data tentang data”: catatan yang tersimpan di dalam file gambar tetapi tidak pernah terlihat di foto itu sendiri. Kamera, ponsel, aplikasi edit foto, dan generator gambar AI menambahkannya secara otomatis, biasanya tanpa memberi tahu Anda.',
+          'Pada foto, metadata terbagi ke dalam lima kelompok besar. Masing-masing menjawab pertanyaan berbeda tentang gambar — dan tentang orang yang memotret atau membuatnya.',
+        ],
+        types: [
+          { name: 'Deskriptif', text: 'Judul, keterangan, kata kunci, nama orang di dalam foto.', example: 'IPTC Caption, XMP dc:title' },
+          { name: 'Teknis', text: 'Merek dan model kamera, lensa, bukaan, kecepatan rana, ISO, nomor seri.', example: 'EXIF Make, Model, BodySerialNumber' },
+          { name: 'Lokasi & waktu', text: 'Koordinat GPS, ketinggian, tanggal pemotretan, dan zona waktu.', example: 'EXIF GPSLatitude, DateTimeOriginal' },
+          { name: 'Hak & administrasi', text: 'Pembuat, pemilik, hak cipta, software edit terakhir.', example: 'EXIF Artist, Copyright, Software' },
+          { name: 'Asal-usul & AI', text: 'Content Credentials, label “dibuat dengan AI”, prompt, dan workflow.', example: 'C2PA manifest, IPTC DigitalSourceType' },
+        ],
+        synonyms:
+          'Anda akan menemukan banyak nama untuk pekerjaan yang sama — “penghapus metadata”, “hapus EXIF”, “pembersih metadata”, “hapus info foto” — semuanya berarti mengeluarkan catatan tersembunyi dari file tanpa mengubah gambar. Begitu pula “penampil”, “pembaca”, atau “pemeriksa metadata” menunjukkan isi file. AI Label Remover bisa melakukan keduanya.',
+      },
+      why: {
+        title: 'Mengapa perlu melihat dan menghapus metadata sebelum membagikan foto?',
+        paragraphs: [
+          'Satu kolom metadata biasanya tidak berbahaya, tetapi bila digabung, semuanya bercerita banyak tentang Anda. Foto yang diambil di rumah lalu diunggah ke marketplace bisa membawa koordinat GPS yang akurat hingga beberapa meter; gambar yang dikirim lewat email atau tautan cloud menyimpan semua yang ditulis kamera. Lihat [bagaimana GPS di foto bisa membocorkan alamat rumah Anda](remove-gps-location-from-photos).',
+          'Untuk gambar yang dibuat atau diedit dengan AI, metadata juga menentukan apakah platform menampilkan label “Dibuat dengan AI”, dan dapat membuka seluruh prompt yang Anda tulis.',
+        ],
+        bullets: [
+          'Membocorkan tempat tinggal, tempat kerja, atau perjalanan Anda lewat koordinat GPS.',
+          'Menghubungkan banyak foto ke satu orang melalui nomor seri kamera atau nama pemilik.',
+          'Membuka prompt, seed, model, dan workflow yang ingin Anda rahasiakan.',
+          'Mendapat label AI dari platform karena data C2PA atau IPTC yang terlampir.',
+        ],
+      },
+      standards: {
+        title: 'Standar metadata foto yang umum',
+        lead: 'Satu file gambar bisa menyimpan beberapa “laci” metadata sekaligus, masing-masing mengikuti standar berbeda. AI Label Remover membaca dan menghapus semua yang tercantum di bawah ini.',
+        items: [
+          { name: 'EXIF', text: 'Ditulis oleh kamera dan ponsel: pengaturan eksposur, perangkat, waktu, GPS, thumbnail. [Pelajari EXIF](what-is-exif-data).' },
+          { name: 'XMP', text: 'Format XML milik Adobe untuk riwayat edit, rating, kata kunci, dan banyak properti terkait AI.' },
+          { name: 'IPTC', text: 'Standar dunia pers: keterangan, pembuat, hak cipta, dan tag [DigitalSourceType](iptc-digitalsourcetype-ai) yang menyatakan gambar AI.' },
+          { name: 'C2PA', text: 'Content Credentials bertanda tangan kriptografis yang mencatat bagaimana file dibuat dan diedit. [Apa itu C2PA](what-is-c2pa-content-credentials).' },
+          { name: 'PNG text', text: 'Chunk tEXt, iTXt, dan zTXt tempat [Stable Diffusion dan ComfyUI](remove-stable-diffusion-comfyui-metadata) menyimpan prompt dan workflow.' },
+        ],
+      },
+    },
+    security: {
+      title: 'Foto Anda tetap aman',
+      lead: 'Untuk alat apa pun yang menangani file pribadi, pertanyaan pertama adalah “ke mana foto saya pergi?”. Jawaban AI Label Remover: tidak ke mana-mana.',
+      items: [
+        { title: '100% di perangkat Anda', text: 'Pembacaan dan pembersihan berjalan di Web Worker di dalam tab browser. Tidak ada server yang menerima file Anda.' },
+        { title: 'Tidak disimpan, tidak untuk melatih AI', text: 'Karena foto tidak pernah dikirim, tidak ada salinan yang bisa disimpan, bocor, atau dipakai melatih model.' },
+        { title: 'Bisa dipakai offline', text: 'Muat halaman, matikan Wi-Fi, lalu cuci sebuah file — tetap berfungsi. Tab Network di DevTools tidak menunjukkan data gambar yang keluar.' },
+        { title: 'Tanpa akun, tanpa pelacakan', text: 'Tanpa pendaftaran, analitik, iklan, atau piksel pihak ketiga. Situs hanya mengingat bahasa dan tema yang Anda pilih.' },
+      ],
+    },
+    faq: [
+      { q: 'Apa beda EXIF dan metadata?', a: 'EXIF adalah salah satu jenis metadata — yang ditulis kamera dan ponsel. “Metadata” adalah istilah yang lebih luas dan juga mencakup XMP, IPTC, C2PA, serta chunk teks PNG. Lihat [apa itu data EXIF](what-is-exif-data).' },
+      { q: 'Bisakah metadata menunjukkan lokasi foto diambil?', a: 'Bisa, jika gambar memiliki tag GPS. Ponsel biasanya mencatat lintang, bujur, dan ketinggian saat kamera diizinkan mengakses lokasi. [Penghapus EXIF](remove-exif-data) menghapus tag ini tanpa mengurangi kualitas gambar.' },
+      { q: 'Bagaimana cara menghapus metadata AI dari gambar?', a: 'Letakkan gambar di kotak bagian atas halaman ini lalu tekan “Cuci semua gambar”, atau gunakan [pembersih tag AI](ai-tag-cleaner) untuk melihat data C2PA, IPTC, dan prompt terlebih dahulu.' },
+      { q: 'Apakah aman mengunggah foto saya di sini?', a: 'Foto Anda sama sekali tidak diunggah. AI Label Remover membuka file di browser, memprosesnya di memori tab, dan menyimpan salinan bersih langsung ke perangkat Anda. Setelah halaman dimuat, Anda bisa offline dan alat tetap berjalan.' },
+    ],
   },
   labels: {
     tools: 'Alat metadata lainnya',

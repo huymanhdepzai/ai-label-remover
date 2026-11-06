@@ -42,6 +42,7 @@ function FileTile({ ext, tool, index }: { ext: string; tool: ToolSlug | null; in
 export function Hero({ hasJobs }: { hasJobs: boolean }) {
   const t = useT();
   const home = useI18n((s) => s.pages?.home);
+  const reassure = useI18n((s) => s.home?.reassure);
   const homeHref = useHref(HOME);
   const trustKeys = Object.keys(TRUST_ICONS) as (keyof typeof TRUST_ICONS)[];
 
@@ -57,7 +58,7 @@ export function Hero({ hasJobs }: { hasJobs: boolean }) {
                 <h1 className="font-display text-[2.1rem] leading-[1.06] font-extrabold tracking-[-0.035em] text-balance text-ink sm:text-5xl lg:text-[3.3rem]">
                   {t.hero.kicker}
                 </h1>
-                <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">{home?.reassure ?? `${t.hero.title} ${t.hero.titleAccent}`}</p>
+                <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">{reassure ?? `${t.hero.title} ${t.hero.titleAccent}`}</p>
               </div>
 
               {/* Thẻ định dạng tệp — cũng là liên kết tới trang công cụ hợp với định dạng đó — và liên kết tới danh sách công cụ */}

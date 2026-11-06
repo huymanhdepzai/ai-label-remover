@@ -432,3 +432,41 @@ summary::-webkit-details-marker {
     background-position: 100% 0;
   }
 }
+
+/*
+ * ---- Khung hiệu ứng trọng lực (src/components/physics/Gravity.tsx) ----
+ * Khi vật lý chạy (data-active="true"): phần tử kéo được bằng chuột. Màn hình hẹp hoặc giảm chuyển động:
+ * vật lý không chạy và khung trở thành lưới tĩnh (nội dung vẫn đầy đủ, không phần tử nào bị chồng lên nhau).
+ */
+.gravity-arena {
+  position: relative;
+  overflow: hidden;
+}
+.gravity-arena[data-active='true'] .gravity-body {
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+  will-change: transform;
+}
+.gravity-arena[data-active='true'] .gravity-body:active {
+  cursor: grabbing;
+}
+@media (max-width: 639px), (prefers-reduced-motion: reduce) {
+  .gravity-arena {
+    height: auto !important;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    padding: 1rem;
+  }
+  .gravity-arena .gravity-body {
+    position: static !important;
+    transform: none !important;
+  }
+  .gravity-arena .gravity-body > * {
+    width: auto !important;
+  }
+  .gravity-reset {
+    display: none !important;
+  }
+}

@@ -38,7 +38,7 @@ const ORG_REF = { '@id': absoluteUrl('/#organization') };
  */
 export function StructuredData() {
   const bundle = useI18n();
-  const { lang, m, articles, pages } = bundle;
+  const { lang, m, articles, pages, home } = bundle;
   const seo = m.seo;
   const route = useRouter((s) => s.route);
 
@@ -78,7 +78,7 @@ export function StructuredData() {
           { '@context': 'https://schema.org', ...organization(lang) },
           { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, alternateName: SITE.alternateNames, url: homeUrl, inLanguage: lang, publisher: ORG_REF },
           webApp(SITE.name, m.meta.description, homeUrl),
-          faqPage([...seo.faq.items, ...(pages?.home.faq ?? [])]),
+          faqPage([...seo.faq.items, ...(home?.faq ?? [])]),
           {
             '@context': 'https://schema.org',
             '@type': 'HowTo',
@@ -162,7 +162,7 @@ export function StructuredData() {
         return result;
       }
     }
-  }, [bundle, lang, m, seo, articles, pages, route]);
+  }, [bundle, lang, m, seo, articles, pages, home, route]);
 
   return (
     <>

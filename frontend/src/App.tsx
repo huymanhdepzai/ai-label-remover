@@ -16,11 +16,11 @@ import { useJobStore } from './store/useJobStore';
  * Trang chủ theo trình tự "giá trị → bằng chứng → việc cần làm → kiến thức → an tâm → hỏi đáp":
  * đầu trang (công cụ) → dải nguồn ảnh → bắt đầu với tệp bạn có → metadata là gì / vì sao / tiêu chuẩn →
  * từng loại tệp → cách làm → bảo mật → so sánh → bài viết → hỏi đáp → miễn trừ trách nhiệm.
- * Ngôn ngữ không có nội dung trang chủ riêng (`pages.home`) tự bỏ các mục mới và giữ khối Tính năng.
+ * Ngôn ngữ chưa có trang công cụ (`pages`) bỏ mục "bắt đầu với tệp bạn có"; thiếu mục bảo mật thì giữ khối Tính năng.
  */
 function HomePage() {
   const hasJobs = useJobStore((s) => s.jobs.length > 0);
-  const hasSecurity = useI18n((s) => Boolean(s.pages?.home.security));
+  const hasSecurity = useI18n((s) => Boolean(s.home?.security));
   return (
     <main>
       <Hero hasJobs={hasJobs} />

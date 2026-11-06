@@ -538,7 +538,7 @@ export function Disclaimer() {
 
 export function Faq() {
   const { faq } = useT().seo;
-  const extra = useI18n((s) => s.pages?.home.faq) ?? [];
+  const extra = useI18n((s) => s.home?.faq) ?? [];
   return (
     <Section id={HOME_SECTIONS.faq} title={faq.title}>
       <FaqList items={[...faq.items, ...extra]} />
