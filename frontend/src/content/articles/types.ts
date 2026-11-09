@@ -1,8 +1,8 @@
 import type { GuideSlug } from '../seo';
 
 /**
- * Bài viết chuyên sâu cho trang hướng dẫn. Chỉ có ở các ngôn ngữ thị trường chính;
- * ngôn ngữ khác hiển thị phần tóm tắt trong `seo.guides.items` của tệp ngôn ngữ.
+ * Bài viết chuyên sâu cho trang hướng dẫn. Mọi ngôn ngữ đều có ít nhất 6 bài nền tảng; bài mở rộng chỉ có ở
+ * các ngôn ngữ trong GUIDE_LANGS. Phần tóm tắt đầu bài nền tảng vẫn lấy từ `seo.guides.items` của tệp ngôn ngữ.
  */
 export interface ArticleSection {
   heading: string;
