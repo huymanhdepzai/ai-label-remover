@@ -77,7 +77,7 @@ const fr: Pages = {
     faq: [
       { q: 'Quelle est la différence entre EXIF et métadonnées ?', a: 'L’EXIF est un type de métadonnées — celui qu’écrivent les appareils photo et smartphones. « Métadonnées » est le terme général, qui couvre aussi XMP, IPTC, C2PA et les chunks texte du PNG. Voyez [ce que sont les données EXIF](what-is-exif-data).' },
       { q: 'Les métadonnées peuvent-elles montrer où une photo a été prise ?', a: 'Oui, si l’image contient des balises GPS. Les smartphones enregistrent généralement latitude, longitude et altitude quand la localisation est activée pour l’appareil photo. Le [suppresseur d’EXIF](remove-exif-data) retire ces balises sans toucher à la qualité.' },
-      { q: 'Comment supprimer les métadonnées IA d’une image ?', a: 'Déposez l’image dans la zone en haut de cette page et cliquez sur « Nettoyer toutes les images », ou utilisez le [nettoyeur de tags IA](ai-tag-cleaner) pour d’abord voir les données C2PA, IPTC et le prompt.' },
+      { q: 'Comment supprimer les métadonnées IA d’une image ?', a: 'Déposez l’image dans la zone en haut de cette page et cliquez sur « Supprimer toutes les métadonnées », ou utilisez le [nettoyeur de tags IA](ai-tag-cleaner) pour d’abord voir les données C2PA, IPTC et le prompt.' },
       { q: 'Est-il sûr d’envoyer mes photos ici ?', a: 'Vos photos ne sont pas envoyées du tout. AI Label Remover ouvre les fichiers dans votre navigateur, les traite dans la mémoire de l’onglet et enregistre la copie propre directement sur votre appareil. Une fois la page chargée, vous pouvez passer hors ligne : elle continue de fonctionner.' },
     ],
   },
@@ -115,7 +115,7 @@ const fr: Pages = {
           heading: 'Comment fonctionne le nettoyeur de tags IA',
           paragraphs: [
             'AI Label Remover lit la structure du fichier directement dans votre navigateur. Chaque tag IA est affiché avec le champ exact d’où il vient, et le fichier reçoit un verdict — « Traces d’IA trouvées », « À regarder de plus près » ou « Aucune trace d’IA » — avant toute modification.',
-            '« Nettoyer toutes les images » découpe les blocs qui contiennent ces tags : XMP, IPTC, EXIF, le magasin de manifestes C2PA et les chunks texte PNG. Les données d’image compressées sont copiées octet par octet, et la copie nettoyée est relue pour confirmer qu’il ne reste aucun tag IA.',
+            '« Supprimer toutes les métadonnées » découpe les blocs qui contiennent ces tags : XMP, IPTC, EXIF, le magasin de manifestes C2PA et les chunks texte PNG. Les données d’image compressées sont copiées octet par octet, et la copie nettoyée est relue pour confirmer qu’il ne reste aucun tag IA.',
           ],
         },
         {
@@ -167,7 +167,7 @@ const fr: Pages = {
           bullets: [
             'Déposez la photo retouchée dans la zone en haut de cette page.',
             'Lisez le verdict et les champs qui l’expliquent — le rapport nomme l’action C2PA ou la valeur IPTC exacte.',
-            'Cliquez sur « Nettoyer toutes les images » et enregistrez la copie propre.',
+            'Cliquez sur « Supprimer toutes les métadonnées » et enregistrez la copie propre.',
             'Publiez la copie propre, pas l’export d’origine.',
           ],
         },

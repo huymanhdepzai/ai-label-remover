@@ -181,23 +181,23 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Die Kopie waschen, die du postest',
+        heading: 'Die Kopie bereinigen, die du postest',
         paragraphs: [
-          'Klicke auf „Alle Bilder waschen“. AI Label Remover schneidet den C2PA-Speicher sowie die XMP-, IPTC- und EXIF-Blöcke aus dem Bytestrom und lässt Pixeldaten, Größe, Drehung und Farbprofil unverändert. Die gewaschene Datei wird erneut gelesen, damit du vor dem Speichern siehst, dass die KI-Spuren weg sind. Die Seite [KI-Metadaten entfernen](ai-tag-cleaner) erklärt jede behandelte Spur.',
+          'Klicke auf „Alle Metadaten entfernen“. AI Label Remover schneidet den C2PA-Speicher sowie die XMP-, IPTC- und EXIF-Blöcke aus dem Bytestrom und lässt Pixeldaten, Größe, Drehung und Farbprofil unverändert. Die bereinigte Datei wird erneut gelesen, damit du vor dem Speichern siehst, dass die KI-Spuren weg sind. Die Seite [KI-Metadaten entfernen](ai-tag-cleaner) erklärt jede behandelte Spur.',
           'Erneutes Speichern als JPEG würde die Metadaten ebenfalls entfernen, [komprimiert das Bild aber jedes Mal neu](remove-metadata-without-losing-quality). Das Herausschneiden von Blöcken vermeidet diesen Verlust vollständig.',
         ],
       },
       {
         heading: 'Ein falsches Label korrigieren heißt nicht, ein richtiges zu verstecken',
         paragraphs: [
-          'Waschen ist für Labels gedacht, die deine Arbeit falsch beschreiben, und um private Angaben privat zu halten. Ist ein Bild ganz oder überwiegend generiert und könnte als echt durchgehen, erwarten Plattformregeln in der Regel eine Kennzeichnung – das Label soll Betrachter informieren. Nutze AI Label Remover, um Fehler zu korrigieren, nicht um synthetische Bilder als Fotos auszugeben.',
+          'Bereinigen ist für Labels gedacht, die deine Arbeit falsch beschreiben, und um private Angaben privat zu halten. Ist ein Bild ganz oder überwiegend generiert und könnte als echt durchgehen, erwarten Plattformregeln in der Regel eine Kennzeichnung – das Label soll Betrachter informieren. Nutze AI Label Remover, um Fehler zu korrigieren, nicht um synthetische Bilder als Fotos auszugeben.',
         ],
       },
     ],
     faqHeading: 'Zum KI-Label',
     faq: [
-      { q: 'Kann ich das Label „KI-Info“ nach dem Posten entfernen?', a: 'Meist nicht durch Bearbeiten des Beitrags. Beschreibt das Label ein echtes Foto falsch, nutze die Einspruchs- oder Kontostatus-Optionen der Plattform, falls vorhanden, und wasch die Datei vor dem nächsten Post.' },
-      { q: 'Verschwindet das Label sicher, wenn ich die Datei wasche?', a: 'Keine Garantie. Waschen entfernt die in der Datei gespeicherten Signale – bei bearbeiteten Fotos die übliche Ursache –, Plattformen können aber andere Erkennung nutzen oder eine Angabe verlangen.' },
+      { q: 'Kann ich das Label „KI-Info“ nach dem Posten entfernen?', a: 'Meist nicht durch Bearbeiten des Beitrags. Beschreibt das Label ein echtes Foto falsch, nutze die Einspruchs- oder Kontostatus-Optionen der Plattform, falls vorhanden, und bereinige die Datei vor dem nächsten Post.' },
+      { q: 'Verschwindet das Label sicher, wenn ich die Datei bereinige?', a: 'Keine Garantie. Bereinigen entfernt die in der Datei gespeicherten Signale – bei bearbeiteten Fotos die übliche Ursache –, Plattformen können aber andere Erkennung nutzen oder eine Angabe verlangen.' },
       { q: 'Verändert sich das Foto optisch?', a: 'Nein. Nur Metadatenblöcke werden entfernt. Die Bilddaten werden Byte für Byte kopiert, Drehung und ICC-Farbprofil bleiben erhalten.' },
       { q: 'Kann ich die Kameraeinstellungen behalten und nur die KI-Felder entfernen?', a: 'Derzeit nicht. AI Label Remover entfernt alle identifizierenden Metadaten – Ort, Gerät, Urheber und KI-Herkunft – in einem Durchgang, die sicherste Voreinstellung zum öffentlichen Teilen. Größe, Drehung, Farbe und Animation bleiben immer erhalten.' },
     ],
@@ -223,7 +223,7 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Gründe fürs Waschen – und dagegen',
+        heading: 'Gründe fürs Bereinigen – und dagegen',
         paragraphs: [
           'Generierungsdaten sind ein komplettes Rezept. Sie lassen jeden deinen Look nachbauen, zeigen, auf welche Checkpoints und LoRAs du setzt, und können lokale Pfade, Ordner- oder Benutzernamen aus einem Workflow preisgeben. Große ComfyUI-Graphen bringen außerdem Dutzende Kilobyte pro Bild mit.',
           'Andererseits lesen Modell-Plattformen die Parameter, um Generierungsinfos anzuzeigen, und Mitwirkende möchten vielleicht den Workflow. Prüfe jede Datei zuerst; [AI Label Remover zeigt alles, bevor etwas entfernt wird](image-metadata-viewer-online).',
@@ -236,18 +236,18 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Was beim Waschen bleibt',
+        heading: 'Was beim Bereinigen bleibt',
         paragraphs: [
-          'Klicke auf „Alle Bilder waschen“. Das PNG-Modul entfernt Text-, XMP-, EXIF- und C2PA-Chunks als ganze Einheiten und behält IHDR, IDAT, Palette, Transparenz, Gamma und Farbe sowie die APNG-Animations-Chunks. Weil Chunks komplett entfernt werden, bleiben die übrigen CRCs gültig und die Datei öffnet sich überall. Die Seite [PNG-Metadaten entfernen](png-metadata-remover) erklärt jeden Chunk im Detail.',
+          'Klicke auf „Alle Metadaten entfernen“. Das PNG-Modul entfernt Text-, XMP-, EXIF- und C2PA-Chunks als ganze Einheiten und behält IHDR, IDAT, Palette, Transparenz, Gamma und Farbe sowie die APNG-Animations-Chunks. Weil Chunks komplett entfernt werden, bleiben die übrigen CRCs gültig und die Datei öffnet sich überall. Die Seite [PNG-Metadaten entfernen](png-metadata-remover) erklärt jeden Chunk im Detail.',
           'Öffnen und erneutes Speichern in einem Editor würde den Text ebenfalls entfernen, [komprimiert das Bild aber neu und kann Farben verschieben](remove-metadata-without-losing-quality). Das Entfernen auf Byte-Ebene vermeidet beides.',
         ],
       },
     ],
     faqHeading: 'Zu Stable-Diffusion- und ComfyUI-Daten',
     faq: [
-      { q: 'Wie verhindere ich, dass A1111 oder ComfyUI Metadaten speichern?', a: 'A1111 und Forge haben eine Einstellung, die das Schreiben der Generierungsparameter in PNG-Dateien stoppt, und ComfyUI lässt sich mit der Option --disable-metadata starten. Beides gilt nur für neue Bilder – wasch also die vorhandenen.' },
-      { q: 'Kann ComfyUI den Workflow aus einem gewaschenen PNG wiederherstellen?', a: 'Nein. Die Chunks „prompt“ und „workflow“ sind weg, das Ziehen der Datei in ComfyUI stellt nichts wieder her. Behalte ein ungewaschenes Original, wenn du den Graph noch brauchst.' },
-      { q: 'Sieht das gewaschene PNG gleich aus?', a: 'Ja. Die IDAT-Chunks mit den komprimierten Pixeln werden unverändert kopiert, das Bild ist pixelgenau identisch.' },
+      { q: 'Wie verhindere ich, dass A1111 oder ComfyUI Metadaten speichern?', a: 'A1111 und Forge haben eine Einstellung, die das Schreiben der Generierungsparameter in PNG-Dateien stoppt, und ComfyUI lässt sich mit der Option --disable-metadata starten. Beides gilt nur für neue Bilder – bereinige also die vorhandenen.' },
+      { q: 'Kann ComfyUI den Workflow aus einem bereinigten PNG wiederherstellen?', a: 'Nein. Die Chunks „prompt“ und „workflow“ sind weg, das Ziehen der Datei in ComfyUI stellt nichts wieder her. Behalte ein unbearbeitetes Original, wenn du den Graph noch brauchst.' },
+      { q: 'Sieht das bereinigte PNG gleich aus?', a: 'Ja. Die IDAT-Chunks mit den komprimierten Pixeln werden unverändert kopiert, das Bild ist pixelgenau identisch.' },
       { q: 'Was ist mit JPEG- und WebP-Exporten?', a: 'Prompts in EXIF UserComment oder XMP werden auch in JPEG- und WebP-Dateien erkannt und entfernt.' },
     ],
   },
@@ -256,7 +256,7 @@ const de: Articles = {
     metaTitle: 'Prompts aus Midjourney- und DALL·E-Bildern entfernen',
     related: ['chatgpt-gemini-image-metadata', 'what-metadata-ai-image-generators-add', 'synthid-invisible-ai-watermarks'],
     description:
-      'Downloads aus Midjourney, DALL·E, ChatGPT und Firefly können deinen Prompt, die Job-ID und KI-Herkunftsangaben enthalten. Prüf die Datei und wasch sie vor dem Posten.',
+      'Downloads aus Midjourney, DALL·E, ChatGPT und Firefly können deinen Prompt, die Job-ID und KI-Herkunftsangaben enthalten. Prüf die Datei und bereinige sie vor dem Posten.',
     updated: '2026-10-23',
     sections: [
       {
@@ -278,25 +278,25 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Erst ansehen, dann waschen',
+        heading: 'Erst ansehen, dann bereinigen',
         paragraphs: [
-          'Leg das Bild auf den Tisch und lies den Bericht. Zeilen mit „KI“ enthalten Prompts, Generatornamen und Herkunftsangaben; Zeilen mit „Personen“ Urheber, Beschreibungen und Kennungen. Klicke auf „Alle Bilder waschen“ und speichere die saubere Datei – oder den ganzen Stapel als ZIP. Die Seite [KI-Metadaten entfernen](ai-tag-cleaner) erklärt jede Art von Spur.',
+          'Leg das Bild auf den Tisch und lies den Bericht. Zeilen mit „KI“ enthalten Prompts, Generatornamen und Herkunftsangaben; Zeilen mit „Personen“ Urheber, Beschreibungen und Kennungen. Klicke auf „Alle Metadaten entfernen“ und speichere die saubere Datei – oder den ganzen Stapel als ZIP. Die Seite [KI-Metadaten entfernen](ai-tag-cleaner) erklärt jede Art von Spur.',
           'Alles läuft in deinem Browser, die Prompts, die du schützen willst, landen also unterwegs nicht bei noch einem Dienst.',
         ],
       },
       {
         heading: 'Grenzen, die du kennen solltest',
         paragraphs: [
-          'Manche Anbieter verstecken zusätzlich Wasserzeichen in den Pixeln, etwa [Googles SynthID](synthid-invisible-ai-watermarks). Das sind keine Metadaten, und Waschen berührt sie nicht. Und wenn du ein realistisches KI-Bild postest, können Plattformregeln trotzdem eine Kennzeichnung verlangen. Waschen schützt deinen Arbeitsprozess; es ändert nicht, was das Bild ist.',
+          'Manche Anbieter verstecken zusätzlich Wasserzeichen in den Pixeln, etwa [Googles SynthID](synthid-invisible-ai-watermarks). Das sind keine Metadaten, und Bereinigen berührt sie nicht. Und wenn du ein realistisches KI-Bild postest, können Plattformregeln trotzdem eine Kennzeichnung verlangen. Bereinigen schützt deinen Arbeitsprozess; es ändert nicht, was das Bild ist.',
         ],
       },
     ],
     faqHeading: 'Zu Midjourney- und DALL·E-Metadaten',
     faq: [
-      { q: 'Kann jemand meinen Prompt aus einem heruntergeladenen Bild lesen?', a: 'Wenn der Prompt in den Metadaten der Datei steht, kann ihn jeder mit einem Metadaten-Viewer lesen und kopieren. Waschen vor dem Teilen entfernt ihn.' },
+      { q: 'Kann jemand meinen Prompt aus einem heruntergeladenen Bild lesen?', a: 'Wenn der Prompt in den Metadaten der Datei steht, kann ihn jeder mit einem Metadaten-Viewer lesen und kopieren. Bereinigen vor dem Teilen entfernt ihn.' },
       { q: 'Enthält jeder Midjourney-Download den Prompt?', a: 'Das hängt vom Format und vom aktuellen Verhalten des Dienstes ab. Öffne die Datei in AI Label Remover, um genau zu sehen, was drin ist.' },
-      { q: 'Entfernt Waschen SynthID oder ähnliche Wasserzeichen?', a: 'Nein. Unsichtbare Wasserzeichen stecken in den Pixeldaten, die AI Label Remover nie verändert.' },
-      { q: 'Kann ich eine ganze Reihe von Generierungen waschen?', a: 'Ja. Lade bis zu 50 Bilder, prüfe die Berichte und speichere alle als ein ZIP.' },
+      { q: 'Entfernt Bereinigen SynthID oder ähnliche Wasserzeichen?', a: 'Nein. Unsichtbare Wasserzeichen stecken in den Pixeldaten, die AI Label Remover nie verändert.' },
+      { q: 'Kann ich eine ganze Reihe von Generierungen bereinigen?', a: 'Ja. Lade bis zu 50 Bilder, prüfe die Berichte und speichere alle als ein ZIP.' },
     ],
   },
 
@@ -331,12 +331,12 @@ const de: Articles = {
       {
         heading: 'Was Entfernen tatsächlich bewirkt',
         paragraphs: [
-          '[Waschen löscht den eingebetteten Datensatz](remove-c2pa-content-credentials) aus dieser Kopie der Datei. Bedenke: Jede Bearbeitung bricht ohnehin die kryptografische Bindung – Verifier melden ein Manifest, das nicht mehr zu den Pixeln passt, als ungültig –, Entfernen beseitigt also einen Datensatz, der sonst mitreisen würde.',
-          'Manche Systeme fügen „dauerhafte“ Credentials hinzu: [ein unsichtbares Wasserzeichen oder einen Fingerabdruck](synthid-invisible-ai-watermarks), über den ein Verifier das Manifest aus einem Online-Archiv abrufen kann, selbst wenn die eingebettete Kopie fehlt. Metadaten-Waschen wirkt darauf nicht, weil sie in den Pixeln oder auf einem Server liegen.',
+          '[Bereinigen löscht den eingebetteten Datensatz](remove-c2pa-content-credentials) aus dieser Kopie der Datei. Bedenke: Jede Bearbeitung bricht ohnehin die kryptografische Bindung – Verifier melden ein Manifest, das nicht mehr zu den Pixeln passt, als ungültig –, Entfernen beseitigt also einen Datensatz, der sonst mitreisen würde.',
+          'Manche Systeme fügen „dauerhafte“ Credentials hinzu: [ein unsichtbares Wasserzeichen oder einen Fingerabdruck](synthid-invisible-ai-watermarks), über den ein Verifier das Manifest aus einem Online-Archiv abrufen kann, selbst wenn die eingebettete Kopie fehlt. Das Entfernen von Metadaten wirkt darauf nicht, weil sie in den Pixeln oder auf einem Server liegen.',
         ],
       },
       {
-        heading: 'Behalten oder waschen?',
+        heading: 'Behalten oder bereinigen?',
         paragraphs: [
           'Credentials sind nützlich, wenn du die Herkunft eines Bildes belegen musst – im Journalismus oder bei eigenen Originalfotos. Sie können aber auch Software, Bearbeitungsverlauf und Identität preisgeben, die du lieber für dich behältst, oder [bei leicht bearbeiteten Fotos KI-Labels auslösen](made-with-ai-label). Lies zuerst das Manifest und entscheide pro Datei.',
         ],
@@ -345,8 +345,8 @@ const de: Articles = {
     faqHeading: 'Zu C2PA',
     faq: [
       { q: 'Wer nutzt C2PA?', a: 'Adobe, Microsoft, Google, OpenAI, Meta, Kamerahersteller wie Leica, Sony und Nikon sowie viele Nachrichtenorganisationen unterstützen den Standard oder gehören der Koalition an – jeder setzt ihn aber anders ein.' },
-      { q: 'Ist C2PA eine Art unsichtbares Wasserzeichen?', a: 'Nein. C2PA sind Metadaten neben den Bilddaten. Pixel-Wasserzeichen wie SynthID sind ein eigener Mechanismus und vom Waschen nicht betroffen.' },
-      { q: 'Wie prüfe ich die Signatur vor dem Waschen?', a: 'AI Label Remover zeigt Generator, Aktionen und Quelltyp. Für eine vollständige Signaturprüfung lass das Original vorher durch einen offiziellen Content-Credentials-Verifier laufen.' },
+      { q: 'Ist C2PA eine Art unsichtbares Wasserzeichen?', a: 'Nein. C2PA sind Metadaten neben den Bilddaten. Pixel-Wasserzeichen wie SynthID sind ein eigener Mechanismus und vom Bereinigen nicht betroffen.' },
+      { q: 'Wie prüfe ich die Signatur vor dem Bereinigen?', a: 'AI Label Remover zeigt Generator, Aktionen und Quelltyp. Für eine vollständige Signaturprüfung lass das Original vorher durch einen offiziellen Content-Credentials-Verifier laufen.' },
       { q: 'Kostet das Entfernen von C2PA Qualität?', a: 'Nein. Das Manifest ist ein eigener Block; die komprimierten Bilddaten werden unverändert kopiert.' },
     ],
   },
@@ -381,15 +381,15 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Ohne Nebenwirkungen waschen',
+        heading: 'Ohne Nebenwirkungen bereinigen',
         paragraphs: [
-          'Klicke auf „Alle Bilder waschen“. [GPS-, Datums-, Geräte-, Urheber- und Softwarefelder](remove-exif-data) verschwinden, zusammen mit eingebetteten Vorschaubildern und MPF-Zusatzbildern, die sonst eine versteckte Kopie behalten würden. Das Ausrichtungs-Tag wird in einen winzigen EXIF-Block zurückgeschrieben, damit Hochformatfotos nicht kippen, und das Farbprofil bleibt erhalten, damit die Farben stimmen. iPhone-HEIC wird direkt gewaschen, ohne Umwandlung in JPEG – siehe [HEIC-Metadaten entfernen](heic-metadata-remover).',
+          'Klicke auf „Alle Metadaten entfernen“. [GPS-, Datums-, Geräte-, Urheber- und Softwarefelder](remove-exif-data) verschwinden, zusammen mit eingebetteten Vorschaubildern und MPF-Zusatzbildern, die sonst eine versteckte Kopie behalten würden. Das Ausrichtungs-Tag wird in einen winzigen EXIF-Block zurückgeschrieben, damit Hochformatfotos nicht kippen, und das Farbprofil bleibt erhalten, damit die Farben stimmen. iPhone-HEIC wird direkt bereinigt, ohne Umwandlung in JPEG – siehe [HEIC-Metadaten entfernen](heic-metadata-remover).',
         ],
       },
       {
         heading: 'Schon an der Kamera stoppen',
         paragraphs: [
-          'Du kannst [die Standortmarkierung in den Kameraeinstellungen ausschalten](view-remove-metadata-iphone-android) oder den Standort für ein einzelnes Teilen über die Teilen-Optionen entfernen. Die Datei vor dem Versand zu waschen bleibt trotzdem die gründlichste Gewohnheit, denn so verschwinden auch Geräte-, Zeit- und Vorschaudaten, die Smartphone-Einstellungen übrig lassen.',
+          'Du kannst [die Standortmarkierung in den Kameraeinstellungen ausschalten](view-remove-metadata-iphone-android) oder den Standort für ein einzelnes Teilen über die Teilen-Optionen entfernen. Die Datei vor dem Versand zu bereinigen bleibt trotzdem die gründlichste Gewohnheit, denn so verschwinden auch Geräte-, Zeit- und Vorschaudaten, die Smartphone-Einstellungen übrig lassen.',
         ],
       },
       {
@@ -419,21 +419,21 @@ const de: Articles = {
         paragraphs: [],
         bullets: [
           'Leg das Foto in AI Label Remover und sieh dir den Tab „Was sie verrät“ an.',
-          'Wird ein Ort angezeigt, klicke auf „Alle Bilder waschen“ und speichere die gewaschene Kopie.',
+          'Wird ein Ort angezeigt, klicke auf „Alle Metadaten entfernen“ und speichere die bereinigte Kopie.',
           'Prüfe, ob das grüne Feld bestätigt, dass Ort, Personen und Zeit weg sind.',
           'Wirf einen Blick aufs Bild nach sichtbaren Hinweisen – Adressen, Kennzeichen, Wahrzeichen.',
-          'Teile die gewaschene Kopie und behalte das Original in deiner eigenen Mediathek.',
+          'Teile die bereinigte Kopie und behalte das Original in deiner eigenen Mediathek.',
         ],
       },
     ],
     faqHeading: 'Zu GPS und Foto-Privatsphäre',
     faq: [
-      { q: 'Lässt sich der Standort nach dem Waschen wiederherstellen?', a: 'Nicht aus der gewaschenen Datei – die Felder werden entfernt, nicht versteckt. Das Original auf deinem Smartphone hat ihn noch, teile also nur die gewaschene Kopie.' },
+      { q: 'Lässt sich der Standort nach dem Bereinigen wiederherstellen?', a: 'Nicht aus der bereinigten Datei – die Felder werden entfernt, nicht versteckt. Das Original auf deinem Smartphone hat ihn noch, teile also nur die bereinigte Kopie.' },
       { q: 'Werden meine Fotos ohne GPS trotzdem verortet?', a: 'Das kann passieren. Smartphones bestimmen die Position auch über WLAN und Mobilfunk – entzieh also der Kamera-App selbst die Standortberechtigung, nicht nur das GPS.' },
       { q: 'Woran erkenne ich, ob ein Foto GPS-Daten hat?', a: 'Leg es in AI Label Remover: Der Tab „Was sie verrät“ zeigt jeden Standort mit dekodierten Koordinaten. Auf dem Smartphone zeigt das Info-Fenster des Fotos eine Karte, wenn GPS vorhanden ist.' },
       { q: 'Entfernen soziale Netzwerke GPS nicht sowieso?', a: 'Viele große entfernen EXIF aus dem veröffentlichten Bild. Anhänge, Dokumente und Cloud-Links behalten meist die Original-Metadaten.' },
       { q: 'Wird mein Foto gedreht?', a: 'Nein. Das Ausrichtungs-Tag bleibt erhalten, das Foto wird genau wie vorher angezeigt.' },
-      { q: 'Funktionieren HEIC-Fotos vom iPhone?', a: 'Ja. HEIC- und HEIF-Dateien werden direkt gewaschen, ohne Formatwechsel und ohne Neukodierung.' },
+      { q: 'Funktionieren HEIC-Fotos vom iPhone?', a: 'Ja. HEIC- und HEIF-Dateien werden direkt bereinigt, ohne Formatwechsel und ohne Neukodierung.' },
     ],
   },
 
@@ -450,20 +450,20 @@ const de: Articles = {
         bullets: [
           'Leg bis zu 50 JPG-, PNG-, WebP-, GIF-, HEIC- oder AVIF-Dateien auf den Tisch (je 25 MB und 40 MP).',
           'Jede wird automatisch gelesen; klicke auf eine Datei in der Liste, um ihren Bericht zu sehen.',
-          'Klicke einmal auf „Alle Bilder waschen“, um alles Gelesene zu waschen – dieselbe Engine wie beim Werkzeug [EXIF-Daten entfernen](remove-exif-data).',
+          'Klicke einmal auf „Alle Metadaten entfernen“, um alles Gelesene zu bereinigen – dieselbe Engine wie beim Werkzeug [EXIF-Daten entfernen](remove-exif-data).',
           'Speichere die Dateien einzeln oder klicke auf „Alle als ZIP speichern“ für ein einziges Archiv.',
         ],
       },
       {
         heading: 'Tempo ohne Server',
         paragraphs: [
-          'AI Label Remover verteilt die Arbeit auf mehrere Web Worker – Hintergrund-Threads im Browser – passend zur Zahl deiner CPU-Kerne. Jeder Worker nimmt eine Datei, analysiert sie und gibt gewaschene Bytes zurück, sodass die Seite selbst bei schweren HEIC-Dateien flüssig bleibt. Das ZIP nutzt die Methode „store“, da Bilder schon komprimiert sind; das Packen geht schnell und [bringt keinen weiteren Verlust](remove-metadata-without-losing-quality).',
+          'AI Label Remover verteilt die Arbeit auf mehrere Web Worker – Hintergrund-Threads im Browser – passend zur Zahl deiner CPU-Kerne. Jeder Worker nimmt eine Datei, analysiert sie und gibt bereinigte Bytes zurück, sodass die Seite selbst bei schweren HEIC-Dateien flüssig bleibt. Das ZIP nutzt die Methode „store“, da Bilder schon komprimiert sind; das Packen geht schnell und [bringt keinen weiteren Verlust](remove-metadata-without-losing-quality).',
         ],
       },
       {
         heading: 'Jedes Ergebnis wird erneut gelesen',
         paragraphs: [
-          'Nach dem Waschen wird jede Ausgabedatei erneut gelesen, und das grüne Ergebnisfeld bestätigt, ob Orts-, Personen-, Zeitdaten und KI-Spuren weg sind. Haben zwei Dateien denselben Namen, bekommt die Kopie im ZIP eine Nummer, damit nichts überschrieben wird.',
+          'Nach dem Bereinigen wird jede Ausgabedatei erneut gelesen, und das grüne Ergebnisfeld bestätigt, ob Orts-, Personen-, Zeitdaten und KI-Spuren weg sind. Haben zwei Dateien denselben Namen, bekommt die Kopie im ZIP eine Nummer, damit nichts überschrieben wird.',
         ],
       },
       {
@@ -475,16 +475,16 @@ const de: Articles = {
       {
         heading: 'Nichts verlässt den Rechner',
         paragraphs: [
-          'Kein Bild wird hochgeladen, gespeichert oder protokolliert; der einzige Netzwerkverkehr ist das Laden der Seite selbst. Damit eignet sich das Waschen im Stapel für Kundenlieferungen, unveröffentlichte Shootings und alles, was du nicht an Dritte schicken darfst.',
+          'Kein Bild wird hochgeladen, gespeichert oder protokolliert; der einzige Netzwerkverkehr ist das Laden der Seite selbst. Damit eignet sich das Bereinigen im Stapel für Kundenlieferungen, unveröffentlichte Shootings und alles, was du nicht an Dritte schicken darfst.',
         ],
       },
     ],
-    faqHeading: 'Zum Waschen im Stapel',
+    faqHeading: 'Zum Bereinigen im Stapel',
     faq: [
       { q: 'Kann ein Stapel verschiedene Formate mischen?', a: 'Ja. Ein Stapel kann JPG, PNG, WebP, GIF, HEIC und AVIF mischen, und jede Datei behält ihr Format.' },
       { q: 'Warum maximal 50 Dateien?', a: 'Die gesamte Verarbeitung nutzt den Speicher deines Geräts. Die Grenze hält Smartphones und ältere Laptops stabil; du kannst beliebig viele Runden machen.' },
-      { q: 'Ändern sich die Dateinamen?', a: 'Nein. Gewaschene Dateien behalten ihre Namen. Nur exakte Duplikate im ZIP bekommen eine Nummer angehängt.' },
-      { q: 'Funktioniert es offline?', a: 'Ja. Einmal geladen, wäscht die Seite Dateien ohne Verbindung, weil nichts gesendet wird.' },
+      { q: 'Ändern sich die Dateinamen?', a: 'Nein. Bereinigte Dateien behalten ihre Namen. Nur exakte Duplikate im ZIP bekommen eine Nummer angehängt.' },
+      { q: 'Funktioniert es offline?', a: 'Ja. Einmal geladen, bereinigt die Seite Dateien ohne Verbindung, weil nichts gesendet wird.' },
     ],
   },
 
@@ -496,7 +496,7 @@ const de: Articles = {
       'Dieser Ratgeber zeigt, was die Anbieter typischerweise schreiben, wie du es im Browser liest, welche Teile ein Metadaten-Reiniger entfernen kann – und welche kein seriöses Werkzeug anrühren kann.',
     ],
     description:
-      'Welche Metadaten Bilder aus ChatGPT und Gemini (Nano Banana) tragen – C2PA, SynthID, sichtbare Marken –, wie du sie liest und was Waschen entfernen kann.',
+      'Welche Metadaten Bilder aus ChatGPT und Gemini (Nano Banana) tragen – C2PA, SynthID, sichtbare Marken –, wie du sie liest und was Bereinigen entfernen kann.',
     related: ['synthid-invisible-ai-watermarks', 'what-metadata-ai-image-generators-add', 'how-to-check-if-image-is-ai-generated'],
     updated: '2026-10-23',
     sections: [
@@ -504,7 +504,7 @@ const de: Articles = {
         heading: 'Zwei Anbieter, zwei Ebenen der Kennzeichnung',
         paragraphs: [
           'OpenAI und Google kennzeichnen generierte Bilder, setzen aber auf unterschiedliche Ebenen. OpenAI stützt sich vor allem auf [C2PA Content Credentials](what-is-c2pa-content-credentials): ein signiertes Manifest in der Datei, das den Generator nennt und angibt, dass das Bild von KI erstellt wurde. Google stützt sich vor allem auf [SynthID](synthid-invisible-ai-watermarks), ein unsichtbares Wasserzeichen, das bei der Erzeugung in die Pixel eingebettet wird, und hat neueren Modellen wie Nano Banana Pro in der Gemini-App und den Cloud-Produkten C2PA-Metadaten hinzugefügt.',
-          'Die beiden Ebenen verhalten sich sehr unterschiedlich. Metadaten stehen in einem eigenen Block, jeder fähige Viewer kann sie lesen, und sie verschwinden, sobald die Datei neu kodiert oder gewaschen wird. Ein Pixel-Wasserzeichen übersteht Zuschnitt, Skalierung und Kompression und lässt sich nur mit dem Detektor des Anbieters lesen.',
+          'Die beiden Ebenen verhalten sich sehr unterschiedlich. Metadaten stehen in einem eigenen Block, jeder fähige Viewer kann sie lesen, und sie verschwinden, sobald die Datei neu kodiert oder bereinigt wird. Ein Pixel-Wasserzeichen übersteht Zuschnitt, Skalierung und Kompression und lässt sich nur mit dem Detektor des Anbieters lesen.',
         ],
       },
       {
@@ -537,8 +537,8 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Was Waschen entfernt – und was bleibt',
-        paragraphs: ['Ein Klick auf „Alle Bilder waschen“ – oder der [KI-Metadaten-Entferner](ai-tag-cleaner) – schneidet die Metadaten aus dem Bytestrom, ohne das Bild neu zu zeichnen. In der Praxis:'],
+        heading: 'Was Bereinigen entfernt – und was bleibt',
+        paragraphs: ['Ein Klick auf „Alle Metadaten entfernen“ – oder der [KI-Metadaten-Entferner](ai-tag-cleaner) – schneidet die Metadaten aus dem Bytestrom, ohne das Bild neu zu zeichnen. In der Praxis:'],
         bullets: [
           'Entfernt: das C2PA-Manifest, XMP- und IPTC-Felder, EXIF und jeder Text, der das Werkzeug nennt oder einen Prompt enthält.',
           'Erhalten: Pixeldaten, Abmessungen, Drehung und ICC-Farbprofil – das Bild sieht identisch aus.',
@@ -548,7 +548,7 @@ const de: Articles = {
       {
         heading: 'KI-Bilder ehrlich verwenden',
         paragraphs: [
-          'Waschen ist ein Datenschutzwerkzeug: Es verhindert, dass Prompts, Kontodaten und Bearbeitungsverlauf mit einer Datei mitreisen. Es ändert nicht, was das Bild ist. Wenn du ein realistisches KI-Bild veröffentlichst, erwarten die meisten Plattformen eine Kennzeichnung, und manche schränken die Reichweite von Konten ein, die das nicht tun. Korrigiere falsche Labels auf echten Fotos; kennzeichne echte KI-Arbeit klar.',
+          'Bereinigen ist ein Datenschutzwerkzeug: Es verhindert, dass Prompts, Kontodaten und Bearbeitungsverlauf mit einer Datei mitreisen. Es ändert nicht, was das Bild ist. Wenn du ein realistisches KI-Bild veröffentlichst, erwarten die meisten Plattformen eine Kennzeichnung, und manche schränken die Reichweite von Konten ein, die das nicht tun. Korrigiere falsche Labels auf echten Fotos; kennzeichne echte KI-Arbeit klar.',
         ],
       },
     ],
@@ -557,7 +557,7 @@ const de: Articles = {
       { q: 'Enthält jedes ChatGPT-Bild C2PA?', a: 'Bilder, die direkt aus der Bildgenerierung von OpenAI heruntergeladen werden, enthalten normalerweise Content Credentials. Kopien per Screenshot, erneut gespeicherte oder durch andere Apps gereichte Dateien verlieren sie oft.' },
       { q: 'Kann AI Label Remover SynthID aus Gemini-Bildern entfernen?', a: 'Nein. SynthID ist in die Pixel eingebettet, und AI Label Remover verändert nie Pixel. Es entfernt nur Metadaten wie C2PA, XMP und EXIF.' },
       { q: 'Wie prüfe ich, ob ein Bild von Gemini stammt?', a: 'Such in AI Label Remover zuerst nach einem C2PA-Manifest. Für SynthID nutzt du Googles eigene Prüfung, etwa indem du Gemini nach dem Bild fragst.' },
-      { q: 'Verschlechtert das Waschen eines ChatGPT-Bildes die Qualität?', a: 'Nein. Nur Metadatenblöcke werden entfernt; die komprimierten Bilddaten werden unverändert kopiert, das Ergebnis ist pixelgenau identisch.' },
+      { q: 'Verschlechtert das Bereinigen eines ChatGPT-Bildes die Qualität?', a: 'Nein. Nur Metadatenblöcke werden entfernt; die komprimierten Bilddaten werden unverändert kopiert, das Ergebnis ist pixelgenau identisch.' },
     ],
   },
 
@@ -624,7 +624,7 @@ const de: Articles = {
       {
         heading: 'Browser-Methode: gleiche Schritte auf jedem Computer',
         paragraphs: [
-          'Wenn du keine Software installieren darfst – etwa auf einem Firmenlaptop – oder eine Methode für alle Formate willst, öffne AI Label Remover in Chrome, Edge, Safari oder Firefox. Zieh bis zu 50 Bilder hinein, lies den Bericht, klicke auf „Alle Bilder waschen“ und speichere die Dateien oder ein ZIP. Es [entfernt EXIF](remove-exif-data), GPS, XMP, IPTC, C2PA und PNG-Prompt-Chunks aus JPEG, PNG, WebP, GIF, HEIC und AVIF, behält Ausrichtung und Farbprofil und läuft vollständig auf deinem Rechner.',
+          'Wenn du keine Software installieren darfst – etwa auf einem Firmenlaptop – oder eine Methode für alle Formate willst, öffne AI Label Remover in Chrome, Edge, Safari oder Firefox. Zieh bis zu 50 Bilder hinein, lies den Bericht, klicke auf „Alle Metadaten entfernen“ und speichere die Dateien oder ein ZIP. Es [entfernt EXIF](remove-exif-data), GPS, XMP, IPTC, C2PA und PNG-Prompt-Chunks aus JPEG, PNG, WebP, GIF, HEIC und AVIF, behält Ausrichtung und Farbprofil und läuft vollständig auf deinem Rechner.',
         ],
       },
       {
@@ -714,7 +714,7 @@ const de: Articles = {
       {
         heading: 'Ansehen ist nicht verifizieren',
         paragraphs: [
-          'Gewöhnliche Metadaten sind Klartext, den jeder bearbeiten kann – behandle sie als Hinweis, nicht als Beweis. C2PA ist anders, weil es signiert ist, doch ein Viewer, der das Manifest anzeigt, validiert noch nicht die Signatur; nutze dafür einen offiziellen Content-Credentials-Verifier. Wenn du genug gesehen hast und die Daten loswerden willst, klicke auf „Alle Bilder waschen“, um sie zu entfernen, ohne das Bild zu verändern – die Seite [EXIF-Daten entfernen](remove-exif-data) erklärt genau, was wegfällt.',
+          'Gewöhnliche Metadaten sind Klartext, den jeder bearbeiten kann – behandle sie als Hinweis, nicht als Beweis. C2PA ist anders, weil es signiert ist, doch ein Viewer, der das Manifest anzeigt, validiert noch nicht die Signatur; nutze dafür einen offiziellen Content-Credentials-Verifier. Wenn du genug gesehen hast und die Daten loswerden willst, klicke auf „Alle Metadaten entfernen“, um sie zu entfernen, ohne das Bild zu verändern – die Seite [EXIF-Daten entfernen](remove-exif-data) erklärt genau, was wegfällt.',
         ],
       },
     ],
@@ -781,7 +781,7 @@ const de: Articles = {
       {
         heading: 'Finden und entfernen',
         paragraphs: [
-          'Leg das Bild in AI Label Remover. Unter „KI-Spuren“ erscheint das Feld als „XMP · Iptc4xmpExt › DigitalSourceType“ mit seinem Wert; derselbe Begriff in einem C2PA-Manifest steht unter C2PA. „Alle Bilder waschen“ entfernt das ganze XMP-Paket und den C2PA-Speicher und damit auch das Feld, dazu EXIF und andere identifizierende Daten. Die Seite [KI-Metadaten entfernen](ai-tag-cleaner) behandelt auch die übrigen KI-Felder.',
+          'Leg das Bild in AI Label Remover. Unter „KI-Spuren“ erscheint das Feld als „XMP · Iptc4xmpExt › DigitalSourceType“ mit seinem Wert; derselbe Begriff in einem C2PA-Manifest steht unter C2PA. „Alle Metadaten entfernen“ entfernt das ganze XMP-Paket und den C2PA-Speicher und damit auch das Feld, dazu EXIF und andere identifizierende Daten. Die Seite [KI-Metadaten entfernen](ai-tag-cleaner) behandelt auch die übrigen KI-Felder.',
           'Wenn du nur dieses eine Feld entfernen und den Rest deines XMP behalten willst, geht das per Kommandozeile: exiftool -XMP-iptcExt:DigitalSourceType= foto.jpg. Denk daran, dass ein passender Wert auch in einem C2PA-Manifest stehen kann.',
         ],
       },
@@ -852,7 +852,7 @@ const de: Articles = {
           'Abmessungen vergleichen – Breite und Höhe müssen identisch sein.',
           'Dateigröße vergleichen – die saubere Datei darf nur etwa um die Größe der entfernten Metadaten kleiner sein, nie drastisch kleiner.',
           'Pixel vergleichen – beide in einem Editor als Ebenen mit dem Mischmodus Differenz öffnen; ein verlustfreies Ergebnis ist reines Schwarz.',
-          'Datei erneut lesen – [AI Label Remover liest jede gewaschene Datei erneut](batch-remove-metadata) und zeigt, welche Felder übrig sind.',
+          'Datei erneut lesen – [AI Label Remover liest jede bereinigte Datei erneut](batch-remove-metadata) und zeigt, welche Felder übrig sind.',
         ],
       },
       {
@@ -865,8 +865,8 @@ const de: Articles = {
     faqHeading: 'Zum verlustfreien Entfernen von Metadaten',
     faq: [
       { q: 'Verschlechtert das Entfernen von Metadaten die Bildqualität?', a: 'Nicht, wenn es auf Byte-Ebene geschieht. Nur Neukodierung – Screenshots, Neuspeichern, Konvertieren – kostet Qualität.' },
-      { q: 'Warum ist meine Datei nach dem Waschen kleiner?', a: 'Weil Metadatenblöcke, Miniaturbilder und eingebettete Vorschauen entfernt wurden. Die Bilddaten selbst sind unverändert.' },
-      { q: 'Sehen die Farben nach dem Waschen anders aus?', a: 'Nein. AI Label Remover behält das ICC-Farbprofil, die Farben werden genau wie vorher angezeigt.' },
+      { q: 'Warum ist meine Datei nach dem Bereinigen kleiner?', a: 'Weil Metadatenblöcke, Miniaturbilder und eingebettete Vorschauen entfernt wurden. Die Bilddaten selbst sind unverändert.' },
+      { q: 'Sehen die Farben nach dem Bereinigen anders aus?', a: 'Nein. AI Label Remover behält das ICC-Farbprofil, die Farben werden genau wie vorher angezeigt.' },
       { q: 'Ist ein Screenshot ein sicherer Weg, Metadaten zu entfernen?', a: 'Er entfernt Metadaten, senkt aber die Qualität und kann anderes vom Bildschirm erfassen. Verlustfreies Entfernen lässt das Originalbild unangetastet.' },
     ],
   },
@@ -984,7 +984,7 @@ const de: Articles = {
       {
         heading: 'Wenn ein echtes Foto gekennzeichnet wird',
         paragraphs: [
-          'Eine einzige generative Bearbeitung, etwa das Entfernen eines Passanten, kann das ganze Foto in den Metadaten als KI-Montage markieren. Leg die Datei vor dem Posten in AI Label Remover, um zu sehen, welches Feld ein Label auslösen würde. Wäre das Label falsch, entfernt [das Waschen einer Kopie](ai-tag-cleaner) die Ursache; ist das Bild überwiegend generiert, kennzeichne es – dafür gibt es Labels.',
+          'Eine einzige generative Bearbeitung, etwa das Entfernen eines Passanten, kann das ganze Foto in den Metadaten als KI-Montage markieren. Leg die Datei vor dem Posten in AI Label Remover, um zu sehen, welches Feld ein Label auslösen würde. Wäre das Label falsch, entfernt [das Bereinigen einer Kopie](ai-tag-cleaner) die Ursache; ist das Bild überwiegend generiert, kennzeichne es – dafür gibt es Labels.',
         ],
       },
     ],
@@ -993,7 +993,7 @@ const de: Articles = {
       { q: 'Kennzeichnet Instagram auch KI-generierte Profile?', a: 'Instagram hat Labels auf Profilebene für Konten eingeführt, die KI-generierte Personen zeigen, und kann Empfehlungen für Konten einschränken, die das nicht angeben. Wer nur mit KI-Werkzeugen bearbeitet, ist in der Regel nicht betroffen; prüfe die aktuellen Hinweise von Instagram.' },
       { q: 'Ich habe nur ein kleines Objekt entfernt – warum das KI-Label?', a: 'Viele Editoren erfassen jede generative Bearbeitung in C2PA oder IPTC als „Montage mit KI“. Plattformen lesen die Angabe, ohne zu gewichten, wie groß die Bearbeitung war.' },
       { q: 'Behalten Plattformen meine Metadaten nach dem Posten?', a: 'Die meisten lesen sie beim Upload und entfernen sie aus der öffentlichen Kopie, daher zeigt ein Download deines eigenen Beitrags selten die Originalfelder.' },
-      { q: 'Entgeht ein gewaschenes Bild jedem Label?', a: 'Nicht immer. Waschen entfernt Signale in der Datei, aber Plattformen können auch Wasserzeichenerkennung, Klassifikatoren nutzen oder eine Angabe verlangen.' },
+      { q: 'Entgeht ein bereinigtes Bild jedem Label?', a: 'Nicht immer. Bereinigen entfernt Signale in der Datei, aber Plattformen können auch Wasserzeichenerkennung, Klassifikatoren nutzen oder eine Angabe verlangen.' },
     ],
   },
 
@@ -1046,7 +1046,7 @@ const de: Articles = {
         heading: 'Lokale Generatoren: Stable-Diffusion-Oberflächen und ComfyUI',
         paragraphs: [
           'Lokale Werkzeuge signieren nichts, speichern aber oft die meisten Details: A1111 und Forge schreiben einen „parameters“-Text-Chunk, und [ComfyUI bettet seinen kompletten Prompt und die Workflow-Graphen](remove-stable-diffusion-comfyui-metadata) als JSON ein. Diese Optionen lassen sich meist abschalten – allerdings nur für neue Bilder.',
-          'Generatoren ändern ihre Ausgabe zwischen Versionen, daher ist der verlässliche Weg, die Datei selbst zu öffnen: Leg sie in AI Label Remover auf den Tisch, um jedes Feld zu sehen, und wasch heraus, was du lieber nicht teilen möchtest – mit dem [KI-Metadaten-Entferner](ai-tag-cleaner).',
+          'Generatoren ändern ihre Ausgabe zwischen Versionen, daher ist der verlässliche Weg, die Datei selbst zu öffnen: Leg sie in AI Label Remover auf den Tisch, um jedes Feld zu sehen, und entferne, was du lieber nicht teilen möchtest – mit dem [KI-Metadaten-Entferner](ai-tag-cleaner).',
         ],
       },
     ],
@@ -1054,7 +1054,7 @@ const de: Articles = {
     faq: [
       { q: 'Fügt Nano Banana Bildern Metadaten hinzu?', a: 'Google markiert Bilder seiner Modelle mit SynthID und hat neueren Modellen wie Nano Banana Pro C2PA Content Credentials hinzugefügt. Prüf eine konkrete Datei, um zu sehen, was sie enthält.' },
       { q: 'Fügen alle Generatoren C2PA hinzu?', a: 'Nein. Große gehostete Dienste tun es zunehmend; viele Werkzeuge, vor allem lokale, schreiben nur Text-Metadaten oder gar nichts.' },
-      { q: 'Entfernt Waschen auch unsichtbare Wasserzeichen?', a: 'Nein. Wasserzeichen wie SynthID stecken in den Pixeln, und Waschen verändert nie Pixel.' },
+      { q: 'Entfernt Bereinigen auch unsichtbare Wasserzeichen?', a: 'Nein. Wasserzeichen wie SynthID stecken in den Pixeln, und Bereinigen verändert nie Pixel.' },
       { q: 'Warum unterscheiden sich zwei Bilder aus demselben Werkzeug?', a: 'Exportformat, App-Version, Downloadquelle und spätere Bearbeitungen können jeweils Felder hinzufügen oder entfernen.' },
     ],
   },
@@ -1062,13 +1062,13 @@ const de: Articles = {
   'synthid-invisible-ai-watermarks': {
     metaTitle: 'SynthID und unsichtbare KI-Wasserzeichen erklärt',
     related: ['chatgpt-gemini-image-metadata', 'how-to-check-if-image-is-ai-generated', 'what-is-c2pa-content-credentials'],
-    title: 'SynthID und unsichtbare Wasserzeichen: Wo das Waschen von Metadaten endet',
+    title: 'SynthID und unsichtbare Wasserzeichen: Wo das Bereinigen von Metadaten endet',
     summary: [
       'Manche KI-Bilder tragen zwei Arten von Markierung: Metadaten neben dem Bild und ein in die Pixel eingewobenes Wasserzeichen. Googles SynthID ist das bekannteste Beispiel für Letzteres.',
       'Dieser Beitrag erklärt, wie sich Pixel-Wasserzeichen von C2PA und EXIF unterscheiden, wie sie erkannt werden und warum ein seriöses Metadaten-Werkzeug sie nicht entfernen kann.',
     ],
     description:
-      'Was SynthID und andere unsichtbare KI-Wasserzeichen sind, wie sie sich von C2PA-Metadaten unterscheiden, wie sie erkannt werden und warum Metadaten-Waschen sie nicht berührt.',
+      'Was SynthID und andere unsichtbare KI-Wasserzeichen sind, wie sie sich von C2PA-Metadaten unterscheiden, wie sie erkannt werden und warum das Entfernen von Metadaten sie nicht berührt.',
     updated: '2026-10-23',
     sections: [
       {
@@ -1090,7 +1090,7 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Warum Waschen es in Ruhe lässt',
+        heading: 'Warum Bereinigen es in Ruhe lässt',
         paragraphs: [
           'Ein verlustfreies Metadaten-Werkzeug – AI Label Remover eingeschlossen – [kopiert Bilddaten Byte für Byte](remove-metadata-without-losing-quality); genau so garantiert es, dass keine Qualität verloren geht. Jedes Wasserzeichen in diesen Bytes bleibt, wo es ist. Werkzeuge, die versprechen, „KI-Wasserzeichen zu entfernen“, halten das entweder nicht oder verändern das Bild stark, und der Versuch, das Wasserzeichen eines Anbieters zu umgehen, kann gegen dessen Bedingungen verstoßen.',
         ],
@@ -1125,14 +1125,14 @@ const de: Articles = {
       {
         heading: 'Was das für deine Privatsphäre bedeutet',
         paragraphs: [
-          'Nach öffentlicher Beschreibung kennzeichnet ein Pixel-Wasserzeichen Inhalte als vom Modell eines Anbieters erzeugt, statt deinen Prompt als lesbaren Text zu speichern. Die Angaben, die dich am häufigsten preisgeben – Prompts, Konto-IDs, Standorte, Gerätedaten –, stecken in den Metadaten, und genau diese Ebene kann ein Werkzeug zum Waschen reinigen. Kurz gesagt: Waschen schützt deine persönlichen Daten, während das Wasserzeichen weiterhin anzeigt, woher das Bild stammt.',
+          'Nach öffentlicher Beschreibung kennzeichnet ein Pixel-Wasserzeichen Inhalte als vom Modell eines Anbieters erzeugt, statt deinen Prompt als lesbaren Text zu speichern. Die Angaben, die dich am häufigsten preisgeben – Prompts, Konto-IDs, Standorte, Gerätedaten –, stecken in den Metadaten, und genau diese Ebene kann ein Werkzeug zum Bereinigen reinigen. Kurz gesagt: Bereinigen schützt deine persönlichen Daten, während das Wasserzeichen weiterhin anzeigt, woher das Bild stammt.',
         ],
       },
     ],
     faqHeading: 'Zu SynthID und Wasserzeichen',
     faq: [
       { q: 'Ist ein Bild ohne Wasserzeichen ein echtes Foto?', a: 'Nein. Viele Generatoren fügen gar kein Wasserzeichen hinzu – sein Fehlen sagt für sich allein nichts aus.' },
-      { q: 'Kann ein Wasserzeichen meinen Prompt verraten?', a: 'Nach öffentlicher Beschreibung nicht. Prompts und Kontodaten stehen meist in den Metadaten, die beim Waschen entfernt werden.' },
+      { q: 'Kann ein Wasserzeichen meinen Prompt verraten?', a: 'Nach öffentlicher Beschreibung nicht. Prompts und Kontodaten stehen meist in den Metadaten, die beim Bereinigen entfernt werden.' },
       { q: 'Entfernt Zuschneiden oder ein Screenshot SynthID?', a: 'In der Regel nicht. SynthID ist darauf ausgelegt, übliche Bearbeitungen wie Zuschnitt, Skalierung, Screenshots und Kompression zu überstehen.' },
       { q: 'Entfernt AI Label Remover SynthID?', a: 'Nein. Es entfernt nur Metadaten und bearbeitet nie Pixel, daher bleibt jedes unsichtbare Wasserzeichen erhalten.' },
       { q: 'Woran erkenne ich, ob ein Bild SynthID enthält?', a: 'Das können nur Googles Prüfwerkzeuge sagen. Ein Metadaten-Leser kann nicht in die Pixel schauen.' },
@@ -1143,7 +1143,7 @@ const de: Articles = {
   'turn-off-content-credentials-photoshop-lightroom': {
     metaTitle: 'Content Credentials in Photoshop und Lightroom',
     related: ['what-is-c2pa-content-credentials', 'made-with-ai-label', 'iptc-digitalsourcetype-ai'],
-    title: 'Content Credentials in Photoshop und Lightroom: steuern und Exporte waschen',
+    title: 'Content Credentials in Photoshop und Lightroom: steuern und Exporte bereinigen',
     summary: [
       'Adobe-Apps können Exporten Content Credentials anhängen – ein signiertes Bearbeitungsprotokoll samt verwendeter generativer KI-Funktionen. Praktisch als Nachweis deiner Arbeit, aber auch ein häufiger Grund, warum retuschierte Fotos KI-Labels bekommen.',
       'Hier erfährst du, woher die Credentials kommen, wie du einen Export prüfst und wie du sie aus einer Kopie wäschst, wenn du eine saubere Datei brauchst.',
@@ -1173,15 +1173,15 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Eine Kopie waschen',
+        heading: 'Eine Kopie bereinigen',
         paragraphs: [
-          'Brauchst du eine saubere Datei für ein Kundenportal, einen Marktplatz oder ein soziales Netzwerk, [wasch den C2PA-Block](remove-c2pa-content-credentials) aus einer Kopie. AI Label Remover schneidet das Manifest aus dem Bytestrom, behält Pixel, Größe, Drehung und Farbprofil und liest das Ergebnis erneut, damit du bestätigen kannst, dass nichts übrig ist.',
+          'Brauchst du eine saubere Datei für ein Kundenportal, einen Marktplatz oder ein soziales Netzwerk, [entferne den C2PA-Block](remove-c2pa-content-credentials) aus einer Kopie. AI Label Remover schneidet das Manifest aus dem Bytestrom, behält Pixel, Größe, Drehung und Farbprofil und liest das Ergebnis erneut, damit du bestätigen kannst, dass nichts übrig ist.',
         ],
       },
       {
         heading: 'Das signierte Original archivieren',
         paragraphs: [
-          'Credentials können ein wertvoller Nachweis der Urheberschaft und der Bearbeitung sein. Bewahre den Originalexport mit seinen Credentials auf und teile gewaschene Kopien nur dort, wo die Metadaten irreführen oder mehr preisgeben würden, als du willst.',
+          'Credentials können ein wertvoller Nachweis der Urheberschaft und der Bearbeitung sein. Bewahre den Originalexport mit seinen Credentials auf und teile bereinigte Kopien nur dort, wo die Metadaten irreführen oder mehr preisgeben würden, als du willst.',
         ],
       },
     ],
@@ -1189,8 +1189,8 @@ const de: Articles = {
     faq: [
       { q: 'Warum kennzeichnet Instagram meine Photoshop-Bearbeitung als KI?', a: 'Generative Füllung, Generatives Erweitern und ähnliche Funktionen erfassen eine KI-Bearbeitung in Content Credentials oder IPTC-Feldern, und Meta liest diese Signale beim Upload.' },
       { q: 'Werden generative Bearbeitungen bei ausgeschalteten Credentials trotzdem erfasst?', a: 'Das kann passieren. Adobe versieht generative Inhalte mit Credentials, prüf also die exportierte Datei, statt dich nur auf die Einstellung zu verlassen.' },
-      { q: 'Macht das Waschen meine Bearbeitungen rückgängig?', a: 'Nein. Nur der Metadatenblock wird entfernt; deine bearbeiteten Pixel werden unverändert kopiert.' },
-      { q: 'Kann ich die Credentials später wieder hinzufügen?', a: 'Nicht in die gewaschene Kopie, aber du kannst vom Original mit aktivierten Credentials erneut exportieren.' },
+      { q: 'Macht das Bereinigen meine Bearbeitungen rückgängig?', a: 'Nein. Nur der Metadatenblock wird entfernt; deine bearbeiteten Pixel werden unverändert kopiert.' },
+      { q: 'Kann ich die Credentials später wieder hinzufügen?', a: 'Nicht in die bereinigte Kopie, aber du kannst vom Original mit aktivierten Credentials erneut exportieren.' },
     ],
   },
 
@@ -1200,7 +1200,7 @@ const de: Articles = {
     title: 'Welche Apps Foto-Metadaten entfernen – und welche dein GPS still weiterreichen',
     summary: [
       'Viele gehen davon aus, dass soziale Medien den Standort aus Fotos entfernen. Bei der veröffentlichten Kopie stimmt das oft. Das Original kann aber weiterhin mit vollständigem EXIF über Messenger, E-Mail, Cloud-Links und Filesharing-Seiten reisen.',
-      'Dieser Ratgeber sortiert gängige Wege des Teilens in „meist gesäubert“ und „meist erhalten“ und endet mit der einen Gewohnheit, die immer funktioniert: die Datei waschen, bevor sie dein Gerät verlässt.',
+      'Dieser Ratgeber sortiert gängige Wege des Teilens in „meist gesäubert“ und „meist erhalten“ und endet mit der einen Gewohnheit, die immer funktioniert: die Datei bereinigen, bevor sie dein Gerät verlässt.',
     ],
     description:
       'Welche sozialen Netzwerke und Messenger Foto-Metadaten entfernen, welche Wege GPS und EXIF behalten und wie du sicher gehst, dass ein Foto vor dem Senden sauber ist.',
@@ -1238,9 +1238,9 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Vor dem Senden waschen',
+        heading: 'Vor dem Senden bereinigen',
         paragraphs: [
-          'Die verlässliche Gewohnheit ist, Metadaten zu waschen, bevor ein Foto dein Gerät verlässt. AI Label Remover [entfernt GPS, Datumsangaben, Geräte- und Urheberfelder](remove-gps-location-from-photos) sowie versteckte Vorschauen, behält Drehung und Farben und erledigt alles lokal – ideal für Fotos an Fremde, Käufer oder Kunden. Die Seite [EXIF-Daten entfernen](remove-exif-data) erklärt jedes entfernte Feld.',
+          'Die verlässliche Gewohnheit ist, Metadaten zu bereinigen, bevor ein Foto dein Gerät verlässt. AI Label Remover [entfernt GPS, Datumsangaben, Geräte- und Urheberfelder](remove-gps-location-from-photos) sowie versteckte Vorschauen, behält Drehung und Farben und erledigt alles lokal – ideal für Fotos an Fremde, Käufer oder Kunden. Die Seite [EXIF-Daten entfernen](remove-exif-data) erklärt jedes entfernte Feld.',
         ],
       },
     ],
@@ -1249,7 +1249,7 @@ const de: Articles = {
       { q: 'Entfernt E-Mail Foto-Metadaten?', a: 'Meist nicht. Anhänge werden als Originaldatei gesendet, EXIF und GPS reisen also mit, sofern deine Mail-App das Bild nicht vorher verkleinert.' },
       { q: 'Entfernt WhatsApp das GPS?', a: 'Als normale Bilder gesendete Fotos werden komprimiert und verlieren die meisten Metadaten. Als Dokument gesendete Fotos behalten die Originaldatei samt GPS.' },
       { q: 'Zeigt Instagram, wo mein Foto aufgenommen wurde?', a: 'Beim veröffentlichten Bild ist das EXIF entfernt. Ein Standort-Tag, das du dem Beitrag hinzufügst, ist etwas anderes und für alle sichtbar.' },
-      { q: 'Reicht nicht ein Screenshot?', a: 'Er entfernt EXIF, senkt aber die Qualität, ändert die Abmessungen und kann anderes vom Bildschirm erfassen. Verlustfreies Waschen lässt das Originalbild unangetastet.' },
+      { q: 'Reicht nicht ein Screenshot?', a: 'Er entfernt EXIF, senkt aber die Qualität, ändert die Abmessungen und kann anderes vom Bildschirm erfassen. Verlustfreies Bereinigen lässt das Originalbild unangetastet.' },
     ],
   },
 
@@ -1259,10 +1259,10 @@ const de: Articles = {
     title: 'Foto-Metadaten auf iPhone und Android ansehen und entfernen',
     summary: [
       'Dein Smartphone speichert, wo und wann jedes Foto aufgenommen wurde, dazu das Gerätemodell. iOS und Android lassen dich das ansehen und den Standort vor dem Teilen entfernen.',
-      'Unten findest du die eingebauten Optionen, wo sie an Grenzen stoßen, und einen Weg im Browser, alles Identifizierende ohne App herauszuwaschen.',
+      'Unten findest du die eingebauten Optionen, wo sie an Grenzen stoßen, und einen Weg im Browser, alles Identifizierende ohne App zu entfernen.',
     ],
     description:
-      'Foto-Metadaten auf iPhone und Android ansehen, den Standort vor dem Teilen entfernen und alles EXIF – auch HEIC – im Browser herauswaschen, ohne App-Installation.',
+      'Foto-Metadaten auf iPhone und Android ansehen, den Standort vor dem Teilen entfernen und alles EXIF – auch HEIC – im Browser entfernen, ohne App-Installation.',
     updated: '2026-10-23',
     sections: [
       {
@@ -1292,27 +1292,27 @@ const de: Articles = {
         ],
       },
       {
-        heading: 'Alles im Browser herauswaschen',
+        heading: 'Alles im Browser entfernen',
         paragraphs: [
-          'Öffne AI Label Remover auf deinem Smartphone, tippe auf „Dateien auswählen“, lies den Bericht und tippe auf „Alle Bilder waschen“. [GPS-, Zeit-, Geräte- und Urheberdaten werden entfernt](remove-gps-location-from-photos) – auch bei iPhone-HEIC –, während Drehung und Farbe erhalten bleiben. Kein Upload, keine App – und die Seite [HEIC-Metadaten entfernen](heic-metadata-remover) zeigt, was ein iPhone-Foto speichert.',
+          'Öffne AI Label Remover auf deinem Smartphone, tippe auf „Dateien auswählen“, lies den Bericht und tippe auf „Alle Metadaten entfernen“. [GPS-, Zeit-, Geräte- und Urheberdaten werden entfernt](remove-gps-location-from-photos) – auch bei iPhone-HEIC –, während Drehung und Farbe erhalten bleiben. Kein Upload, keine App – und die Seite [HEIC-Metadaten entfernen](heic-metadata-remover) zeigt, was ein iPhone-Foto speichert.',
         ],
       },
       {
         heading: 'iPhone: HEIC, JPEG und Live Photos',
         paragraphs: [
-          'Standardmäßig speichert das iPhone Fotos als HEIC (Einstellungen › Kamera › Formate › High Efficiency); mit „Maximale Kompatibilität“ wird stattdessen JPEG gespeichert. Beide Formate tragen dasselbe EXIF – Standort, Uhrzeit, Gerät und Objektiv. Schickst du ein Foto an ein Gerät, das nicht von Apple ist, wandelt iOS es unterwegs eventuell in JPEG um, die Metadaten reisen aber meist mit. Live Photos enthalten zusätzlich einen kurzen Videoclip mit eigenen Metadaten; AI Label Remover wäscht das Standbild, teile Live Photos also als Standbild, wenn es um Privatsphäre geht.',
+          'Standardmäßig speichert das iPhone Fotos als HEIC (Einstellungen › Kamera › Formate › High Efficiency); mit „Maximale Kompatibilität“ wird stattdessen JPEG gespeichert. Beide Formate tragen dasselbe EXIF – Standort, Uhrzeit, Gerät und Objektiv. Schickst du ein Foto an ein Gerät, das nicht von Apple ist, wandelt iOS es unterwegs eventuell in JPEG um, die Metadaten reisen aber meist mit. Live Photos enthalten zusätzlich einen kurzen Videoclip mit eigenen Metadaten; AI Label Remover bereinigt das Standbild, teile Live Photos also als Standbild, wenn es um Privatsphäre geht.',
         ],
       },
       {
         heading: 'Android: jede Marke macht es ein bisschen anders',
         paragraphs: [
-          'Android-Smartphones teilen dieselben EXIF-Felder, aber nicht dieselben Menüs. Manche Galerie-Apps bieten im Teilen-Dialog einen Schalter zum Entfernen der Standortdaten, andere erlauben nur das Bearbeiten der Details Foto für Foto. Google Fotos hat eine Einstellung, die den Standort vor Betrachtern deiner geteilten Links und Alben verbirgt, an Dateien, die auf anderen Wegen verschickt werden, ändert das aber nichts. Menünamen ändern sich von Version zu Version – findest du die Option nicht, ist Waschen der verlässliche Ausweg.',
+          'Android-Smartphones teilen dieselben EXIF-Felder, aber nicht dieselben Menüs. Manche Galerie-Apps bieten im Teilen-Dialog einen Schalter zum Entfernen der Standortdaten, andere erlauben nur das Bearbeiten der Details Foto für Foto. Google Fotos hat eine Einstellung, die den Standort vor Betrachtern deiner geteilten Links und Alben verbirgt, an Dateien, die auf anderen Wegen verschickt werden, ändert das aber nichts. Menünamen ändern sich von Version zu Version – findest du die Option nicht, ist Bereinigen der verlässliche Ausweg.',
         ],
       },
       {
         heading: 'Die Falle „als Datei senden“',
         paragraphs: [
-          'Messenger komprimieren Fotos meist und verwerfen dabei die meisten Metadaten, wenn du normal sendest. Schickst du dasselbe Foto als Datei oder Dokument – oft, um die volle Qualität zu behalten –, kommt das Original unverändert an, Standort inklusive. AirDrop, Nearby Share, E-Mail und Cloud-Links verhalten sich genauso. Genau dann solltest du [prüfen, was die Datei verrät](remove-gps-location-from-photos), und sie vorher waschen.',
+          'Messenger komprimieren Fotos meist und verwerfen dabei die meisten Metadaten, wenn du normal sendest. Schickst du dasselbe Foto als Datei oder Dokument – oft, um die volle Qualität zu behalten –, kommt das Original unverändert an, Standort inklusive. AirDrop, Nearby Share, E-Mail und Cloud-Links verhalten sich genauso. Genau dann solltest du [prüfen, was die Datei verrät](remove-gps-location-from-photos), und sie vorher bereinigen.',
         ],
       },
       {
@@ -1321,18 +1321,18 @@ const de: Articles = {
         bullets: [
           'Öffne AI Label Remover im Browser deines Smartphones und leg es für das nächste Mal auf den Home-Bildschirm.',
           'Tippe auf „Dateien auswählen“ und wähle die Fotos, die du teilen willst.',
-          'Lies den Bericht, tippe auf „Alle Bilder waschen“ und prüfe das grüne Feld.',
-          'Speichere die gewaschenen Kopien und teile diese, nicht die Originale.',
+          'Lies den Bericht, tippe auf „Alle Metadaten entfernen“ und prüfe das grüne Feld.',
+          'Speichere die bereinigten Kopien und teile diese, nicht die Originale.',
         ],
       },
     ],
     faqHeading: 'Zu Foto-Metadaten auf dem Smartphone',
     faq: [
-      { q: 'Behält AirDrop den Standort?', a: 'Das kann sein. AirDrop sendet die Originaldatei. Tippe oben im Teilen-Menü auf „Optionen“ und schalte „Ort“ aus – oder wasch die Datei vorher.' },
-      { q: 'Entfernt ein Screenshot eines Fotos die Metadaten?', a: 'Er verwirft das ursprüngliche EXIF, senkt aber die Qualität, und der Screenshot bekommt eigene Metadaten. Das Original zu waschen ist verlustfrei und gründlicher.' },
+      { q: 'Behält AirDrop den Standort?', a: 'Das kann sein. AirDrop sendet die Originaldatei. Tippe oben im Teilen-Menü auf „Optionen“ und schalte „Ort“ aus – oder bereinige die Datei vorher.' },
+      { q: 'Entfernt ein Screenshot eines Fotos die Metadaten?', a: 'Er verwirft das ursprüngliche EXIF, senkt aber die Qualität, und der Screenshot bekommt eigene Metadaten. Das Original zu bereinigen ist verlustfrei und gründlicher.' },
       { q: 'Brauche ich eine App, um EXIF auf dem Smartphone zu entfernen?', a: 'Nein. Eingebaute Optionen entfernen den Standort für ein einzelnes Teilen, und AI Label Remover läuft im Browser des Smartphones und entfernt alles andere ohne Installation.' },
       { q: 'Säubert das Ausschalten des Standorts meine älteren Fotos?', a: 'Nein. Es wirkt nur auf neue Aufnahmen. Vorhandene Fotos behalten ihren Standort, bis du ihn entfernst.' },
-      { q: 'Werden HEIC-Dateien vom iPhone unterstützt?', a: 'Ja. HEIC-Dateien werden direkt gewaschen, ohne Umwandlung in JPEG und ohne Neukodierung.' },
+      { q: 'Werden HEIC-Dateien vom iPhone unterstützt?', a: 'Ja. HEIC-Dateien werden direkt bereinigt, ohne Umwandlung in JPEG und ohne Neukodierung.' },
       { q: 'Entfernt die Teilen-Option des iPhones alles?', a: 'Im Wesentlichen nur den Standort. Gerätemodell und Aufnahmezeit können in der geteilten Datei bleiben.' },
     ],
   },
@@ -1414,7 +1414,7 @@ const de: Articles = {
       {
         heading: 'Was bleiben darf, was weg sollte',
         paragraphs: [
-          'Für alles, was öffentlich geteilt wird – Posts, Anzeigen, Chat-Anhänge, Foren –, ist das Entfernen aller identifizierenden EXIF-Daten die sichere Voreinstellung. Zwei Angaben lohnt es sich zu behalten, weil sie die Darstellung betreffen, nicht die Identität: das Ausrichtungs-Tag und das Farbprofil. Wenn du als Urheber genannt werden willst, hält eine sichtbare Bildunterschrift oder Signatur weit besser als ein Copyright-Feld im EXIF, das die meisten Plattformen ohnehin verwerfen. Bewahre die Originale in deinem eigenen Archiv auf und teile die gewaschene Kopie.',
+          'Für alles, was öffentlich geteilt wird – Posts, Anzeigen, Chat-Anhänge, Foren –, ist das Entfernen aller identifizierenden EXIF-Daten die sichere Voreinstellung. Zwei Angaben lohnt es sich zu behalten, weil sie die Darstellung betreffen, nicht die Identität: das Ausrichtungs-Tag und das Farbprofil. Wenn du als Urheber genannt werden willst, hält eine sichtbare Bildunterschrift oder Signatur weit besser als ein Copyright-Feld im EXIF, das die meisten Plattformen ohnehin verwerfen. Bewahre die Originale in deinem eigenen Archiv auf und teile die bereinigte Kopie.',
         ],
       },
     ],

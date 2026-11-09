@@ -55,14 +55,14 @@ const tr: Pages = {
       items: [
         { title: '%100 cihazınızda', text: 'Okuma ve temizleme, tarayıcı sekmenizdeki bir Web Worker içinde çalışır. Hiçbir sunucu dosyalarınızı almaz.' },
         { title: 'Saklama yok, yapay zekâ eğitimi yok', text: 'Fotoğraflar hiçbir yere gönderilmediği için saklanacak, sızdırılacak ya da model eğitiminde kullanılacak bir kopya yoktur.' },
-        { title: 'Çevrimdışı çalışır', text: 'Sayfayı yükleyin, Wi-Fi’ı kapatın ve bir dosya yıkayın — yine çalışır. DevTools’taki Ağ sekmesi dışarı çıkan hiçbir görsel verisi göstermez.' },
+        { title: 'Çevrimdışı çalışır', text: 'Sayfayı yükleyin, Wi-Fi’ı kapatın ve bir dosya temizleyin — yine çalışır. DevTools’taki Ağ sekmesi dışarı çıkan hiçbir görsel verisi göstermez.' },
         { title: 'Hesap yok, takip yok', text: 'Kayıt, analiz, reklam ya da üçüncü taraf pikseli yok. Site yalnızca seçtiğiniz dili ve temayı hatırlar.' },
       ],
     },
     faq: [
       { q: 'EXIF ile meta veri arasındaki fark nedir?', a: 'EXIF bir meta veri türüdür — kameraların ve telefonların yazdığı tür. “Meta veri” daha geniş bir kavramdır ve XMP, IPTC, C2PA ile PNG metin chunk’larını da kapsar.' },
-      { q: 'Meta veriler bir fotoğrafın nerede çekildiğini gösterebilir mi?', a: 'Evet, görselde GPS etiketleri varsa. Kameranın konuma erişimi açıksa telefonlar genellikle enlem, boylam ve rakımı kaydeder. Yıkama bu etiketleri kaliteye dokunmadan kaldırır. [Fotoğraflardan GPS konumunu kaldırma](remove-gps-location-from-photos) yazısına bakın.' },
-      { q: 'Bir görseldeki yapay zekâ meta verilerini nasıl kaldırırım?', a: 'Görseli bu sayfanın üstündeki kutuya bırakın ve “Tüm görselleri yıka” düğmesine basın. Yıkamadan önce her dosyanın kartı bulunan C2PA, IPTC ve prompt verilerini gösterir.' },
+      { q: 'Meta veriler bir fotoğrafın nerede çekildiğini gösterebilir mi?', a: 'Evet, görselde GPS etiketleri varsa. Kameranın konuma erişimi açıksa telefonlar genellikle enlem, boylam ve rakımı kaydeder. Temizleme bu etiketleri kaliteye dokunmadan kaldırır. [Fotoğraflardan GPS konumunu kaldırma](remove-gps-location-from-photos) yazısına bakın.' },
+      { q: 'Bir görseldeki yapay zekâ meta verilerini nasıl kaldırırım?', a: 'Görseli bu sayfanın üstündeki kutuya bırakın ve “Tüm meta verileri kaldır” düğmesine basın. Temizlemeden önce her dosyanın kartı bulunan C2PA, IPTC ve prompt verilerini gösterir.' },
       { q: 'Fotoğraflarımı buraya yüklemek güvenli mi?', a: 'Fotoğraflarınız hiç yüklenmez. AI Label Remover dosyaları tarayıcınızda açar, sekmenin belleğinde işler ve temiz kopyayı doğrudan cihazınıza kaydeder. Sayfa yüklendikten sonra çevrimdışı olsanız da çalışmaya devam eder.' },
     ],
     ctaTools: 'Tüm araçları gör',
@@ -113,7 +113,7 @@ const tr: Pages = {
           heading: 'AI etiket temizleyici nasıl çalışır',
           paragraphs: [
             'AI Label Remover dosya yapısını doğrudan tarayıcınızda okur. Her AI etiketi geldiği alanla birlikte listelenir ve dosya, hiçbir şey değişmeden önce bir sonuç alır: “AI izleri bulundu”, “Bir kez daha bakmaya değer” ya da “AI izi yok”.',
-            '“Tüm görselleri yıka” düğmesi bu etiketleri taşıyan blokları keser: XMP, IPTC, EXIF, C2PA manifest deposu ve PNG metin chunk’ları. Sıkıştırılmış görüntü verisi bayt bayt kopyalanır ve temiz kopya yeniden okunur; böylece hiçbir AI etiketi kalmadığını görürsünüz.',
+            '“Tüm meta verileri kaldır” düğmesi bu etiketleri taşıyan blokları keser: XMP, IPTC, EXIF, C2PA manifest deposu ve PNG metin chunk’ları. Sıkıştırılmış görüntü verisi bayt bayt kopyalanır ve temiz kopya yeniden okunur; böylece hiçbir AI etiketi kalmadığını görürsünüz.',
           ],
         },
         {
@@ -136,7 +136,7 @@ const tr: Pages = {
         { q: 'AI etiketlerini temizlemek kaliteyi düşürür mü?', a: 'Hayır. Hiçbir şey yeniden kodlanmaz; yalnızca meta veri kaldırılır, görüntü verisi aynı kalır.' },
         { q: 'Hangi biçimleri temizleyebilirim?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF ve AVIF — tek seferde 50 dosyaya kadar, her biri en fazla 25 MB. PNG’deki prompt’lar için [PNG meta veri silici](png-metadata-remover) de kullanılabilir.' },
         { q: 'ChatGPT ya da Gemini görsellerinin meta verisini kaldırır mı?', a: 'Bu servislerin yazdığı C2PA Content Credentials ve IPTC alanlarını kaldırır. Google ayrıca piksellere SynthID filigranı gömer; bunu hiçbir meta veri aracı kaldıramaz.' },
-        { q: 'Silmeden önce prompt’u görebilir miyim?', a: 'Evet. “Ham meta veri” sekmesi prompt’ları, iş akışlarını ve üretici adlarını kelimesi kelimesine gösterir; saklamak istediklerinizi yıkamadan önce kopyalayabilirsiniz.' },
+        { q: 'Silmeden önce prompt’u görebilir miyim?', a: 'Evet. “Ham meta veri” sekmesi prompt’ları, iş akışlarını ve üretici adlarını kelimesi kelimesine gösterir; saklamak istediklerinizi temizlemeden önce kopyalayabilirsiniz.' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'remove-stable-diffusion-comfyui-metadata'],
       updated: '2026-11-06',
@@ -163,7 +163,7 @@ const tr: Pages = {
           bullets: [
             'Düzenlenmiş fotoğrafı bu sayfanın üstündeki kutuya bırakın.',
             'Sonucu ve arkasındaki alanları okuyun — rapor tam C2PA eylemini ya da IPTC değerini gösterir.',
-            '“Tüm görselleri yıka” düğmesine basın ve temiz kopyayı kaydedin.',
+            '“Tüm meta verileri kaldır” düğmesine basın ve temiz kopyayı kaydedin.',
             'Orijinal dışa aktarımı değil, temiz kopyayı yükleyin.',
           ],
         },
@@ -212,13 +212,13 @@ const tr: Pages = {
           heading: 'Bu EXIF silici nasıl çalışır',
           paragraphs: [
             'AI Label Remover dosya yapısını doğrudan okur. JPEG’de EXIF ve XMP’yi taşıyan APP1 segmentini, ayrıca IPTC’yi, yorumları ve küçük resimleri keser; HEIC, PNG ve WebP’de karşılık gelen kutuları veya chunk’ları kaldırır. Sıkıştırılmış görüntü verisi bayt bayt kopyalanır; hiçbir şey yeniden kodlanmaz ve fotoğraf aynen görünür.',
-            'Fotoğrafın nasıl görüntüleneceğini belirleyen alanlar bilerek korunur: yön, ICC renk profili ve piksel boyutu. Böylece kaba araçların yol açtığı yan dönmüş fotoğraflar ve soluk renkler önlenir. İş bitince yıkanmış dosya yeniden okunur; EXIF alanlarının gerçekten gittiğini görürsünüz.',
+            'Fotoğrafın nasıl görüntüleneceğini belirleyen alanlar bilerek korunur: yön, ICC renk profili ve piksel boyutu. Böylece kaba araçların yol açtığı yan dönmüş fotoğraflar ve soluk renkler önlenir. İş bitince temizlenmiş dosya yeniden okunur; EXIF alanlarının gerçekten gittiğini görürsünüz.',
           ],
         },
         {
           heading: 'Paylaşmadan önce EXIF ne zaman silinmeli',
           paragraphs: [
-            'Büyük sosyal ağların çoğu yüklemede EXIF’i kaldırır, ama birçok yer kaldırmaz: e-posta ekleri, bulut bağlantıları, forumlar, ilan siteleri, “orijinal kalitede” dosya gönderen sohbet uygulamaları ve kendi web siteniz. Bir fotoğrafın nereye gideceğinden emin değilseniz önce yıkamak güvenli varsayılandır.',
+            'Büyük sosyal ağların çoğu yüklemede EXIF’i kaldırır, ama birçok yer kaldırmaz: e-posta ekleri, bulut bağlantıları, forumlar, ilan siteleri, “orijinal kalitede” dosya gönderen sohbet uygulamaları ve kendi web siteniz. Bir fotoğrafın nereye gideceğinden emin değilseniz önce temizlemek güvenli varsayılandır.',
             'İnternette bir şey satmak, evde çekilmiş bir fotoğrafı paylaşmak ya da yeni tanıştığınız birine fotoğraf göndermek, [GPS verisinin konumu ele verebildiği](remove-gps-location-from-photos) klasik durumlardır.',
           ],
         },
@@ -234,7 +234,7 @@ const tr: Pages = {
         { q: 'EXIF’i silmek kaliteyi düşürür mü?', a: 'Hayır. Yalnızca meta veri blokları kesilir; sıkıştırılmış görüntü verisi değiştirilmeden kopyalanır, bu yüzden çözünürlük, netlik ve renkler aynen kalır.' },
         { q: 'Fotoğrafım yine doğru yönde mi görünecek?', a: 'Evet. Yön değeri ICC renk profiliyle birlikte korunur; görsel eskisi gibi görüntülenir.' },
         { q: 'iPhone HEIC fotoğraflarından EXIF silinebilir mi?', a: 'Evet. HEIC ve HEIF dosyaları JPEG’e dönüştürülmeden doğrudan desteklenir. Ayrıca özel bir sayfa var: [HEIC meta veri silici](heic-metadata-remover).' },
-        { q: 'EXIF’in gittiğini nasıl kontrol ederim?', a: 'Yıkamadan sonra AI Label Remover yeni dosyayı yeniden okur ve hangi alanların kaldığını gösterir. Dosyayı işletim sisteminizin dosya özelliklerinde de açabilirsiniz.' },
+        { q: 'EXIF’in gittiğini nasıl kontrol ederim?', a: 'Temizlemeden sonra AI Label Remover yeni dosyayı yeniden okur ve hangi alanların kaldığını gösterir. Dosyayı işletim sisteminizin dosya özelliklerinde de açabilirsiniz.' },
         { q: 'Çok sayıda fotoğrafı aynı anda yapabilir miyim?', a: 'Evet: tek seferde 50 dosyaya kadar, tek bir ZIP olarak indirilebilir. [Toplu meta veri kaldırma](batch-remove-metadata) yazısına bakın.' },
       ],
       related: ['remove-gps-location-from-photos', 'batch-remove-metadata', 'made-with-ai-label'],
@@ -305,11 +305,11 @@ const tr: Pages = {
           heading: 'JPEG’e dönüştürmeden meta veri kaldırma',
           paragraphs: [
             'Alışılmış tavsiye, HEIC’i JPEG’e dönüştürüp meta verinin geçmemesini ummaktır. Bu, görüntüyü yeniden kodlar, kalite kaybettirir ve çoğu zaman geniş gamlı renk profilini atar. AI Label Remover bunun yerine HEIC kabının kendisini düzenler: Exif ve XMP öğelerini, C2PA uuid kutularını ve zaman damgası kutularını kaldırır; HEVC görüntü verisini, yönü (irot/imir) ve renk profilini (colr) olduğu gibi bırakır.',
-            'Aynı motor, aynı ISOBMFF kabını kullanan AVIF’i de işler; modern uygulamaların AVIF dışa aktarımları da aynı şekilde yıkanabilir.',
+            'Aynı motor, aynı ISOBMFF kabını kullanan AVIF’i de işler; modern uygulamaların AVIF dışa aktarımları da aynı şekilde temizlenebilir.',
           ],
         },
         {
-          heading: 'iPhone ayarları mı, dosyayı yıkamak mı',
+          heading: 'iPhone ayarları mı, dosyayı temizlemek mı',
           paragraphs: [
             'iOS, paylaşım sayfasındaki “Seçenekler” düğmesiyle tek bir paylaşım için konumu kapatmanıza izin verir; Fotoğraflar uygulaması da her fotoğrafın konumunu düzenleyebilir ya da kaldırabilir. Tek tük paylaşımlar için iyi çalışır, ama unutmak kolaydır ve diğer alanları kaldırmaz. [Fotoğraflardaki GPS neden risklidir](remove-gps-location-from-photos) yazısına bakın.',
             'Bir grup fotoğraf için — bir tatil klasörü, ürün çekimleri ya da bir ilan için görseller — hepsini AI Label Remover’a bırakıp tek bir ZIP kaydetmek daha hızlıdır ve önce/sonra raporu tam olarak neyin kaldırıldığını gösterir.',
@@ -318,10 +318,10 @@ const tr: Pages = {
       ],
       faqHeading: 'HEIC hakkında sorular',
       faq: [
-        { q: 'HEIC’in bazen açılmadığı Windows’ta çalışır mı?', a: 'Evet. AI Label Remover HEIC yapısını kendisi okur, bu yüzden yüklü bir HEIC codec’ine ihtiyaç duymaz. HEIC dosyaları önizleme yerine bir biçim etiketi gösterir, ama okuma ve yıkama normal çalışır.' },
-        { q: 'Yıkanmış dosya Fotoğraflar’da açılır mı?', a: 'Evet. Çıktı, aynı görüntü verisine sahip standart bir HEIC dosyasıdır; yalnızca meta veri öğeleri kaldırılır.' },
+        { q: 'HEIC’in bazen açılmadığı Windows’ta çalışır mı?', a: 'Evet. AI Label Remover HEIC yapısını kendisi okur, bu yüzden yüklü bir HEIC codec’ine ihtiyaç duymaz. HEIC dosyaları önizleme yerine bir biçim etiketi gösterir, ama okuma ve temizleme normal çalışır.' },
+        { q: 'Temizlenmiş dosya Fotoğraflar’da açılır mı?', a: 'Evet. Çıktı, aynı görüntü verisine sahip standart bir HEIC dosyasıdır; yalnızca meta veri öğeleri kaldırılır.' },
         { q: 'Live Photo destekleniyor mu?', a: 'AI Label Remover durağan HEIC görüntüsünü işler. Live Photo’nun eşlenmiş videosu ayrı bir dosyadır ve değiştirilmez.' },
-        { q: 'Dosya boyutu sınırı var mı?', a: 'Her dosya en fazla 25 MB ve 40 megapiksel olabilir; bu, güncel tüm iPhone’ların fotoğraflarını kapsar. Aynı anda 50 dosya yıkayabilirsiniz.' },
+        { q: 'Dosya boyutu sınırı var mı?', a: 'Her dosya en fazla 25 MB ve 40 megapiksel olabilir; bu, güncel tüm iPhone’ların fotoğraflarını kapsar. Aynı anda 50 dosya temizleyebilirsiniz.' },
       ],
       related: ['remove-gps-location-from-photos', 'batch-remove-metadata', 'what-is-c2pa-content-credentials'],
       updated: '2026-11-06',
@@ -348,13 +348,13 @@ const tr: Pages = {
           heading: 'Görüntü aynı görünsün diye kalanlar',
           paragraphs: [
             'Saydamlık (tRNS), gama ve renklilik (gAMA, cHRM), sRGB bayrağı ve gömülü ICC profili (iCCP) görüntülenmeyi etkiler, bu yüzden korunur. Animasyonlu PNG’ler acTL, fcTL ve fdAT chunk’larını korur; APNG animasyonları oynamaya devam eder.',
-            'IDAT verisi yeniden sıkıştırılmak yerine kopyalandığından, yıkanmış dosya orijinaliyle piksel piksel aynıdır — metin chunk’ları gittiği için genellikle biraz daha küçüktür.',
+            'IDAT verisi yeniden sıkıştırılmak yerine kopyalandığından, temizlenmiş dosya orijinaliyle piksel piksel aynıdır — metin chunk’ları gittiği için genellikle biraz daha küçüktür.',
           ],
         },
         {
           heading: 'AI prompt’larını ve iş akışlarını korumak',
           paragraphs: [
-            'Stable Diffusion, Forge veya ComfyUI ile yapılmış görselleri paylaşırsanız, herkes PNG’yi aynı araca sürükleyip tam prompt’unuzu, seed’inizi, modelinizi ve düğüm grafiğinizi geri alabilir. [Stable Diffusion ve ComfyUI prompt’ları PNG’de nasıl saklar](remove-stable-diffusion-comfyui-metadata) neyin kaydedildiğini gösterir. Yıkama hepsini kaldırır; saklamak isterseniz “Ham meta veri” sekmesinden prompt’u önce kopyalayabilirsiniz.',
+            'Stable Diffusion, Forge veya ComfyUI ile yapılmış görselleri paylaşırsanız, herkes PNG’yi aynı araca sürükleyip tam prompt’unuzu, seed’inizi, modelinizi ve düğüm grafiğinizi geri alabilir. [Stable Diffusion ve ComfyUI prompt’ları PNG’de nasıl saklar](remove-stable-diffusion-comfyui-metadata) neyin kaydedildiğini gösterir. Temizleme hepsini kaldırır; saklamak isterseniz “Ham meta veri” sekmesinden prompt’u önce kopyalayabilirsiniz.',
           ],
         },
       ],
@@ -362,7 +362,7 @@ const tr: Pages = {
       faq: [
         { q: 'PNG meta verisini kaldırmak renkleri değiştirir mi?', a: 'Hayır. Renkle ilgili chunk’lar — sRGB, gAMA, cHRM ve iCCP — korunur ve IDAT görüntü verisi değiştirilmeden kopyalanır.' },
         { q: 'Saydam PNG’lerle çalışır mı?', a: 'Evet. Saydamlık verisi (tRNS ya da IDAT içindeki alfa kanalı) görüntünün parçasıdır ve asla dokunulmaz.' },
-        { q: 'Prompt’u bir yerde saklayabilir miyim?', a: 'Yıkamadan önce “Ham meta veri” sekmesinden kopyalayın. Kaldırıldıktan sonra meta veri yıkanmış dosyadan geri getirilemez.' },
+        { q: 'Prompt’u bir yerde saklayabilir miyim?', a: 'Temizlemeden önce “Ham meta veri” sekmesinden kopyalayın. Kaldırıldıktan sonra meta veri temizlenmiş dosyadan geri getirilemez.' },
         { q: 'Midjourney veya DALL·E PNG’leri için de çalışır mı?', a: 'Evet. Bu servislerin gömdüğü metin, XMP veya C2PA verisi aynı şekilde kaldırılır. [Midjourney ve DALL·E prompt’larını gizleme](hide-midjourney-dalle-prompts) yazısına bakın.' },
       ],
       related: ['remove-stable-diffusion-comfyui-metadata', 'hide-midjourney-dalle-prompts', 'batch-remove-metadata'],
@@ -386,7 +386,7 @@ const tr: Pages = {
         {
           heading: 'Araç nasıl çalışır',
           paragraphs: [
-            'Bir görsel eklediğinizde tarayıcınız onu yerelde okur. Web Worker’lar dosya yapısını — JPEG segmentleri, PNG chunk’ları, WebP RIFF chunk’ları, GIF blokları ve HEIC/AVIF kutuları — çözümler ve bulduğu her meta veri bloğunu listeler. Yıkama bu blokları bayt akışından çıkarır, sıkıştırılmış görüntü verisini değiştirmeden kopyalar ve neyin kaldığını doğrulamak için sonucu yeniden okur.',
+            'Bir görsel eklediğinizde tarayıcınız onu yerelde okur. Web Worker’lar dosya yapısını — JPEG segmentleri, PNG chunk’ları, WebP RIFF chunk’ları, GIF blokları ve HEIC/AVIF kutuları — çözümler ve bulduğu her meta veri bloğunu listeler. Temizleme bu blokları bayt akışından çıkarır, sıkıştırılmış görüntü verisini değiştirmeden kopyalar ve neyin kaldığını doğrulamak için sonucu yeniden okur.',
             'Sunucu tarafında hiçbir işlem yapılmaz. Web sitesi statik sayfalardan oluşur; yüklendikten sonra araç çevrimdışı çalışır.',
           ],
         },
@@ -438,7 +438,7 @@ const tr: Pages = {
           paragraphs: ['AI Label Remover’a bir görsel eklediğinizde yolculuğunun tamamı şudur:'],
           bullets: [
             'Tarayıcınız dosyayı cihazınızdan açar ve sekmenin belleğinde tutar.',
-            'Sekmedeki Web Worker’lar meta veriyi okur ve yıkamaya bastığınızda temiz bir kopya yazar — yine bellekte.',
+            'Sekmedeki Web Worker’lar meta veriyi okur ve “Tüm meta verileri kaldır”a bastığınızda temiz bir kopya yazar — yine bellekte.',
             'Kaydettiğinizde tarayıcınız temiz dosyayı ya da ZIP’i doğrudan cihazınıza yazar.',
             'Sekmeyi kapattığınızda ya da yenilediğinizde görseller ve raporlar kaybolur. Sunucuda hiçbir şey kalmaz, çünkü hiçbir sunucu onları almaz.',
           ],
@@ -446,7 +446,7 @@ const tr: Pages = {
         {
           heading: 'Bunu kendiniz doğrulayabilirsiniz',
           paragraphs: [
-            'Sözümüze güvenmek zorunda değilsiniz. Sayfayı yükleyin, Wi-Fi’ı ya da mobil veriyi kapatın ve bir dosya yıkayın: yine çalışır, çünkü gönderilmesi gereken bir şey yok. Geliştirici araçlarını biliyorsanız yıkama sırasında Ağ sekmesini açın; hiçbir görüntü verisinin cihazınızdan çıkmadığını görürsünüz.',
+            'Sözümüze güvenmek zorunda değilsiniz. Sayfayı yükleyin, Wi-Fi’ı ya da mobil veriyi kapatın ve bir dosya temizleyin: yine çalışır, çünkü gönderilmesi gereken bir şey yok. Geliştirici araçlarını biliyorsanız temizleme sırasında Ağ sekmesini açın; hiçbir görüntü verisinin cihazınızdan çıkmadığını görürsünüz.',
           ],
         },
         {

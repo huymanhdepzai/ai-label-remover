@@ -77,7 +77,7 @@ const es: Pages = {
     faq: [
       { q: '¿Qué diferencia hay entre EXIF y metadatos?', a: 'EXIF es un tipo de metadatos: el que escriben cámaras y móviles. “Metadatos” es el término general e incluye también XMP, IPTC, C2PA y los chunks de texto de PNG. Mira [qué son los datos EXIF](what-is-exif-data).' },
       { q: '¿Pueden los metadatos mostrar dónde se tomó una foto?', a: 'Sí, si la imagen tiene etiquetas GPS. Los móviles suelen guardar latitud, longitud y altitud cuando la cámara tiene acceso a la ubicación. El [eliminador de EXIF](remove-exif-data) quita esas etiquetas sin tocar la calidad.' },
-      { q: '¿Cómo elimino los metadatos de IA de una imagen?', a: 'Suelta la imagen en el recuadro de arriba y pulsa “Limpiar todas las imágenes”, o usa el [limpiador de etiquetas de IA](ai-tag-cleaner) para ver primero los datos C2PA, IPTC y el prompt.' },
+      { q: '¿Cómo elimino los metadatos de IA de una imagen?', a: 'Suelta la imagen en el recuadro de arriba y pulsa “Eliminar todos los metadatos”, o usa el [limpiador de etiquetas de IA](ai-tag-cleaner) para ver primero los datos C2PA, IPTC y el prompt.' },
       { q: '¿Es seguro subir mis fotos aquí?', a: 'Tus fotos no se suben a ningún sitio. AI Label Remover abre los archivos en tu navegador, los procesa en la memoria de la pestaña y guarda la copia limpia directamente en tu dispositivo. Una vez cargada la página, puedes desconectarte y sigue funcionando.' },
     ],
   },
@@ -115,7 +115,7 @@ const es: Pages = {
           heading: 'Cómo funciona el limpiador de etiquetas de IA',
           paragraphs: [
             'AI Label Remover lee la estructura del archivo directamente en tu navegador. Cada etiqueta de IA aparece con el campo exacto del que sale, y el archivo recibe un veredicto —“Rastros de IA encontrados”, “Merece otra mirada” o “Sin rastros de IA”— antes de cambiar nada.',
-            'Al pulsar “Limpiar todas las imágenes” se cortan los bloques que contienen las etiquetas: XMP, IPTC, EXIF, el almacén de manifiestos C2PA y los chunks de texto PNG. Los datos de imagen se copian byte a byte y la copia limpia se vuelve a leer para confirmar que no queda ninguna etiqueta de IA.',
+            'Al pulsar “Eliminar todos los metadatos” se cortan los bloques que contienen las etiquetas: XMP, IPTC, EXIF, el almacén de manifiestos C2PA y los chunks de texto PNG. Los datos de imagen se copian byte a byte y la copia limpia se vuelve a leer para confirmar que no queda ninguna etiqueta de IA.',
           ],
         },
         {
@@ -167,7 +167,7 @@ const es: Pages = {
           bullets: [
             'Suelta la foto editada en el recuadro de arriba.',
             'Lee el veredicto y los campos que lo explican: el informe nombra la acción C2PA o el valor IPTC exacto.',
-            'Pulsa “Limpiar todas las imágenes” y guarda la copia limpia.',
+            'Pulsa “Eliminar todos los metadatos” y guarda la copia limpia.',
             'Sube la copia limpia, no la exportación original.',
           ],
         },

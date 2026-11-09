@@ -9,7 +9,7 @@ const es: Messages = {
   header: {
     language: 'Idioma',
     theme: { label: 'Apariencia', light: 'Claro', dark: 'Oscuro', system: 'Como el dispositivo' },
-    nav: { tool: 'Limpiar imágenes', how: 'Proceso', formats: 'Tipos de archivo', guides: 'Artículos', faq: 'Preguntas' },
+    nav: { tool: 'Eliminar metadatos', how: 'Proceso', formats: 'Tipos de archivo', guides: 'Artículos', faq: 'Preguntas' },
   },
   hero: {
     kicker: 'AI Label Remover — quita etiquetas de IA, C2PA, EXIF y prompts de tus fotos',
@@ -54,7 +54,7 @@ const es: Messages = {
     clearList: 'Vaciar la mesa',
     downloadZip: 'Guardar todo en ZIP',
     zipping: 'Creando ZIP… {percent}%',
-    strip: 'Limpiar todas las imágenes',
+    strip: 'Eliminar todos los metadatos',
   },
   status: {
     analyzing: 'Leyendo',
@@ -64,7 +64,7 @@ const es: Messages = {
     failed: 'Error',
   },
   file: {
-    strip: 'Limpiar este archivo',
+    strip: 'Eliminar metadatos',
     download: 'Guardar archivo',
     retry: 'Reintentar',
     showReport: 'Abrir informe',
@@ -216,7 +216,7 @@ const es: Messages = {
       steps: [
         { title: 'Suelta los archivos', text: 'Añade hasta 50 imágenes JPG, PNG, WebP, GIF, HEIC o AVIF. El navegador las abre en local; ninguna copia va a ningún sitio.' },
         { title: 'Lee el informe', text: 'Cada archivo se recorre bloque a bloque —EXIF, XMP, IPTC, C2PA, chunks de texto— y ves qué dice sobre lugar, personas, hora e IA.' },
-        { title: 'Pulsa «Limpiar todas las imágenes»', text: 'Los bloques de metadatos se recortan del flujo de bytes. Los datos de imagen no se tocan y el resultado se vuelve a leer para demostrar que los campos han desaparecido.' },
+        { title: 'Pulsa «Eliminar todos los metadatos»', text: 'Los bloques de metadatos se recortan del flujo de bytes. Los datos de imagen no se tocan y el resultado se vuelve a leer para demostrar que los campos han desaparecido.' },
         { title: 'Guarda las copias limpias', text: 'Guarda los archivos de uno en uno o todos juntos en un único ZIP.' },
       ],
     },

@@ -183,7 +183,7 @@ const es: Articles = {
       {
         heading: 'Limpia la copia que publicas',
         paragraphs: [
-          'Pulsa “Limpiar todas las imágenes”. AI Label Remover recorta del flujo de bytes el almacén C2PA y los bloques XMP, IPTC y EXIF, y deja intactos los píxeles, el tamaño, la rotación y el perfil de color. El archivo limpio se vuelve a leer para que veas que los rastros de IA han desaparecido antes de guardar. La página para [eliminar metadatos de IA](ai-tag-cleaner) detalla cada rastro que trata.',
+          'Pulsa “Eliminar todos los metadatos”. AI Label Remover recorta del flujo de bytes el almacén C2PA y los bloques XMP, IPTC y EXIF, y deja intactos los píxeles, el tamaño, la rotación y el perfil de color. El archivo limpio se vuelve a leer para que veas que los rastros de IA han desaparecido antes de guardar. La página para [eliminar metadatos de IA](ai-tag-cleaner) detalla cada rastro que trata.',
           'Guardar de nuevo como JPEG también quitaría los metadatos, pero [recomprime la imagen cada vez](remove-metadata-without-losing-quality). Recortar bloques evita por completo esa pérdida.',
         ],
       },
@@ -238,7 +238,7 @@ const es: Articles = {
       {
         heading: 'Qué se conserva al limpiar',
         paragraphs: [
-          'Pulsa “Limpiar todas las imágenes”. El módulo PNG elimina como unidades completas los chunks de texto, XMP, EXIF y C2PA, y conserva IHDR, IDAT, paleta, transparencia, gamma y color, así como los chunks de animación APNG. Como los chunks se eliminan enteros, los CRC restantes siguen siendo válidos y el archivo se abre en todas partes. La página para [eliminar metadatos de PNG](png-metadata-remover) detalla cada chunk.',
+          'Pulsa “Eliminar todos los metadatos”. El módulo PNG elimina como unidades completas los chunks de texto, XMP, EXIF y C2PA, y conserva IHDR, IDAT, paleta, transparencia, gamma y color, así como los chunks de animación APNG. Como los chunks se eliminan enteros, los CRC restantes siguen siendo válidos y el archivo se abre en todas partes. La página para [eliminar metadatos de PNG](png-metadata-remover) detalla cada chunk.',
           'Abrir y guardar de nuevo en un editor también perdería el texto, pero [recomprime la imagen y puede alterar los colores](remove-metadata-without-losing-quality). La eliminación a nivel de bytes evita ambas cosas.',
         ],
       },
@@ -280,7 +280,7 @@ const es: Articles = {
       {
         heading: 'Mira primero, limpia después',
         paragraphs: [
-          'Coloca la imagen en la mesa y lee el informe. Las filas marcadas como «IA» contienen prompts, nombres de generadores y declaraciones de origen; las marcadas como «Personas», autores, descripciones e identificadores. Pulsa “Limpiar todas las imágenes” y guarda el archivo limpio, o guarda todo el lote en un ZIP. La página para [eliminar metadatos de IA](ai-tag-cleaner) explica cada tipo de rastro.',
+          'Coloca la imagen en la mesa y lee el informe. Las filas marcadas como «IA» contienen prompts, nombres de generadores y declaraciones de origen; las marcadas como «Personas», autores, descripciones e identificadores. Pulsa “Eliminar todos los metadatos” y guarda el archivo limpio, o guarda todo el lote en un ZIP. La página para [eliminar metadatos de IA](ai-tag-cleaner) explica cada tipo de rastro.',
           'Todo ocurre en tu navegador, así que los prompts que proteges no pasan por otro servicio más por el camino.',
         ],
       },
@@ -383,7 +383,7 @@ const es: Articles = {
       {
         heading: 'Límpiala sin efectos secundarios',
         paragraphs: [
-          'Pulsa “Limpiar todas las imágenes”. [Los campos de GPS, fechas, dispositivo, autor y software](remove-exif-data) desaparecen, junto con las miniaturas incrustadas y las imágenes secundarias MPF que guardarían una copia oculta. La etiqueta de orientación se vuelve a escribir en un bloque EXIF mínimo para que los retratos no salgan girados, y el perfil de color se conserva para que los colores sigan siendo fieles. Los HEIC del iPhone se limpian sin convertirlos a JPEG; mira la página para [eliminar metadatos HEIC](heic-metadata-remover).',
+          'Pulsa “Eliminar todos los metadatos”. [Los campos de GPS, fechas, dispositivo, autor y software](remove-exif-data) desaparecen, junto con las miniaturas incrustadas y las imágenes secundarias MPF que guardarían una copia oculta. La etiqueta de orientación se vuelve a escribir en un bloque EXIF mínimo para que los retratos no salgan girados, y el perfil de color se conserva para que los colores sigan siendo fieles. Los HEIC del iPhone se limpian sin convertirlos a JPEG; mira la página para [eliminar metadatos HEIC](heic-metadata-remover).',
         ],
       },
       {
@@ -419,7 +419,7 @@ const es: Articles = {
         paragraphs: [],
         bullets: [
           'Coloca la foto en AI Label Remover y mira la pestaña “Qué revela”.',
-          'Si aparece un lugar, pulsa “Limpiar todas las imágenes” y guarda la copia limpia.',
+          'Si aparece un lugar, pulsa “Eliminar todos los metadatos” y guarda la copia limpia.',
           'Comprueba que el panel verde confirma que lugar, personas y hora han desaparecido.',
           'Revisa la imagen en busca de pistas visibles: direcciones, matrículas, monumentos.',
           'Comparte la copia limpia y guarda el original en tu propia biblioteca.',
@@ -450,7 +450,7 @@ const es: Articles = {
         bullets: [
           'Coloca hasta 50 archivos JPG, PNG, WebP, GIF, HEIC o AVIF en la mesa (25 MB y 40 MP cada uno).',
           'Cada uno se lee automáticamente; haz clic en cualquier archivo de la cola para ver su informe.',
-          'Pulsa “Limpiar todas las imágenes” una vez para limpiar todo lo leído; es el mismo motor que la herramienta para [eliminar datos EXIF](remove-exif-data).',
+          'Pulsa “Eliminar todos los metadatos” una vez para limpiar todo lo leído; es el mismo motor que la herramienta para [eliminar datos EXIF](remove-exif-data).',
           'Guarda los archivos uno a uno o pulsa “Guardar todo en ZIP” para obtener un único archivo.',
         ],
       },
@@ -538,7 +538,7 @@ const es: Articles = {
       },
       {
         heading: 'Qué elimina la limpieza y qué se queda',
-        paragraphs: ['Al pulsar “Limpiar todas las imágenes” —o usar el [eliminador de metadatos de IA](ai-tag-cleaner)—, los metadatos se recortan del flujo de bytes sin redibujar la imagen. En la práctica:'],
+        paragraphs: ['Al pulsar “Eliminar todos los metadatos” —o usar el [eliminador de metadatos de IA](ai-tag-cleaner)—, los metadatos se recortan del flujo de bytes sin redibujar la imagen. En la práctica:'],
         bullets: [
           'Se elimina: el manifiesto C2PA, los campos XMP e IPTC, el EXIF y cualquier texto que nombre la herramienta o contenga un prompt.',
           'Se conserva: los datos de píxeles, las dimensiones, la rotación y el perfil de color ICC, así que la imagen se ve idéntica.',
@@ -624,7 +624,7 @@ const es: Articles = {
       {
         heading: 'Método en el navegador: los mismos pasos en cualquier ordenador',
         paragraphs: [
-          'Si no puedes instalar software —en un portátil del trabajo, por ejemplo— o quieres un único método para todos los formatos, abre AI Label Remover en Chrome, Edge, Safari o Firefox. Suelta hasta 50 imágenes, lee el informe, pulsa “Limpiar todas las imágenes” y guarda los archivos o un ZIP. [Elimina EXIF](remove-exif-data), GPS, XMP, IPTC, C2PA y los chunks de prompts PNG de JPEG, PNG, WebP, GIF, HEIC y AVIF, conserva la orientación y el perfil de color, y todo ocurre en tu equipo.',
+          'Si no puedes instalar software —en un portátil del trabajo, por ejemplo— o quieres un único método para todos los formatos, abre AI Label Remover en Chrome, Edge, Safari o Firefox. Suelta hasta 50 imágenes, lee el informe, pulsa “Eliminar todos los metadatos” y guarda los archivos o un ZIP. [Elimina EXIF](remove-exif-data), GPS, XMP, IPTC, C2PA y los chunks de prompts PNG de JPEG, PNG, WebP, GIF, HEIC y AVIF, conserva la orientación y el perfil de color, y todo ocurre en tu equipo.',
         ],
       },
       {
@@ -714,7 +714,7 @@ const es: Articles = {
       {
         heading: 'Ver no es verificar',
         paragraphs: [
-          'Los metadatos corrientes son texto plano que cualquiera puede editar, así que tómalos como pistas, no como pruebas. C2PA es distinto porque va firmado, pero que un visor muestre el manifiesto no equivale a validar la firma; para eso usa un verificador oficial de Content Credentials. Cuando hayas visto suficiente y quieras que esos datos desaparezcan, pulsa “Limpiar todas las imágenes” para eliminarlos sin cambiar la imagen; la página para [eliminar datos EXIF](remove-exif-data) explica qué se elimina exactamente.',
+          'Los metadatos corrientes son texto plano que cualquiera puede editar, así que tómalos como pistas, no como pruebas. C2PA es distinto porque va firmado, pero que un visor muestre el manifiesto no equivale a validar la firma; para eso usa un verificador oficial de Content Credentials. Cuando hayas visto suficiente y quieras que esos datos desaparezcan, pulsa “Eliminar todos los metadatos” para eliminarlos sin cambiar la imagen; la página para [eliminar datos EXIF](remove-exif-data) explica qué se elimina exactamente.',
         ],
       },
     ],
@@ -781,7 +781,7 @@ const es: Articles = {
       {
         heading: 'Encontrarlo y eliminarlo',
         paragraphs: [
-          'Coloca la imagen en AI Label Remover. En “Rastros de IA” el campo aparece como “XMP · Iptc4xmpExt › DigitalSourceType” con su valor; el mismo término dentro de un manifiesto C2PA se muestra bajo C2PA. Al pulsar “Limpiar todas las imágenes” se elimina todo el paquete XMP y el almacén C2PA, y el campo se va con ellos, junto con el EXIF y otros datos identificativos. La página para [eliminar metadatos de IA](ai-tag-cleaner) cubre también los demás campos de IA.',
+          'Coloca la imagen en AI Label Remover. En “Rastros de IA” el campo aparece como “XMP · Iptc4xmpExt › DigitalSourceType” con su valor; el mismo término dentro de un manifiesto C2PA se muestra bajo C2PA. Al pulsar “Eliminar todos los metadatos” se elimina todo el paquete XMP y el almacén C2PA, y el campo se va con ellos, junto con el EXIF y otros datos identificativos. La página para [eliminar metadatos de IA](ai-tag-cleaner) cubre también los demás campos de IA.',
           'Si solo necesitas quitar este campo y conservar el resto del XMP, una herramienta de línea de comandos puede hacerlo: exiftool -XMP-iptcExt:DigitalSourceType= foto.jpg. Recuerda que puede haber un valor equivalente dentro de un manifiesto C2PA.',
         ],
       },
@@ -1294,7 +1294,7 @@ const es: Articles = {
       {
         heading: 'Limpia todo desde el navegador',
         paragraphs: [
-          'Abre AI Label Remover en el móvil, toca “Buscar archivos”, lee el informe y toca “Limpiar todas las imágenes”. [Se eliminan los datos de GPS, hora, dispositivo y autor](remove-gps-location-from-photos) —HEIC del iPhone incluido— mientras la rotación y el color se mantienen. Sin subir nada y sin app; la página para [eliminar metadatos HEIC](heic-metadata-remover) explica qué registra una foto del iPhone.',
+          'Abre AI Label Remover en el móvil, toca “Buscar archivos”, lee el informe y toca “Eliminar todos los metadatos”. [Se eliminan los datos de GPS, hora, dispositivo y autor](remove-gps-location-from-photos) —HEIC del iPhone incluido— mientras la rotación y el color se mantienen. Sin subir nada y sin app; la página para [eliminar metadatos HEIC](heic-metadata-remover) explica qué registra una foto del iPhone.',
         ],
       },
       {
@@ -1321,7 +1321,7 @@ const es: Articles = {
         bullets: [
           'Abre AI Label Remover en el navegador del móvil y añádelo a la pantalla de inicio para la próxima vez.',
           'Toca “Buscar archivos” y elige las fotos que vas a compartir.',
-          'Lee el informe, toca “Limpiar todas las imágenes” y revisa el panel verde.',
+          'Lee el informe, toca “Eliminar todos los metadatos” y revisa el panel verde.',
           'Guarda las copias limpias y comparte esas, no los originales.',
         ],
       },

@@ -62,7 +62,7 @@ const pl: Pages = {
     faq: [
       { q: 'Czym różni się EXIF od metadanych?', a: 'EXIF to jeden z rodzajów metadanych — ten, który zapisują aparaty i telefony. „Metadane” to pojęcie szersze, obejmujące także XMP, IPTC, C2PA i fragmenty tekstowe PNG.' },
       { q: 'Czy metadane mogą pokazać, gdzie zrobiono zdjęcie?', a: 'Tak, jeśli obraz zawiera tagi GPS. Telefony zwykle zapisują szerokość, długość geograficzną i wysokość, gdy aparat ma dostęp do lokalizacji. Czyszczenie usuwa te tagi bez wpływu na jakość. Zobacz, [jak usunąć lokalizację GPS ze zdjęć](remove-gps-location-from-photos).' },
-      { q: 'Jak usunąć metadane AI z obrazu?', a: 'Upuść obraz w polu na górze tej strony i kliknij „Wyczyść wszystkie obrazy”. Przed czyszczeniem karta każdego pliku pokazuje znalezione dane C2PA, IPTC i prompt.' },
+      { q: 'Jak usunąć metadane AI z obrazu?', a: 'Upuść obraz w polu na górze tej strony i kliknij „Usuń wszystkie metadane”. Przed czyszczeniem karta każdego pliku pokazuje znalezione dane C2PA, IPTC i prompt.' },
       { q: 'Czy przesyłanie tu zdjęć jest bezpieczne?', a: 'Twoje zdjęcia w ogóle nie są przesyłane. AI Label Remover otwiera pliki w przeglądarce, przetwarza je w pamięci karty i zapisuje czystą kopię bezpośrednio na Twoim urządzeniu. Po wczytaniu strony możesz przejść offline, a narzędzie nadal działa.' },
     ],
     ctaTools: 'Zobacz wszystkie narzędzia',
@@ -113,7 +113,7 @@ const pl: Pages = {
           heading: 'Jak działa czyszczenie tagów AI',
           paragraphs: [
             'AI Label Remover odczytuje strukturę pliku bezpośrednio w przeglądarce. Każdy tag AI jest pokazany wraz z dokładnym polem, z którego pochodzi, a plik dostaje ocenę — „Znaleziono ślady AI”, „Warto przyjrzeć się bliżej” lub „Brak śladów AI” — zanim cokolwiek zostanie zmienione.',
-            'Kliknięcie „Wyczyść wszystkie obrazy” wycina bloki z tymi tagami: XMP, IPTC, EXIF, magazyn manifestów C2PA i fragmenty tekstowe PNG. Skompresowane dane obrazu są kopiowane bajt po bajcie, a czysta kopia jest ponownie odczytywana, aby potwierdzić, że nie został żaden tag AI.',
+            'Kliknięcie „Usuń wszystkie metadane” wycina bloki z tymi tagami: XMP, IPTC, EXIF, magazyn manifestów C2PA i fragmenty tekstowe PNG. Skompresowane dane obrazu są kopiowane bajt po bajcie, a czysta kopia jest ponownie odczytywana, aby potwierdzić, że nie został żaden tag AI.',
           ],
         },
         {
@@ -163,7 +163,7 @@ const pl: Pages = {
           bullets: [
             'Upuść edytowane zdjęcie w polu na górze tej strony.',
             'Przeczytaj ocenę i pola, które za nią stoją — raport podaje dokładną akcję C2PA lub wartość IPTC.',
-            'Kliknij „Wyczyść wszystkie obrazy” i zapisz czystą kopię.',
+            'Kliknij „Usuń wszystkie metadane” i zapisz czystą kopię.',
             'Opublikuj czystą kopię, a nie oryginalny eksport.',
           ],
         },

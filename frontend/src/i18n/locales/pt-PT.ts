@@ -9,7 +9,7 @@ const ptPT: Messages = {
   header: {
     language: 'Idioma',
     theme: { label: 'Aspeto', light: 'Claro', dark: 'Escuro', system: 'Como o dispositivo' },
-    nav: { tool: 'Limpar imagens', how: 'Como funciona', formats: 'Tipos de ficheiro', guides: 'Artigos', faq: 'Perguntas' },
+    nav: { tool: 'Remover metadados', how: 'Como funciona', formats: 'Tipos de ficheiro', guides: 'Artigos', faq: 'Perguntas' },
   },
   hero: {
     kicker: 'AI Label Remover — Remover metadados de fotografias — EXIF, GPS, C2PA e prompts de IA',
@@ -54,7 +54,7 @@ const ptPT: Messages = {
     clearList: 'Arrumar a mesa',
     downloadZip: 'Guardar tudo em ZIP',
     zipping: 'A criar o ZIP… {percent}%',
-    strip: 'Limpar todas as imagens',
+    strip: 'Remover todos os metadados',
   },
   status: {
     analyzing: 'A ler',
@@ -64,7 +64,7 @@ const ptPT: Messages = {
     failed: 'Erro',
   },
   file: {
-    strip: 'Limpar este ficheiro',
+    strip: 'Remover metadados',
     download: 'Guardar ficheiro',
     retry: 'Tentar novamente',
     showReport: 'Abrir relatório',
@@ -216,7 +216,7 @@ const ptPT: Messages = {
       steps: [
         { title: 'Largue os ficheiros', text: 'Adicione até 50 imagens JPG, PNG, WebP, GIF, HEIC ou AVIF. O navegador abre-as localmente; nenhuma cópia vai para lado nenhum.' },
         { title: 'Leia o relatório', text: 'Cada ficheiro é percorrido bloco a bloco — EXIF, XMP, IPTC, C2PA, chunks de texto — e vê o que diz sobre local, pessoas, hora e IA.' },
-        { title: 'Carregue em «Limpar todas as imagens»', text: 'Os blocos de metadados são recortados do fluxo de bytes. Os dados de imagem ficam intactos e o resultado é lido de novo para provar que os campos desapareceram.' },
+        { title: 'Carregue em «Remover todos os metadados»', text: 'Os blocos de metadados são recortados do fluxo de bytes. Os dados de imagem ficam intactos e o resultado é lido de novo para provar que os campos desapareceram.' },
         { title: 'Guarde as cópias limpas', text: 'Guarde os ficheiros um a um ou leve todas as imagens limpas num único arquivo ZIP.' },
       ],
     },
@@ -250,7 +250,7 @@ const ptPT: Messages = {
     },
     formats: {
       eyebrow: 'Tipos de ficheiro',
-      title: 'O que é lavado de cada tipo de ficheiro',
+      title: 'O que é removido de cada tipo de ficheiro',
       text: 'Cada formato guarda os metadados à sua maneira. O AI Label Remover lê essa estrutura diretamente em vez de voltar a renderizar a imagem.',
       colFormat: 'Tipo',
       colStructure: 'Composto por',
@@ -288,7 +288,7 @@ const ptPT: Messages = {
           title: 'Guarde para si os prompts do Midjourney e do DALL·E',
           paragraphs: [
             'As imagens exportadas do Midjourney, DALL·E ou Firefly podem trazer o texto do prompt, um ID de tarefa, o nome da sua conta e uma declaração de origem por IA em XMP, EXIF ou texto PNG. Se os prompts fazem parte do seu ofício, cada publicação oferece esse trabalho.',
-            'Carregue o ficheiro, procure as linhas marcadas «IA» e «Pessoas» e lave-as todas com um botão.',
+            'Carregue o ficheiro, procure as linhas marcadas «IA» e «Pessoas» e remova-as todas com um botão.',
           ],
         },
         {
@@ -323,7 +323,7 @@ const ptPT: Messages = {
         { q: 'Que tipos de ficheiro posso usar?', a: 'JPEG/JPG, PNG, WebP, GIF, HEIC/HEIF (o formato predefinido do iPhone) e AVIF. Cada ficheiro pode ter até 25 MB e 40 megapíxeis, e pode carregar 50 de uma vez.' },
         { q: 'O que significa «Vale a pena rever»?', a: 'O ficheiro tem Content Credentials C2PA que não indicam o uso de IA. Algumas plataformas leem esse registo ao decidir etiquetas, por isso convém lavá-lo se não quiser que acompanhe a imagem.' },
         { q: 'O AI Label Remover consegue retirar o SynthID ou outras marcas de água invisíveis?', a: 'Não. Essas marcas estão entrelaçadas nos píxeis, não guardadas como metadados, e o AI Label Remover nunca altera píxeis de propósito.' },
-        { q: 'O Instagram ou o Facebook continuarão a etiquetar a imagem?', a: 'As etiquetas que vêm de metadados C2PA ou IPTC perdem a origem depois de lavados. As plataformas podem, ainda assim, usar outros sinais ou pedir-lhe que declare o conteúdo de IA.' },
+        { q: 'O Instagram ou o Facebook continuarão a etiquetar a imagem?', a: 'As etiquetas que vêm de metadados C2PA ou IPTC perdem a origem depois de removidos. As plataformas podem, ainda assim, usar outros sinais ou pedir-lhe que declare o conteúdo de IA.' },
         { q: 'O que é retirado exatamente e o que fica?', a: 'Retirado: GPS, datas e definições da câmara, autor e direitos de autor, legendas, software e histórico de edição, miniaturas, etiquetas de origem por IA (IPTC DigitalSourceType, XMP), prompts e workflows, e manifestos C2PA. Fica: tamanho em píxeis, rotação, perfil de cor ICC e fotogramas de animação.' },
         { q: 'Qual é o truque, se é grátis?', a: 'Não há truque. É o seu dispositivo que faz o processamento, por isso não há fatura de servidor por imagem a repercutir, nem conta, nem marca de água.' },
       ],
@@ -369,7 +369,7 @@ const ptPT: Messages = {
       ],
     },
     howToSchema: {
-      name: 'Como lavar os metadados de IA de uma imagem',
+      name: 'Como remover os metadados de IA de uma imagem',
       description: 'Retire C2PA, EXIF, XMP e prompts de IA das imagens no navegador, sem perda de qualidade.',
     },
     footer: {

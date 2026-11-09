@@ -35,7 +35,7 @@ const pl: Articles = {
       {
         heading: 'Bezstratne czyszczenie kopii przeznaczonej do publikacji',
         paragraphs: [
-          'Kliknięcie przycisku „Wyczyść wszystkie obrazy” powoduje, że AI Label Remover precyzyjnie wycina bloki C2PA, XMP, IPTC i EXIF ze strumienia binarnego, pozostawiając piksele, wymiary, orientację i profil kolorów ICC bez zmian. Szczegóły działania opisano na stronie narzędzia [AI tag cleaner](ai-tag-cleaner).',
+          'Kliknięcie przycisku „Usuń wszystkie metadane” powoduje, że AI Label Remover precyzyjnie wycina bloki C2PA, XMP, IPTC i EXIF ze strumienia binarnego, pozostawiając piksele, wymiary, orientację i profil kolorów ICC bez zmian. Szczegóły działania opisano na stronie narzędzia [AI tag cleaner](ai-tag-cleaner).',
           'Zwykłe ponowne zapisanie jako JPEG w programie graficznym powoduje ponowną kompresję ze stratą jakości, podczas gdy wycinanie bloków metadanych w całości chroni oryginalną jakość.',
         ],
       },
@@ -378,7 +378,7 @@ const pl: Articles = {
       {
         heading: 'Wyświetlenie to jeszcze nie weryfikacja',
         paragraphs: [
-          'Zwykłe metadane to zwykły tekst, który każdy może zmienić — traktuj je jako wskazówkę, nie dowód. C2PA jest inne, bo jest podpisane cyfrowo, ale wyświetlenie manifestu nie oznacza sprawdzenia podpisu; do tego służy oficjalny weryfikator Content Credentials. Gdy już wiesz, co jest w pliku, i chcesz to usunąć, kliknij „Wyczyść wszystkie obrazy” — dane znikną bez zmiany samego obrazu. Strona [usuwanie danych EXIF](remove-exif-data) wyjaśnia dokładnie, co zostaje usunięte.',
+          'Zwykłe metadane to zwykły tekst, który każdy może zmienić — traktuj je jako wskazówkę, nie dowód. C2PA jest inne, bo jest podpisane cyfrowo, ale wyświetlenie manifestu nie oznacza sprawdzenia podpisu; do tego służy oficjalny weryfikator Content Credentials. Gdy już wiesz, co jest w pliku, i chcesz to usunąć, kliknij „Usuń wszystkie metadane” — dane znikną bez zmiany samego obrazu. Strona [usuwanie danych EXIF](remove-exif-data) wyjaśnia dokładnie, co zostaje usunięte.',
         ],
       },
     ],

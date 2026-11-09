@@ -9,7 +9,7 @@ const pl: Messages = {
   header: {
     language: 'Język',
     theme: { label: 'Wygląd', light: 'Jasny', dark: 'Ciemny', system: 'Jak urządzenie' },
-    nav: { tool: 'Czyść obrazy', how: 'Przebieg', formats: 'Typy plików', guides: 'Artykuły', faq: 'Pytania' },
+    nav: { tool: 'Usuń metadane', how: 'Przebieg', formats: 'Typy plików', guides: 'Artykuły', faq: 'Pytania' },
   },
   hero: {
     kicker: 'AI Label Remover — Usuń metadane ze zdjęć — EXIF, GPS, C2PA i prompty AI',
@@ -54,7 +54,7 @@ const pl: Messages = {
     clearList: 'Uprzątnij stół',
     downloadZip: 'Zapisz wszystko jako ZIP',
     zipping: 'Pakowanie ZIP… {percent}%',
-    strip: 'Wyczyść wszystkie obrazy',
+    strip: 'Usuń wszystkie metadane',
   },
   status: {
     analyzing: 'Odczyt',
@@ -64,7 +64,7 @@ const pl: Messages = {
     failed: 'Błąd',
   },
   file: {
-    strip: 'Wyczyść ten plik',
+    strip: 'Usuń metadane',
     download: 'Zapisz plik',
     retry: 'Spróbuj ponownie',
     showReport: 'Otwórz raport',
@@ -216,7 +216,7 @@ const pl: Messages = {
       steps: [
         { title: 'Wrzuć pliki', text: 'Dodaj do 50 obrazów JPG, PNG, WebP, GIF, HEIC lub AVIF. Przeglądarka otwiera je lokalnie; żadna kopia nigdzie nie wędruje.' },
         { title: 'Przeczytaj raport', text: 'Każdy plik jest przeglądany blok po bloku — EXIF, XMP, IPTC, C2PA, chunki tekstowe — i widzisz, co mówi o miejscu, osobach, czasie i AI.' },
-        { title: 'Naciśnij „Wyczyść wszystkie obrazy”', text: 'Bloki metadanych są wycinane ze strumienia bajtów. Dane obrazu zostają nietknięte, a wynik jest odczytywany ponownie, by udowodnić, że pola zniknęły.' },
+        { title: 'Naciśnij „Usuń wszystkie metadane”', text: 'Bloki metadanych są wycinane ze strumienia bajtów. Dane obrazu zostają nietknięte, a wynik jest odczytywany ponownie, by udowodnić, że pola zniknęły.' },
         { title: 'Zapisz czyste kopie', text: 'Zapisuj pliki po kolei albo pobierz wszystkie wyczyszczone obrazy w jednym archiwum ZIP.' },
       ],
     },

@@ -9,7 +9,7 @@ const fr: Messages = {
   header: {
     language: 'Langue',
     theme: { label: 'Apparence', light: 'Clair', dark: 'Sombre', system: 'Comme l’appareil' },
-    nav: { tool: 'Nettoyer des images', how: 'Déroulé', formats: 'Types de fichiers', guides: 'Articles', faq: 'Questions' },
+    nav: { tool: 'Supprimer les métadonnées', how: 'Déroulé', formats: 'Types de fichiers', guides: 'Articles', faq: 'Questions' },
   },
   hero: {
     kicker: 'AI Label Remover — retirez labels IA, C2PA, EXIF et prompts de vos photos',
@@ -54,7 +54,7 @@ const fr: Messages = {
     clearList: 'Vider la table',
     downloadZip: 'Tout enregistrer en ZIP',
     zipping: 'Création du ZIP… {percent} %',
-    strip: 'Nettoyer toutes les images',
+    strip: 'Supprimer toutes les métadonnées',
   },
   status: {
     analyzing: 'Lecture',
@@ -64,7 +64,7 @@ const fr: Messages = {
     failed: 'Échec',
   },
   file: {
-    strip: 'Nettoyer ce fichier',
+    strip: 'Supprimer les métadonnées',
     download: 'Enregistrer le fichier',
     retry: 'Réessayer',
     showReport: 'Ouvrir le rapport',
@@ -216,7 +216,7 @@ const fr: Messages = {
       steps: [
         { title: 'Déposez les fichiers', text: 'Ajoutez jusqu’à 50 images JPG, PNG, WebP, GIF, HEIC ou AVIF. Le navigateur les ouvre en local ; aucune copie ne part ailleurs.' },
         { title: 'Lisez le rapport', text: 'Chaque fichier est parcouru bloc par bloc — EXIF, XMP, IPTC, C2PA, chunks de texte — et vous voyez ce qu’il dit du lieu, des personnes, de l’heure et de l’IA.' },
-        { title: 'Appuyez sur « Nettoyer toutes les images »', text: 'Les blocs de métadonnées sont découpés du flux d’octets. Les données d’image ne bougent pas et le résultat est relu pour prouver que les champs ont disparu.' },
+        { title: 'Appuyez sur « Supprimer toutes les métadonnées »', text: 'Les blocs de métadonnées sont découpés du flux d’octets. Les données d’image ne bougent pas et le résultat est relu pour prouver que les champs ont disparu.' },
         { title: 'Enregistrez les copies propres', text: 'Enregistrez les fichiers un par un, ou récupérez toutes les images nettoyées dans une seule archive ZIP.' },
       ],
     },

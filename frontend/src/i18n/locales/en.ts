@@ -11,7 +11,7 @@ const en = {
   header: {
     language: 'Language',
     theme: { label: 'Appearance', light: 'Light', dark: 'Dark', system: 'Match device' },
-    nav: { tool: 'Wash images', how: 'Workflow', formats: 'File types', guides: 'Articles', faq: 'Questions' },
+    nav: { tool: 'Remove metadata', how: 'Workflow', formats: 'File types', guides: 'Articles', faq: 'Questions' },
   },
   hero: {
     kicker: 'AI Label Remover — clean AI tags, C2PA, EXIF and prompts out of your photos',
@@ -32,7 +32,7 @@ const en = {
     release: 'Drop to start checking…',
     or: 'or',
     choose: 'Browse files',
-    inputLabel: 'Pick images to wash',
+    inputLabel: 'Pick images to clean',
     limits: 'JPG, PNG, WebP, GIF, HEIC, AVIF · each file up to {size} and 40 MP · {count} files per session',
     checking: 'Reading files: {count}…',
   },
@@ -51,23 +51,23 @@ const en = {
     sceneSteps: ['Edit Metadata', 'Remove EXIF', 'Clean AI Data'],
     analyzing: 'reading {count}',
     pending: 'ready {count}',
-    completed: 'washed {count}',
+    completed: 'cleaned {count}',
     failed: 'failed {count}',
     totalRemoved: 'Metadata lifted out so far: {size}',
     clearList: 'Clear table',
     downloadZip: 'Save all as ZIP',
     zipping: 'Packing ZIP… {percent}%',
-    strip: 'Wash all images',
+    strip: 'Remove all metadata',
   },
   status: {
     analyzing: 'Reading',
-    pending: 'Ready to wash',
-    processing: 'Washing',
-    completed: 'Washed',
+    pending: 'Ready to clean',
+    processing: 'Removing metadata',
+    completed: 'Cleaned',
     failed: 'Failed',
   },
   file: {
-    strip: 'Wash this file',
+    strip: 'Remove metadata',
     download: 'Save file',
     retry: 'Try again',
     showReport: 'Open report',
@@ -116,7 +116,7 @@ const en = {
     category: { location: 'Place', personal: 'People', time: 'Time', ai: 'AI' },
     checksTitle: 'Checks performed',
     checksSub: '{count} checks, all run locally',
-    resultTitle: 'Lifted out {count} metadata blocks ({size}). We re-read the washed file to confirm:',
+    resultTitle: 'Lifted out {count} metadata blocks ({size}). We re-read the clean file to confirm:',
     aiSignals: 'AI traces',
     clean: 'gone',
     remaining: 'still there',
@@ -220,20 +220,20 @@ const en = {
       steps: [
         { title: 'Drop the files in', text: 'Add as many as 50 JPG, PNG, WebP, GIF, HEIC or AVIF images. The browser opens them locally; no copy goes anywhere.' },
         { title: 'Read the report', text: 'Each file is walked block by block — EXIF, XMP, IPTC, C2PA, text chunks — and you see what it says about place, people, time and AI.' },
-        { title: 'Press “Wash all images”', text: 'The metadata blocks are cut out of the byte stream. Image data is left alone, and the result is read again to prove the fields are gone.' },
-        { title: 'Save the clean copies', text: 'Save files one at a time, or grab every washed image in one ZIP archive.' },
+        { title: 'Press “Remove all metadata”', text: 'The metadata blocks are cut out of the byte stream. Image data is left alone, and the result is read again to prove the fields are gone.' },
+        { title: 'Save the clean copies', text: 'Save files one at a time, or grab every clean image in one ZIP archive.' },
       ],
     },
     features: {
       eyebrow: 'What you get',
       title: 'Built for people who share images in public',
       items: [
-        { title: 'Private by design', text: 'Reading and washing run in Web Workers inside your tab. There is no server receiving files, so there is nothing to store or leak.' },
+        { title: 'Private by design', text: 'Reading and cleaning run in Web Workers inside your tab. There is no server receiving files, so there is nothing to store or leak.' },
         { title: 'No re-compression', text: 'The picture is never redrawn or re-saved. Only metadata blocks are removed, so sharpness, color and pixel size do not change.' },
         { title: 'Spots AI fingerprints', text: 'Recognises C2PA manifests, IPTC DigitalSourceType, Stable Diffusion and ComfyUI prompts, plus traces left by Midjourney, DALL·E and Firefly.' },
         { title: 'A clear privacy readout', text: 'GPS coordinates, owner names, device serials and capture dates are pulled to the top so you see them before anyone else does.' },
         { title: 'Six formats, many at once', text: 'JPEG, PNG, WebP, GIF, HEIC/HEIF and AVIF, spread across your CPU cores so a big batch stays quick.' },
-        { title: 'Displays like the original', text: 'Pixel size, rotation, ICC color profile and animation frames are always kept, so the washed file looks the same everywhere.' },
+        { title: 'Displays like the original', text: 'Pixel size, rotation, ICC color profile and animation frames are always kept, so the clean file looks the same everywhere.' },
       ],
     },
     why: {
@@ -254,11 +254,11 @@ const en = {
     },
     formats: {
       eyebrow: 'File types',
-      title: 'What gets washed out of each file type',
+      title: 'What gets removed from each file type',
       text: 'Each format stores metadata its own way. AI Label Remover reads that structure directly instead of re-rendering the picture.',
       colFormat: 'Type',
       colStructure: 'Built from',
-      colRemoved: 'Washed out',
+      colRemoved: 'Removed',
       colKept: 'Left in place',
     },
     guides: {
@@ -266,7 +266,7 @@ const en = {
       title: 'Notes on image metadata and AI labels',
       related: 'Keep reading',
       home: 'AI Label Remover',
-      tryTool: 'Wash a file now — it stays on your device',
+      tryTool: 'Clean a file now — it stays on your device',
       updated: 'Last revised {date}',
       toc: 'Contents',
       readTime: '{minutes} min read',
@@ -285,28 +285,28 @@ const en = {
           title: 'Stable Diffusion and ComfyUI hide your full prompt in the PNG',
           paragraphs: [
             'A1111 and Forge save the prompt, negative prompt, seed, sampler and checkpoint in a PNG text chunk called “parameters”. ComfyUI goes further and embeds the complete node graph as JSON in “prompt” and “workflow” chunks — anyone can drag your image back into ComfyUI and rebuild it.',
-            'AI Label Remover prints those chunks word for word in “Raw metadata”, then drops them when you wash the file. The IDAT image data is copied across unchanged.',
+            'AI Label Remover prints those chunks word for word in “Raw metadata”, then drops them when you clean the file. The IDAT image data is copied across unchanged.',
           ],
         },
         {
           title: 'Keep your Midjourney and DALL·E prompts to yourself',
           paragraphs: [
             'Images exported from Midjourney, DALL·E or Firefly can carry the prompt text, a job ID, your account name and an AI-source declaration in XMP, EXIF or PNG text. If your prompts are part of your craft, that is work you are giving away with every post.',
-            'Load the file, look for rows tagged “AI” and “People”, and wash them all out with one button.',
+            'Load the file, look for rows tagged “AI” and “People”, and remove them all with one button.',
           ],
         },
         {
           title: 'C2PA and Content Credentials, explained plainly',
           paragraphs: [
             'C2PA is an open standard for attaching a signed history to a file: which app made it, which edits followed and whether generative AI was involved. Adobe, Microsoft, Google, OpenAI and several camera makers write it, and social platforms read it.',
-            'AI Label Remover shows the claim generator, each recorded c2pa action and any DigitalSourceType value it finds. Washing removes the entire manifest store from the file.',
+            'AI Label Remover shows the claim generator, each recorded c2pa action and any DigitalSourceType value it finds. Cleaning removes the entire manifest store from the file.',
           ],
         },
         {
           title: 'The GPS data in your phone photos may be giving away your address',
           paragraphs: [
             'A typical phone picture records GPS coordinates good to a few meters, the exact time, the phone model and sometimes its serial number. Post the original file and a stranger can work out where you live, work or sleep.',
-            'The “What it reveals” tab flags place, people and time at a glance. Washing also drops embedded thumbnails and MPF second images, which keep their own copy of the EXIF data.',
+            'The “What it reveals” tab flags place, people and time at a glance. Cleaning also drops embedded thumbnails and MPF second images, which keep their own copy of the EXIF data.',
           ],
         },
         {
@@ -325,9 +325,9 @@ const en = {
         { q: 'Do my images get sent anywhere?', a: 'No. The page reads and rewrites files inside your browser using Web Workers. Once it has loaded you can switch off Wi-Fi and it keeps working.' },
         { q: 'Will the picture look any worse afterwards?', a: 'No. AI Label Remover only cuts metadata blocks out of the file. The compressed image data is copied byte for byte, so resolution, detail and color are identical.' },
         { q: 'Which file types can I use?', a: 'JPEG/JPG, PNG, WebP, GIF, HEIC/HEIF (the iPhone default) and AVIF. Each file can be up to 25 MB and 40 megapixels, and you can load 50 at a time.' },
-        { q: 'What does “Worth a second look” mean?', a: 'The file carries C2PA Content Credentials that do not say AI was used. Some platforms still read that record when deciding on labels, so it is worth washing if you do not want it attached.' },
+        { q: 'What does “Worth a second look” mean?', a: 'The file carries C2PA Content Credentials that do not say AI was used. Some platforms still read that record when deciding on labels, so it is worth cleaning if you do not want it attached.' },
         { q: 'Can AI Label Remover remove SynthID or other invisible watermarks?', a: 'No. Those watermarks are woven into the pixels, not stored as metadata, and AI Label Remover deliberately never changes pixels.' },
-        { q: 'Will Instagram or Facebook still label the image?', a: 'Labels that come from C2PA or IPTC metadata lose their source once it is washed out. Platforms can still rely on other signals or ask you to disclose AI content yourself.' },
+        { q: 'Will Instagram or Facebook still label the image?', a: 'Labels that come from C2PA or IPTC metadata lose their source once it is removed. Platforms can still rely on other signals or ask you to disclose AI content yourself.' },
         { q: 'Exactly what is removed, and what stays?', a: 'Removed: GPS, dates and camera settings, author and copyright, captions, software and edit history, thumbnails, AI source labels (IPTC DigitalSourceType, XMP), prompts and workflows, and C2PA manifests. Kept: pixel size, rotation, ICC color profile and animation frames.' },
         { q: 'Is there a catch to it being free?', a: 'No catch. Your device does the processing, so there is no per-image server bill to pass on, no account and no watermark.' },
       ],
@@ -342,7 +342,7 @@ const en = {
             'Reads and removes metadata stored in image files: EXIF, GPS, XMP, IPTC, C2PA Content Credentials and PNG text such as AI prompts.',
             'Works entirely in your browser. Files are never uploaded, stored or logged.',
             'Copies the image data unchanged, keeping pixel size, rotation, color profile and animation.',
-            'Reads every washed file again and shows which fields remain.',
+            'Reads every clean file again and shows which fields remain.',
           ],
         },
         {
@@ -359,7 +359,7 @@ const en = {
           items: [
             'Use AI Label Remover to protect privacy and correct wrong labels, not to deceive people or pass AI-generated images off as real.',
             'Follow the disclosure rules of the platforms you post on and the laws that apply to you.',
-            'Only wash files you own or are allowed to modify, and respect copyright and attribution.',
+            'Only clean files you own or are allowed to modify, and respect copyright and attribution.',
           ],
         },
         {
@@ -373,7 +373,7 @@ const en = {
       ],
     },
     howToSchema: {
-      name: 'How to wash AI metadata out of an image',
+      name: 'How to remove AI metadata from an image',
       description: 'Strip C2PA, EXIF, XMP and AI prompts from images in the browser, with no loss in quality.',
     },
     footer: {

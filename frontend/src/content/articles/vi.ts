@@ -103,7 +103,7 @@ const vi: Articles = {
               "heading": "Giải pháp No AI Tag: Kiểm tra và làm sạch tệp ảnh",
               "paragraphs": [
                   "Để đưa tác phẩm về trạng thái [No AI Tag](no-ai-tag), bạn cần cắt bỏ chính xác những khối dữ liệu mà thuật toán nền tảng đang quét. Với AI Label Remover, bạn chỉ cần thả ảnh vào giao diện để nhận báo cáo chi tiết ngay lập tức.",
-                  "Trình [xem metadata ảnh](image-metadata-viewer-online) phân tách rõ ràng vị trí GPS, thông số máy ảnh và dấu vết AI. Khi phát hiện cờ nguồn gốc AI, một lần bấm “Làm sạch tất cả” sẽ cắt bỏ hoàn toàn các khối đó khỏi tệp."
+                  "Trình [xem metadata ảnh](image-metadata-viewer-online) phân tách rõ ràng vị trí GPS, thông số máy ảnh và dấu vết AI. Khi phát hiện cờ nguồn gốc AI, một lần bấm “Xóa toàn bộ metadata” sẽ cắt bỏ hoàn toàn các khối đó khỏi tệp."
               ]
           },
           {
@@ -181,7 +181,7 @@ const vi: Articles = {
       {
         heading: 'Làm sạch bản sao bạn sẽ đăng',
         paragraphs: [
-          'Bấm “Làm sạch tất cả”. AI Label Remover cắt kho C2PA, các khối XMP, IPTC và EXIF khỏi chuỗi byte, để nguyên dữ liệu ảnh, kích thước, hướng xoay và hồ sơ màu. Tệp đã làm sạch được đọc lại để bạn thấy dấu vết AI đã biến mất trước khi lưu. Trang [xóa metadata AI](ai-tag-cleaner) liệt kê mọi loại dấu vết công cụ xử lý.',
+          'Bấm “Xóa toàn bộ metadata”. AI Label Remover cắt kho C2PA, các khối XMP, IPTC và EXIF khỏi chuỗi byte, để nguyên dữ liệu ảnh, kích thước, hướng xoay và hồ sơ màu. Tệp đã làm sạch được đọc lại để bạn thấy dấu vết AI đã biến mất trước khi lưu. Trang [xóa metadata AI](ai-tag-cleaner) liệt kê mọi loại dấu vết công cụ xử lý.',
           'Lưu lại thành JPEG mới cũng làm mất metadata, nhưng [mỗi lần như vậy ảnh bị nén thêm](remove-metadata-without-losing-quality). Cắt khối giúp tránh hoàn toàn chuyện đó.',
         ],
       },
@@ -247,7 +247,7 @@ const vi: Articles = {
       {
         heading: 'Làm sạch xong còn lại gì',
         paragraphs: [
-          'Bấm “Làm sạch tất cả”. Bộ xử lý PNG bỏ các chunk văn bản, XMP, EXIF và C2PA theo nguyên khối, giữ IHDR, IDAT, bảng màu, độ trong suốt, gamma, các chunk màu và cả chunk ảnh động APNG. Vì chunk bị gỡ nguyên khối, CRC của các chunk còn lại vẫn hợp lệ và tệp mở được ở mọi nơi. Trang [xóa metadata PNG](png-metadata-remover) giải thích chi tiết từng chunk.',
+          'Bấm “Xóa toàn bộ metadata”. Bộ xử lý PNG bỏ các chunk văn bản, XMP, EXIF và C2PA theo nguyên khối, giữ IHDR, IDAT, bảng màu, độ trong suốt, gamma, các chunk màu và cả chunk ảnh động APNG. Vì chunk bị gỡ nguyên khối, CRC của các chunk còn lại vẫn hợp lệ và tệp mở được ở mọi nơi. Trang [xóa metadata PNG](png-metadata-remover) giải thích chi tiết từng chunk.',
           'Mở rồi lưu lại bằng phần mềm chỉnh sửa cũng làm mất văn bản, nhưng [ảnh bị nén lại và màu có thể lệch](remove-metadata-without-losing-quality). Gỡ ở mức byte tránh được cả hai.',
         ],
       },
@@ -300,7 +300,7 @@ const vi: Articles = {
       {
         heading: 'Xem trước, rồi làm sạch',
         paragraphs: [
-          'Đặt ảnh lên bàn soi và đọc báo cáo. Dòng gắn “AI” chứa prompt, tên bộ tạo ảnh và khai báo nguồn; dòng gắn “Cá nhân” chứa tác giả, mô tả và mã định danh. Bấm “Làm sạch tất cả” rồi lưu tệp sạch — hoặc lưu cả lô thành ZIP. Trang [xóa metadata AI](ai-tag-cleaner) giải thích từng loại dấu vết.',
+          'Đặt ảnh lên bàn soi và đọc báo cáo. Dòng gắn “AI” chứa prompt, tên bộ tạo ảnh và khai báo nguồn; dòng gắn “Cá nhân” chứa tác giả, mô tả và mã định danh. Bấm “Xóa toàn bộ metadata” rồi lưu tệp sạch — hoặc lưu cả lô thành ZIP. Trang [xóa metadata AI](ai-tag-cleaner) giải thích từng loại dấu vết.',
           'Mọi thứ chạy trong trình duyệt, nên chính những prompt bạn đang muốn bảo vệ không bị gửi qua thêm một dịch vụ nào khác.',
         ],
       },
@@ -425,7 +425,7 @@ const vi: Articles = {
       {
         heading: 'Làm sạch mà không gây tác dụng phụ',
         paragraphs: [
-          'Bấm “Làm sạch tất cả”. [Các trường GPS, ngày giờ, thiết bị, tác giả và phần mềm](remove-exif-data) bị gỡ, cùng ảnh thu nhỏ nhúng và ảnh phụ MPF vốn giữ một bản sao ẩn. Thẻ hướng xoay được ghi lại trong một khối EXIF tối giản để ảnh dọc không bị nằm ngang, hồ sơ màu được giữ để màu không lệch. Ảnh HEIC từ iPhone được xử lý tại chỗ, không chuyển sang JPEG — xem thêm trang [xóa metadata HEIC](heic-metadata-remover).',
+          'Bấm “Xóa toàn bộ metadata”. [Các trường GPS, ngày giờ, thiết bị, tác giả và phần mềm](remove-exif-data) bị gỡ, cùng ảnh thu nhỏ nhúng và ảnh phụ MPF vốn giữ một bản sao ẩn. Thẻ hướng xoay được ghi lại trong một khối EXIF tối giản để ảnh dọc không bị nằm ngang, hồ sơ màu được giữ để màu không lệch. Ảnh HEIC từ iPhone được xử lý tại chỗ, không chuyển sang JPEG — xem thêm trang [xóa metadata HEIC](heic-metadata-remover).',
         ],
       },
       {
@@ -461,7 +461,7 @@ const vi: Articles = {
         paragraphs: [],
         bullets: [
           'Thả ảnh vào AI Label Remover và xem thẻ “Tệp tiết lộ gì”.',
-          'Nếu có địa điểm, bấm “Làm sạch tất cả” rồi lưu bản đã làm sạch.',
+          'Nếu có địa điểm, bấm “Xóa toàn bộ metadata” rồi lưu bản đã làm sạch.',
           'Kiểm tra khung màu xanh xác nhận địa điểm, con người và thời gian đã biến mất.',
           'Liếc qua bức ảnh để tìm manh mối nhìn thấy được — địa chỉ, biển số xe, địa danh.',
           'Chia sẻ bản đã làm sạch và giữ ảnh gốc trong thư viện của bạn.',
@@ -509,7 +509,7 @@ const vi: Articles = {
         bullets: [
           'Đặt tối đa 50 tệp JPG, PNG, WebP, GIF, HEIC hoặc AVIF lên bàn (mỗi tệp 25 MB và 40 MP).',
           'Từng tệp được đọc tự động; bấm vào tệp bất kỳ trong hàng đợi để xem báo cáo.',
-          'Bấm “Làm sạch tất cả” một lần để làm sạch mọi tệp đã đọc xong — cùng bộ xử lý với công cụ [xóa dữ liệu EXIF](remove-exif-data).',
+          'Bấm “Xóa toàn bộ metadata” một lần để làm sạch mọi tệp đã đọc xong — cùng bộ xử lý với công cụ [xóa dữ liệu EXIF](remove-exif-data).',
           'Lưu từng tệp, hoặc bấm “Lưu tất cả (ZIP)” để nhận một tệp nén duy nhất.',
         ],
       },
@@ -608,7 +608,7 @@ const vi: Articles = {
       },
       {
         heading: 'Làm sạch gỡ được gì — và cái gì ở lại',
-        paragraphs: ['Bấm “Làm sạch tất cả” — hoặc dùng trang [xóa metadata AI](ai-tag-cleaner) — sẽ cắt metadata khỏi chuỗi byte mà không vẽ lại ảnh. Cụ thể:'],
+        paragraphs: ['Bấm “Xóa toàn bộ metadata” — hoặc dùng trang [xóa metadata AI](ai-tag-cleaner) — sẽ cắt metadata khỏi chuỗi byte mà không vẽ lại ảnh. Cụ thể:'],
         bullets: [
           'Bị gỡ: manifest C2PA, các trường XMP và IPTC, EXIF và mọi đoạn văn bản nêu tên công cụ hay chứa prompt.',
           'Được giữ: dữ liệu điểm ảnh, kích thước, hướng xoay và hồ sơ màu ICC — ảnh trông y hệt.',
@@ -705,7 +705,7 @@ const vi: Articles = {
       {
         heading: 'Qua trình duyệt: cùng một cách trên mọi máy',
         paragraphs: [
-          'Nếu không được cài phần mềm — trên máy công ty chẳng hạn — hoặc muốn một cách cho mọi định dạng, hãy mở AI Label Remover trên Chrome, Edge, Safari hay Firefox. Thả tối đa 50 ảnh, đọc báo cáo, bấm “Làm sạch tất cả” rồi lưu từng tệp hoặc ZIP. Công cụ [gỡ EXIF](remove-exif-data), GPS, XMP, IPTC, C2PA và chunk prompt PNG khỏi JPEG, PNG, WebP, GIF, HEIC và AVIF, giữ hướng xoay và hồ sơ màu, và chạy hoàn toàn trên máy bạn.',
+          'Nếu không được cài phần mềm — trên máy công ty chẳng hạn — hoặc muốn một cách cho mọi định dạng, hãy mở AI Label Remover trên Chrome, Edge, Safari hay Firefox. Thả tối đa 50 ảnh, đọc báo cáo, bấm “Xóa toàn bộ metadata” rồi lưu từng tệp hoặc ZIP. Công cụ [gỡ EXIF](remove-exif-data), GPS, XMP, IPTC, C2PA và chunk prompt PNG khỏi JPEG, PNG, WebP, GIF, HEIC và AVIF, giữ hướng xoay và hồ sơ màu, và chạy hoàn toàn trên máy bạn.',
         ],
       },
       {
@@ -806,7 +806,7 @@ const vi: Articles = {
       {
         heading: 'Xem không có nghĩa là xác minh',
         paragraphs: [
-          'Metadata thông thường là văn bản trơn ai cũng sửa được, nên hãy coi nó là manh mối chứ không phải bằng chứng. C2PA khác vì có chữ ký, nhưng trình xem hiện manifest không đồng nghĩa với việc xác minh chữ ký; hãy dùng công cụ xác minh Content Credentials chính thức cho việc đó. Khi đã xem đủ và muốn xóa dữ liệu, bấm “Làm sạch tất cả” để gỡ mà không đổi bức ảnh — trang [xóa dữ liệu EXIF](remove-exif-data) giải thích rõ những gì bị gỡ.',
+          'Metadata thông thường là văn bản trơn ai cũng sửa được, nên hãy coi nó là manh mối chứ không phải bằng chứng. C2PA khác vì có chữ ký, nhưng trình xem hiện manifest không đồng nghĩa với việc xác minh chữ ký; hãy dùng công cụ xác minh Content Credentials chính thức cho việc đó. Khi đã xem đủ và muốn xóa dữ liệu, bấm “Xóa toàn bộ metadata” để gỡ mà không đổi bức ảnh — trang [xóa dữ liệu EXIF](remove-exif-data) giải thích rõ những gì bị gỡ.',
         ],
       },
     ],
@@ -884,7 +884,7 @@ const vi: Articles = {
       {
         heading: 'Tìm và xóa trường này',
         paragraphs: [
-          'Đặt ảnh vào AI Label Remover. Trong “Dấu vết AI”, trường hiện dưới dạng “XMP · Iptc4xmpExt › DigitalSourceType” kèm giá trị; cùng thuật ngữ đó bên trong manifest C2PA được liệt kê dưới mục C2PA. Bấm “Làm sạch tất cả” sẽ gỡ cả gói XMP lẫn kho C2PA, kéo theo trường này, cùng EXIF và các dữ liệu nhận dạng khác. Trang [xóa metadata AI](ai-tag-cleaner) nói về cả các trường AI khác.',
+          'Đặt ảnh vào AI Label Remover. Trong “Dấu vết AI”, trường hiện dưới dạng “XMP · Iptc4xmpExt › DigitalSourceType” kèm giá trị; cùng thuật ngữ đó bên trong manifest C2PA được liệt kê dưới mục C2PA. Bấm “Xóa toàn bộ metadata” sẽ gỡ cả gói XMP lẫn kho C2PA, kéo theo trường này, cùng EXIF và các dữ liệu nhận dạng khác. Trang [xóa metadata AI](ai-tag-cleaner) nói về cả các trường AI khác.',
           'Nếu chỉ cần xóa riêng trường này và giữ phần XMP còn lại, có thể dùng dòng lệnh: exiftool -XMP-iptcExt:DigitalSourceType= photo.jpg. Lưu ý giá trị tương ứng có thể vẫn nằm trong manifest C2PA.',
         ],
       },
@@ -1491,7 +1491,7 @@ const vi: Articles = {
       {
         heading: 'Xóa sạch từ trình duyệt',
         paragraphs: [
-          'Mở AI Label Remover trên điện thoại, chạm “Chọn ảnh”, đọc báo cáo rồi chạm “Làm sạch tất cả”. [Dữ liệu GPS, thời gian, thiết bị và tác giả bị gỡ](remove-gps-location-from-photos) — kể cả với ảnh HEIC của iPhone — trong khi hướng xoay và màu sắc được giữ. Không tải lên, không cài ứng dụng — trang [xóa metadata HEIC](heic-metadata-remover) cho biết ảnh iPhone ghi lại những gì.',
+          'Mở AI Label Remover trên điện thoại, chạm “Chọn ảnh”, đọc báo cáo rồi chạm “Xóa toàn bộ metadata”. [Dữ liệu GPS, thời gian, thiết bị và tác giả bị gỡ](remove-gps-location-from-photos) — kể cả với ảnh HEIC của iPhone — trong khi hướng xoay và màu sắc được giữ. Không tải lên, không cài ứng dụng — trang [xóa metadata HEIC](heic-metadata-remover) cho biết ảnh iPhone ghi lại những gì.',
         ],
       },
       {
@@ -1518,7 +1518,7 @@ const vi: Articles = {
         bullets: [
           'Mở AI Label Remover trên trình duyệt điện thoại và thêm vào màn hình chính để dùng lần sau.',
           'Chạm “Chọn ảnh” và chọn những ảnh sắp chia sẻ.',
-          'Đọc báo cáo, chạm “Làm sạch tất cả” và kiểm tra khung màu xanh.',
+          'Đọc báo cáo, chạm “Xóa toàn bộ metadata” và kiểm tra khung màu xanh.',
           'Lưu bản đã làm sạch và chia sẻ những bản đó, không phải ảnh gốc.',
         ],
       },

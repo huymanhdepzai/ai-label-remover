@@ -35,7 +35,7 @@ const it: Articles = {
       {
         heading: 'Pulire la copia destinata alla condivisione',
         paragraphs: [
-          'Facendo clic su “Pulisci tutte le immagini”, AI Label Remover esclude i blocchi C2PA, XMP, IPTC ed EXIF dal flusso binario, mantenendo inalterati i pixel, le dimensioni, l’orientamento e il profilo colore ICC. La pagina dello strumento [AI tag cleaner](ai-tag-cleaner) illustra i dettagli tecnici del processo.',
+          'Facendo clic su “Rimuovi tutti i metadati”, AI Label Remover esclude i blocchi C2PA, XMP, IPTC ed EXIF dal flusso binario, mantenendo inalterati i pixel, le dimensioni, l’orientamento e il profilo colore ICC. La pagina dello strumento [AI tag cleaner](ai-tag-cleaner) illustra i dettagli tecnici del processo.',
           'A differenza del salvataggio tradizionale da editor grafici che ricomprime l’immagine JPEG deteriorandone i dettagli, la rimozione diretta a livello di byte garantisce una pulizia completamente priva di perdite qualitative.',
         ],
       },
@@ -378,7 +378,7 @@ const it: Articles = {
       {
         heading: 'Visualizzare non significa verificare',
         paragraphs: [
-          'I metadati ordinari sono semplice testo che chiunque può modificare: trattali come un indizio, non come una prova. Il C2PA è diverso perché è firmato digitalmente, ma un visualizzatore che mostra il manifest non ne convalida la firma; per quello usa un verificatore ufficiale di Content Credentials. Quando hai visto abbastanza e vuoi eliminare i dati, premi “Pulisci tutte le immagini”: i metadati vengono rimossi senza modificare l’immagine. La pagina [rimuovere i dati EXIF](remove-exif-data) spiega esattamente cosa viene eliminato.',
+          'I metadati ordinari sono semplice testo che chiunque può modificare: trattali come un indizio, non come una prova. Il C2PA è diverso perché è firmato digitalmente, ma un visualizzatore che mostra il manifest non ne convalida la firma; per quello usa un verificatore ufficiale di Content Credentials. Quando hai visto abbastanza e vuoi eliminare i dati, premi “Rimuovi tutti i metadati”: i metadati vengono rimossi senza modificare l’immagine. La pagina [rimuovere i dati EXIF](remove-exif-data) spiega esattamente cosa viene eliminato.',
         ],
       },
     ],

@@ -25,15 +25,18 @@ function HomePage() {
     <main>
       <Hero hasJobs={hasJobs} />
       <SourcesStrip />
-      <StartWithFile />
-      <LearnMetadata />
-      <FormatTable />
-      <HowItWorks />
-      {hasSecurity ? <Security /> : <Features />}
-      <WhyChoose />
-      <Guides />
-      <Faq />
-      <Disclaimer />
+      {/* Dưới màn hình đầu: trình duyệt hoãn layout/vẽ tới khi cuộn gần (xem .defer-render trong index.css). */}
+      <div className="defer-render">
+        <StartWithFile />
+        <LearnMetadata />
+        <FormatTable />
+        <HowItWorks />
+        {hasSecurity ? <Security /> : <Features />}
+        <WhyChoose />
+        <Guides />
+        <Faq />
+        <Disclaimer />
+      </div>
     </main>
   );
 }

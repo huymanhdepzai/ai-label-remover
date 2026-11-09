@@ -33,9 +33,9 @@ const nl: Articles = {
         ],
       },
       {
-        heading: 'De te delen kopie verliesvrij wassen',
+        heading: 'De te delen kopie verliesvrij opschonen',
         paragraphs: [
-          'Klik op “Alle afbeeldingen wassen”. AI Label Remover knipt de C2PA-, XMP-, IPTC- en EXIF-blokken nauwkeurig uit de binaire stroom en laat pixels, afmetingen, draaiing en het ICC-kleurprofiel onaangetast. Raadpleeg de pagina [AI-tagcleaner](ai-tag-cleaner) voor technische details.',
+          'Klik op “Alle metadata verwijderen”. AI Label Remover knipt de C2PA-, XMP-, IPTC- en EXIF-blokken nauwkeurig uit de binaire stroom en laat pixels, afmetingen, draaiing en het ICC-kleurprofiel onaangetast. Raadpleeg de pagina [AI-tagcleaner](ai-tag-cleaner) voor technische details.',
           'Waar traditioneel opnieuw opslaan als JPEG het beeld comprimeert en kwaliteitsverlies veroorzaakt, voorkomt het wegsnijden van blokken elk verlies.',
         ],
       },
@@ -48,7 +48,7 @@ const nl: Articles = {
     ],
     faqHeading: 'Veelgestelde vragen over AI-labels',
     faq: [
-      { q: 'Kan ik het label “AI-info” na het plaatsen nog verwijderen?', a: 'Meestal niet via het bewerken van het bericht. Was het bronbestand vooraf met de [AI-tagcleaner](ai-tag-cleaner) en plaats het opnieuw.' },
+      { q: 'Kan ik het label “AI-info” na het plaatsen nog verwijderen?', a: 'Meestal niet via het bewerken van het bericht. Schoon het bronbestand vooraf op met de [AI-tagcleaner](ai-tag-cleaner) en plaats het opnieuw.' },
       { q: 'Verdwijnt het label gegarandeerd als ik de metadata wis?', a: 'Het elimineert de bestandsmatige oorzaak (C2PA en IPTC). Platforms kunnen echter ook over visuele herkenningsmodellen beschikken.' },
       { q: 'Verandert de foto visueel of gaat er scherpte verloren?', a: 'Nee. De pixeldata wordt byte voor byte gekopieerd; alleen de beschrijvende headers worden verwijderd.' },
       { q: 'Kan ik camera-instellingen behouden en alleen AI-tags wissen?', a: 'Voor optimale veiligheid en privacy verwijdert de tool alle identificerende gegevens in één handeling.' },
@@ -84,7 +84,7 @@ const nl: Articles = {
         ],
       },
       {
-        heading: 'Status van het bestand na het wassen',
+        heading: 'Status van het bestand na het opschonen',
         paragraphs: [
           'De resulterende PNG ziet er identiek uit, maar gedraagt zich in ComfyUI als een gewone afbeelding zonder workflow-data.',
         ],
@@ -93,8 +93,8 @@ const nl: Articles = {
     faqHeading: 'Vragen over Stable Diffusion-metadata',
     faq: [
       { q: 'Kan ik het opslaan van metadata uitschakelen in ComfyUI?', a: 'Ja, door de instellingen van de Save Image-node aan te passen of nodes te gebruiken die zonder metadata opslaan.' },
-      { q: 'Kan ComfyUI de workflow terughalen uit een gewassen PNG?', a: 'Nee. De tekstblokken zijn definitief verwijderd, waardoor er geen data meer overblijft.' },
-      { q: 'Blijft de transparantie van de gewassen PNG behouden?', a: 'Ja, het alfakanaal en de kleurwaarden blijven volledig intact.' },
+      { q: 'Kan ComfyUI de workflow terughalen uit een opgeschoonde PNG?', a: 'Nee. De tekstblokken zijn definitief verwijderd, waardoor er geen data meer overblijft.' },
+      { q: 'Blijft de transparantie van de opgeschoonde PNG behouden?', a: 'Ja, het alfakanaal en de kleurwaarden blijven volledig intact.' },
       { q: 'Wat is het verschil met converteren naar JPEG?', a: 'Converteren leidt tot kwaliteitsverlies door hercompressie. AI Label Remover bewaart de verliesvrije PNG-kwaliteit.' },
     ],
   },
@@ -136,8 +136,8 @@ const nl: Articles = {
     faq: [
       { q: 'Kan iedereen mijn prompt lezen uit een geplaatste afbeelding?', a: 'Als een platform de originele afbeelding zonder hercompressie aanbiedt, kan iedereen de prompt via de metadata inzien.' },
       { q: 'Slaat elke versie van Midjourney prompts op?', a: 'Ja, vrijwel alle directe downloads van de website of Discord bevatten generatie-instructies.' },
-      { q: 'Beïnvloedt het wassen het contrast of de kleuren?', a: 'Nee. Het ICC-profiel en de RGB-waarden blijven intact.' },
-      { q: 'Kan ik een serie gemaakte afbeeldingen tegelijk wassen?', a: 'Ja, via [batch-metadata verwijderen](batch-remove-metadata) kun je tot 50 afbeeldingen gelijktijdig verwerken.' },
+      { q: 'Beïnvloedt het opschonen het contrast of de kleuren?', a: 'Nee. Het ICC-profiel en de RGB-waarden blijven intact.' },
+      { q: 'Kan ik een serie gemaakte afbeeldingen tegelijk opschonen?', a: 'Ja, via [batch-metadata verwijderen](batch-remove-metadata) kun je tot 50 afbeeldingen gelijktijdig verwerken.' },
     ],
   },
 
@@ -267,7 +267,7 @@ const nl: Articles = {
     metaTitle: 'Batch metadata van foto’s verwijderen — gratis en lokaal',
     related: ['remove-gps-location-from-photos', 'remove-stable-diffusion-comfyui-metadata', 'hide-midjourney-dalle-prompts'],
     description:
-      'Was tot 50 afbeeldingen tegelijk in de browser: parallelle Web Workers zorgen voor snelheid, zonder upload naar servers en met download als één ZIP.',
+      'Verwijder metadata uit tot 50 afbeeldingen tegelijk in de browser: parallelle Web Workers zorgen voor snelheid, zonder upload naar servers en met download als één ZIP.',
     updated: '2026-10-23',
     sections: [
       {
@@ -292,7 +292,7 @@ const nl: Articles = {
       {
         heading: 'Originele bestandsnamen en downloaden als ZIP',
         paragraphs: [
-          'Gewassen bestanden behouden hun oorspronkelijke naam en kunnen los of met één klik gebundeld als ZIP-bestand worden opgeslagen.',
+          'Opgeschoonde bestanden behouden hun oorspronkelijke naam en kunnen los of met één klik gebundeld als ZIP-bestand worden opgeslagen.',
         ],
       },
       {
@@ -378,7 +378,7 @@ const nl: Articles = {
       {
         heading: 'Bekijken is nog geen verifiëren',
         paragraphs: [
-          'Gewone metadata is platte tekst die iedereen kan aanpassen; behandel het dus als aanwijzing, niet als bewijs. C2PA is anders omdat het digitaal ondertekend is, maar een viewer die het manifest toont, controleert de handtekening nog niet — gebruik daarvoor een officiële Content Credentials-verifier. Heb je genoeg gezien en wil je de gegevens kwijt, druk dan op “Alle afbeeldingen wassen” om ze te verwijderen zonder de afbeelding zelf te veranderen. De pagina [EXIF-gegevens verwijderen](remove-exif-data) legt precies uit wat er verdwijnt.',
+          'Gewone metadata is platte tekst die iedereen kan aanpassen; behandel het dus als aanwijzing, niet als bewijs. C2PA is anders omdat het digitaal ondertekend is, maar een viewer die het manifest toont, controleert de handtekening nog niet — gebruik daarvoor een officiële Content Credentials-verifier. Heb je genoeg gezien en wil je de gegevens kwijt, druk dan op “Alle metadata verwijderen” om ze te verwijderen zonder de afbeelding zelf te veranderen. De pagina [EXIF-gegevens verwijderen](remove-exif-data) legt precies uit wat er verdwijnt.',
         ],
       },
     ],

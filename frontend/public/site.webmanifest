@@ -1,7 +1,7 @@
 {
   "name": "AI Label Remover",
   "short_name": "AI Label Remover",
-  "description": "Wash hidden metadata — C2PA, EXIF, GPS, XMP, AI prompts — out of your images, right in the browser.",
+  "description": "Remove hidden metadata — C2PA, EXIF, GPS, XMP, AI prompts — from your images, right in the browser.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#eef2f6",

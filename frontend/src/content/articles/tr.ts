@@ -378,7 +378,7 @@ const tr: Articles = {
       {
         heading: 'Görüntülemek doğrulamak değildir',
         paragraphs: [
-          'Sıradan meta veri, herkesin değiştirebileceği düz metindir; bu yüzden onu kanıt değil ipucu olarak görün. C2PA dijital olarak imzalandığı için farklıdır, ancak manifesti göstermek imzayı doğrulamakla aynı şey değildir — bunun için resmi bir Content Credentials doğrulayıcısı kullanın. Yeterince gördüyseniz ve verilerin silinmesini istiyorsanız “Tüm görselleri yıka” düğmesine basın; görselin kendisi değişmeden meta veri kaldırılır. [EXIF verisini silme](remove-exif-data) sayfası tam olarak neyin silindiğini açıklar.',
+          'Sıradan meta veri, herkesin değiştirebileceği düz metindir; bu yüzden onu kanıt değil ipucu olarak görün. C2PA dijital olarak imzalandığı için farklıdır, ancak manifesti göstermek imzayı doğrulamakla aynı şey değildir — bunun için resmi bir Content Credentials doğrulayıcısı kullanın. Yeterince gördüyseniz ve verilerin silinmesini istiyorsanız “Tüm meta verileri kaldır” düğmesine basın; görselin kendisi değişmeden meta veri kaldırılır. [EXIF verisini silme](remove-exif-data) sayfası tam olarak neyin silindiğini açıklar.',
         ],
       },
     ],

@@ -9,7 +9,7 @@ const ca: Messages = {
   header: {
     language: 'Idioma',
     theme: { label: 'Aparença', light: 'Clar', dark: 'Fosc', system: 'Com el dispositiu' },
-    nav: { tool: 'Netejar imatges', how: 'Procés', formats: 'Tipus de fitxer', guides: 'Articles', faq: 'Preguntes' },
+    nav: { tool: 'Eliminar metadades', how: 'Procés', formats: 'Tipus de fitxer', guides: 'Articles', faq: 'Preguntes' },
   },
   hero: {
     kicker: 'AI Label Remover — Eliminar metadades de fotos — EXIF, GPS, C2PA i prompts d’IA',
@@ -54,7 +54,7 @@ const ca: Messages = {
     clearList: 'Buida la taula',
     downloadZip: 'Desa-ho tot en ZIP',
     zipping: 'Creant el ZIP… {percent}%',
-    strip: 'Neteja totes les imatges',
+    strip: 'Elimina totes les metadades',
   },
   status: {
     analyzing: 'Llegint',
@@ -64,7 +64,7 @@ const ca: Messages = {
     failed: 'Error',
   },
   file: {
-    strip: 'Neteja aquest fitxer',
+    strip: 'Elimina les metadades',
     download: 'Desa el fitxer',
     retry: 'Torna-ho a provar',
     showReport: 'Obre l’informe',
@@ -216,7 +216,7 @@ const ca: Messages = {
       steps: [
         { title: 'Deixa-hi els fitxers', text: 'Afegeix fins a 50 imatges JPG, PNG, WebP, GIF, HEIC o AVIF. El navegador les obre en local; cap còpia va enlloc.' },
         { title: 'Llegeix l’informe', text: 'Cada fitxer es recorre bloc a bloc —EXIF, XMP, IPTC, C2PA, chunks de text— i veus què diu sobre el lloc, les persones, l’hora i la IA.' },
-        { title: 'Prem «Neteja totes les imatges»', text: 'Els blocs de metadades es retallen del flux de bytes. Les dades d’imatge no es toquen i el resultat es torna a llegir per demostrar que els camps han desaparegut.' },
+        { title: 'Prem «Elimina totes les metadades»', text: 'Els blocs de metadades es retallen del flux de bytes. Les dades d’imatge no es toquen i el resultat es torna a llegir per demostrar que els camps han desaparegut.' },
         { title: 'Desa les còpies netes', text: 'Desa els fitxers d’un en un o emporta’t totes les imatges netes en un únic arxiu ZIP.' },
       ],
     },

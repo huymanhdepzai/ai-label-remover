@@ -9,7 +9,7 @@ const vi: Messages = {
   header: {
     language: 'Ngôn ngữ',
     theme: { label: 'Giao diện', light: 'Sáng', dark: 'Tối', system: 'Theo thiết bị' },
-    nav: { tool: 'Làm sạch ảnh', how: 'Quy trình', formats: 'Loại tệp', guides: 'Bài viết', faq: 'Thắc mắc' },
+    nav: { tool: 'Xóa metadata', how: 'Quy trình', formats: 'Loại tệp', guides: 'Bài viết', faq: 'Thắc mắc' },
   },
   hero: {
     kicker: 'AI Label Remover — xóa nhãn AI, tag AI, EXIF và prompt khỏi ảnh',
@@ -54,7 +54,7 @@ const vi: Messages = {
     clearList: 'Dọn bàn',
     downloadZip: 'Lưu tất cả (ZIP)',
     zipping: 'Đang đóng gói ZIP… {percent}%',
-    strip: 'Làm sạch tất cả',
+    strip: 'Xóa toàn bộ metadata',
   },
   status: {
     analyzing: 'Đang đọc',
@@ -64,7 +64,7 @@ const vi: Messages = {
     failed: 'Lỗi',
   },
   file: {
-    strip: 'Làm sạch tệp này',
+    strip: 'Xóa metadata',
     download: 'Lưu tệp',
     retry: 'Thử lại',
     showReport: 'Mở báo cáo',
@@ -216,7 +216,7 @@ const vi: Messages = {
       steps: [
         { title: 'Thả tệp vào', text: 'Thêm tối đa 50 ảnh JPG, PNG, WebP, GIF, HEIC hoặc AVIF. Trình duyệt mở chúng ngay trên máy; không có bản sao nào được gửi đi.' },
         { title: 'Đọc báo cáo', text: 'Mỗi tệp được duyệt từng khối — EXIF, XMP, IPTC, C2PA, chunk văn bản — để bạn thấy nó nói gì về địa điểm, con người, thời gian và AI.' },
-        { title: 'Bấm “Làm sạch tất cả”', text: 'Các khối metadata bị cắt khỏi chuỗi byte. Dữ liệu ảnh để nguyên, và tệp kết quả được đọc lại để chứng minh các trường đã biến mất.' },
+        { title: 'Bấm “Xóa toàn bộ metadata”', text: 'Các khối metadata bị cắt khỏi chuỗi byte. Dữ liệu ảnh để nguyên, và tệp kết quả được đọc lại để chứng minh các trường đã biến mất.' },
         { title: 'Lưu bản sạch', text: 'Lưu từng tệp một, hoặc lấy toàn bộ ảnh đã làm sạch trong một tệp ZIP.' },
       ],
     },

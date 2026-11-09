@@ -55,14 +55,14 @@ const zhTW: Pages = {
       items: [
         { title: '100% 在你的裝置上處理', text: '讀取與清理在瀏覽器分頁內的 Web Worker 中執行。沒有任何伺服器會收到你的檔案。' },
         { title: '不儲存，不用於訓練 AI', text: '照片從不外傳，因此不存在可被儲存、外洩或用來訓練模型的副本。' },
-        { title: '離線也能用', text: '載入頁面後關閉 Wi-Fi，再清洗一個檔案——照樣可以運作。DevTools 的「網路」面板中也看不到任何圖片資料外傳。' },
+        { title: '離線也能用', text: '載入頁面後關閉 Wi-Fi，再清理一個檔案——照樣可以運作。DevTools 的「網路」面板中也看不到任何圖片資料外傳。' },
         { title: '免帳號，不追蹤', text: '無需註冊，沒有分析工具、廣告或第三方像素。網站只記住你選擇的語言與主題。' },
       ],
     },
     faq: [
       { q: 'EXIF 和中繼資料有什麼不同？', a: 'EXIF 是中繼資料的一種，由相機和手機寫入。「中繼資料」是更廣泛的概念，也包含 XMP、IPTC、C2PA 以及 PNG 的文字區塊。' },
-      { q: '中繼資料能顯示照片的拍攝地點嗎？', a: '可以，只要圖片帶有 GPS 標籤。當相機獲准使用位置資訊時，手機通常會記錄緯度、經度與海拔。清洗後這些標籤會被移除，畫質不受影響。請參閱[如何刪除照片中的 GPS 位置](remove-gps-location-from-photos)。' },
-      { q: '如何刪除圖片中的 AI 中繼資料？', a: '把圖片拖到本頁頂端的方框中，然後點選「清洗所有圖片」。清洗前，每個檔案的卡片都會顯示找到的 C2PA、IPTC 與提示詞資料。' },
+      { q: '中繼資料能顯示照片的拍攝地點嗎？', a: '可以，只要圖片帶有 GPS 標籤。當相機獲准使用位置資訊時，手機通常會記錄緯度、經度與海拔。清理後這些標籤會被移除，畫質不受影響。請參閱[如何刪除照片中的 GPS 位置](remove-gps-location-from-photos)。' },
+      { q: '如何刪除圖片中的 AI 中繼資料？', a: '把圖片拖到本頁頂端的方框中，然後點選「移除所有中繼資料」。清理前，每個檔案的卡片都會顯示找到的 C2PA、IPTC 與提示詞資料。' },
       { q: '在這裡上傳照片安全嗎？', a: '你的照片根本不會被上傳。AI Label Remover 在瀏覽器中開啟檔案，在分頁記憶體中處理，並把乾淨的副本直接儲存到你的裝置。頁面載入完成後，即使離線也能繼續使用。' },
     ],
     ctaTools: '查看所有工具',
@@ -88,7 +88,7 @@ const zhTW: Pages = {
     homeLead: '每個頁面專注一項任務，工具就在頁面頂端。',
     formats: '會刪除什麼，保留什麼',
     contact: '聯絡我們',
-    contactText: '有問題、發現錯誤，或有檔案清洗不正常？請來信',
+    contactText: '有問題、發現錯誤，或有檔案清理不正常？請來信',
     updated: '更新於 {date}',
   },
   tools: {
@@ -113,7 +113,7 @@ const zhTW: Pages = {
           heading: 'AI 標籤清除器如何運作',
           paragraphs: [
             'AI Label Remover 直接在瀏覽器中讀取檔案結構。每個 AI 標籤都會連同來源欄位一起列出，並且在做任何變更之前，檔案會先得到一個判定——「發現 AI 痕跡」「值得再看一眼」或「沒有 AI 痕跡」。',
-            '點選「清洗所有圖片」會切除包含這些標籤的區塊：XMP、IPTC、EXIF、C2PA 資訊清單儲存區和 PNG 文字區塊。壓縮的影像資料逐位元組複製，清理後的副本會再讀取一次，讓你確認沒有留下任何 AI 標籤。',
+            '點選「移除所有中繼資料」會切除包含這些標籤的區塊：XMP、IPTC、EXIF、C2PA 資訊清單儲存區和 PNG 文字區塊。壓縮的影像資料逐位元組複製，清理後的副本會再讀取一次，讓你確認沒有留下任何 AI 標籤。',
           ],
         },
         {
@@ -136,7 +136,7 @@ const zhTW: Pages = {
         { q: '清除 AI 標籤會降低畫質嗎？', a: '不會。不做任何重新編碼，只刪除中繼資料，影像資料維持不變。' },
         { q: '支援哪些格式？', a: 'JPG、PNG、WebP、GIF、HEIC/HEIF 與 AVIF——每次最多 50 個檔案，每個不超過 25 MB。PNG 裡的提示詞也可以用 [PNG 中繼資料移除工具](png-metadata-remover)處理。' },
         { q: '能刪除 ChatGPT 或 Gemini 圖片的中繼資料嗎？', a: '可以刪除這些服務寫入的 C2PA 內容憑證與 IPTC 欄位。Google 另外會在像素中嵌入 SynthID 浮水印，任何中繼資料工具都無法去除。' },
-        { q: '刪除前能先看到提示詞嗎？', a: '可以。「原始中繼資料」分頁會逐字顯示提示詞、工作流程和產生器名稱，你可以在清洗前複製想保留的內容。' },
+        { q: '刪除前能先看到提示詞嗎？', a: '可以。「原始中繼資料」分頁會逐字顯示提示詞、工作流程和產生器名稱，你可以在清理前複製想保留的內容。' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'remove-stable-diffusion-comfyui-metadata'],
       updated: '2026-11-06',
@@ -163,7 +163,7 @@ const zhTW: Pages = {
           bullets: [
             '把修過的照片拖到本頁頂端的方框中。',
             '查看判定結果和依據欄位——報告會寫明確切的 C2PA 動作或 IPTC 值。',
-            '點選「清洗所有圖片」，儲存乾淨的副本。',
+            '點選「移除所有中繼資料」，儲存乾淨的副本。',
             '上傳乾淨的副本，而不是最初匯出的檔案。',
           ],
         },
@@ -182,9 +182,9 @@ const zhTW: Pages = {
       ],
       faqHeading: 'No AI Tag 常見問題',
       faq: [
-        { q: '能拿掉已發布貼文上的「AI 資訊」標示嗎？', a: '不能。標示屬於平台上的那則貼文。請刪除或封存該貼文，在這裡清洗檔案，再上傳乾淨的副本。' },
+        { q: '能拿掉已發布貼文上的「AI 資訊」標示嗎？', a: '不能。標示屬於平台上的那則貼文。請刪除或封存該貼文，在這裡清理檔案，再上傳乾淨的副本。' },
         { q: 'No AI Tag 能保證效果嗎？', a: '沒有。它會刪除平台讀取的中繼資料，但平台也可能使用其他訊號。不過對大多數修過的照片來說，中繼資料就是被標示的原因。' },
-        { q: 'iPhone 和 Android 照片可以用嗎？', a: '可以。iPhone 的 HEIC 和 Android 的 JPG 都會直接清洗，不需轉檔。另有專用的 [HEIC 中繼資料移除工具](heic-metadata-remover)。' },
+        { q: 'iPhone 和 Android 照片可以用嗎？', a: '可以。iPhone 的 HEIC 和 Android 的 JPG 都會直接清理，不需轉檔。另有專用的 [HEIC 中繼資料移除工具](heic-metadata-remover)。' },
         { q: '完全由 AI 生成的圖片上的 AI 標籤呢？', a: '[AI 標籤清除器](ai-tag-cleaner)可以顯示並刪除它們，但平台規則通常仍要求你自行標示寫實的 AI 圖片。' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'batch-remove-metadata'],
@@ -212,13 +212,13 @@ const zhTW: Pages = {
           heading: '這個 EXIF 移除工具如何運作',
           paragraphs: [
             'AI Label Remover 直接讀取檔案結構。在 JPEG 中，它會切除包含 EXIF 和 XMP 的 APP1 區段，以及 IPTC、註解和縮圖；在 HEIC、PNG 和 WebP 中則刪除對應的 box 或區塊。壓縮的影像資料逐位元組複製，因此不會重新編碼，照片看起來完全一樣。',
-            '決定照片顯示方式的欄位會刻意保留：方向、ICC 色彩描述檔和像素尺寸。這樣就不會出現粗糙工具常見的照片橫躺、顏色發灰等問題。處理完成後，清洗過的檔案會再讀取一次，讓你確認 EXIF 欄位真的刪除了。',
+            '決定照片顯示方式的欄位會刻意保留：方向、ICC 色彩描述檔和像素尺寸。這樣就不會出現粗糙工具常見的照片橫躺、顏色發灰等問題。處理完成後，清理過的檔案會再讀取一次，讓你確認 EXIF 欄位真的刪除了。',
           ],
         },
         {
           heading: '分享前什麼時候該刪除 EXIF',
           paragraphs: [
-            '許多大型社群網站會在上傳時刪除 EXIF，但還有很多地方不會：電子郵件附件、雲端連結、論壇、二手拍賣平台、傳送「原始畫質」的聊天 App，以及你自己的網站。如果不確定照片會流向哪裡，先清洗一遍是最穩妥的做法。',
+            '許多大型社群網站會在上傳時刪除 EXIF，但還有很多地方不會：電子郵件附件、雲端連結、論壇、二手拍賣平台、傳送「原始畫質」的聊天 App，以及你自己的網站。如果不確定照片會流向哪裡，先清理一遍是最穩妥的做法。',
             '在網路上賣東西、發布在家拍的照片、傳照片給剛認識的人，都是 [GPS 資料可能洩露位置](remove-gps-location-from-photos)的典型情境。',
           ],
         },
@@ -234,7 +234,7 @@ const zhTW: Pages = {
         { q: '刪除 EXIF 會降低畫質嗎？', a: '不會。只切除中繼資料區塊，壓縮的影像資料原樣複製，所以解析度、銳利度和色彩完全不變。' },
         { q: '照片方向還會正確嗎？', a: '會。方向值和 ICC 色彩描述檔都會保留，圖片顯示方式和之前相同。' },
         { q: '能刪除 iPhone HEIC 照片的 EXIF 嗎？', a: '可以。直接支援 HEIC 和 HEIF，不必先轉成 JPEG。另有專用頁面：[HEIC 中繼資料移除工具](heic-metadata-remover)。' },
-        { q: '怎麼確認 EXIF 已經刪除？', a: '清洗後，AI Label Remover 會重新讀取新檔案並顯示剩下的欄位。你也可以在作業系統的檔案內容中查看。' },
+        { q: '怎麼確認 EXIF 已經刪除？', a: '清理後，AI Label Remover 會重新讀取新檔案並顯示剩下的欄位。你也可以在作業系統的檔案內容中查看。' },
         { q: '能一次處理很多照片嗎？', a: '可以：每次最多 50 個檔案，可打包成一個 ZIP 下載。請參閱[批次刪除中繼資料](batch-remove-metadata)。' },
       ],
       related: ['remove-gps-location-from-photos', 'batch-remove-metadata', 'made-with-ai-label'],
@@ -305,11 +305,11 @@ const zhTW: Pages = {
           heading: '不轉 JPEG 也能刪除中繼資料',
           paragraphs: [
             '常見的建議是把 HEIC 轉成 JPEG，期待中繼資料不會被帶過去。但這樣會重新編碼影像、損失畫質，還常常丟掉廣色域色彩描述檔。AI Label Remover 則直接編輯 HEIC 容器本身：刪除 Exif 和 XMP 項目、C2PA uuid box 以及時間戳記 box，並保持 HEVC 影像資料、方向（irot/imir）和色彩描述檔（colr）不變。',
-            '同一引擎也能處理使用相同 ISOBMFF 容器的 AVIF，所以新式 App 匯出的 AVIF 也能用同樣方式清洗。',
+            '同一引擎也能處理使用相同 ISOBMFF 容器的 AVIF，所以新式 App 匯出的 AVIF 也能用同樣方式清理。',
           ],
         },
         {
-          heading: 'iPhone 設定與清洗檔案的差別',
+          heading: 'iPhone 設定與清理檔案的差別',
           paragraphs: [
             'iOS 可以在分享表單中點「選項」關閉單次分享的位置資訊，「照片」App 也能逐張修改或移除位置。偶爾分享一兩張很方便，但容易忘記，而且不會刪除其他欄位。請參閱[照片中的 GPS 為什麼有風險](remove-gps-location-from-photos)。',
             '如果是一批照片——整個旅遊相簿、商品照或刊登用的圖片——把它們拖進 AI Label Remover 並儲存成一個 ZIP 會更快，前後對照報告也會清楚顯示刪除了什麼。',
@@ -318,10 +318,10 @@ const zhTW: Pages = {
       ],
       faqHeading: 'HEIC 常見問題',
       faq: [
-        { q: '在有時打不開 HEIC 的 Windows 上能用嗎？', a: '能。AI Label Remover 自行讀取 HEIC 結構，因此不必安裝 HEIC 編解碼器。HEIC 檔案會顯示格式標籤而不是預覽圖，但讀取和清洗都正常。' },
-        { q: '清洗後的檔案還能在「照片」中開啟嗎？', a: '能。輸出是標準的 HEIC 檔案，影像資料相同，只刪除了中繼資料項目。' },
+        { q: '在有時打不開 HEIC 的 Windows 上能用嗎？', a: '能。AI Label Remover 自行讀取 HEIC 結構，因此不必安裝 HEIC 編解碼器。HEIC 檔案會顯示格式標籤而不是預覽圖，但讀取和清理都正常。' },
+        { q: '清理後的檔案還能在「照片」中開啟嗎？', a: '能。輸出是標準的 HEIC 檔案，影像資料相同，只刪除了中繼資料項目。' },
         { q: '支援原況照片嗎？', a: 'AI Label Remover 處理的是靜態 HEIC 影像。原況照片配套的影片是另一個檔案，不會被變更。' },
-        { q: '有檔案大小限制嗎？', a: '每個檔案最大 25 MB、4000 萬像素，足以涵蓋目前所有 iPhone 拍攝的照片，一次可清洗 50 個。' },
+        { q: '有檔案大小限制嗎？', a: '每個檔案最大 25 MB、4000 萬像素，足以涵蓋目前所有 iPhone 拍攝的照片，一次可清理 50 個。' },
       ],
       related: ['remove-gps-location-from-photos', 'batch-remove-metadata', 'what-is-c2pa-content-credentials'],
       updated: '2026-11-06',
@@ -348,13 +348,13 @@ const zhTW: Pages = {
           heading: '為了讓影像不變而保留的內容',
           paragraphs: [
             '透明度（tRNS）、伽瑪與色度（gAMA、cHRM）、sRGB 旗標以及內嵌 ICC 描述檔（iCCP）都會影響顯示，因此會保留。動態 PNG 保留 acTL、fcTL 和 fdAT 區塊，APNG 動畫照常播放。',
-            '由於 IDAT 資料是複製而非重新壓縮，清洗後的檔案和原圖逐像素一致——通常還會小一點，因為文字區塊沒了。',
+            '由於 IDAT 資料是複製而非重新壓縮，清理後的檔案和原圖逐像素一致——通常還會小一點，因為文字區塊沒了。',
           ],
         },
         {
           heading: '保護 AI 提示詞與工作流程',
           paragraphs: [
-            '如果你分享用 Stable Diffusion、Forge 或 ComfyUI 生成的圖片，任何人都能把 PNG 拖回同一個工具，還原你完整的提示詞、種子、模型和節點圖。[Stable Diffusion 與 ComfyUI 如何在 PNG 中藏提示詞](remove-stable-diffusion-comfyui-metadata)說明了儲存的內容。清洗會刪除全部資訊；若想自己保留提示詞，可以先在「原始中繼資料」分頁中複製。',
+            '如果你分享用 Stable Diffusion、Forge 或 ComfyUI 生成的圖片，任何人都能把 PNG 拖回同一個工具，還原你完整的提示詞、種子、模型和節點圖。[Stable Diffusion 與 ComfyUI 如何在 PNG 中藏提示詞](remove-stable-diffusion-comfyui-metadata)說明了儲存的內容。清理會刪除全部資訊；若想自己保留提示詞，可以先在「原始中繼資料」分頁中複製。',
           ],
         },
       ],
@@ -362,7 +362,7 @@ const zhTW: Pages = {
       faq: [
         { q: '刪除 PNG 中繼資料會改變顏色嗎？', a: '不會。與顏色相關的區塊——sRGB、gAMA、cHRM 和 iCCP——都會保留，IDAT 影像資料原樣複製。' },
         { q: '透明 PNG 可以用嗎？', a: '可以。透明資料（tRNS 或 IDAT 中的 Alpha 色版）屬於影像本身，絕不會被變更。' },
-        { q: '能把提示詞保存下來嗎？', a: '請在清洗前從「原始中繼資料」分頁複製。刪除後，就無法從清洗過的檔案還原中繼資料。' },
+        { q: '能把提示詞保存下來嗎？', a: '請在清理前從「原始中繼資料」分頁複製。刪除後，就無法從清理過的檔案還原中繼資料。' },
         { q: 'Midjourney 或 DALL·E 的 PNG 也能處理嗎？', a: '能。這些服務嵌入的文字、XMP 或 C2PA 資料會以同樣方式刪除。請參閱[如何隱藏 Midjourney 與 DALL·E 提示詞](hide-midjourney-dalle-prompts)。' },
       ],
       related: ['remove-stable-diffusion-comfyui-metadata', 'hide-midjourney-dalle-prompts', 'batch-remove-metadata'],
@@ -386,7 +386,7 @@ const zhTW: Pages = {
         {
           heading: '工具如何運作',
           paragraphs: [
-            '加入圖片後，瀏覽器會在本機讀取它。Web Worker 解析檔案結構——JPEG 區段、PNG 區塊、WebP RIFF 區塊、GIF 區塊以及 HEIC/AVIF box——並列出找到的每個中繼資料區塊。清洗會從位元組串流中刪除這些區塊，原樣複製壓縮的影像資料，再重新讀取結果確認剩下的內容。',
+            '加入圖片後，瀏覽器會在本機讀取它。Web Worker 解析檔案結構——JPEG 區段、PNG 區塊、WebP RIFF 區塊、GIF 區塊以及 HEIC/AVIF box——並列出找到的每個中繼資料區塊。清理會從位元組串流中刪除這些區塊，原樣複製壓縮的影像資料，再重新讀取結果確認剩下的內容。',
             '沒有任何伺服器端處理。網站本身是一組靜態頁面；載入後，工具可以離線使用。',
           ],
         },
@@ -438,7 +438,7 @@ const zhTW: Pages = {
           paragraphs: ['當你把圖片加入 AI Label Remover，它的完整歷程如下：'],
           bullets: [
             '瀏覽器從你的裝置開啟檔案，並保存在分頁的記憶體中。',
-            '分頁內的 Web Worker 讀取中繼資料，你點選清洗後寫出乾淨的副本——仍然在記憶體中。',
+            '分頁內的 Web Worker 讀取中繼資料，你點選清理後寫出乾淨的副本——仍然在記憶體中。',
             '儲存時，瀏覽器把乾淨的檔案或 ZIP 直接寫入你的裝置。',
             '關閉或重新整理分頁後，圖片和報告隨之消失。伺服器上什麼都不會留下，因為從來沒有伺服器接收過它們。',
           ],
@@ -446,7 +446,7 @@ const zhTW: Pages = {
         {
           heading: '你可以親自驗證',
           paragraphs: [
-            '你不必只聽我們說。載入頁面後關閉 Wi-Fi 或行動數據，再清洗一個檔案：它照樣能用，因為沒有任何東西需要傳送。如果你熟悉開發人員工具，可以在清洗時開啟「網路」面板，會看到沒有任何圖片資料離開裝置。',
+            '你不必只聽我們說。載入頁面後關閉 Wi-Fi 或行動數據，再清理一個檔案：它照樣能用，因為沒有任何東西需要傳送。如果你熟悉開發人員工具，可以在清理時開啟「網路」面板，會看到沒有任何圖片資料離開裝置。',
           ],
         },
         {

@@ -183,7 +183,7 @@ const fr: Articles = {
       {
         heading: 'Nettoyer la copie que vous publiez',
         paragraphs: [
-          'Appuyez sur « Nettoyer toutes les images ». AI Label Remover découpe du flux d’octets le magasin C2PA et les blocs XMP, IPTC et EXIF, en laissant intacts les pixels, la taille, la rotation et le profil couleur. Le fichier nettoyé est relu pour que vous voyiez la disparition des traces d’IA avant d’enregistrer. La page pour [supprimer les métadonnées IA](ai-tag-cleaner) détaille chaque trace traitée.',
+          'Appuyez sur « Supprimer toutes les métadonnées ». AI Label Remover découpe du flux d’octets le magasin C2PA et les blocs XMP, IPTC et EXIF, en laissant intacts les pixels, la taille, la rotation et le profil couleur. Le fichier nettoyé est relu pour que vous voyiez la disparition des traces d’IA avant d’enregistrer. La page pour [supprimer les métadonnées IA](ai-tag-cleaner) détaille chaque trace traitée.',
           'Réenregistrer en JPEG supprimerait aussi les métadonnées, mais [recompresse l’image à chaque fois](remove-metadata-without-losing-quality). Découper les blocs évite totalement cette perte.',
         ],
       },
@@ -238,7 +238,7 @@ const fr: Articles = {
       {
         heading: 'Ce que le nettoyage conserve',
         paragraphs: [
-          'Appuyez sur « Nettoyer toutes les images ». Le module PNG retire les chunks de texte, XMP, EXIF et C2PA en entier et conserve IHDR, IDAT, palette, transparence, gamma et couleur, ainsi que les chunks d’animation APNG. Comme les chunks sont retirés en entier, les CRC restants restent valides et le fichier s’ouvre partout. La page pour [supprimer les métadonnées PNG](png-metadata-remover) détaille chaque chunk.',
+          'Appuyez sur « Supprimer toutes les métadonnées ». Le module PNG retire les chunks de texte, XMP, EXIF et C2PA en entier et conserve IHDR, IDAT, palette, transparence, gamma et couleur, ainsi que les chunks d’animation APNG. Comme les chunks sont retirés en entier, les CRC restants restent valides et le fichier s’ouvre partout. La page pour [supprimer les métadonnées PNG](png-metadata-remover) détaille chaque chunk.',
           'Ouvrir et réenregistrer dans un éditeur ferait aussi disparaître le texte, mais [recompresse l’image et peut décaler les couleurs](remove-metadata-without-losing-quality). La suppression au niveau des octets évite les deux.',
         ],
       },
@@ -280,7 +280,7 @@ const fr: Articles = {
       {
         heading: 'Regarder d’abord, nettoyer ensuite',
         paragraphs: [
-          'Posez l’image sur la table et lisez le rapport. Les lignes marquées « IA » contiennent prompts, noms de générateurs et déclarations d’origine ; les lignes marquées « Personnes », auteurs, descriptions et identifiants. Appuyez sur « Nettoyer toutes les images » et enregistrez le fichier propre — ou tout le lot en ZIP. La page pour [supprimer les métadonnées IA](ai-tag-cleaner) explique chaque type de trace.',
+          'Posez l’image sur la table et lisez le rapport. Les lignes marquées « IA » contiennent prompts, noms de générateurs et déclarations d’origine ; les lignes marquées « Personnes », auteurs, descriptions et identifiants. Appuyez sur « Supprimer toutes les métadonnées » et enregistrez le fichier propre — ou tout le lot en ZIP. La page pour [supprimer les métadonnées IA](ai-tag-cleaner) explique chaque type de trace.',
           'Tout se passe dans votre navigateur : les prompts que vous protégez ne transitent donc pas par un service de plus en chemin.',
         ],
       },
@@ -383,7 +383,7 @@ const fr: Articles = {
       {
         heading: 'Nettoyer sans effets secondaires',
         paragraphs: [
-          'Appuyez sur « Nettoyer toutes les images ». [Les champs GPS, dates, appareil, auteur et logiciel](remove-exif-data) disparaissent, avec les miniatures intégrées et les images secondaires MPF qui en garderaient une copie cachée. La balise d’orientation est réécrite dans un minuscule bloc EXIF pour que les portraits ne basculent pas, et le profil couleur est conservé pour des couleurs fidèles. Les HEIC d’iPhone sont nettoyés directement, sans conversion en JPEG — voir la page pour [supprimer les métadonnées HEIC](heic-metadata-remover).',
+          'Appuyez sur « Supprimer toutes les métadonnées ». [Les champs GPS, dates, appareil, auteur et logiciel](remove-exif-data) disparaissent, avec les miniatures intégrées et les images secondaires MPF qui en garderaient une copie cachée. La balise d’orientation est réécrite dans un minuscule bloc EXIF pour que les portraits ne basculent pas, et le profil couleur est conservé pour des couleurs fidèles. Les HEIC d’iPhone sont nettoyés directement, sans conversion en JPEG — voir la page pour [supprimer les métadonnées HEIC](heic-metadata-remover).',
         ],
       },
       {
@@ -419,7 +419,7 @@ const fr: Articles = {
         paragraphs: [],
         bullets: [
           'Posez la photo dans AI Label Remover et regardez l’onglet « Ce qu’il révèle ».',
-          'Si un lieu apparaît, appuyez sur « Nettoyer toutes les images » et enregistrez la copie nettoyée.',
+          'Si un lieu apparaît, appuyez sur « Supprimer toutes les métadonnées » et enregistrez la copie nettoyée.',
           'Vérifiez que le panneau vert confirme la disparition du lieu, des personnes et de l’heure.',
           'Parcourez l’image à la recherche d’indices visibles — adresses, plaques d’immatriculation, monuments.',
           'Partagez la copie nettoyée et gardez l’original dans votre photothèque.',
@@ -450,7 +450,7 @@ const fr: Articles = {
         bullets: [
           'Posez jusqu’à 50 fichiers JPG, PNG, WebP, GIF, HEIC ou AVIF sur la table (25 Mo et 40 MP chacun).',
           'Chacun est lu automatiquement ; cliquez sur un fichier de la file pour voir son rapport.',
-          'Appuyez une fois sur « Nettoyer toutes les images » pour nettoyer tout ce qui a été lu — le même moteur que l’outil pour [supprimer les données EXIF](remove-exif-data).',
+          'Appuyez une fois sur « Supprimer toutes les métadonnées » pour nettoyer tout ce qui a été lu — le même moteur que l’outil pour [supprimer les données EXIF](remove-exif-data).',
           'Enregistrez les fichiers un par un, ou appuyez sur « Tout enregistrer en ZIP » pour une seule archive.',
         ],
       },
@@ -538,7 +538,7 @@ const fr: Articles = {
       },
       {
         heading: 'Ce que le nettoyage retire — et ce qui reste',
-        paragraphs: ['Appuyer sur « Nettoyer toutes les images » — ou passer par l’outil pour [supprimer les métadonnées IA](ai-tag-cleaner) — découpe les métadonnées du flux d’octets sans redessiner l’image. En pratique :'],
+        paragraphs: ['Appuyer sur « Supprimer toutes les métadonnées » — ou passer par l’outil pour [supprimer les métadonnées IA](ai-tag-cleaner) — découpe les métadonnées du flux d’octets sans redessiner l’image. En pratique :'],
         bullets: [
           'Retiré : le manifeste C2PA, les champs XMP et IPTC, l’EXIF et tout texte qui nomme l’outil ou contient un prompt.',
           'Conservé : les pixels, les dimensions, la rotation et le profil couleur ICC — l’image reste identique.',
@@ -624,7 +624,7 @@ const fr: Articles = {
       {
         heading: 'Méthode navigateur : les mêmes étapes sur tout ordinateur',
         paragraphs: [
-          'Si vous ne pouvez pas installer de logiciel — sur un portable professionnel par exemple — ou si vous voulez une seule méthode pour tous les formats, ouvrez AI Label Remover dans Chrome, Edge, Safari ou Firefox. Déposez jusqu’à 50 images, lisez le rapport, appuyez sur « Nettoyer toutes les images » et enregistrez les fichiers ou un ZIP. Il [retire EXIF](remove-exif-data), GPS, XMP, IPTC, C2PA et les chunks de prompts PNG des JPEG, PNG, WebP, GIF, HEIC et AVIF, conserve l’orientation et le profil couleur, et tout se passe sur votre machine.',
+          'Si vous ne pouvez pas installer de logiciel — sur un portable professionnel par exemple — ou si vous voulez une seule méthode pour tous les formats, ouvrez AI Label Remover dans Chrome, Edge, Safari ou Firefox. Déposez jusqu’à 50 images, lisez le rapport, appuyez sur « Supprimer toutes les métadonnées » et enregistrez les fichiers ou un ZIP. Il [retire EXIF](remove-exif-data), GPS, XMP, IPTC, C2PA et les chunks de prompts PNG des JPEG, PNG, WebP, GIF, HEIC et AVIF, conserve l’orientation et le profil couleur, et tout se passe sur votre machine.',
         ],
       },
       {
@@ -714,7 +714,7 @@ const fr: Articles = {
       {
         heading: 'Voir n’est pas vérifier',
         paragraphs: [
-          'Les métadonnées ordinaires sont du texte brut que n’importe qui peut modifier : considérez-les comme des indices, pas des preuves. Le C2PA est différent parce qu’il est signé, mais un lecteur qui affiche le manifeste ne valide pas la signature ; utilisez pour cela un vérificateur officiel de Content Credentials. Quand vous en avez assez vu et voulez que ces données disparaissent, appuyez sur « Nettoyer toutes les images » pour les retirer sans modifier l’image — la page pour [supprimer les données EXIF](remove-exif-data) détaille ce qui disparaît.',
+          'Les métadonnées ordinaires sont du texte brut que n’importe qui peut modifier : considérez-les comme des indices, pas des preuves. Le C2PA est différent parce qu’il est signé, mais un lecteur qui affiche le manifeste ne valide pas la signature ; utilisez pour cela un vérificateur officiel de Content Credentials. Quand vous en avez assez vu et voulez que ces données disparaissent, appuyez sur « Supprimer toutes les métadonnées » pour les retirer sans modifier l’image — la page pour [supprimer les données EXIF](remove-exif-data) détaille ce qui disparaît.',
         ],
       },
     ],
@@ -781,7 +781,7 @@ const fr: Articles = {
       {
         heading: 'Le trouver et le supprimer',
         paragraphs: [
-          'Posez l’image dans AI Label Remover. Dans « Traces d’IA », le champ apparaît comme « XMP · Iptc4xmpExt › DigitalSourceType » avec sa valeur ; le même terme dans un manifeste C2PA est listé sous C2PA. Appuyer sur « Nettoyer toutes les images » retire tout le paquet XMP et le magasin C2PA, et donc le champ, avec l’EXIF et les autres données identifiantes. La page pour [supprimer les métadonnées IA](ai-tag-cleaner) couvre aussi les autres champs IA.',
+          'Posez l’image dans AI Label Remover. Dans « Traces d’IA », le champ apparaît comme « XMP · Iptc4xmpExt › DigitalSourceType » avec sa valeur ; le même terme dans un manifeste C2PA est listé sous C2PA. Appuyer sur « Supprimer toutes les métadonnées » retire tout le paquet XMP et le magasin C2PA, et donc le champ, avec l’EXIF et les autres données identifiantes. La page pour [supprimer les métadonnées IA](ai-tag-cleaner) couvre aussi les autres champs IA.',
           'Si vous devez retirer uniquement ce champ et garder le reste de votre XMP, un outil en ligne de commande le permet : exiftool -XMP-iptcExt:DigitalSourceType= photo.jpg. N’oubliez pas qu’une valeur équivalente peut aussi figurer dans un manifeste C2PA.',
         ],
       },
@@ -1294,7 +1294,7 @@ const fr: Articles = {
       {
         heading: 'Tout nettoyer depuis le navigateur',
         paragraphs: [
-          'Ouvrez AI Label Remover sur votre téléphone, touchez « Parcourir les fichiers », lisez le rapport et touchez « Nettoyer toutes les images ». [Les données de GPS, d’heure, d’appareil et d’auteur sont retirées](remove-gps-location-from-photos) — HEIC d’iPhone compris — tandis que la rotation et les couleurs restent. Sans envoi, sans appli — et la page pour [supprimer les métadonnées HEIC](heic-metadata-remover) montre ce qu’enregistre une photo d’iPhone.',
+          'Ouvrez AI Label Remover sur votre téléphone, touchez « Parcourir les fichiers », lisez le rapport et touchez « Supprimer toutes les métadonnées ». [Les données de GPS, d’heure, d’appareil et d’auteur sont retirées](remove-gps-location-from-photos) — HEIC d’iPhone compris — tandis que la rotation et les couleurs restent. Sans envoi, sans appli — et la page pour [supprimer les métadonnées HEIC](heic-metadata-remover) montre ce qu’enregistre une photo d’iPhone.',
         ],
       },
       {
@@ -1321,7 +1321,7 @@ const fr: Articles = {
         bullets: [
           'Ouvrez AI Label Remover dans le navigateur du téléphone et ajoutez-le à l’écran d’accueil pour la prochaine fois.',
           'Touchez « Parcourir les fichiers » et choisissez les photos à partager.',
-          'Lisez le rapport, touchez « Nettoyer toutes les images » et vérifiez le panneau vert.',
+          'Lisez le rapport, touchez « Supprimer toutes les métadonnées » et vérifiez le panneau vert.',
           'Enregistrez les copies nettoyées et partagez celles-ci, pas les originaux.',
         ],
       },

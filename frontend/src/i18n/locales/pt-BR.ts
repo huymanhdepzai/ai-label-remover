@@ -9,7 +9,7 @@ const ptBR: Messages = {
   header: {
     language: 'Idioma',
     theme: { label: 'Aparência', light: 'Claro', dark: 'Escuro', system: 'Igual ao dispositivo' },
-    nav: { tool: 'Limpar imagens', how: 'Como funciona', formats: 'Tipos de arquivo', guides: 'Artigos', faq: 'Dúvidas' },
+    nav: { tool: 'Remover metadados', how: 'Como funciona', formats: 'Tipos de arquivo', guides: 'Artigos', faq: 'Dúvidas' },
   },
   hero: {
     kicker: 'AI Label Remover — remova rótulos de IA, C2PA, EXIF e prompts das suas fotos',
@@ -54,7 +54,7 @@ const ptBR: Messages = {
     clearList: 'Limpar a mesa',
     downloadZip: 'Salvar tudo em ZIP',
     zipping: 'Montando o ZIP… {percent}%',
-    strip: 'Limpar todas as imagens',
+    strip: 'Remover todos os metadados',
   },
   status: {
     analyzing: 'Lendo',
@@ -64,7 +64,7 @@ const ptBR: Messages = {
     failed: 'Erro',
   },
   file: {
-    strip: 'Limpar este arquivo',
+    strip: 'Remover metadados',
     download: 'Salvar arquivo',
     retry: 'Tentar de novo',
     showReport: 'Abrir relatório',
@@ -216,7 +216,7 @@ const ptBR: Messages = {
       steps: [
         { title: 'Solte os arquivos', text: 'Adicione até 50 imagens JPG, PNG, WebP, GIF, HEIC ou AVIF. O navegador as abre localmente; nenhuma cópia vai para lugar nenhum.' },
         { title: 'Leia o relatório', text: 'Cada arquivo é percorrido bloco a bloco — EXIF, XMP, IPTC, C2PA, chunks de texto — e você vê o que ele diz sobre local, pessoas, hora e IA.' },
-        { title: 'Toque em “Limpar todas as imagens”', text: 'Os blocos de metadados são recortados do fluxo de bytes. Os dados da imagem ficam intactos, e o resultado é lido de novo para provar que os campos sumiram.' },
+        { title: 'Toque em “Remover todos os metadados”', text: 'Os blocos de metadados são recortados do fluxo de bytes. Os dados da imagem ficam intactos, e o resultado é lido de novo para provar que os campos sumiram.' },
         { title: 'Salve as cópias limpas', text: 'Salve um arquivo por vez ou pegue todas as imagens limpas em um único ZIP.' },
       ],
     },
@@ -250,7 +250,7 @@ const ptBR: Messages = {
     },
     formats: {
       eyebrow: 'Tipos de arquivo',
-      title: 'O que é lavado de cada tipo de arquivo',
+      title: 'O que é removido de cada tipo de arquivo',
       text: 'Cada formato guarda metadados do seu jeito. O AI Label Remover lê essa estrutura diretamente em vez de renderizar a imagem de novo.',
       colFormat: 'Tipo',
       colStructure: 'Formado por',
@@ -288,7 +288,7 @@ const ptBR: Messages = {
           title: 'Guarde seus prompts do Midjourney e do DALL·E para você',
           paragraphs: [
             'Imagens exportadas do Midjourney, DALL·E ou Firefly podem levar o texto do prompt, um ID de tarefa, o nome da sua conta e uma declaração de origem por IA em XMP, EXIF ou texto PNG. Se seus prompts fazem parte do seu ofício, cada post entrega esse trabalho de graça.',
-            'Carregue o arquivo, procure as linhas marcadas “IA” e “Pessoas” e lave tudo com um botão.',
+            'Carregue o arquivo, procure as linhas marcadas “IA” e “Pessoas” e remova tudo com um botão.',
           ],
         },
         {
@@ -369,7 +369,7 @@ const ptBR: Messages = {
       ],
     },
     howToSchema: {
-      name: 'Como lavar os metadados de IA de uma imagem',
+      name: 'Como remover os metadados de IA de uma imagem',
       description: 'Tire C2PA, EXIF, XMP e prompts de IA das suas imagens direto no navegador, com a qualidade intacta.',
     },
     footer: {

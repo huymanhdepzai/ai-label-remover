@@ -373,7 +373,7 @@ export function SiteFooter() {
   const infoLang = hasPages(lang) ? lang : DEFAULT_LANG;
 
   return (
-    <footer className="border-t border-line bg-sheet pb-[env(safe-area-inset-bottom,0px)]">
+    <footer className="defer-render-self border-t border-line bg-sheet pb-[env(safe-area-inset-bottom,0px)]">
       <div className="mx-auto max-w-6xl px-5 pt-14 pb-8 sm:px-8 sm:pt-16">
         <div className={`grid gap-x-8 gap-y-10 sm:grid-cols-2 ${pages ? 'lg:grid-cols-[minmax(0,1.5fr)_repeat(3,minmax(0,1fr))]' : 'lg:grid-cols-[minmax(0,1.5fr)_repeat(2,minmax(0,1fr))]'} lg:gap-x-10`}>
           {/* Thương hiệu */}

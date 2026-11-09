@@ -70,14 +70,14 @@ const de: Pages = {
       items: [
         { title: '100 % auf Ihrem Gerät', text: 'Lesen und Bereinigen laufen in einem Web Worker in Ihrem Browser-Tab. Kein Server erhält jemals Ihre Dateien.' },
         { title: 'Keine Speicherung, kein KI-Training', text: 'Da Fotos nirgendwohin gesendet werden, gibt es keine Kopie, die gespeichert, geleakt oder zum Trainieren eines Modells genutzt werden könnte.' },
-        { title: 'Funktioniert offline', text: 'Seite laden, WLAN ausschalten und eine Datei waschen – es funktioniert trotzdem. Der Netzwerk-Tab der DevTools zeigt keine Bilddaten, die das Gerät verlassen.' },
+        { title: 'Funktioniert offline', text: 'Seite laden, WLAN ausschalten und eine Datei bereinigen – es funktioniert trotzdem. Der Netzwerk-Tab der DevTools zeigt keine Bilddaten, die das Gerät verlassen.' },
         { title: 'Kein Konto, kein Tracking', text: 'Keine Anmeldung, keine Analyse, keine Werbung, keine Drittanbieter-Pixel. Die Seite merkt sich nur die gewählte Sprache und das Farbschema.' },
       ],
     },
     faq: [
       { q: 'Was ist der Unterschied zwischen EXIF und Metadaten?', a: 'EXIF ist eine Art von Metadaten – die, die Kameras und Smartphones schreiben. „Metadaten“ ist der Oberbegriff und umfasst auch XMP, IPTC, C2PA und PNG-Text-Chunks. Siehe [was EXIF-Daten sind](what-is-exif-data).' },
       { q: 'Können Metadaten zeigen, wo ein Foto aufgenommen wurde?', a: 'Ja, wenn das Bild GPS-Tags enthält. Smartphones speichern meist Breite, Länge und Höhe, wenn die Kamera auf den Standort zugreifen darf. Der [EXIF-Entferner](remove-exif-data) löscht diese Tags, ohne die Bildqualität anzutasten.' },
-      { q: 'Wie entferne ich KI-Metadaten aus einem Bild?', a: 'Ziehen Sie das Bild in das Feld oben auf dieser Seite und klicken Sie auf „Alle Bilder waschen“, oder nutzen Sie den [KI-Tag-Cleaner](ai-tag-cleaner), um C2PA-, IPTC- und Prompt-Daten vorher anzusehen.' },
+      { q: 'Wie entferne ich KI-Metadaten aus einem Bild?', a: 'Ziehen Sie das Bild in das Feld oben auf dieser Seite und klicken Sie auf „Alle Metadaten entfernen“, oder nutzen Sie den [KI-Tag-Cleaner](ai-tag-cleaner), um C2PA-, IPTC- und Prompt-Daten vorher anzusehen.' },
       { q: 'Ist es sicher, meine Fotos hier hochzuladen?', a: 'Ihre Fotos werden gar nicht hochgeladen. AI Label Remover öffnet Dateien in Ihrem Browser, verarbeitet sie im Speicher des Tabs und speichert die saubere Kopie direkt auf Ihrem Gerät. Sobald die Seite geladen ist, funktioniert sie auch offline.' },
     ],
   },
@@ -88,7 +88,7 @@ const de: Pages = {
     homeLead: 'Jede Seite konzentriert sich auf eine Aufgabe – mit dem Werkzeug direkt oben.',
     formats: 'Was entfernt wird und was bleibt',
     contact: 'Kontakt',
-    contactText: 'Fragen, Fehler oder eine Datei, die nicht richtig gewaschen wird? Schreib an',
+    contactText: 'Fragen, Fehler oder eine Datei, die nicht richtig bereinigt wird? Schreib an',
     updated: 'Aktualisiert am {date}',
   },
   tools: {
@@ -115,7 +115,7 @@ const de: Pages = {
           heading: 'So arbeitet der KI-Tag-Cleaner',
           paragraphs: [
             'AI Label Remover liest die Dateistruktur direkt in Ihrem Browser. Jeder KI-Tag wird mit dem genauen Feld angezeigt, aus dem er stammt, und die Datei erhält ein Urteil – „KI-Spuren gefunden“, „Einen zweiten Blick wert“ oder „Keine KI-Spuren“ –, bevor irgendetwas geändert wird.',
-            '„Alle Bilder waschen“ schneidet die Blöcke heraus, in denen die Tags stecken: XMP, IPTC, EXIF, den C2PA-Manifestspeicher und PNG-Text-Chunks. Die komprimierten Bilddaten werden Byte für Byte kopiert, und die bereinigte Kopie wird erneut gelesen, damit Sie sehen, dass kein KI-Tag übrig ist.',
+            '„Alle Metadaten entfernen“ schneidet die Blöcke heraus, in denen die Tags stecken: XMP, IPTC, EXIF, den C2PA-Manifestspeicher und PNG-Text-Chunks. Die komprimierten Bilddaten werden Byte für Byte kopiert, und die bereinigte Kopie wird erneut gelesen, damit Sie sehen, dass kein KI-Tag übrig ist.',
           ],
         },
         {
@@ -138,7 +138,7 @@ const de: Pages = {
         { q: 'Verringert das Entfernen von KI-Tags die Qualität?', a: 'Nein. Nichts wird neu kodiert, nur Metadaten werden entfernt. Mehr dazu unter [verlustfrei entfernen](remove-metadata-without-losing-quality).' },
         { q: 'Welche Formate werden unterstützt?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF und AVIF – bis zu 50 Dateien auf einmal, je bis zu 25 MB. Prompts in PNG-Dateien entfernt auch der [PNG-Metadaten-Entferner](png-metadata-remover).' },
         { q: 'Entfernt das die Metadaten von ChatGPT- oder Gemini-Bildern?', a: 'Es entfernt die C2PA Content Credentials und IPTC-Felder, die diese Dienste schreiben. Google bettet zusätzlich ein SynthID-Wasserzeichen in die Pixel ein, das kein Metadaten-Werkzeug entfernen kann. Details in [Metadaten von ChatGPT- und Gemini-Bildern](chatgpt-gemini-image-metadata).' },
-        { q: 'Kann ich den Prompt vor dem Löschen sehen?', a: 'Ja. Der Tab „Rohe Metadaten“ zeigt Prompts, Workflows und Generatornamen wortwörtlich, sodass du vor dem Waschen alles kopieren kannst, was du behalten willst.' },
+        { q: 'Kann ich den Prompt vor dem Löschen sehen?', a: 'Ja. Der Tab „Rohe Metadaten“ zeigt Prompts, Workflows und Generatornamen wortwörtlich, sodass du vor dem Bereinigen alles kopieren kannst, was du behalten willst.' },
       ],
       related: ['iptc-digitalsourcetype-ai', 'what-metadata-ai-image-generators-add', 'how-to-check-if-image-is-ai-generated'],
       updated: '2026-11-05',
@@ -167,7 +167,7 @@ const de: Pages = {
           bullets: [
             'Ziehen Sie das bearbeitete Foto in das Feld oben auf dieser Seite.',
             'Lesen Sie das Urteil und die Felder dahinter – der Bericht nennt die genaue C2PA-Aktion oder den IPTC-Wert.',
-            'Klicken Sie auf „Alle Bilder waschen“ und speichern Sie die saubere Kopie.',
+            'Klicken Sie auf „Alle Metadaten entfernen“ und speichern Sie die saubere Kopie.',
             'Laden Sie die saubere Kopie hoch, nicht den ursprünglichen Export.',
           ],
         },
@@ -218,13 +218,13 @@ const de: Pages = {
           heading: 'So funktioniert dieser EXIF-Entferner',
           paragraphs: [
             'AI Label Remover liest die Dateistruktur direkt. In einem JPEG schneidet es das APP1-Segment mit EXIF und XMP heraus, dazu IPTC, Kommentare und eingebettete Vorschaubilder; in HEIC, PNG und WebP entfernt es die entsprechenden Boxen oder Chunks. Die komprimierten Bilddaten werden Byte für Byte kopiert – nichts wird neu kodiert, das Foto sieht identisch aus.',
-            'Felder, die steuern, wie das Foto angezeigt wird, bleiben bewusst erhalten: Drehung, ICC-Farbprofil und Pixelgröße. So vermeidest du seitlich liegende Fotos und blasse Farben, die gröbere Werkzeuge hinterlassen. Danach wird die gewaschene Datei erneut gelesen, damit du siehst, dass die EXIF-Felder wirklich weg sind.',
+            'Felder, die steuern, wie das Foto angezeigt wird, bleiben bewusst erhalten: Drehung, ICC-Farbprofil und Pixelgröße. So vermeidest du seitlich liegende Fotos und blasse Farben, die gröbere Werkzeuge hinterlassen. Danach wird die bereinigte Datei erneut gelesen, damit du siehst, dass die EXIF-Felder wirklich weg sind.',
           ],
         },
         {
           heading: 'Wann du EXIF vor dem Teilen entfernen solltest',
           paragraphs: [
-            'Viele große soziale Netzwerke entfernen EXIF beim Hochladen, viele andere Orte aber nicht: E-Mail-Anhänge, Cloud-Links, Foren, Kleinanzeigen, Messenger, die Dateien in „Originalqualität“ senden, und deine eigene Website. [Welche Plattformen Metadaten entfernen](which-platforms-strip-photo-metadata) listet die üblichen auf. Wenn du nicht weißt, wo ein Foto landet, ist vorheriges Waschen die sichere Wahl.',
+            'Viele große soziale Netzwerke entfernen EXIF beim Hochladen, viele andere Orte aber nicht: E-Mail-Anhänge, Cloud-Links, Foren, Kleinanzeigen, Messenger, die Dateien in „Originalqualität“ senden, und deine eigene Website. [Welche Plattformen Metadaten entfernen](which-platforms-strip-photo-metadata) listet die üblichen auf. Wenn du nicht weißt, wo ein Foto landet, ist vorheriges Bereinigen die sichere Wahl.',
             'Etwas online verkaufen, ein zu Hause aufgenommenes Foto posten oder Bilder an jemanden schicken, den du gerade erst kennengelernt hast – das sind die klassischen Fälle, in denen [GPS-Daten einen Ort verraten können](remove-gps-location-from-photos).',
           ],
         },
@@ -240,7 +240,7 @@ const de: Pages = {
         { q: 'Verschlechtert das Entfernen von EXIF die Bildqualität?', a: 'Nein. Es werden nur Metadatenblöcke herausgeschnitten; die komprimierten Bilddaten werden unverändert kopiert, Auflösung, Schärfe und Farbe bleiben exakt gleich. Siehe [warum erneutes Speichern Qualität kostet](remove-metadata-without-losing-quality).' },
         { q: 'Steht mein Foto danach noch richtig herum?', a: 'Ja. Der Ausrichtungswert bleibt erhalten, damit das Bild wie vorher angezeigt wird, ebenso das ICC-Farbprofil.' },
         { q: 'Kann ich EXIF aus HEIC-Fotos vom iPhone entfernen?', a: 'Ja. HEIC- und HEIF-Dateien werden direkt unterstützt, ohne vorherige Umwandlung in JPEG. Es gibt auch eine eigene Seite zum [Entfernen von HEIC-Metadaten](heic-metadata-remover).' },
-        { q: 'Wie prüfe ich, ob die EXIF-Daten weg sind?', a: 'Nach dem Waschen liest AI Label Remover die neue Datei erneut und zeigt, welche Felder übrig sind. Du kannst sie auch in einem beliebigen [Online-Metadaten-Viewer](image-metadata-viewer-online) oder in den Dateieigenschaften deines Systems öffnen.' },
+        { q: 'Wie prüfe ich, ob die EXIF-Daten weg sind?', a: 'Nach dem Bereinigen liest AI Label Remover die neue Datei erneut und zeigt, welche Felder übrig sind. Du kannst sie auch in einem beliebigen [Online-Metadaten-Viewer](image-metadata-viewer-online) oder in den Dateieigenschaften deines Systems öffnen.' },
         { q: 'Geht das auch ganz ohne Website?', a: 'Ja – Windows, macOS und Smartphones haben eingebaute Optionen, jede mit Grenzen. [Metadaten unter Windows und Mac entfernen](remove-metadata-windows-mac) und [auf iPhone und Android](view-remove-metadata-iphone-android) vergleichen sie.' },
       ],
       related: ['what-is-exif-data', 'remove-gps-location-from-photos', 'which-platforms-strip-photo-metadata'],
@@ -313,11 +313,11 @@ const de: Pages = {
           heading: 'Metadaten entfernen, ohne in JPEG umzuwandeln',
           paragraphs: [
             'Der übliche Rat lautet, HEIC in JPEG umzuwandeln und zu hoffen, dass die Metadaten nicht überleben. Das kodiert das Bild neu, kostet Qualität und verwirft oft das Wide-Gamut-Farbprofil. AI Label Remover bearbeitet stattdessen den HEIC-Container selbst: Es entfernt die Exif- und XMP-Items, C2PA-uuid-Boxen und Zeitstempel-Boxen und lässt HEVC-Bilddaten, Drehung (irot/imir) und Farbprofil (colr) unangetastet.',
-            'Dieselbe Engine verarbeitet AVIF, das dasselbe ISOBMFF-Containerformat nutzt – AVIF-Exporte moderner Apps lassen sich also genauso waschen.',
+            'Dieselbe Engine verarbeitet AVIF, das dasselbe ISOBMFF-Containerformat nutzt – AVIF-Exporte moderner Apps lassen sich also genauso bereinigen.',
           ],
         },
         {
-          heading: 'iPhone-Einstellungen oder Datei waschen',
+          heading: 'iPhone-Einstellungen oder Datei bereinigen',
           paragraphs: [
             'iOS erlaubt es, den Standort für ein einzelnes Teilen über „Optionen“ im Teilen-Menü abzuschalten, und die Fotos-App kann den Standort pro Foto ändern oder entfernen. Das funktioniert für einzelne Freigaben, wird aber leicht vergessen und entfernt die übrigen Felder nicht. [Metadaten auf iPhone und Android ansehen und entfernen](view-remove-metadata-iphone-android) vergleicht die eingebauten Optionen.',
             'Für einen Stapel Fotos – einen Urlaubsordner, Produktbilder oder Bilder für eine Anzeige – ist es schneller, alles in AI Label Remover zu ziehen und ein ZIP zu speichern, und der Vorher-nachher-Bericht zeigt genau, was entfernt wurde.',
@@ -326,10 +326,10 @@ const de: Pages = {
       ],
       faqHeading: 'Fragen zu HEIC',
       faq: [
-        { q: 'Funktioniert das unter Windows, wo sich HEIC manchmal nicht öffnen lässt?', a: 'Ja. AI Label Remover liest die HEIC-Struktur selbst und braucht keinen installierten HEIC-Codec. HEIC-Dateien zeigen statt eines Vorschaubilds ein Formatlabel, Lesen und Waschen funktionieren aber normal.' },
-        { q: 'Öffnet sich die gewaschene Datei noch in Fotos?', a: 'Ja. Das Ergebnis ist eine normale HEIC-Datei mit denselben Bilddaten; nur die Metadaten-Items werden entfernt.' },
+        { q: 'Funktioniert das unter Windows, wo sich HEIC manchmal nicht öffnen lässt?', a: 'Ja. AI Label Remover liest die HEIC-Struktur selbst und braucht keinen installierten HEIC-Codec. HEIC-Dateien zeigen statt eines Vorschaubilds ein Formatlabel, Lesen und Bereinigen funktionieren aber normal.' },
+        { q: 'Öffnet sich die bereinigte Datei noch in Fotos?', a: 'Ja. Das Ergebnis ist eine normale HEIC-Datei mit denselben Bilddaten; nur die Metadaten-Items werden entfernt.' },
         { q: 'Werden Live Photos unterstützt?', a: 'AI Label Remover verarbeitet das HEIC-Standbild. Das zugehörige Video eines Live Photos ist eine eigene Datei und bleibt unverändert.' },
-        { q: 'Gibt es eine Größenbeschränkung?', a: 'Jede Datei darf bis zu 25 MB und 40 Megapixel groß sein, das deckt Fotos aller aktuellen iPhones ab, und du kannst 50 auf einmal waschen.' },
+        { q: 'Gibt es eine Größenbeschränkung?', a: 'Jede Datei darf bis zu 25 MB und 40 Megapixel groß sein, das deckt Fotos aller aktuellen iPhones ab, und du kannst 50 auf einmal bereinigen.' },
       ],
       related: ['view-remove-metadata-iphone-android', 'remove-gps-location-from-photos', 'batch-remove-metadata'],
       updated: '2026-10-23',
@@ -356,13 +356,13 @@ const de: Pages = {
           heading: 'Was bleibt, damit das Bild gleich aussieht',
           paragraphs: [
             'Transparenz (tRNS), Gamma und Farbwertigkeit (gAMA, cHRM), das sRGB-Flag und das eingebettete ICC-Profil (iCCP) beeinflussen die Darstellung und bleiben daher erhalten. Animierte PNGs behalten ihre acTL-, fcTL- und fdAT-Chunks, APNG-Animationen laufen also weiter.',
-            'Da die IDAT-Daten kopiert statt neu komprimiert werden, ist die gewaschene Datei pixelgenau identisch mit dem Original – meist etwas kleiner, weil die Text-Chunks fehlen.',
+            'Da die IDAT-Daten kopiert statt neu komprimiert werden, ist die bereinigte Datei pixelgenau identisch mit dem Original – meist etwas kleiner, weil die Text-Chunks fehlen.',
           ],
         },
         {
           heading: 'KI-Prompts und Workflows schützen',
           paragraphs: [
-            'Wenn du Bilder aus Stable Diffusion, Forge oder ComfyUI teilst, kann jeder das PNG zurück in dasselbe Werkzeug ziehen und deinen exakten Prompt, Seed, dein Modell und deinen Node-Graph wiederherstellen. [Wie Stable Diffusion und ComfyUI Prompts im PNG verstecken](remove-stable-diffusion-comfyui-metadata) zeigt, was gespeichert wird. Waschen entfernt alles, und im Tab „Rohe Metadaten“ kannst du den Prompt vorher kopieren, wenn du ihn behalten willst.',
+            'Wenn du Bilder aus Stable Diffusion, Forge oder ComfyUI teilst, kann jeder das PNG zurück in dasselbe Werkzeug ziehen und deinen exakten Prompt, Seed, dein Modell und deinen Node-Graph wiederherstellen. [Wie Stable Diffusion und ComfyUI Prompts im PNG verstecken](remove-stable-diffusion-comfyui-metadata) zeigt, was gespeichert wird. Bereinigen entfernt alles, und im Tab „Rohe Metadaten“ kannst du den Prompt vorher kopieren, wenn du ihn behalten willst.',
           ],
         },
       ],
@@ -370,7 +370,7 @@ const de: Pages = {
       faq: [
         { q: 'Verändert das Entfernen von PNG-Metadaten die Farben?', a: 'Nein. Farbrelevante Chunks – sRGB, gAMA, cHRM und iCCP – bleiben erhalten, und die IDAT-Bilddaten werden unverändert kopiert.' },
         { q: 'Funktioniert es mit transparenten PNGs?', a: 'Ja. Transparenzdaten (tRNS oder der Alphakanal in IDAT) gehören zum Bild und werden nie angetastet.' },
-        { q: 'Kann ich den Prompt irgendwo behalten?', a: 'Kopiere ihn vor dem Waschen aus dem Tab „Rohe Metadaten“. Einmal entfernt, lassen sich Metadaten aus der gewaschenen Datei nicht wiederherstellen.' },
+        { q: 'Kann ich den Prompt irgendwo behalten?', a: 'Kopiere ihn vor dem Bereinigen aus dem Tab „Rohe Metadaten“. Einmal entfernt, lassen sich Metadaten aus der bereinigten Datei nicht wiederherstellen.' },
         { q: 'Funktioniert es auch mit PNGs aus Midjourney oder DALL·E?', a: 'Ja. Text-, XMP- oder C2PA-Daten, die diese Dienste einbetten, werden genauso entfernt. Siehe [Midjourney- und DALL·E-Prompts verbergen](hide-midjourney-dalle-prompts).' },
       ],
       related: ['remove-stable-diffusion-comfyui-metadata', 'hide-midjourney-dalle-prompts', 'what-metadata-ai-image-generators-add'],
@@ -394,7 +394,7 @@ const de: Pages = {
         {
           heading: 'So funktioniert das Werkzeug',
           paragraphs: [
-            'Wenn du ein Bild hinzufügst, liest dein Browser es lokal. Web Worker analysieren die Dateistruktur – JPEG-Segmente, PNG-Chunks, WebP-RIFF-Chunks, GIF-Blöcke und HEIC/AVIF-Boxen – und listen jeden gefundenen Metadatenblock auf. Waschen entfernt diese Blöcke aus dem Bytestrom, kopiert die komprimierten Bilddaten unverändert und liest das Ergebnis erneut, um zu bestätigen, was übrig ist.',
+            'Wenn du ein Bild hinzufügst, liest dein Browser es lokal. Web Worker analysieren die Dateistruktur – JPEG-Segmente, PNG-Chunks, WebP-RIFF-Chunks, GIF-Blöcke und HEIC/AVIF-Boxen – und listen jeden gefundenen Metadatenblock auf. Bereinigen entfernt diese Blöcke aus dem Bytestrom, kopiert die komprimierten Bilddaten unverändert und liest das Ergebnis erneut, um zu bestätigen, was übrig ist.',
             'Es gibt keine serverseitige Verarbeitung. Die Website besteht aus statischen Seiten; einmal geladen, funktioniert das Werkzeug offline.',
           ],
         },
@@ -446,7 +446,7 @@ const de: Pages = {
           paragraphs: ['Wenn du AI Label Remover ein Bild hinzufügst, ist das sein ganzer Weg:'],
           bullets: [
             'Dein Browser öffnet die Datei von deinem Gerät und hält sie im Speicher des Tabs.',
-            'Web Worker im Tab lesen die Metadaten und erstellen beim Waschen eine saubere Kopie – ebenfalls nur im Speicher.',
+            'Web Worker im Tab lesen die Metadaten und erstellen beim Bereinigen eine saubere Kopie – ebenfalls nur im Speicher.',
             'Beim Speichern schreibt dein Browser die saubere Datei oder das ZIP direkt auf dein Gerät.',
             'Schließt oder lädst du den Tab neu, sind Bilder und Berichte weg. Auf keinem Server bleibt etwas zurück, weil kein Server sie je erhält.',
           ],
@@ -454,7 +454,7 @@ const de: Pages = {
         {
           heading: 'Du kannst das selbst prüfen',
           paragraphs: [
-            'Du musst uns nicht einfach glauben. Lade die Seite, schalte WLAN oder mobile Daten aus und wasch eine Datei: Es funktioniert weiter, weil nichts gesendet werden muss. Wenn du dich mit den Entwicklertools auskennst, öffne beim Waschen den Tab „Netzwerk“ – du wirst sehen, dass keine Bilddaten dein Gerät verlassen.',
+            'Du musst uns nicht einfach glauben. Lade die Seite, schalte WLAN oder mobile Daten aus und bereinige eine Datei: Es funktioniert weiter, weil nichts gesendet werden muss. Wenn du dich mit den Entwicklertools auskennst, öffne beim Bereinigen den Tab „Netzwerk“ – du wirst sehen, dass keine Bilddaten dein Gerät verlassen.',
           ],
         },
         {

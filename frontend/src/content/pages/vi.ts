@@ -77,7 +77,7 @@ const vi: Pages = {
     faq: [
       { q: 'EXIF khác gì metadata?', a: 'EXIF là một loại metadata — loại do máy ảnh và điện thoại ghi vào. “Metadata” là khái niệm rộng hơn, gồm cả XMP, IPTC, C2PA và các chunk văn bản của PNG. Xem [EXIF là gì](what-is-exif-data).' },
       { q: 'Metadata có cho biết ảnh được chụp ở đâu không?', a: 'Có, nếu ảnh có thẻ GPS. Điện thoại thường ghi vĩ độ, kinh độ và độ cao khi bật định vị cho máy ảnh. Công cụ [xóa EXIF](remove-exif-data) gỡ các thẻ này mà vẫn giữ nguyên chất lượng ảnh.' },
-      { q: 'Làm sao xóa metadata AI khỏi ảnh?', a: 'Thả ảnh vào khung ở đầu trang rồi bấm “Làm sạch tất cả”, hoặc dùng trang chuyên biệt [xóa metadata AI](ai-tag-cleaner) để xem trước C2PA, IPTC và prompt có trong tệp.' },
+      { q: 'Làm sao xóa metadata AI khỏi ảnh?', a: 'Thả ảnh vào khung ở đầu trang rồi bấm “Xóa toàn bộ metadata”, hoặc dùng trang chuyên biệt [xóa metadata AI](ai-tag-cleaner) để xem trước C2PA, IPTC và prompt có trong tệp.' },
       { q: 'Tải ảnh lên đây có an toàn không?', a: 'Ảnh không hề được tải lên. AI Label Remover mở tệp ngay trong trình duyệt, xử lý trong bộ nhớ của thẻ và ghi tệp sạch thẳng vào máy bạn. Sau khi trang tải xong, bạn có thể tắt mạng mà công cụ vẫn chạy.' },
     ],
   },
@@ -115,7 +115,7 @@ const vi: Pages = {
           heading: 'AI Tag Cleaner hoạt động thế nào',
           paragraphs: [
             'AI Label Remover đọc trực tiếp cấu trúc tệp ngay trong trình duyệt. Mỗi tag AI được liệt kê kèm đúng trường chứa nó, và tệp được kết luận “Có dấu vết AI”, “Nên xem kỹ” hoặc “Không có dấu vết AI” trước khi bất cứ thứ gì bị thay đổi.',
-            'Bấm “Làm sạch tất cả” sẽ cắt bỏ các khối chứa tag: XMP, IPTC, EXIF, kho manifest C2PA và chunk văn bản PNG. Dữ liệu ảnh nén được chép nguyên từng byte, và bản sạch được đọc lại để bạn thấy không còn tag AI nào.',
+            'Bấm “Xóa toàn bộ metadata” sẽ cắt bỏ các khối chứa tag: XMP, IPTC, EXIF, kho manifest C2PA và chunk văn bản PNG. Dữ liệu ảnh nén được chép nguyên từng byte, và bản sạch được đọc lại để bạn thấy không còn tag AI nào.',
           ],
         },
         {
@@ -167,7 +167,7 @@ const vi: Pages = {
           bullets: [
             'Thả ảnh đã chỉnh vào ô ở đầu trang này.',
             'Đọc kết luận và các trường liên quan — báo cáo nêu đúng thao tác C2PA hoặc giá trị IPTC gây ra nhãn.',
-            'Bấm “Làm sạch tất cả” và lưu bản sạch.',
+            'Bấm “Xóa toàn bộ metadata” và lưu bản sạch.',
             'Đăng bản sạch, không đăng tệp xuất gốc.',
           ],
         },

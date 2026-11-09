@@ -9,7 +9,7 @@ const it: Messages = {
   header: {
     language: 'Lingua',
     theme: { label: 'Aspetto', light: 'Chiaro', dark: 'Scuro', system: 'Come il dispositivo' },
-    nav: { tool: 'Pulisci immagini', how: 'Procedura', formats: 'Tipi di file', guides: 'Articoli', faq: 'Domande' },
+    nav: { tool: 'Rimuovi metadati', how: 'Procedura', formats: 'Tipi di file', guides: 'Articoli', faq: 'Domande' },
   },
   hero: {
     kicker: 'AI Label Remover — Rimuovere i metadati dalle foto — EXIF, GPS, C2PA e prompt IA',
@@ -54,7 +54,7 @@ const it: Messages = {
     clearList: 'Sgombra il tavolo',
     downloadZip: 'Salva tutto in ZIP',
     zipping: 'Creazione ZIP… {percent}%',
-    strip: 'Pulisci tutte le immagini',
+    strip: 'Rimuovi tutti i metadati',
   },
   status: {
     analyzing: 'In lettura',
@@ -64,7 +64,7 @@ const it: Messages = {
     failed: 'Errore',
   },
   file: {
-    strip: 'Pulisci questo file',
+    strip: 'Rimuovi metadati',
     download: 'Salva file',
     retry: 'Riprova',
     showReport: 'Apri rapporto',
@@ -216,7 +216,7 @@ const it: Messages = {
       steps: [
         { title: 'Trascina i file', text: 'Aggiungi fino a 50 immagini JPG, PNG, WebP, GIF, HEIC o AVIF. Il browser le apre in locale; nessuna copia va da nessuna parte.' },
         { title: 'Leggi il rapporto', text: 'Ogni file viene esaminato blocco per blocco — EXIF, XMP, IPTC, C2PA, chunk di testo — e vedi cosa dice su luogo, persone, ora e IA.' },
-        { title: 'Premi “Pulisci tutte le immagini”', text: 'I blocchi di metadati vengono ritagliati dal flusso di byte. I dati immagine non si toccano e il risultato viene riletto per dimostrare che i campi sono spariti.' },
+        { title: 'Premi “Rimuovi tutti i metadati”', text: 'I blocchi di metadati vengono ritagliati dal flusso di byte. I dati immagine non si toccano e il risultato viene riletto per dimostrare che i campi sono spariti.' },
         { title: 'Salva le copie pulite', text: 'Salva i file uno alla volta, oppure prendi tutte le immagini pulite in un unico archivio ZIP.' },
       ],
     },
@@ -288,7 +288,7 @@ const it: Messages = {
           title: 'Tieni per te i tuoi prompt di Midjourney e DALL·E',
           paragraphs: [
             'Le immagini esportate da Midjourney, DALL·E o Firefly possono contenere il testo del prompt, un ID del lavoro, il nome dell’account e una dichiarazione di origine IA in XMP, EXIF o testo PNG. Se i prompt fanno parte del tuo mestiere, a ogni post regali quel lavoro.',
-            'Carica il file, cerca le righe contrassegnate “IA” e “Persone” e lavale via tutte con un pulsante.',
+            'Carica il file, cerca le righe contrassegnate “IA” e “Persone” e rimuovile tutte con un pulsante.',
           ],
         },
         {
@@ -323,7 +323,7 @@ const it: Messages = {
         { q: 'Quali tipi di file posso usare?', a: 'JPEG/JPG, PNG, WebP, GIF, HEIC/HEIF (il formato predefinito dell’iPhone) e AVIF. Ogni file può arrivare a 25 MB e 40 megapixel, e puoi caricarne 50 alla volta.' },
         { q: 'Cosa significa “Merita un secondo sguardo”?', a: 'Il file contiene Content Credentials C2PA che non dichiarano l’uso di IA. Alcune piattaforme leggono comunque quel registro per decidere le etichette, quindi conviene pulirlo se non vuoi che accompagni l’immagine.' },
         { q: 'AI Label Remover può togliere SynthID o altre filigrane invisibili?', a: 'No. Quelle filigrane sono intessute nei pixel, non salvate come metadati, e AI Label Remover per scelta non modifica mai i pixel.' },
-        { q: 'Instagram o Facebook etichetteranno ancora l’immagine?', a: 'Le etichette basate su metadati C2PA o IPTC perdono la loro fonte una volta lavati via. Le piattaforme possono però usare altri segnali o chiederti di dichiarare i contenuti IA.' },
+        { q: 'Instagram o Facebook etichetteranno ancora l’immagine?', a: 'Le etichette basate su metadati C2PA o IPTC perdono la loro fonte una volta rimossi. Le piattaforme possono però usare altri segnali o chiederti di dichiarare i contenuti IA.' },
         { q: 'Cosa viene tolto esattamente, e cosa resta?', a: 'Tolto: GPS, date e impostazioni della fotocamera, autore e copyright, didascalie, software e cronologia delle modifiche, miniature, etichette di origine IA (IPTC DigitalSourceType, XMP), prompt e workflow, manifesti C2PA. Resta: dimensioni in pixel, rotazione, profilo colore ICC e fotogrammi delle animazioni.' },
         { q: 'Dov’è il trucco, se è gratis?', a: 'Non c’è. L’elaborazione la fa il tuo dispositivo, quindi non esiste un costo di server per immagine da scaricare su qualcuno, né account, né filigrana.' },
       ],

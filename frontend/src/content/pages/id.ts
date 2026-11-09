@@ -70,14 +70,14 @@ const id: Pages = {
       items: [
         { title: '100% di perangkat Anda', text: 'Pembacaan dan pembersihan berjalan di Web Worker di dalam tab browser. Tidak ada server yang menerima file Anda.' },
         { title: 'Tidak disimpan, tidak untuk melatih AI', text: 'Karena foto tidak pernah dikirim, tidak ada salinan yang bisa disimpan, bocor, atau dipakai melatih model.' },
-        { title: 'Bisa dipakai offline', text: 'Muat halaman, matikan Wi-Fi, lalu cuci sebuah file — tetap berfungsi. Tab Network di DevTools tidak menunjukkan data gambar yang keluar.' },
+        { title: 'Bisa dipakai offline', text: 'Muat halaman, matikan Wi-Fi, lalu bersihkan sebuah file — tetap berfungsi. Tab Network di DevTools tidak menunjukkan data gambar yang keluar.' },
         { title: 'Tanpa akun, tanpa pelacakan', text: 'Tanpa pendaftaran, analitik, iklan, atau piksel pihak ketiga. Situs hanya mengingat bahasa dan tema yang Anda pilih.' },
       ],
     },
     faq: [
       { q: 'Apa beda EXIF dan metadata?', a: 'EXIF adalah salah satu jenis metadata — yang ditulis kamera dan ponsel. “Metadata” adalah istilah yang lebih luas dan juga mencakup XMP, IPTC, C2PA, serta chunk teks PNG. Lihat [apa itu data EXIF](what-is-exif-data).' },
       { q: 'Bisakah metadata menunjukkan lokasi foto diambil?', a: 'Bisa, jika gambar memiliki tag GPS. Ponsel biasanya mencatat lintang, bujur, dan ketinggian saat kamera diizinkan mengakses lokasi. [Penghapus EXIF](remove-exif-data) menghapus tag ini tanpa mengurangi kualitas gambar.' },
-      { q: 'Bagaimana cara menghapus metadata AI dari gambar?', a: 'Letakkan gambar di kotak bagian atas halaman ini lalu tekan “Cuci semua gambar”, atau gunakan [pembersih tag AI](ai-tag-cleaner) untuk melihat data C2PA, IPTC, dan prompt terlebih dahulu.' },
+      { q: 'Bagaimana cara menghapus metadata AI dari gambar?', a: 'Letakkan gambar di kotak bagian atas halaman ini lalu tekan “Hapus semua metadata”, atau gunakan [pembersih tag AI](ai-tag-cleaner) untuk melihat data C2PA, IPTC, dan prompt terlebih dahulu.' },
       { q: 'Apakah aman mengunggah foto saya di sini?', a: 'Foto Anda sama sekali tidak diunggah. AI Label Remover membuka file di browser, memprosesnya di memori tab, dan menyimpan salinan bersih langsung ke perangkat Anda. Setelah halaman dimuat, Anda bisa offline dan alat tetap berjalan.' },
     ],
   },
@@ -88,7 +88,7 @@ const id: Pages = {
     homeLead: 'Setiap halaman fokus pada satu tugas, dengan alat siap pakai di bagian atas.',
     formats: 'Yang dihapus dan yang dipertahankan',
     contact: 'Kontak',
-    contactText: 'Ada pertanyaan, bug, atau file yang tidak tercuci dengan benar? Kirim email ke',
+    contactText: 'Ada pertanyaan, bug, atau file yang tidak dibersihkan dengan benar? Kirim email ke',
     updated: 'Diperbarui {date}',
   },
   tools: {
@@ -115,7 +115,7 @@ const id: Pages = {
           heading: 'Cara kerja AI Tag Cleaner',
           paragraphs: [
             'AI Label Remover membaca struktur file langsung di browser Anda. Setiap tag AI ditampilkan bersama kolom asalnya, dan file mendapat kesimpulan — “Jejak AI ditemukan”, “Layak dicek lagi”, atau “Tidak ada jejak AI” — sebelum apa pun diubah.',
-            'Menekan “Cuci semua gambar” memotong blok yang memuat tag tersebut: XMP, IPTC, EXIF, penyimpanan manifest C2PA, dan chunk teks PNG. Data gambar terkompresi disalin byte demi byte, dan salinan bersih dibaca ulang agar Anda bisa memastikan tidak ada tag AI yang tersisa.',
+            'Menekan “Hapus semua metadata” memotong blok yang memuat tag tersebut: XMP, IPTC, EXIF, penyimpanan manifest C2PA, dan chunk teks PNG. Data gambar terkompresi disalin byte demi byte, dan salinan bersih dibaca ulang agar Anda bisa memastikan tidak ada tag AI yang tersisa.',
           ],
         },
         {
@@ -138,7 +138,7 @@ const id: Pages = {
         { q: 'Apakah menghapus tag AI menurunkan kualitas?', a: 'Tidak. Tidak ada yang di-encode ulang; hanya metadata yang dihapus. Lihat [mengapa penghapusan tanpa penurunan kualitas penting](remove-metadata-without-losing-quality).' },
         { q: 'Format apa saja yang didukung?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF, dan AVIF — hingga 50 file sekaligus, masing-masing hingga 25 MB. Prompt di file PNG juga bisa dihapus dengan [penghapus metadata PNG](png-metadata-remover).' },
         { q: 'Apakah ini menghapus metadata gambar ChatGPT atau Gemini?', a: 'Ini menghapus Content Credentials C2PA dan kolom IPTC yang ditulis layanan tersebut. Google juga menyematkan watermark SynthID di piksel, yang tidak bisa dihapus alat metadata mana pun. Detailnya di [metadata gambar ChatGPT dan Gemini](chatgpt-gemini-image-metadata).' },
-        { q: 'Bisakah saya melihat prompt sebelum menghapusnya?', a: 'Bisa. Tab “Metadata mentah” menampilkan prompt, workflow, dan nama generator kata demi kata, sehingga Anda bisa menyalin apa pun yang ingin disimpan sebelum mencuci.' },
+        { q: 'Bisakah saya melihat prompt sebelum menghapusnya?', a: 'Bisa. Tab “Metadata mentah” menampilkan prompt, workflow, dan nama generator kata demi kata, sehingga Anda bisa menyalin apa pun yang ingin disimpan sebelum membersihkan.' },
       ],
       related: ['iptc-digitalsourcetype-ai', 'what-metadata-ai-image-generators-add', 'how-to-check-if-image-is-ai-generated'],
       updated: '2026-11-05',
@@ -167,7 +167,7 @@ const id: Pages = {
           bullets: [
             'Letakkan foto yang sudah diedit ke kotak di bagian atas halaman ini.',
             'Baca kesimpulan dan kolom di baliknya — laporan menyebut aksi C2PA atau nilai IPTC yang tepat.',
-            'Tekan “Cuci semua gambar” dan simpan salinan bersih.',
+            'Tekan “Hapus semua metadata” dan simpan salinan bersih.',
             'Unggah salinan bersih, bukan file ekspor aslinya.',
           ],
         },
@@ -218,13 +218,13 @@ const id: Pages = {
           heading: 'Cara kerja penghapus EXIF ini',
           paragraphs: [
             'AI Label Remover membaca struktur file secara langsung. Pada JPEG, ia memotong segmen APP1 yang berisi EXIF dan XMP, ditambah IPTC, komentar, dan thumbnail tersemat; pada HEIC, PNG, dan WebP, ia menghapus box atau chunk yang setara. Data gambar terkompresi disalin byte demi byte, jadi tidak ada encode ulang dan foto terlihat sama persis.',
-            'Kolom yang mengatur tampilan foto sengaja dipertahankan: rotasi, profil warna ICC, dan ukuran piksel. Dengan begitu foto tidak jadi miring atau warnanya pudar seperti hasil alat yang lebih kasar. Setelah selesai, file yang sudah dicuci dibaca ulang agar Anda bisa melihat kolom EXIF benar-benar hilang.',
+            'Kolom yang mengatur tampilan foto sengaja dipertahankan: rotasi, profil warna ICC, dan ukuran piksel. Dengan begitu foto tidak jadi miring atau warnanya pudar seperti hasil alat yang lebih kasar. Setelah selesai, file yang sudah dibersihkan dibaca ulang agar Anda bisa melihat kolom EXIF benar-benar hilang.',
           ],
         },
         {
           heading: 'Kapan menghapus EXIF sebelum berbagi',
           paragraphs: [
-            'Banyak media sosial besar menghapus EXIF saat unggah, tetapi banyak tempat lain tidak: lampiran email, tautan penyimpanan cloud, forum, situs jual beli, aplikasi chat yang mengirim file “kualitas asli”, dan situs web Anda sendiri. [Platform mana yang menghapus metadata](which-platforms-strip-photo-metadata) mencantumkan yang umum. Jika tidak yakin ke mana foto akan berakhir, mencucinya lebih dulu adalah pilihan aman.',
+            'Banyak media sosial besar menghapus EXIF saat unggah, tetapi banyak tempat lain tidak: lampiran email, tautan penyimpanan cloud, forum, situs jual beli, aplikasi chat yang mengirim file “kualitas asli”, dan situs web Anda sendiri. [Platform mana yang menghapus metadata](which-platforms-strip-photo-metadata) mencantumkan yang umum. Jika tidak yakin ke mana foto akan berakhir, membersihkannya lebih dulu adalah pilihan aman.',
             'Menjual barang online, mengunggah foto yang diambil di rumah, atau mengirim gambar ke orang yang baru dikenal adalah contoh klasik di mana [data GPS bisa mengungkap lokasi](remove-gps-location-from-photos).',
           ],
         },
@@ -240,7 +240,7 @@ const id: Pages = {
         { q: 'Apakah menghapus EXIF menurunkan kualitas gambar?', a: 'Tidak. Hanya blok metadata yang dipotong; data gambar terkompresi disalin tanpa perubahan, sehingga resolusi, ketajaman, dan warna tetap sama persis. Lihat [mengapa menyimpan ulang menurunkan kualitas](remove-metadata-without-losing-quality).' },
         { q: 'Apakah foto tetap pada orientasi yang benar?', a: 'Ya. Nilai orientasi dipertahankan agar gambar tampil seperti sebelumnya, begitu juga profil warna ICC.' },
         { q: 'Bisakah menghapus EXIF dari foto HEIC iPhone?', a: 'Bisa. File HEIC dan HEIF didukung langsung tanpa harus dikonversi ke JPEG. Ada juga halaman khusus untuk [menghapus metadata HEIC](heic-metadata-remover).' },
-        { q: 'Bagaimana memastikan EXIF sudah hilang?', a: 'Setelah dicuci, AI Label Remover membaca ulang file baru dan menampilkan kolom yang tersisa. Anda juga bisa membukanya di [penampil metadata online](image-metadata-viewer-online) mana pun atau di properti file sistem operasi.' },
+        { q: 'Bagaimana memastikan EXIF sudah hilang?', a: 'Setelah dibersihkan, AI Label Remover membaca ulang file baru dan menampilkan kolom yang tersisa. Anda juga bisa membukanya di [penampil metadata online](image-metadata-viewer-online) mana pun atau di properti file sistem operasi.' },
         { q: 'Bisakah dilakukan tanpa situs web sama sekali?', a: 'Bisa — Windows, macOS, dan ponsel punya opsi bawaan, masing-masing dengan keterbatasan. [Menghapus metadata di Windows dan Mac](remove-metadata-windows-mac) serta [di iPhone dan Android](view-remove-metadata-iphone-android) membandingkannya.' },
       ],
       related: ['what-is-exif-data', 'remove-gps-location-from-photos', 'which-platforms-strip-photo-metadata'],
@@ -313,11 +313,11 @@ const id: Pages = {
           heading: 'Hapus metadata tanpa konversi ke JPEG',
           paragraphs: [
             'Saran yang umum adalah mengonversi HEIC ke JPEG dan berharap metadatanya tidak ikut. Cara itu meng-encode ulang gambar, menurunkan kualitas, dan sering membuang profil warna gamut lebar. AI Label Remover justru mengedit wadah HEIC itu sendiri: menghapus item Exif dan XMP, box uuid C2PA, dan box stempel waktu, sambil mempertahankan data gambar HEVC, rotasi (irot/imir), dan profil warna (colr).',
-            'Mesin yang sama juga menangani AVIF, yang memakai format wadah ISOBMFF yang sama, sehingga ekspor AVIF dari aplikasi modern bisa dicuci dengan cara yang sama.',
+            'Mesin yang sama juga menangani AVIF, yang memakai format wadah ISOBMFF yang sama, sehingga ekspor AVIF dari aplikasi modern bisa dibersihkan dengan cara yang sama.',
           ],
         },
         {
-          heading: 'Pengaturan iPhone vs mencuci file',
+          heading: 'Pengaturan iPhone vs membersihkan file',
           paragraphs: [
             'iOS memungkinkan mematikan lokasi untuk satu kali berbagi lewat tombol “Pilihan” di lembar berbagi, dan app Foto bisa mengubah atau menghapus lokasi per foto. Cara ini bagus untuk berbagi sesekali, tetapi mudah terlupa dan tidak menghapus kolom lain. [Melihat dan menghapus metadata di iPhone dan Android](view-remove-metadata-iphone-android) membandingkan opsi bawaan.',
             'Untuk banyak foto sekaligus — folder foto liburan, foto produk, atau gambar untuk iklan jual — meletakkannya di AI Label Remover lalu menyimpan satu ZIP lebih cepat, dan laporan sebelum-sesudah menunjukkan persis apa yang dihapus.',
@@ -326,10 +326,10 @@ const id: Pages = {
       ],
       faqHeading: 'Pertanyaan tentang HEIC',
       faq: [
-        { q: 'Apakah bisa dipakai di Windows, yang kadang tidak bisa membuka HEIC?', a: 'Bisa. AI Label Remover membaca struktur HEIC sendiri, jadi tidak perlu codec HEIC terpasang. File HEIC menampilkan label format sebagai pengganti thumbnail, tetapi pembacaan dan pencucian berjalan normal.' },
-        { q: 'Apakah file yang sudah dicuci tetap bisa dibuka di app Foto?', a: 'Ya. Hasilnya adalah file HEIC standar dengan data gambar yang sama; hanya item metadata yang dihapus.' },
+        { q: 'Apakah bisa dipakai di Windows, yang kadang tidak bisa membuka HEIC?', a: 'Bisa. AI Label Remover membaca struktur HEIC sendiri, jadi tidak perlu codec HEIC terpasang. File HEIC menampilkan label format sebagai pengganti thumbnail, tetapi pembacaan dan pembersihan berjalan normal.' },
+        { q: 'Apakah file yang sudah dibersihkan tetap bisa dibuka di app Foto?', a: 'Ya. Hasilnya adalah file HEIC standar dengan data gambar yang sama; hanya item metadata yang dihapus.' },
         { q: 'Apakah Live Photo didukung?', a: 'AI Label Remover memproses gambar diam HEIC. Video pasangan Live Photo adalah file terpisah dan tidak diubah.' },
-        { q: 'Apakah ada batas ukuran file?', a: 'Setiap file maksimal 25 MB dan 40 megapiksel, cukup untuk foto dari semua iPhone saat ini, dan Anda bisa mencuci 50 file sekaligus.' },
+        { q: 'Apakah ada batas ukuran file?', a: 'Setiap file maksimal 25 MB dan 40 megapiksel, cukup untuk foto dari semua iPhone saat ini, dan Anda bisa membersihkan 50 file sekaligus.' },
       ],
       related: ['view-remove-metadata-iphone-android', 'remove-gps-location-from-photos', 'batch-remove-metadata'],
       updated: '2026-10-23',
@@ -356,13 +356,13 @@ const id: Pages = {
           heading: 'Yang dipertahankan agar gambar terlihat sama',
           paragraphs: [
             'Transparansi (tRNS), gamma dan kromatisitas (gAMA, cHRM), penanda sRGB, dan profil ICC tersemat (iCCP) memengaruhi tampilan gambar, jadi dipertahankan. PNG animasi tetap menyimpan chunk acTL, fcTL, dan fdAT, sehingga animasi APNG tetap berjalan.',
-            'Karena data IDAT disalin, bukan dikompresi ulang, file yang sudah dicuci identik piksel demi piksel dengan aslinya — biasanya sedikit lebih kecil karena chunk teksnya hilang.',
+            'Karena data IDAT disalin, bukan dikompresi ulang, file yang sudah dibersihkan identik piksel demi piksel dengan aslinya — biasanya sedikit lebih kecil karena chunk teksnya hilang.',
           ],
         },
         {
           heading: 'Melindungi prompt dan workflow AI',
           paragraphs: [
-            'Jika Anda membagikan gambar buatan Stable Diffusion, Forge, atau ComfyUI, siapa pun bisa menyeret PNG itu kembali ke alat yang sama dan memulihkan prompt, seed, model, dan graf node Anda secara persis. [Cara Stable Diffusion dan ComfyUI menyembunyikan prompt di PNG](remove-stable-diffusion-comfyui-metadata) menunjukkan apa saja yang tersimpan. Pencucian menghapus semuanya, dan tab “Metadata mentah” memungkinkan Anda menyalin prompt lebih dulu jika ingin menyimpannya sendiri.',
+            'Jika Anda membagikan gambar buatan Stable Diffusion, Forge, atau ComfyUI, siapa pun bisa menyeret PNG itu kembali ke alat yang sama dan memulihkan prompt, seed, model, dan graf node Anda secara persis. [Cara Stable Diffusion dan ComfyUI menyembunyikan prompt di PNG](remove-stable-diffusion-comfyui-metadata) menunjukkan apa saja yang tersimpan. Pembersihan menghapus semuanya, dan tab “Metadata mentah” memungkinkan Anda menyalin prompt lebih dulu jika ingin menyimpannya sendiri.',
           ],
         },
       ],
@@ -370,7 +370,7 @@ const id: Pages = {
       faq: [
         { q: 'Apakah menghapus metadata PNG mengubah warna?', a: 'Tidak. Chunk terkait warna — sRGB, gAMA, cHRM, dan iCCP — dipertahankan, dan data gambar IDAT disalin tanpa perubahan.' },
         { q: 'Apakah bisa untuk PNG transparan?', a: 'Bisa. Data transparansi (tRNS atau kanal alfa di dalam IDAT) adalah bagian dari gambar dan tidak pernah disentuh.' },
-        { q: 'Bisakah saya menyimpan prompt di suatu tempat?', a: 'Salin dari tab “Metadata mentah” sebelum mencuci. Setelah dihapus, metadata tidak bisa dipulihkan dari file yang sudah dicuci.' },
+        { q: 'Bisakah saya menyimpan prompt di suatu tempat?', a: 'Salin dari tab “Metadata mentah” sebelum membersihkan. Setelah dihapus, metadata tidak bisa dipulihkan dari file yang sudah dibersihkan.' },
         { q: 'Apakah juga bisa untuk PNG dari Midjourney atau DALL·E?', a: 'Bisa. Data teks, XMP, atau C2PA yang disematkan layanan tersebut dihapus dengan cara yang sama. Lihat [menyembunyikan prompt Midjourney dan DALL·E](hide-midjourney-dalle-prompts).' },
       ],
       related: ['remove-stable-diffusion-comfyui-metadata', 'hide-midjourney-dalle-prompts', 'what-metadata-ai-image-generators-add'],
@@ -394,7 +394,7 @@ const id: Pages = {
         {
           heading: 'Cara kerja alat ini',
           paragraphs: [
-            'Saat Anda menambahkan gambar, browser membacanya secara lokal. Web Worker mengurai struktur file — segmen JPEG, chunk PNG, chunk RIFF WebP, blok GIF, dan box HEIC/AVIF — lalu mendaftar setiap blok metadata yang ditemukan. Pencucian menghapus blok-blok itu dari aliran byte, menyalin data gambar terkompresi tanpa perubahan, lalu membaca ulang hasilnya untuk memastikan apa yang tersisa.',
+            'Saat Anda menambahkan gambar, browser membacanya secara lokal. Web Worker mengurai struktur file — segmen JPEG, chunk PNG, chunk RIFF WebP, blok GIF, dan box HEIC/AVIF — lalu mendaftar setiap blok metadata yang ditemukan. Pembersihan menghapus blok-blok itu dari aliran byte, menyalin data gambar terkompresi tanpa perubahan, lalu membaca ulang hasilnya untuk memastikan apa yang tersisa.',
             'Tidak ada pemrosesan di sisi server. Situs ini adalah kumpulan halaman statis; setelah dimuat, alat tetap berfungsi tanpa koneksi.',
           ],
         },
@@ -446,7 +446,7 @@ const id: Pages = {
           paragraphs: ['Saat Anda menambahkan gambar ke AI Label Remover, inilah seluruh perjalanannya:'],
           bullets: [
             'Browser membuka file dari perangkat Anda dan menyimpannya di memori tab.',
-            'Web Worker di dalam tab membaca metadata dan, saat Anda menekan cuci, membuat salinan bersih — tetap hanya di memori.',
+            'Web Worker di dalam tab membaca metadata dan, saat Anda menekan “Hapus semua metadata”, membuat salinan bersih — tetap hanya di memori.',
             'Saat Anda menyimpan, browser menulis file bersih atau ZIP langsung ke perangkat Anda.',
             'Saat Anda menutup atau memuat ulang tab, gambar dan laporan hilang. Tidak ada yang tersimpan di server, karena tidak ada server yang pernah menerimanya.',
           ],
@@ -454,7 +454,7 @@ const id: Pages = {
         {
           heading: 'Anda bisa memeriksanya sendiri',
           paragraphs: [
-            'Anda tidak perlu sekadar percaya pada kami. Buka halaman, matikan Wi-Fi atau data seluler, lalu cuci sebuah file: alat tetap berjalan, karena tidak ada yang perlu dikirim. Jika terbiasa dengan alat developer, buka tab Network saat mencuci dan Anda akan melihat tidak ada data gambar yang keluar dari perangkat.',
+            'Anda tidak perlu sekadar percaya pada kami. Buka halaman, matikan Wi-Fi atau data seluler, lalu bersihkan sebuah file: alat tetap berjalan, karena tidak ada yang perlu dikirim. Jika terbiasa dengan alat developer, buka tab Network saat membersihkan dan Anda akan melihat tidak ada data gambar yang keluar dari perangkat.',
           ],
         },
         {

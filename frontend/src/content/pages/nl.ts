@@ -55,14 +55,14 @@ const nl: Pages = {
       items: [
         { title: '100% op je apparaat', text: 'Lezen en opschonen gebeurt in een Web Worker in je browsertabblad. Geen enkele server ontvangt je bestanden.' },
         { title: 'Niets opgeslagen, geen AI-training', text: 'Omdat foto’s nergens heen gaan, bestaat er geen kopie die kan worden opgeslagen, gelekt of gebruikt om een model te trainen.' },
-        { title: 'Werkt offline', text: 'Laad de pagina, zet wifi uit en was een bestand — het werkt nog steeds. Het tabblad Netwerk in DevTools toont geen beeldgegevens die vertrekken.' },
+        { title: 'Werkt offline', text: 'Laad de pagina, zet wifi uit en schoon een bestand op — het werkt nog steeds. Het tabblad Netwerk in DevTools toont geen beeldgegevens die vertrekken.' },
         { title: 'Geen account, geen tracking', text: 'Geen registratie, geen analytics, advertenties of pixels van derden. De site onthoudt alleen de taal en het thema die je kiest.' },
       ],
     },
     faq: [
       { q: 'Wat is het verschil tussen EXIF en metadata?', a: 'EXIF is één soort metadata — de soort die camera’s en telefoons schrijven. “Metadata” is het bredere begrip en omvat ook XMP, IPTC, C2PA en tekstchunks in PNG.' },
-      { q: 'Kan metadata laten zien waar een foto is gemaakt?', a: 'Ja, als de afbeelding GPS-tags heeft. Telefoons leggen meestal breedtegraad, lengtegraad en hoogte vast als de camera je locatie mag gebruiken. Wassen verwijdert deze tags zonder de kwaliteit aan te tasten. Zie [GPS-locatie uit foto’s verwijderen](remove-gps-location-from-photos).' },
-      { q: 'Hoe verwijder ik AI-metadata uit een afbeelding?', a: 'Sleep de afbeelding naar het vak bovenaan deze pagina en klik op “Alle afbeeldingen wassen”. Vóór het wassen toont het overzicht van elk bestand welke C2PA-, IPTC- en promptgegevens erin zitten.' },
+      { q: 'Kan metadata laten zien waar een foto is gemaakt?', a: 'Ja, als de afbeelding GPS-tags heeft. Telefoons leggen meestal breedtegraad, lengtegraad en hoogte vast als de camera je locatie mag gebruiken. Opschonen verwijdert deze tags zonder de kwaliteit aan te tasten. Zie [GPS-locatie uit foto’s verwijderen](remove-gps-location-from-photos).' },
+      { q: 'Hoe verwijder ik AI-metadata uit een afbeelding?', a: 'Sleep de afbeelding naar het vak bovenaan deze pagina en klik op “Alle metadata verwijderen”. Vóór het opschonen toont het overzicht van elk bestand welke C2PA-, IPTC- en promptgegevens erin zitten.' },
       { q: 'Is het veilig om mijn foto’s hier te uploaden?', a: 'Je foto’s worden helemaal niet geüpload. AI Label Remover opent bestanden in je browser, verwerkt ze in het geheugen van het tabblad en slaat de schone kopie direct op je apparaat op. Zodra de pagina geladen is, kun je offline gaan en blijft alles werken.' },
     ],
     ctaTools: 'Alle tools bekijken',
@@ -88,7 +88,7 @@ const nl: Pages = {
     homeLead: 'Elke pagina richt zich op één taak, met de tool direct bovenaan.',
     formats: 'Wat wordt verwijderd en wat blijft',
     contact: 'Contact',
-    contactText: 'Vragen, bugs of een bestand dat niet goed gewassen wordt? Schrijf naar',
+    contactText: 'Vragen, bugs of een bestand dat niet goed opgeschoond wordt? Schrijf naar',
     updated: 'Bijgewerkt op {date}',
   },
   tools: {
@@ -113,7 +113,7 @@ const nl: Pages = {
           heading: 'Zo werkt de AI-tag-cleaner',
           paragraphs: [
             'AI Label Remover leest de bestandsstructuur direct in je browser. Elke AI-tag wordt getoond met het exacte veld waar hij vandaan komt, en het bestand krijgt een oordeel — “AI-sporen gevonden”, “Even goed bekijken” of “Geen AI-sporen” — voordat er iets verandert.',
-            'Met “Alle afbeeldingen wassen” worden de blokken met die tags weggeknipt: XMP, IPTC, EXIF, de C2PA-manifeststore en PNG-tekstchunks. De gecomprimeerde beelddata worden byte voor byte gekopieerd en de schone kopie wordt opnieuw gelezen, zodat je kunt zien dat er geen AI-tag over is.',
+            'Met “Alle metadata verwijderen” worden de blokken met die tags weggeknipt: XMP, IPTC, EXIF, de C2PA-manifeststore en PNG-tekstchunks. De gecomprimeerde beelddata worden byte voor byte gekopieerd en de schone kopie wordt opnieuw gelezen, zodat je kunt zien dat er geen AI-tag over is.',
           ],
         },
         {
@@ -125,7 +125,7 @@ const nl: Pages = {
         {
           heading: 'Wat een AI-tag-cleaner niet kan',
           paragraphs: [
-            'Wassen werkt alleen op metadata. Onzichtbare watermerken zoals SynthID zitten in de pixels en blijven bestaan, en platforms kunnen eigen classificatiemodellen gebruiken. Tags verwijderen is bedoeld voor privacy en om onterechte labels op echte foto’s te herstellen — is een afbeelding met AI gemaakt en realistisch, dan vragen platforms meestal nog steeds om dat te vermelden.',
+            'Opschonen werkt alleen op metadata. Onzichtbare watermerken zoals SynthID zitten in de pixels en blijven bestaan, en platforms kunnen eigen classificatiemodellen gebruiken. Tags verwijderen is bedoeld voor privacy en om onterechte labels op echte foto’s te herstellen — is een afbeelding met AI gemaakt en realistisch, dan vragen platforms meestal nog steeds om dat te vermelden.',
           ],
         },
       ],
@@ -134,7 +134,7 @@ const nl: Pages = {
         { q: 'Is een AI-tag hetzelfde als een AI-label?', a: 'Niet helemaal. De tag is data in het bestand; het label is wat een platform toont, zoals “AI-info” op Instagram. Platforms maken het label vaak op basis van de tag. Om dat bij een echte foto te voorkomen, zie [No AI Tag](no-ai-tag).' },
         { q: 'Kan ik alleen de AI-tags verwijderen en de rest houden?', a: 'De cleaner verwijdert hele metadatablokken in plaats van losse velden, omdat AI-tags over meerdere blokken verspreid zijn. Rotatie, ICC-kleurprofiel en pixelafmetingen blijven altijd behouden, dus de foto ziet er precies hetzelfde uit.' },
         { q: 'Gaat de kwaliteit omlaag door AI-tags te wissen?', a: 'Nee. Er wordt niets opnieuw gecodeerd; alleen metadata verdwijnt, de beelddata blijven identiek.' },
-        { q: 'Welke formaten kan ik wassen?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF en AVIF — tot 50 bestanden tegelijk, elk tot 25 MB. Prompts in PNG’s kun je ook met de [PNG-metadataverwijderaar](png-metadata-remover) aanpakken.' },
+        { q: 'Welke formaten kan ik opschonen?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF en AVIF — tot 50 bestanden tegelijk, elk tot 25 MB. Prompts in PNG’s kun je ook met de [PNG-metadataverwijderaar](png-metadata-remover) aanpakken.' },
         { q: 'Verwijdert dit de metadata van ChatGPT- of Gemini-afbeeldingen?', a: 'Het verwijdert de C2PA Content Credentials en IPTC-velden die deze diensten schrijven. Google voegt ook een SynthID-watermerk in de pixels toe, dat geen enkele metadatatool kan weghalen.' },
         { q: 'Kan ik de prompt zien voordat ik hem wis?', a: 'Ja. Het tabblad “Ruwe metadata” toont prompts, workflows en generatornamen woord voor woord, zodat je kunt kopiëren wat je wilt bewaren.' },
       ],
@@ -163,7 +163,7 @@ const nl: Pages = {
           bullets: [
             'Sleep de bewerkte foto naar het vak bovenaan deze pagina.',
             'Lees het oordeel en de velden erachter — het rapport noemt de exacte C2PA-actie of IPTC-waarde.',
-            'Klik op “Alle afbeeldingen wassen” en bewaar de schone kopie.',
+            'Klik op “Alle metadata verwijderen” en bewaar de schone kopie.',
             'Upload de schone kopie, niet de oorspronkelijke export.',
           ],
         },
@@ -182,9 +182,9 @@ const nl: Pages = {
       ],
       faqHeading: 'Vragen over No AI Tag',
       faq: [
-        { q: 'Verdwijnt het “AI-info”-label van een bericht dat al online staat?', a: 'Nee. Het label hoort bij het bericht op het platform. Verwijder of archiveer het bericht, was het bestand hier en upload de schone kopie.' },
+        { q: 'Verdwijnt het “AI-info”-label van een bericht dat al online staat?', a: 'Nee. Het label hoort bij het bericht op het platform. Verwijder of archiveer het bericht, schoon het bestand hier op en upload de schone kopie.' },
         { q: 'Garandeert No AI Tag het resultaat?', a: 'Nee. Het verwijdert de metadata die platforms lezen, maar die kunnen ook andere signalen gebruiken. Bij de meeste bewerkte foto’s is de metadata wel de reden voor het label.' },
-        { q: 'Werkt het met iPhone- en Android-foto’s?', a: 'Ja. HEIC van iPhone en JPG van Android worden gewassen zonder conversie. Er is ook een aparte [HEIC-metadataverwijderaar](heic-metadata-remover).' },
+        { q: 'Werkt het met iPhone- en Android-foto’s?', a: 'Ja. HEIC van iPhone en JPG van Android worden opgeschoond zonder conversie. Er is ook een aparte [HEIC-metadataverwijderaar](heic-metadata-remover).' },
         { q: 'En AI-tags op een volledig met AI gemaakte afbeelding?', a: 'De [AI-tag-cleaner](ai-tag-cleaner) toont en verwijdert ze, maar platformregels vragen meestal nog steeds dat je realistische AI-beelden zelf labelt.' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'batch-remove-metadata'],
@@ -212,13 +212,13 @@ const nl: Pages = {
           heading: 'Zo werkt deze EXIF-verwijderaar',
           paragraphs: [
             'AI Label Remover leest de bestandsstructuur direct. In een JPEG knipt hij het APP1-segment met EXIF en XMP weg, plus IPTC, opmerkingen en miniaturen; in HEIC, PNG en WebP verwijdert hij de overeenkomende boxen of chunks. De gecomprimeerde beelddata worden byte voor byte gekopieerd, dus er wordt niets opnieuw gecodeerd en de foto blijft identiek.',
-            'Velden die bepalen hoe de foto wordt weergegeven blijven bewust behouden: rotatie, ICC-kleurprofiel en pixelafmetingen. Zo voorkom je gekantelde foto’s en flets kleuren die grovere tools opleveren. Na afloop wordt het gewassen bestand opnieuw gelezen, zodat je ziet dat de EXIF-velden echt weg zijn.',
+            'Velden die bepalen hoe de foto wordt weergegeven blijven bewust behouden: rotatie, ICC-kleurprofiel en pixelafmetingen. Zo voorkom je gekantelde foto’s en flets kleuren die grovere tools opleveren. Na afloop wordt het opgeschoonde bestand opnieuw gelezen, zodat je ziet dat de EXIF-velden echt weg zijn.',
           ],
         },
         {
           heading: 'Wanneer je EXIF verwijdert voor het delen',
           paragraphs: [
-            'Veel grote sociale netwerken halen EXIF weg bij het uploaden, maar talloze plekken niet: e-mailbijlagen, cloudlinks, forums, marktplaatsen, chatapps die bestanden in “originele kwaliteit” versturen en je eigen website. Weet je niet waar een foto belandt, dan is eerst wassen de veilige keuze.',
+            'Veel grote sociale netwerken halen EXIF weg bij het uploaden, maar talloze plekken niet: e-mailbijlagen, cloudlinks, forums, marktplaatsen, chatapps die bestanden in “originele kwaliteit” versturen en je eigen website. Weet je niet waar een foto belandt, dan is eerst opschonen de veilige keuze.',
             'Iets online verkopen, een thuis gemaakte foto plaatsen of foto’s sturen naar iemand die je net kent zijn de klassieke gevallen waarin [GPS-gegevens een locatie kunnen verraden](remove-gps-location-from-photos).',
           ],
         },
@@ -234,7 +234,7 @@ const nl: Pages = {
         { q: 'Verlaagt EXIF verwijderen de kwaliteit?', a: 'Nee. Alleen metadatablokken worden weggeknipt; de gecomprimeerde beelddata worden ongewijzigd gekopieerd, dus resolutie, scherpte en kleur blijven precies gelijk.' },
         { q: 'Staat mijn foto daarna nog goed rechtop?', a: 'Ja. De oriëntatiewaarde blijft behouden, samen met het ICC-kleurprofiel, dus de foto wordt net zo weergegeven als ervoor.' },
         { q: 'Kan ik EXIF uit HEIC-foto’s van een iPhone halen?', a: 'Ja. HEIC en HEIF worden rechtstreeks ondersteund, zonder ze eerst naar JPEG om te zetten. Er is ook een aparte pagina: [HEIC-metadataverwijderaar](heic-metadata-remover).' },
-        { q: 'Hoe controleer ik of de EXIF weg is?', a: 'Na het wassen leest AI Label Remover het nieuwe bestand opnieuw en toont welke velden er nog zijn. Je kunt het ook openen in de bestandseigenschappen van je besturingssysteem.' },
+        { q: 'Hoe controleer ik of de EXIF weg is?', a: 'Na het opschonen leest AI Label Remover het nieuwe bestand opnieuw en toont welke velden er nog zijn. Je kunt het ook openen in de bestandseigenschappen van je besturingssysteem.' },
         { q: 'Kan ik veel foto’s tegelijk doen?', a: 'Ja: tot 50 bestanden tegelijk, te downloaden als één ZIP. Zie [metadata in bulk verwijderen](batch-remove-metadata).' },
       ],
       related: ['remove-gps-location-from-photos', 'batch-remove-metadata', 'made-with-ai-label'],
@@ -305,11 +305,11 @@ const nl: Pages = {
           heading: 'Metadata verwijderen zonder naar JPEG om te zetten',
           paragraphs: [
             'Het gebruikelijke advies is HEIC naar JPEG omzetten en hopen dat de metadata niet meekomt. Dat codeert het beeld opnieuw, kost kwaliteit en gooit vaak het kleurprofiel met breed gamma weg. AI Label Remover bewerkt in plaats daarvan de HEIC-container zelf: het verwijdert Exif- en XMP-items, C2PA-uuid-boxen en tijdstempelboxen, en laat de HEVC-beelddata, rotatie (irot/imir) en het kleurprofiel (colr) intact.',
-            'Dezelfde engine verwerkt AVIF, dat dezelfde ISOBMFF-container gebruikt, dus AVIF-exports van moderne apps worden op dezelfde manier gewassen.',
+            'Dezelfde engine verwerkt AVIF, dat dezelfde ISOBMFF-container gebruikt, dus AVIF-exports van moderne apps worden op dezelfde manier opgeschoond.',
           ],
         },
         {
-          heading: 'iPhone-instellingen of het bestand wassen',
+          heading: 'iPhone-instellingen of het bestand opschonen',
           paragraphs: [
             'In iOS kun je de locatie voor één keer delen uitzetten via de knop “Opties” in het deelmenu, en de app Foto’s kan de locatie per foto aanpassen of verwijderen. Dat werkt prima voor losse foto’s, maar je vergeet het snel en de andere velden blijven staan. Lees [waarom GPS in foto’s een risico is](remove-gps-location-from-photos).',
             'Voor een reeks foto’s — een map vakantiefoto’s, productfoto’s of beelden voor een advertentie — is ze in AI Label Remover slepen en één ZIP bewaren sneller, en het voor-en-na-rapport laat precies zien wat er is verwijderd.',
@@ -318,10 +318,10 @@ const nl: Pages = {
       ],
       faqHeading: 'Vragen over HEIC',
       faq: [
-        { q: 'Werkt het op Windows, waar HEIC soms niet opent?', a: 'Ja. AI Label Remover leest de HEIC-structuur zelf, dus er is geen HEIC-codec nodig. HEIC-bestanden tonen een formaatlabel in plaats van een voorbeeld, maar lezen en wassen werken gewoon.' },
-        { q: 'Opent het gewassen bestand nog in Foto’s?', a: 'Ja. Het resultaat is een standaard HEIC-bestand met dezelfde beelddata; alleen de metadata-items zijn verwijderd.' },
+        { q: 'Werkt het op Windows, waar HEIC soms niet opent?', a: 'Ja. AI Label Remover leest de HEIC-structuur zelf, dus er is geen HEIC-codec nodig. HEIC-bestanden tonen een formaatlabel in plaats van een voorbeeld, maar lezen en opschonen werken gewoon.' },
+        { q: 'Opent het opgeschoonde bestand nog in Foto’s?', a: 'Ja. Het resultaat is een standaard HEIC-bestand met dezelfde beelddata; alleen de metadata-items zijn verwijderd.' },
         { q: 'Worden Live Photos ondersteund?', a: 'AI Label Remover verwerkt de stilstaande HEIC-foto. De bijbehorende video van een Live Photo is een apart bestand en wordt niet veranderd.' },
-        { q: 'Is er een limiet voor de bestandsgrootte?', a: 'Elk bestand mag tot 25 MB en 40 megapixel zijn, genoeg voor foto’s van elke huidige iPhone, en je kunt er 50 tegelijk wassen.' },
+        { q: 'Is er een limiet voor de bestandsgrootte?', a: 'Elk bestand mag tot 25 MB en 40 megapixel zijn, genoeg voor foto’s van elke huidige iPhone, en je kunt er 50 tegelijk opschonen.' },
       ],
       related: ['remove-gps-location-from-photos', 'batch-remove-metadata', 'what-is-c2pa-content-credentials'],
       updated: '2026-11-06',
@@ -348,13 +348,13 @@ const nl: Pages = {
           heading: 'Wat blijft, zodat het beeld hetzelfde oogt',
           paragraphs: [
             'Transparantie (tRNS), gamma en chromaticiteit (gAMA, cHRM), de sRGB-vlag en het ingesloten ICC-profiel (iCCP) bepalen de weergave en blijven dus behouden. Geanimeerde PNG’s houden hun acTL-, fcTL- en fdAT-chunks, zodat APNG-animaties blijven werken.',
-            'Omdat de IDAT-data worden gekopieerd en niet opnieuw gecomprimeerd, is het gewassen bestand pixel voor pixel gelijk aan het origineel — meestal iets kleiner, omdat de tekstchunks weg zijn.',
+            'Omdat de IDAT-data worden gekopieerd en niet opnieuw gecomprimeerd, is het opgeschoonde bestand pixel voor pixel gelijk aan het origineel — meestal iets kleiner, omdat de tekstchunks weg zijn.',
           ],
         },
         {
           heading: 'AI-prompts en workflows beschermen',
           paragraphs: [
-            'Deel je afbeeldingen uit Stable Diffusion, Forge of ComfyUI, dan kan iedereen de PNG terugslepen in dezelfde tool en je exacte prompt, seed, model en nodegraaf terugkrijgen. [Hoe Stable Diffusion en ComfyUI prompts in PNG’s verbergen](remove-stable-diffusion-comfyui-metadata) laat zien wat er wordt opgeslagen. Wassen haalt alles weg; via het tabblad “Ruwe metadata” kun je de prompt eerst kopiëren als je hem wilt bewaren.',
+            'Deel je afbeeldingen uit Stable Diffusion, Forge of ComfyUI, dan kan iedereen de PNG terugslepen in dezelfde tool en je exacte prompt, seed, model en nodegraaf terugkrijgen. [Hoe Stable Diffusion en ComfyUI prompts in PNG’s verbergen](remove-stable-diffusion-comfyui-metadata) laat zien wat er wordt opgeslagen. Opschonen haalt alles weg; via het tabblad “Ruwe metadata” kun je de prompt eerst kopiëren als je hem wilt bewaren.',
           ],
         },
       ],
@@ -362,7 +362,7 @@ const nl: Pages = {
       faq: [
         { q: 'Veranderen de kleuren als ik PNG-metadata verwijder?', a: 'Nee. Kleurgerelateerde chunks — sRGB, gAMA, cHRM en iCCP — blijven behouden en de IDAT-beelddata worden ongewijzigd gekopieerd.' },
         { q: 'Werkt het met transparante PNG’s?', a: 'Ja. Transparantiegegevens (tRNS of het alfakanaal in IDAT) horen bij het beeld en worden nooit aangeraakt.' },
-        { q: 'Kan ik de prompt ergens bewaren?', a: 'Kopieer hem uit het tabblad “Ruwe metadata” voordat je wast. Eenmaal verwijderd is de metadata niet terug te halen uit het gewassen bestand.' },
+        { q: 'Kan ik de prompt ergens bewaren?', a: 'Kopieer hem uit het tabblad “Ruwe metadata” voordat je opschoont. Eenmaal verwijderd is de metadata niet terug te halen uit het opgeschoonde bestand.' },
         { q: 'Werkt het ook voor PNG’s van Midjourney of DALL·E?', a: 'Ja. Tekst, XMP of C2PA-gegevens die deze diensten insluiten worden op dezelfde manier verwijderd. Zie [Midjourney- en DALL·E-prompts verbergen](hide-midjourney-dalle-prompts).' },
       ],
       related: ['remove-stable-diffusion-comfyui-metadata', 'hide-midjourney-dalle-prompts', 'batch-remove-metadata'],
@@ -386,7 +386,7 @@ const nl: Pages = {
         {
           heading: 'Hoe de tool werkt',
           paragraphs: [
-            'Als je een afbeelding toevoegt, leest je browser die lokaal. Web Workers ontleden de bestandsstructuur — JPEG-segmenten, PNG-chunks, WebP-RIFF-chunks, GIF-blokken en HEIC/AVIF-boxen — en tonen elk gevonden metadatablok. Wassen haalt die blokken uit de bytestroom, kopieert de gecomprimeerde beelddata ongewijzigd en leest het resultaat opnieuw om te bevestigen wat er over is.',
+            'Als je een afbeelding toevoegt, leest je browser die lokaal. Web Workers ontleden de bestandsstructuur — JPEG-segmenten, PNG-chunks, WebP-RIFF-chunks, GIF-blokken en HEIC/AVIF-boxen — en tonen elk gevonden metadatablok. Opschonen haalt die blokken uit de bytestroom, kopieert de gecomprimeerde beelddata ongewijzigd en leest het resultaat opnieuw om te bevestigen wat er over is.',
             'Er is geen verwerking op een server. De website bestaat uit statische pagina’s; eenmaal geladen werkt de tool ook offline.',
           ],
         },
@@ -438,7 +438,7 @@ const nl: Pages = {
           paragraphs: ['Als je een afbeelding aan AI Label Remover toevoegt, is dit de hele reis:'],
           bullets: [
             'Je browser opent het bestand vanaf je apparaat en houdt het in het geheugen van het tabblad.',
-            'Web Workers in het tabblad lezen de metadata en schrijven bij het wassen een schone kopie — nog steeds in het geheugen.',
+            'Web Workers in het tabblad lezen de metadata en schrijven bij het opschonen een schone kopie — nog steeds in het geheugen.',
             'Bij het opslaan schrijft je browser het schone bestand of de ZIP rechtstreeks naar je apparaat.',
             'Sluit of herlaad je het tabblad, dan zijn afbeeldingen en rapporten weg. Niets blijft op een server, omdat geen server ze ooit ontvangt.',
           ],
@@ -446,7 +446,7 @@ const nl: Pages = {
         {
           heading: 'Je kunt het zelf controleren',
           paragraphs: [
-            'Je hoeft ons niet op ons woord te geloven. Laad de pagina, zet wifi of mobiele data uit en was een bestand: het werkt nog steeds, omdat er niets verstuurd hoeft te worden. Ken je de ontwikkelaarstools, open dan tijdens het wassen het tabblad Netwerk en je ziet dat er geen beelddata je apparaat verlaten.',
+            'Je hoeft ons niet op ons woord te geloven. Laad de pagina, zet wifi of mobiele data uit en schoon een bestand op: het werkt nog steeds, omdat er niets verstuurd hoeft te worden. Ken je de ontwikkelaarstools, open dan tijdens het opschonen het tabblad Netwerk en je ziet dat er geen beelddata je apparaat verlaten.',
           ],
         },
         {
