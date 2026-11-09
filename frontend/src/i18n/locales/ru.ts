@@ -45,6 +45,7 @@ const ru: Messages = {
     process: 'Процесс обработки',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Приостановить анимацию',
+    sceneSteps: ['Изменить метаданные', 'Удалить EXIF', 'Очистить данные ИИ'],
     analyzing: 'читается: {count}',
     pending: 'готово: {count}',
     completed: 'очищено: {count}',

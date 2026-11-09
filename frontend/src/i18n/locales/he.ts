@@ -45,6 +45,7 @@ const he: Messages = {
     process: 'תהליך העריכה',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'השהיית האנימציה',
+    sceneSteps: ['עריכת מטא-נתונים', 'הסרת EXIF', 'ניקוי נתוני AI'],
     analyzing: 'בקריאה {count}',
     pending: 'מוכנות {count}',
     completed: 'נשטפו {count}',

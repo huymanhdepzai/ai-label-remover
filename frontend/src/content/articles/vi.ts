@@ -1,6 +1,153 @@
 import type { Articles } from './types';
 
 const vi: Articles = {
+  'best-ai-metadata-removers-2026': {
+      "title": "Top công cụ xóa metadata và nhãn AI tốt nhất năm 2026",
+      "metaTitle": "Top công cụ xóa metadata và nhãn AI tốt nhất 2026",
+      "summary": [
+          "Khi các nhãn AI tạo sinh, manifest C2PA và cờ IPTC trở thành tiêu chuẩn trên các ứng dụng chỉnh sửa và mạng xã hội năm 2026, việc chọn đúng công cụ làm sạch metadata là vô cùng quan trọng.",
+          "Bài viết so sánh các công cụ ngoại tuyến như ExifTool, trình chỉnh sửa đồ họa và các giải pháp chạy trực tiếp trong trình duyệt để giúp bạn bảo vệ quyền riêng tư và sở hữu bức ảnh sạch hoàn toàn."
+      ],
+      "description": "So sánh các công cụ xóa metadata tốt nhất 2026. Tìm hiểu cách AI Label Remover, AI Tag Cleaner và No AI Tag làm sạch nhãn AI và EXIF mà không nén lại ảnh.",
+      "related": [
+          "how-to-get-no-ai-tag",
+          "made-with-ai-label",
+          "what-is-c2pa-content-credentials"
+      ],
+      "sections": [
+          {
+              "heading": "Vì sao các công cụ xóa metadata truyền thống bất lực trước nhãn AI 2026",
+              "paragraphs": [
+                  "Trước đây, xóa metadata chỉ đơn giản là chạy một công cụ xóa EXIF để loại bỏ thông số máy ảnh và tọa độ GPS. Tuy nhiên năm 2026, các tệp ảnh mang cấu trúc phức tạp hơn nhiều: [manifest Content Credentials C2PA](what-is-c2pa-content-credentials), [thuộc tính IPTC DigitalSourceType](iptc-digitalsourcetype-ai), và các prompt tạo ảnh ẩn từ Midjourney hay ComfyUI.",
+                  "Nhiều phần mềm cũ chỉ xóa được EXIF máy ảnh nhưng bỏ sót khối C2PA nhị phân, hoặc phải giải mã rồi nén lại ảnh JPEG làm suy giảm chất lượng điểm ảnh. Khi mạng xã hội quét thấy các trường AI còn sót lại, họ sẽ tự động gắn nhãn “Thông tin AI” lên bài đăng của bạn."
+              ]
+          },
+          {
+              "heading": "AI Label Remover: Công cụ AI Tag Cleaner hàng đầu trên trình duyệt",
+              "paragraphs": [
+                  "AI Label Remover được phát triển chuyên biệt cho bối cảnh metadata thế hệ mới. Với vai trò là một [AI tag cleaner](ai-tag-cleaner) hiện đại, công cụ phân tích và cắt bỏ các khối JUMBF C2PA, cờ nguồn gốc IPTC, prompt Stable Diffusion và tọa độ GPS ngay trên trình duyệt của bạn.",
+                  "Nhờ xử lý hoàn toàn cục bộ qua Web Workers trên CPU thiết bị, ảnh của bạn không bao giờ bị tải lên máy chủ từ xa. Đặc biệt, luồng byte ảnh được sao chép nguyên trạng mà không qua tái mã hóa, đảm bảo [xóa metadata không giảm chất lượng](remove-metadata-without-losing-quality)."
+              ],
+              "bullets": [
+                  "Không tải ảnh lên máy chủ: Bảo mật tuyệt đối cho ảnh cá nhân và dự án thương mại.",
+                  "Cắt byte không nén lại: Giữ nguyên độ phân giải, profile màu ICC và độ nét điểm ảnh.",
+                  "Loại bỏ triệt để dấu vết AI: Xóa C2PA, IPTC và prompt — những yếu tố gây [nhãn AI gắn nhầm](made-with-ai-label).",
+                  "Xử lý hàng loạt đa định dạng: Hỗ trợ tới 50 tệp JPEG, PNG, WebP, GIF, HEIC và AVIF cùng lúc."
+              ]
+          },
+          {
+              "heading": "So sánh: AI Label Remover với ExifTool và phần mềm đồ họa",
+              "paragraphs": [
+                  "ExifTool vẫn là công cụ dòng lệnh mạnh mẽ cho giới chuyên môn. Tuy nhiên giao diện dòng lệnh rất bất tiện khi cần chia sẻ nhanh, và việc xóa nhầm tham số khối JUMBF có thể làm hỏng tệp ảnh.",
+                  "Các phần mềm chỉnh sửa máy tính cho phép “Export for Web”, nhưng việc này luôn nén lại điểm ảnh khiến chất lượng giảm sút sau mỗi lần lưu. Hơn nữa, Adobe Creative Cloud có thể tự động ký lại Content Credentials vào tệp xuất trừ khi bạn [tắt thủ công](turn-off-content-credentials-photoshop-lightroom).",
+                  "AI Label Remover kết hợp tốc độ tức thì của công cụ web với độ bảo mật tuyệt đối của phần mềm offline. Bạn có thể kiểm tra chính xác dữ liệu trước và sau khi làm sạch."
+              ]
+          },
+          {
+              "heading": "Đạt trạng thái “No AI Tag” khi chia sẻ lên mạng xã hội",
+              "paragraphs": [
+                  "Nếu mục tiêu của bạn là đăng ảnh chụp thật lên Instagram, Facebook, TikTok hay Threads mà không bị dán nhãn cảnh báo vô lý, việc đưa ảnh về trạng thái [No AI Tag](no-ai-tag) là bước không thể thiếu. Các nền tảng sử dụng thuật toán quét tự động phần header tệp để tìm dấu hiệu AI.",
+                  "Bằng cách xử lý ảnh qua [AI tag cleaner](ai-tag-cleaner) trước khi đăng, bạn loại bỏ hoàn toàn các yếu tố kích hoạt quét tự động, giúp tác phẩm chân thực của bạn được đón nhận đúng nghĩa."
+              ]
+          },
+          {
+              "heading": "Đạo đức và trách nhiệm khi xóa metadata AI",
+              "paragraphs": [
+                  "AI Label Remover được tạo ra nhằm bảo vệ quyền riêng tư cá nhân, xóa vị trí GPS và khắc phục tình trạng nhãn AI bị gán sai do các tính năng chỉnh sửa nhỏ. Nếu bức ảnh hoàn toàn do AI tạo ra từ đầu, người sáng tạo cần tuân thủ quy định minh bạch của nền tảng bằng việc khai báo trung thực."
+              ]
+          }
+      ],
+      "faqHeading": "Câu hỏi thường gặp về công cụ xóa metadata năm 2026",
+      "faq": [
+          {
+              "q": "AI Label Remover khác gì các công cụ xóa EXIF truyền thống?",
+              "a": "Các công cụ EXIF cũ chỉ quét tiêu đề TIFF/EXIF và bỏ qua khối C2PA hay IPTC XMP. AI Label Remover là một [AI tag cleaner](ai-tag-cleaner) chuyên dụng, loại bỏ cả metadata máy ảnh lẫn dấu vết nguồn gốc AI mà không nén lại ảnh."
+          },
+          {
+              "q": "Xóa metadata có đảm bảo ảnh có No AI Tag trên Instagram không?",
+              "a": "Làm sạch metadata sẽ loại bỏ mọi tín hiệu kỹ thuật trong tệp (C2PA và IPTC). Dù nền tảng có thể dùng thêm bộ phân loại thị giác, việc xóa metadata mang lại cho ảnh trạng thái [No AI Tag](no-ai-tag) chuẩn xác và không bị gắn nhãn sai."
+          },
+          {
+              "q": "Xử lý ảnh nhạy cảm trên công cụ này có an toàn không?",
+              "a": "Hoàn toàn an toàn. AI Label Remover chạy 100% trên trình duyệt của bạn thông qua Web Workers; không có bất kỳ byte dữ liệu nào được gửi lên máy chủ."
+          },
+          {
+              "q": "Công cụ có xóa được thủy vân SynthID ẩn trong điểm ảnh không?",
+              "a": "Không. Công cụ metadata chỉ can thiệp vào các khối thông tin tiêu đề. Thủy vân vô hình như Google SynthID can thiệp trực tiếp vào giá trị điểm ảnh, không công cụ metadata nào có thể xóa được."
+          }
+      ]
+  },
+
+  'how-to-get-no-ai-tag': {
+      "title": "Cách để ảnh có nhãn “No AI Tag” trên mạng xã hội: Hướng dẫn từ AI Tag Cleaner",
+      "metaTitle": "Cách để ảnh có nhãn No AI Tag: Hướng dẫn AI Tag Cleaner",
+      "summary": [
+          "Nhiều nhiếp ảnh gia và nhà sáng tạo nội dung gặp tình trạng ảnh chụp thật bị gắn nhãn “Thông tin AI” hoặc “Made with AI” một cách vô lý trên mạng xã hội.",
+          "Hướng dẫn này giải thích cơ chế quét tự động của nền tảng và cách sử dụng AI Tag Cleaner để đạt trạng thái “No AI Tag” chuẩn xác mà không làm giảm chất lượng ảnh."
+      ],
+      "description": "Cách đảm bảo ảnh chụp thật có nhãn No AI Tag trên Facebook, Instagram. Dùng AI Tag Cleaner và AI Label Remover để loại bỏ nhãn AI gắn nhầm không nén lại ảnh.",
+      "related": [
+          "best-ai-metadata-removers-2026",
+          "made-with-ai-label",
+          "iptc-digitalsourcetype-ai"
+      ],
+      "sections": [
+          {
+              "heading": "Vì sao ảnh chụp thật lại bị gắn nhãn AI ngoài ý muốn",
+              "paragraphs": [
+                  "Các nền tảng như Instagram, Facebook, Threads và TikTok sử dụng thuật toán quét tự động các tệp tải lên. Nếu bộ quét phát hiện [thuộc tính IPTC DigitalSourceType](iptc-digitalsourcetype-ai) hoặc [manifest Content Credentials C2PA](what-is-c2pa-content-credentials), hệ thống sẽ lập tức gắn nhãn AI.",
+                  "Vấn đề phổ biến nhất hiện nay là gắn nhãn sai (false positive): chỉ cần dùng tính năng Generative Fill của Photoshop, xóa vật thể bằng Lightroom hay công cụ tẩy của điện thoại, phần mềm đã ghi các cờ AI vào tệp. Dù 99% bức ảnh là cảnh thật, toàn bộ tác phẩm vẫn bị coi là sản phẩm nhân tạo."
+              ]
+          },
+          {
+              "heading": "Giải pháp No AI Tag: Kiểm tra và làm sạch tệp ảnh",
+              "paragraphs": [
+                  "Để đưa tác phẩm về trạng thái [No AI Tag](no-ai-tag), bạn cần cắt bỏ chính xác những khối dữ liệu mà thuật toán nền tảng đang quét. Với AI Label Remover, bạn chỉ cần thả ảnh vào giao diện để nhận báo cáo chi tiết ngay lập tức.",
+                  "Trình [xem metadata ảnh](image-metadata-viewer-online) phân tách rõ ràng vị trí GPS, thông số máy ảnh và dấu vết AI. Khi phát hiện cờ nguồn gốc AI, một lần bấm “Làm sạch tất cả” sẽ cắt bỏ hoàn toàn các khối đó khỏi tệp."
+              ]
+          },
+          {
+              "heading": "Vì sao dùng AI Tag Cleaner tốt hơn nhiều so với chụp màn hình",
+              "paragraphs": [
+                  "Nhiều người chọn cách chụp lại màn hình hoặc lưu ảnh qua ứng dụng nhắn tin để làm mất nhãn AI. Cách này tuy làm mất metadata nhưng [làm suy giảm nghiêm trọng độ phân giải và dải màu](remove-metadata-without-losing-quality). Chụp màn hình nén ảnh về sRGB và làm mất độ sắc nét gốc.",
+                  "Sử dụng một [AI tag cleaner](ai-tag-cleaner) chuyên dụng giúp bảo toàn từng byte dữ liệu ảnh gốc. Ảnh giữ nguyên độ sắc nét, kích thước và hồ sơ màu ICC trong khi các khối dữ liệu gây gắn nhãn biến mất hoàn toàn."
+              ]
+          },
+          {
+              "heading": "Hành vi nhận diện của các nền tảng lớn năm 2026",
+              "paragraphs": [
+                  "Mỗi nền tảng có chính sách quét khác nhau. Các ứng dụng thuộc Meta dựa chặt chẽ vào C2PA và IPTC để tự động gán nhãn “Thông tin AI”. TikTok và YouTube cũng nhận diện các tệp chứa thông tin nguồn gốc kỹ thuật số tương tự.",
+                  "Làm sạch ảnh bằng [AI Label Remover](ai-tag-cleaner) giúp ảnh của bạn an toàn và trung thực trên mọi nền tảng."
+              ]
+          },
+          {
+              "heading": "Trách nhiệm minh bạch và quy chuẩn đạo đức",
+              "paragraphs": [
+                  "Đưa ảnh về trạng thái No AI Tag là hoàn toàn chính đáng khi bạn muốn sửa nhãn sai hoặc bảo vệ dữ liệu cá nhân. Tuy nhiên, nếu tác phẩm hoàn toàn do AI tạo ra, bạn nên tôn trọng quy tắc cộng đồng bằng cách tự nguyện công khai theo quy định."
+              ]
+          }
+      ],
+      "faqHeading": "Câu hỏi thường gặp về No AI Tag và công cụ AI Tag Cleaner",
+      "faq": [
+          {
+              "q": "Khái niệm “No AI Tag” có nghĩa là gì?",
+              "a": "No AI Tag có nghĩa là tệp ảnh không chứa bất kỳ siêu dữ liệu nào (như C2PA, cờ IPTC hay prompt) có thể khiến thuật toán mạng xã hội kích hoạt nhãn “Thông tin AI” hay “Made with AI”."
+          },
+          {
+              "q": "Làm sao để biết ảnh có dính nhãn AI trước khi đăng?",
+              "a": "Hãy thả ảnh vào AI Label Remover. Bảng báo cáo sẽ chỉ rõ xem tệp có chứa manifest C2PA, trường IPTC DigitalSourceType hay prompt tạo ảnh hay không."
+          },
+          {
+              "q": "Dùng AI Tag Cleaner có làm giảm độ phân giải ảnh không?",
+              "a": "Không hề. AI Label Remover cắt bỏ các khối metadata trực tiếp từ luồng byte mà không giải mã hay nén lại điểm ảnh, bảo toàn 100% chất lượng."
+          },
+          {
+              "q": "Tại sao Lightroom lại tự gắn nhãn AI vào ảnh RAW của tôi?",
+              "a": "Các phiên bản mới của Lightroom và Photoshop sẽ tự động đính kèm Content Credentials và cờ AI bất cứ khi nào bạn sử dụng công cụ Generative Remove hay Generative Fill."
+          }
+      ]
+  },
+
   'made-with-ai-label': {
     metaTitle: 'Vì sao ảnh thật bị gắn nhãn AI (“Thông tin AI”) trên Instagram',
     related: ['iptc-digitalsourcetype-ai', 'which-platforms-label-ai-images', 'turn-off-content-credentials-photoshop-lightroom'],

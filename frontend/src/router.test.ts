@@ -30,7 +30,8 @@ describe('Phân trang bài viết', () => {
   });
 
   it('mỗi ngôn ngữ có đủ bài nền tảng; bài mở rộng chỉ ở ngôn ngữ đã khai báo', () => {
-    expect(availableGuides('ko')).toEqual([...BASE_GUIDE_SLUGS]);
+    expect(availableGuides('ar')).toEqual([...BASE_GUIDE_SLUGS]);
+    expect(availableGuides('ko')).toEqual(['image-metadata-viewer-online', 'how-to-check-if-image-is-ai-generated', ...BASE_GUIDE_SLUGS]);
     for (const lang of ARTICLE_LANGS) expect(availableGuides(lang)).toHaveLength(BASE_GUIDE_SLUGS.length + EXTRA_GUIDE_SLUGS.length);
   });
 });

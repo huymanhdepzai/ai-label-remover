@@ -45,6 +45,7 @@ const zhTW: Messages = {
     process: '編輯過程',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: '暫停動畫',
+    sceneSteps: ['編輯中繼資料', '移除 EXIF', '清除 AI 資料'],
     analyzing: '讀取中 {count}',
     pending: '就緒 {count}',
     completed: '已清洗 {count}',

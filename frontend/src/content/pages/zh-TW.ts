@@ -131,7 +131,7 @@ const zhTW: Pages = {
       ],
       faqHeading: 'AI 標籤清除器常見問題',
       faq: [
-        { q: 'AI 標籤和 AI 標示是同一件事嗎？', a: '不完全是。標籤是檔案裡的資料；標示是平台顯示的內容，例如 Instagram 的「AI 資訊」。平台常根據標籤產生標示。若要避免真實照片被標示，請看[無 AI 標籤](no-ai-tag)。' },
+        { q: 'AI 標籤和 AI 標示是同一件事嗎？', a: '不完全是。標籤是檔案裡的資料；標示是平台顯示的內容，例如 Instagram 的「AI 資訊」。平台常根據標籤產生標示。若要避免真實照片被標示，請看[No AI Tag](no-ai-tag)。' },
         { q: '可以只刪除 AI 標籤、保留其他內容嗎？', a: '由於 AI 標籤分散在多個區塊，清除器會刪除整個中繼資料區塊而不是單一欄位。方向、ICC 色彩描述檔和像素尺寸一律保留，所以圖片顯示起來和之前完全一樣。' },
         { q: '清除 AI 標籤會降低畫質嗎？', a: '不會。不做任何重新編碼，只刪除中繼資料，影像資料維持不變。' },
         { q: '支援哪些格式？', a: 'JPG、PNG、WebP、GIF、HEIC/HEIF 與 AVIF——每次最多 50 個檔案，每個不超過 25 MB。PNG 裡的提示詞也可以用 [PNG 中繼資料移除工具](png-metadata-remover)處理。' },
@@ -142,10 +142,10 @@ const zhTW: Pages = {
       updated: '2026-11-06',
     },
     'no-ai-tag': {
-      metaTitle: '無 AI 標籤 – 發布真實照片不再出現「AI 資訊」',
+      metaTitle: 'No AI Tag – 發布真實照片不再出現「AI 資訊」',
       description: '真實照片被標上「AI 資訊」？刪除觸發標示的 C2PA 與 IPTC 資料，發布時不帶 AI 標籤。無損、免費，在瀏覽器中完成。',
-      navLabel: '無 AI 標籤',
-      h1: '讓真實照片不帶 AI 標籤',
+      navLabel: 'No AI Tag',
+      h1: 'No AI Tag – 讓真實照片不帶 AI 標籤',
       lead: '在 Photoshop 或手機修圖 App 裡做一處小小的 AI 修補，就可能讓 Instagram、Facebook 或 Threads 替真實照片加上「AI 資訊」標示。把檔案拖到下方，看看是哪些資料觸發了標示，再分享一份中繼資料裡沒有 AI 標籤的乾淨副本。',
       sections: [
         {
@@ -174,21 +174,21 @@ const zhTW: Pages = {
           ],
         },
         {
-          heading: '「無 AI 標籤」能保證與不能保證的事',
+          heading: 'No AI Tag 能保證與不能保證的事',
           paragraphs: [
             '刪除中繼資料能去掉檔案層面的原因，而大多數修過的照片正是因此被標示。它無法去除 SynthID 這類像素浮水印，平台也可能依自己的偵測替貼文加上標示，或要求你自行揭露。本頁面適用於只做了小修改的真實照片：如果圖片由 AI 生成且可能誤導他人，請如實揭露。',
           ],
         },
       ],
-      faqHeading: '「無 AI 標籤」常見問題',
+      faqHeading: 'No AI Tag 常見問題',
       faq: [
         { q: '能拿掉已發布貼文上的「AI 資訊」標示嗎？', a: '不能。標示屬於平台上的那則貼文。請刪除或封存該貼文，在這裡清洗檔案，再上傳乾淨的副本。' },
-        { q: '「無 AI 標籤」有保證嗎？', a: '沒有。它會刪除平台讀取的中繼資料，但平台也可能使用其他訊號。不過對大多數修過的照片來說，中繼資料就是被標示的原因。' },
+        { q: 'No AI Tag 能保證效果嗎？', a: '沒有。它會刪除平台讀取的中繼資料，但平台也可能使用其他訊號。不過對大多數修過的照片來說，中繼資料就是被標示的原因。' },
         { q: 'iPhone 和 Android 照片可以用嗎？', a: '可以。iPhone 的 HEIC 和 Android 的 JPG 都會直接清洗，不需轉檔。另有專用的 [HEIC 中繼資料移除工具](heic-metadata-remover)。' },
         { q: '完全由 AI 生成的圖片上的 AI 標籤呢？', a: '[AI 標籤清除器](ai-tag-cleaner)可以顯示並刪除它們，但平台規則通常仍要求你自行標示寫實的 AI 圖片。' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'batch-remove-metadata'],
-      updated: '2026-11-06',
+      updated: '2026-11-09',
     },
     'remove-exif-data': {
       metaTitle: '線上刪除照片 EXIF 資訊 – 免費又保護隱私',

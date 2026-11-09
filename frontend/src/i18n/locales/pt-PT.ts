@@ -45,6 +45,7 @@ const ptPT: Messages = {
     process: 'Processo de edição',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Pausar animação',
+    sceneSteps: ['Editar metadados', 'Remover EXIF', 'Limpar dados de IA'],
     analyzing: 'a ler {count}',
     pending: 'prontas {count}',
     completed: 'limpas {count}',

@@ -45,6 +45,7 @@ const el: Messages = {
     process: 'Διαδικασία επεξεργασίας',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Παύση κίνησης',
+    sceneSteps: ['Επεξεργασία μεταδεδομένων', 'Αφαίρεση EXIF', 'Καθαρισμός δεδομένων AI'],
     analyzing: 'σε ανάγνωση: {count}',
     pending: 'έτοιμες: {count}',
     completed: 'πλυμένες: {count}',

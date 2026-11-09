@@ -45,6 +45,7 @@ const ro: Messages = {
     process: 'Procesul de editare',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Întrerupe animația',
+    sceneSteps: ['Editează metadatele', 'Elimină EXIF', 'Curăță datele AI'],
     analyzing: 'în citire: {count}',
     pending: 'gata: {count}',
     completed: 'spălate: {count}',

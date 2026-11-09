@@ -45,6 +45,7 @@ const fi: Messages = {
     process: 'Muokkauksen vaiheet',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Keskeytä animaatio',
+    sceneSteps: ['Muokkaa metadataa', 'Poista EXIF', 'Siivoa AI-tiedot'],
     analyzing: 'luetaan: {count}',
     pending: 'valmiina: {count}',
     completed: 'pesty: {count}',

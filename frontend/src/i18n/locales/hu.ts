@@ -45,6 +45,7 @@ const hu: Messages = {
     process: 'Szerkesztési folyamat',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Animáció szüneteltetése',
+    sceneSteps: ['Metaadatok szerkesztése', 'EXIF eltávolítása', 'AI-adatok törlése'],
     analyzing: 'olvasás: {count}',
     pending: 'kész: {count}',
     completed: 'kimosva: {count}',

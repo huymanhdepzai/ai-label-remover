@@ -45,6 +45,7 @@ const ar: Messages = {
     process: 'مراحل التعديل',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'إيقاف الحركة مؤقتًا',
+    sceneSteps: ['تعديل البيانات الوصفية', 'إزالة EXIF', 'مسح بيانات الذكاء الاصطناعي'],
     analyzing: 'قيد القراءة {count}',
     pending: 'جاهزة {count}',
     completed: 'مغسولة {count}',

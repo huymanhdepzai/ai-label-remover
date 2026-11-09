@@ -62,6 +62,8 @@ export const TOOL_FORMATS: Record<ToolSlug, string[]> = {
  * ngôn ngữ có trang công cụ). Thứ tự = mức liên quan.
  */
 export const GUIDE_TOOLS: Record<GuideSlug, readonly ToolSlug[]> = {
+  'best-ai-metadata-removers-2026': ['ai-tag-cleaner', 'no-ai-tag'],
+  'how-to-get-no-ai-tag': ['no-ai-tag', 'ai-tag-cleaner'],
   'made-with-ai-label': ['no-ai-tag', 'remove-c2pa-content-credentials'],
   'remove-stable-diffusion-comfyui-metadata': ['png-metadata-remover', 'ai-tag-cleaner'],
   'hide-midjourney-dalle-prompts': ['ai-tag-cleaner', 'png-metadata-remover'],
@@ -193,6 +195,8 @@ export const BASE_GUIDE_SLUGS = [
  * src/content/articles/<mã>.ts. Đặt bài mới nhất lên đầu.
  */
 export const EXTRA_GUIDE_SLUGS = [
+  'best-ai-metadata-removers-2026',
+  'how-to-get-no-ai-tag',
   'chatgpt-gemini-image-metadata',
   'remove-metadata-windows-mac',
   'image-metadata-viewer-online',
@@ -219,12 +223,14 @@ export type ExtraGuideSlug = (typeof EXTRA_GUIDE_SLUGS)[number];
  * Dịch thêm một bài sang ngôn ngữ mới: thêm bài vào tệp ngôn ngữ đó rồi thêm mã ngôn ngữ vào đây.
  */
 export const GUIDE_LANGS: Record<ExtraGuideSlug, readonly LangCode[]> = {
+  'best-ai-metadata-removers-2026': ARTICLE_LANGS,
+  'how-to-get-no-ai-tag': ARTICLE_LANGS,
   'chatgpt-gemini-image-metadata': ARTICLE_LANGS,
   'remove-metadata-windows-mac': ARTICLE_LANGS,
-  'image-metadata-viewer-online': ARTICLE_LANGS,
+  'image-metadata-viewer-online': PRIORITY_LANGS,
   'iptc-digitalsourcetype-ai': ARTICLE_LANGS,
   'remove-metadata-without-losing-quality': ARTICLE_LANGS,
-  'how-to-check-if-image-is-ai-generated': ARTICLE_LANGS,
+  'how-to-check-if-image-is-ai-generated': PRIORITY_LANGS,
   'which-platforms-label-ai-images': ARTICLE_LANGS,
   'what-metadata-ai-image-generators-add': ARTICLE_LANGS,
   'synthid-invisible-ai-watermarks': ARTICLE_LANGS,
@@ -236,6 +242,8 @@ export const GUIDE_LANGS: Record<ExtraGuideSlug, readonly LangCode[]> = {
 
 /** Thẻ chủ đề (tag đỏ) trên thẻ bài viết — dùng tên riêng / thuật ngữ kỹ thuật nên giống nhau ở mọi ngôn ngữ. */
 export const GUIDE_TAGS: Record<GuideSlug, string> = {
+  'best-ai-metadata-removers-2026': 'Top Tools · 2026',
+  'how-to-get-no-ai-tag': 'No AI Tag · AI Tag Cleaner',
   'made-with-ai-label': 'Facebook · Instagram',
   'remove-stable-diffusion-comfyui-metadata': 'Stable Diffusion · ComfyUI',
   'hide-midjourney-dalle-prompts': 'Midjourney · DALL·E',

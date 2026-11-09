@@ -131,7 +131,7 @@ const pl: Pages = {
       ],
       faqHeading: 'Pytania o czyszczenie tagów AI',
       faq: [
-        { q: 'Czy tag AI to to samo co etykieta AI?', a: 'Nie do końca. Tag to dane w pliku; etykieta to to, co pokazuje platforma, np. „Informacje o AI” na Instagramie. Platformy często tworzą etykietę na podstawie tagu. Aby uniknąć tego na prawdziwym zdjęciu, zobacz [Bez tagu AI](no-ai-tag).' },
+        { q: 'Czy tag AI to to samo co etykieta AI?', a: 'Nie do końca. Tag to dane w pliku; etykieta to to, co pokazuje platforma, np. „Informacje o AI” na Instagramie. Platformy często tworzą etykietę na podstawie tagu. Aby uniknąć tego na prawdziwym zdjęciu, zobacz [No AI Tag](no-ai-tag).' },
         { q: 'Czy mogę usunąć tylko tagi AI, a resztę zostawić?', a: 'Narzędzie usuwa całe bloki metadanych zamiast pojedynczych pól, bo tagi AI są rozrzucone po kilku blokach. Obrót, profil kolorów ICC i rozmiar w pikselach zawsze zostają, więc obraz wygląda dokładnie tak samo.' },
         { q: 'Czy usuwanie tagów AI obniża jakość?', a: 'Nie. Nic nie jest ponownie kodowane; usuwane są tylko metadane, a dane obrazu pozostają identyczne.' },
         { q: 'Jakie formaty mogę czyścić?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF i AVIF — do 50 plików naraz, każdy do 25 MB. Prompty w PNG obsłuży też [usuwanie metadanych PNG](png-metadata-remover).' },
@@ -142,10 +142,10 @@ const pl: Pages = {
       updated: '2026-11-06',
     },
     'no-ai-tag': {
-      metaTitle: 'Bez tagu AI – publikuj prawdziwe zdjęcia bez etykiety',
+      metaTitle: 'No AI Tag – zdjęcia bez etykiety „Informacje o AI”',
       description: 'Etykieta „Informacje o AI” na prawdziwym zdjęciu? Usuń dane C2PA i IPTC, które ją wywołują, i publikuj bez tagu AI. Bezstratnie, za darmo, w przeglądarce.',
-      navLabel: 'Bez tagu AI',
-      h1: 'Bez tagu AI na prawdziwych zdjęciach',
+      navLabel: 'No AI Tag',
+      h1: 'No AI Tag – prawdziwe zdjęcia bez tagu AI',
       lead: 'Drobna poprawka generatywna w Photoshopie lub aplikacji na telefon może wystarczyć, by Instagram, Facebook czy Threads dodały etykietę „Informacje o AI” do autentycznego zdjęcia. Upuść plik poniżej, aby zobaczyć, które dane ją wywołują, a potem udostępnij czystą kopię bez tagu AI w metadanych.',
       sections: [
         {
@@ -174,21 +174,21 @@ const pl: Pages = {
           ],
         },
         {
-          heading: 'Co „bez tagu AI” może, a czego nie może obiecać',
+          heading: 'Co No AI Tag może, a czego nie może obiecać',
           paragraphs: [
             'Usunięcie metadanych usuwa przyczynę zapisaną w pliku, a to ona odpowiada za etykietę w większości edytowanych zdjęć. Nie usuwa znaków wodnych w pikselach, takich jak SynthID, a platforma nadal może oznaczyć post własną detekcją lub poprosić o samodzielne oznaczenie. Ta strona jest przeznaczona dla prawdziwych zdjęć z drobnymi poprawkami: jeśli obraz jest wygenerowany przez AI i może wprowadzać w błąd, oznacz go.',
           ],
         },
       ],
-      faqHeading: 'Pytania o „bez tagu AI”',
+      faqHeading: 'Pytania o No AI Tag',
       faq: [
         { q: 'Czy to usunie etykietę „Informacje o AI” z opublikowanego posta?', a: 'Nie. Etykieta należy do posta na platformie. Usuń lub zarchiwizuj post, wyczyść plik tutaj i opublikuj czystą kopię.' },
-        { q: 'Czy „bez tagu AI” jest gwarantowane?', a: 'Nie. Narzędzie usuwa metadane, które czytają platformy, ale mogą one korzystać też z innych sygnałów. W większości edytowanych zdjęć to właśnie metadane są powodem etykiety.' },
+        { q: 'Czy No AI Tag daje gwarancję?', a: 'Nie. Narzędzie usuwa metadane, które czytają platformy, ale mogą one korzystać też z innych sygnałów. W większości edytowanych zdjęć to właśnie metadane są powodem etykiety.' },
         { q: 'Czy działa ze zdjęciami z iPhone’a i Androida?', a: 'Tak. HEIC z iPhone’a i JPG z Androida są czyszczone bez konwersji. Jest też osobne narzędzie: [usuwanie metadanych HEIC](heic-metadata-remover).' },
         { q: 'A tagi AI na obrazie w całości wygenerowanym przez AI?', a: '[Czyszczenie tagów AI](ai-tag-cleaner) je pokazuje i usuwa, ale zasady platform zwykle nadal wymagają samodzielnego oznaczania realistycznych obrazów AI.' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'batch-remove-metadata'],
-      updated: '2026-11-06',
+      updated: '2026-11-09',
     },
     'remove-exif-data': {
       metaTitle: 'Usuń dane EXIF ze zdjęć online – za darmo i prywatnie',

@@ -279,6 +279,8 @@ const TOOL_OG: Record<ToolSlug, ToolOg> = {
 
 /** Tiêu đề ngắn (≤ 3 dòng) cho ảnh của từng bài — tiêu đề đầy đủ đã có trong og:title. */
 const GUIDE_OG: Record<GuideSlug, string> = {
+  'best-ai-metadata-removers-2026': 'Top AI metadata & label removers in 2026',
+  'how-to-get-no-ai-tag': 'How to ensure your photos have No AI Tag',
   'made-with-ai-label': 'Why your real photo got a “Made with AI” label',
   'remove-stable-diffusion-comfyui-metadata': 'Remove Stable Diffusion & ComfyUI prompts',
   'hide-midjourney-dalle-prompts': 'Hide Midjourney & DALL·E prompts before sharing',

@@ -45,6 +45,7 @@ const fr: Messages = {
     process: 'Étapes de modification',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Mettre l’animation en pause',
+    sceneSteps: ['Modifier les métadonnées', 'Supprimer l’EXIF', 'Nettoyer les données d’IA'],
     analyzing: 'en lecture {count}',
     pending: 'prêtes {count}',
     completed: 'nettoyées {count}',

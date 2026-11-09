@@ -45,6 +45,7 @@ const zhCN: Messages = {
     process: '编辑过程',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: '暂停动画',
+    sceneSteps: ['编辑元数据', '删除 EXIF', '清除 AI 数据'],
     analyzing: '读取中 {count}',
     pending: '就绪 {count}',
     completed: '已清洗 {count}',

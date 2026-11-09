@@ -45,6 +45,7 @@ const pl: Messages = {
     process: 'Przebieg edycji',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Wstrzymaj animację',
+    sceneSteps: ['Edytuj metadane', 'Usuń EXIF', 'Wyczyść dane AI'],
     analyzing: 'odczyt {count}',
     pending: 'gotowe {count}',
     completed: 'wyczyszczone {count}',

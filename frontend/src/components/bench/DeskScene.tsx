@@ -235,8 +235,6 @@ function Float({ dur, delay, children }: { dur: number; delay: number; children:
 
 // ---------- Cảnh hoàn chỉnh ----------
 
-const CHIP_STEPS = ['Edit Metadata', 'Remove EXIF', 'Clean AI Data'];
-
 export function DeskScene({ live }: { live: LiveScene | null }) {
   const t = useT();
   const [paused, setPaused] = useState(false);
@@ -361,7 +359,7 @@ export function DeskScene({ live }: { live: LiveScene | null }) {
         </g>
       </svg>
 
-      {/* ===== Chip nổi "Edit Metadata" (góc trên phải) ===== */}
+      {/* ===== Chip nổi "Edit Metadata" (góc trên phải) — chữ theo ngôn ngữ (workspace.sceneSteps); dir="auto" để chữ RTL đúng thứ tự trong khung ltr ===== */}
       <div className="scene-chip absolute end-[3%] top-[4%] flex items-center gap-2 overflow-hidden rounded-xl bg-white py-2 ps-2 pe-3.5 shadow-[0_10px_24px_-10px_rgba(11,60,75,0.45)]" dir="ltr">
         <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg" style={{ background: TEAL }}>
           <svg viewBox="0 0 20 20" className="h-4 w-4" aria-hidden="true">
@@ -370,10 +368,10 @@ export function DeskScene({ live }: { live: LiveScene | null }) {
         </span>
         <span className="grid text-[0.8rem] font-bold whitespace-nowrap text-[#0F2A33]">
           {live ? (
-            <span className="max-w-36 truncate">{live.status}</span>
+            <span className="max-w-36 truncate" dir="auto">{live.status}</span>
           ) : (
-            CHIP_STEPS.map((s, i) => (
-              <span key={s} className="scene-chip-text" style={{ '--delay': `${i * 3}s` } as CSSProperties}>
+            t.workspace.sceneSteps.map((s, i) => (
+              <span key={i} className="scene-chip-text" dir="auto" style={{ '--delay': `${i * 3}s` } as CSSProperties}>
                 {s}
               </span>
             ))

@@ -45,6 +45,7 @@ const it: Messages = {
     process: 'Processo di modifica',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Metti in pausa l’animazione',
+    sceneSteps: ['Modifica metadati', 'Rimuovi EXIF', 'Pulisci dati di IA'],
     analyzing: 'in lettura {count}',
     pending: 'pronte {count}',
     completed: 'pulite {count}',

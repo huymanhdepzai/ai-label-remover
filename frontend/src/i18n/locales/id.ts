@@ -45,6 +45,7 @@ const id: Messages = {
     process: 'Proses pengeditan',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Jeda animasi',
+    sceneSteps: ['Edit metadata', 'Hapus EXIF', 'Bersihkan data AI'],
     analyzing: 'dibaca {count}',
     pending: 'siap {count}',
     completed: 'dicuci {count}',

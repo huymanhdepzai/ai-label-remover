@@ -131,7 +131,7 @@ const nl: Pages = {
       ],
       faqHeading: 'Vragen over de AI-tag-cleaner',
       faq: [
-        { q: 'Is een AI-tag hetzelfde als een AI-label?', a: 'Niet helemaal. De tag is data in het bestand; het label is wat een platform toont, zoals “AI-info” op Instagram. Platforms maken het label vaak op basis van de tag. Om dat bij een echte foto te voorkomen, zie [Geen AI-tag](no-ai-tag).' },
+        { q: 'Is een AI-tag hetzelfde als een AI-label?', a: 'Niet helemaal. De tag is data in het bestand; het label is wat een platform toont, zoals “AI-info” op Instagram. Platforms maken het label vaak op basis van de tag. Om dat bij een echte foto te voorkomen, zie [No AI Tag](no-ai-tag).' },
         { q: 'Kan ik alleen de AI-tags verwijderen en de rest houden?', a: 'De cleaner verwijdert hele metadatablokken in plaats van losse velden, omdat AI-tags over meerdere blokken verspreid zijn. Rotatie, ICC-kleurprofiel en pixelafmetingen blijven altijd behouden, dus de foto ziet er precies hetzelfde uit.' },
         { q: 'Gaat de kwaliteit omlaag door AI-tags te wissen?', a: 'Nee. Er wordt niets opnieuw gecodeerd; alleen metadata verdwijnt, de beelddata blijven identiek.' },
         { q: 'Welke formaten kan ik wassen?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF en AVIF — tot 50 bestanden tegelijk, elk tot 25 MB. Prompts in PNG’s kun je ook met de [PNG-metadataverwijderaar](png-metadata-remover) aanpakken.' },
@@ -142,10 +142,10 @@ const nl: Pages = {
       updated: '2026-11-06',
     },
     'no-ai-tag': {
-      metaTitle: 'Geen AI-tag – Echte foto’s plaatsen zonder “AI-info”',
+      metaTitle: 'No AI Tag – Echte foto’s plaatsen zonder “AI-info”-label',
       description: 'Een “AI-info”-label op een echte foto? Verwijder de C2PA- en IPTC-data die het veroorzaken en plaats zonder AI-tag. Verliesvrij, gratis, in je browser.',
-      navLabel: 'Geen AI-tag',
-      h1: 'Geen AI-tag op je echte foto’s',
+      navLabel: 'No AI Tag',
+      h1: 'No AI Tag – geen AI-tag op je echte foto’s',
       lead: 'Een kleine generatieve correctie in Photoshop of een telefoonapp kan genoeg zijn voor Instagram, Facebook of Threads om een “AI-info”-label op een echte foto te zetten. Sleep het bestand hieronder om te zien welke data het label veroorzaken en deel daarna een schone kopie zonder AI-tag in de metadata.',
       sections: [
         {
@@ -174,21 +174,21 @@ const nl: Pages = {
           ],
         },
         {
-          heading: 'Wat “geen AI-tag” wel en niet belooft',
+          heading: 'Wat No AI Tag wel en niet belooft',
           paragraphs: [
             'Door de metadata te verwijderen verdwijnt de reden in het bestand, en dat is bij de meeste bewerkte foto’s de oorzaak. Pixelwatermerken zoals SynthID blijven, en een platform kan een bericht nog steeds labelen via eigen detectie of je vragen het zelf aan te geven. Deze pagina is bedoeld voor echte foto’s met kleine bewerkingen: is een afbeelding met AI gemaakt en kan ze misleiden, vermeld dat dan.',
           ],
         },
       ],
-      faqHeading: 'Vragen over “geen AI-tag”',
+      faqHeading: 'Vragen over No AI Tag',
       faq: [
         { q: 'Verdwijnt het “AI-info”-label van een bericht dat al online staat?', a: 'Nee. Het label hoort bij het bericht op het platform. Verwijder of archiveer het bericht, was het bestand hier en upload de schone kopie.' },
-        { q: 'Is “geen AI-tag” gegarandeerd?', a: 'Nee. Het verwijdert de metadata die platforms lezen, maar die kunnen ook andere signalen gebruiken. Bij de meeste bewerkte foto’s is de metadata wel de reden voor het label.' },
+        { q: 'Garandeert No AI Tag het resultaat?', a: 'Nee. Het verwijdert de metadata die platforms lezen, maar die kunnen ook andere signalen gebruiken. Bij de meeste bewerkte foto’s is de metadata wel de reden voor het label.' },
         { q: 'Werkt het met iPhone- en Android-foto’s?', a: 'Ja. HEIC van iPhone en JPG van Android worden gewassen zonder conversie. Er is ook een aparte [HEIC-metadataverwijderaar](heic-metadata-remover).' },
         { q: 'En AI-tags op een volledig met AI gemaakte afbeelding?', a: 'De [AI-tag-cleaner](ai-tag-cleaner) toont en verwijdert ze, maar platformregels vragen meestal nog steeds dat je realistische AI-beelden zelf labelt.' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'batch-remove-metadata'],
-      updated: '2026-11-06',
+      updated: '2026-11-09',
     },
     'remove-exif-data': {
       metaTitle: 'EXIF-gegevens online uit foto’s verwijderen, gratis',

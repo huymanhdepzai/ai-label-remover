@@ -45,6 +45,7 @@ const da: Messages = {
     process: 'Redigeringsforløb',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Sæt animation på pause',
+    sceneSteps: ['Redigér metadata', 'Fjern EXIF', 'Rens AI-data'],
     analyzing: 'læses {count}',
     pending: 'klar {count}',
     completed: 'vasket {count}',

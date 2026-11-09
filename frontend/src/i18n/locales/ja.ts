@@ -45,6 +45,7 @@ const ja: Messages = {
     process: '編集の過程',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'アニメーションを一時停止',
+    sceneSteps: ['メタデータを編集', 'EXIF を削除', 'AI データを消去'],
     analyzing: '読み取り中 {count}',
     pending: '準備完了 {count}',
     completed: '洗浄済み {count}',

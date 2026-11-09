@@ -45,6 +45,7 @@ const sv: Messages = {
     process: 'Redigeringsprocess',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Pausa animationen',
+    sceneSteps: ['Redigera metadata', 'Ta bort EXIF', 'Rensa AI-data'],
     analyzing: 'läses {count}',
     pending: 'redo {count}',
     completed: 'tvättade {count}',

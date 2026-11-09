@@ -45,6 +45,7 @@ const ko: Messages = {
     process: '편집 과정',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: '애니메이션 일시정지',
+    sceneSteps: ['메타데이터 편집', 'EXIF 제거', 'AI 데이터 정리'],
     analyzing: '읽는 중 {count}',
     pending: '준비됨 {count}',
     completed: '세척됨 {count}',

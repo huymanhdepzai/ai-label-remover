@@ -159,6 +159,87 @@ function TagShape({ x, y, w, h, rot = 0, tone = 'rose', text }: { x: number; y: 
 // ======================= Cảnh của từng bài =======================
 
 const SCENES: Record<GuideSlug, () => ReactNode> = {
+  // So sánh công cụ 2026: Bảng xếp hạng AI Label Remover (#1)
+  'best-ai-metadata-removers-2026': () => (
+    <g>
+      <Panel x={70} y={35} w={500} h={290} r={14}>
+        <rect x={70} y={35} width={500} height={44} rx={14} fill={c('cobalt')} />
+        <text x={94} y={63} fontFamily={SANS} fontSize={15} fontWeight={800} fill={c('sheet')}>
+          2026 METADATA CLEANER BENCHMARK
+        </text>
+        <g transform="translate(530 57)">
+          <Sparkle x={0} y={0} r={10} color="amber" />
+        </g>
+        <rect x={88} y={92} width={464} height={56} rx={10} fill={c('fix-soft')} stroke={c('fix')} strokeWidth={1.5} />
+        <rect x={102} y={106} width={28} height={28} rx={6} fill={c('fix')} />
+        <text x={116} y={125} textAnchor="middle" fontFamily={SANS} fontSize={15} fontWeight={900} fill={c('sheet')}>
+          1
+        </text>
+        <text x={142} y={120} fontFamily={SANS} fontSize={14.5} fontWeight={800} fill={c('ink')}>
+          AI Label Remover · AI Tag Cleaner
+        </text>
+        <text x={142} y={137} fontFamily={MONO} fontSize={11} fill={c('ink-2')}>
+          Zero upload · Byte-level lossless · C2PA &amp; IPTC
+        </text>
+        <Pill x={448} y={106} text="BEST" tone="fix" kept mono={false} size={11} />
+
+        <rect x={88} y={158} width={464} height={46} rx={8} fill={c('sheet')} stroke={c('line')} />
+        <text x={116} y={186} textAnchor="middle" fontFamily={SANS} fontSize={13} fontWeight={700} fill={c('ink-3')}>
+          2
+        </text>
+        <text x={142} y={180} fontFamily={SANS} fontSize={13.5} fontWeight={700} fill={c('ink')}>
+          ExifTool CLI
+        </text>
+        <text x={142} y={194} fontFamily={MONO} fontSize={10.5} fill={c('ink-3')}>
+          Terminal utility · Technical setup
+        </text>
+        <Pill x={448} y={166} text="CLI only" tone="amber" mono={false} size={10} />
+
+        <rect x={88} y={214} width={464} height={46} rx={8} fill={c('sheet')} stroke={c('line')} />
+        <text x={116} y={242} textAnchor="middle" fontFamily={SANS} fontSize={13} fontWeight={700} fill={c('ink-3')}>
+          3
+        </text>
+        <text x={142} y={236} fontFamily={SANS} fontSize={13.5} fontWeight={700} fill={c('ink')}>
+          Desktop Photo Editors
+        </text>
+        <text x={142} y={250} fontFamily={MONO} fontSize={10.5} fill={c('ink-3')}>
+          Re-compresses pixels · Lossy export
+        </text>
+        <Pill x={448} y={222} text="Lossy" tone="rose" strike mono={false} size={10} />
+
+        <text x={92} y={298} fontFamily={MONO} fontSize={11.5} fontWeight={700} fill={c('cobalt')}>
+          Verified Clean: No AI Tag on Upload
+        </text>
+      </Panel>
+    </g>
+  ),
+
+  // Hướng dẫn No AI Tag: ảnh gốc -> gỡ cờ C2PA / IPTC -> đóng dấu No AI Tag
+  'how-to-get-no-ai-tag': () => (
+    <g>
+      <Panel x={60} y={45} w={220} h={270} r={12}>
+        <Photo x={74} y={59} w={192} h={130} tone="cobalt" r={8} />
+        <Pill x={80} y={140} text="Made with AI" tone="rose" strike mono={false} size={12} />
+        <Bar x={74} y={207} w={120} h={8} color="line" />
+        <Bar x={74} y={223} w={80} h={7} />
+        <Pill x={74} y={247} text="C2PA / IPTC found" tone="rose" mono size={10} />
+      </Panel>
+
+      <Arrow x1={300} x2={340} y={180} color="cobalt" />
+
+      <Panel x={360} y={45} w={220} h={270} r={12}>
+        <Photo x={374} y={59} w={192} h={130} tone="fix" r={8} />
+        <Pill x={380} y={140} text="No AI Tag" tone="fix" kept mono={false} size={12} />
+        <Bar x={374} y={207} w={120} h={8} color="line" />
+        <Bar x={374} y={223} w={80} h={7} />
+        <Pill x={374} y={247} text="100% Lossless &amp; Clean" tone="fix" kept mono size={10} />
+      </Panel>
+
+      <circle cx={320} cy={110} r={24} fill={c('fix-soft')} stroke={c('fix')} strokeWidth={2} />
+      <Glyph name="shield" x={308} y={98} size={24} color="fix" />
+    </g>
+  ),
+
   // Ảnh thật trên mạng xã hội bị gắn "AI info"; nhãn bị gỡ bay ra ngoài.
   'made-with-ai-label': () => (
     <g>

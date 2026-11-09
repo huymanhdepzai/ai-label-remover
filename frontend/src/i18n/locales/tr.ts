@@ -45,6 +45,7 @@ const tr: Messages = {
     process: 'Düzenleme süreci',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Animasyonu duraklat',
+    sceneSteps: ['Meta veriyi düzenle', 'EXIF’i kaldır', 'AI verisini temizle'],
     analyzing: 'okunuyor {count}',
     pending: 'hazır {count}',
     completed: 'yıkandı {count}',

@@ -131,7 +131,7 @@ const zhCN: Pages = {
       ],
       faqHeading: 'AI 标签清理器常见问题',
       faq: [
-        { q: 'AI 标签和 AI 标识是一回事吗？', a: '不完全是。标签是文件里的数据；标识是平台显示的内容，比如 Instagram 的“AI 信息”。平台常常根据标签生成标识。若要避免真实照片被标注，请看[无 AI 标签](no-ai-tag)。' },
+        { q: 'AI 标签和 AI 标识是一回事吗？', a: '不完全是。标签是文件里的数据；标识是平台显示的内容，比如 Instagram 的“AI 信息”。平台常常根据标签生成标识。若要避免真实照片被标注，请看[No AI Tag](no-ai-tag)。' },
         { q: '能只删除 AI 标签、保留其他内容吗？', a: '由于 AI 标签分散在多个数据块中，清理器会删除整个元数据块而不是单个字段。方向、ICC 色彩配置文件和像素尺寸始终保留，所以图片显示效果与之前完全相同。' },
         { q: '清除 AI 标签会降低画质吗？', a: '不会。不做任何重新编码，只删除元数据，图像数据保持不变。' },
         { q: '支持哪些格式？', a: 'JPG、PNG、WebP、GIF、HEIC/HEIF 和 AVIF——每次最多 50 个文件，每个不超过 25 MB。PNG 中的提示词也可以用 [PNG 元数据删除工具](png-metadata-remover)处理。' },
@@ -142,10 +142,10 @@ const zhCN: Pages = {
       updated: '2026-11-06',
     },
     'no-ai-tag': {
-      metaTitle: '无 AI 标签 – 发布真实照片不再显示“AI 信息”',
+      metaTitle: 'No AI Tag – 发布真实照片不再显示“AI 信息”',
       description: '真实照片被标上“AI 信息”？删除触发标识的 C2PA 和 IPTC 数据，发布时不带 AI 标签。无损、免费，在浏览器中完成。',
-      navLabel: '无 AI 标签',
-      h1: '让真实照片不带 AI 标签',
+      navLabel: 'No AI Tag',
+      h1: 'No AI Tag – 让真实照片不带 AI 标签',
       lead: '在 Photoshop 或手机修图应用里做一处小小的 AI 修补，就可能让 Instagram、Facebook 或 Threads 给真实照片标上“AI 信息”。把文件拖到下方，看看是哪些数据触发了标识，然后分享一份元数据中不含 AI 标签的干净副本。',
       sections: [
         {
@@ -174,21 +174,21 @@ const zhCN: Pages = {
           ],
         },
         {
-          heading: '“无 AI 标签”能保证什么、不能保证什么',
+          heading: 'No AI Tag 能保证什么、不能保证什么',
           paragraphs: [
             '删除元数据可以去掉文件层面的原因，而大多数修过的照片正是因此被标注。它无法去除 SynthID 这类像素水印，平台也可能凭自己的检测给帖子加标识，或要求你自行声明。本页面适用于只做了小修改的真实照片：如果图片由 AI 生成且可能误导他人，请如实声明。',
           ],
         },
       ],
-      faqHeading: '“无 AI 标签”常见问题',
+      faqHeading: 'No AI Tag 常见问题',
       faq: [
         { q: '能去掉已发布帖子上的“AI 信息”标识吗？', a: '不能。标识属于平台上的那条帖子。请删除或归档该帖子，在这里清洗文件，再上传干净的副本。' },
-        { q: '“无 AI 标签”有保证吗？', a: '没有。它会删除平台读取的元数据，但平台也可能使用其他信号。不过对大多数修过的照片来说，元数据就是被标注的原因。' },
+        { q: 'No AI Tag 能保证效果吗？', a: '没有。它会删除平台读取的元数据，但平台也可能使用其他信号。不过对大多数修过的照片来说，元数据就是被标注的原因。' },
         { q: 'iPhone 和安卓照片可以用吗？', a: '可以。iPhone 的 HEIC 和安卓的 JPG 都会直接清洗，无需转换。另有专门的 [HEIC 元数据删除工具](heic-metadata-remover)。' },
         { q: '完全由 AI 生成的图片上的 AI 标签呢？', a: '[AI 标签清理器](ai-tag-cleaner)可以显示并删除它们，但平台规则通常仍要求你自行标注写实的 AI 图片。' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'batch-remove-metadata'],
-      updated: '2026-11-06',
+      updated: '2026-11-09',
     },
     'remove-exif-data': {
       metaTitle: '在线删除照片 EXIF 信息 – 免费且保护隐私',

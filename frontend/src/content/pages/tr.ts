@@ -131,7 +131,7 @@ const tr: Pages = {
       ],
       faqHeading: 'AI etiket temizleyici hakkında sorular',
       faq: [
-        { q: 'AI etiketi ile AI ibaresi aynı şey mi?', a: 'Tam olarak değil. Etiket dosyanın içindeki veridir; ibare ise platformun gösterdiği şeydir, örneğin Instagram’daki “AI bilgisi”. Platformlar ibareyi çoğu zaman etiketten üretir. Gerçek bir fotoğrafta bunu önlemek için [AI etiketsiz](no-ai-tag) sayfasına bakın.' },
+        { q: 'AI etiketi ile AI ibaresi aynı şey mi?', a: 'Tam olarak değil. Etiket dosyanın içindeki veridir; ibare ise platformun gösterdiği şeydir, örneğin Instagram’daki “AI bilgisi”. Platformlar ibareyi çoğu zaman etiketten üretir. Gerçek bir fotoğrafta bunu önlemek için [No AI Tag](no-ai-tag) sayfasına bakın.' },
         { q: 'Yalnızca AI etiketlerini silip gerisini tutabilir miyim?', a: 'Temizleyici tek tek alanlar yerine bütün meta veri bloklarını kaldırır, çünkü AI etiketleri birkaç bloğa dağılmıştır. Yön, ICC renk profili ve piksel boyutu her zaman korunur; görsel tam olarak eskisi gibi görünür.' },
         { q: 'AI etiketlerini temizlemek kaliteyi düşürür mü?', a: 'Hayır. Hiçbir şey yeniden kodlanmaz; yalnızca meta veri kaldırılır, görüntü verisi aynı kalır.' },
         { q: 'Hangi biçimleri temizleyebilirim?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF ve AVIF — tek seferde 50 dosyaya kadar, her biri en fazla 25 MB. PNG’deki prompt’lar için [PNG meta veri silici](png-metadata-remover) de kullanılabilir.' },
@@ -142,10 +142,10 @@ const tr: Pages = {
       updated: '2026-11-06',
     },
     'no-ai-tag': {
-      metaTitle: 'AI etiketsiz – Gerçek fotoğrafları “AI bilgisi” olmadan paylaş',
+      metaTitle: 'No AI Tag – Gerçek fotoğrafları “AI bilgisi” olmadan paylaş',
       description: 'Gerçek bir fotoğrafta “AI bilgisi” mi çıktı? Buna yol açan C2PA ve IPTC verisini kaldırın, AI etiketi olmadan paylaşın. Kayıpsız, ücretsiz, tarayıcıda.',
-      navLabel: 'AI etiketsiz',
-      h1: 'Gerçek fotoğraflarınızda AI etiketi olmasın',
+      navLabel: 'No AI Tag',
+      h1: 'No AI Tag – gerçek fotoğraflarınızda AI etiketi olmasın',
       lead: 'Photoshop’ta ya da bir telefon düzenleyicisinde yapılan küçük bir üretken düzeltme, Instagram, Facebook veya Threads’in gerçek bir fotoğrafa “AI bilgisi” etiketi koyması için yeterli olabilir. Dosyayı aşağıya bırakın, etiketi hangi verinin tetiklediğini görün ve meta verisinde AI etiketi olmayan temiz bir kopya paylaşın.',
       sections: [
         {
@@ -174,21 +174,21 @@ const tr: Pages = {
           ],
         },
         {
-          heading: '“AI etiketsiz” neyi vaat eder, neyi edemez',
+          heading: 'No AI Tag neyi vaat eder, neyi edemez',
           paragraphs: [
             'Meta veriyi kaldırmak, dosyadaki nedeni ortadan kaldırır; düzenlenmiş fotoğrafların çoğunda etiketin sebebi budur. SynthID gibi piksel filigranlarını kaldıramaz ve platform yine de kendi tespitiyle bir gönderiyi etiketleyebilir ya da sizden beyan isteyebilir. Bu sayfa küçük düzenlemeler yapılmış gerçek fotoğraflar içindir: bir görsel AI ile üretilmişse ve insanları yanıltabilecekse bunu belirtin.',
           ],
         },
       ],
-      faqHeading: '“AI etiketsiz” hakkında sorular',
+      faqHeading: 'No AI Tag hakkında sorular',
       faq: [
         { q: 'Zaten yayımladığım gönderideki “AI bilgisi” etiketi kalkar mı?', a: 'Hayır. Etiket platformdaki gönderiye aittir. Gönderiyi silin ya da arşivleyin, dosyayı burada temizleyin ve temiz kopyayı yükleyin.' },
-        { q: '“AI etiketsiz” garanti mi?', a: 'Hayır. Platformların okuduğu meta veriyi kaldırır, ancak platformlar başka sinyaller de kullanabilir. Düzenlenmiş fotoğrafların çoğunda etiketin nedeni meta veridir.' },
+        { q: 'No AI Tag sonucu garanti eder mi?', a: 'Hayır. Platformların okuduğu meta veriyi kaldırır, ancak platformlar başka sinyaller de kullanabilir. Düzenlenmiş fotoğrafların çoğunda etiketin nedeni meta veridir.' },
         { q: 'iPhone ve Android fotoğraflarıyla çalışır mı?', a: 'Evet. iPhone HEIC ve Android JPG dosyaları dönüştürülmeden temizlenir. Ayrıca özel bir [HEIC meta veri silici](heic-metadata-remover) de var.' },
         { q: 'Tamamen AI ile üretilmiş görsellerdeki AI etiketleri ne olacak?', a: '[AI etiket temizleyici](ai-tag-cleaner) bunları gösterir ve kaldırır, ancak platform kuralları genellikle gerçekçi AI görsellerini sizin etiketlemenizi ister.' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'batch-remove-metadata'],
-      updated: '2026-11-06',
+      updated: '2026-11-09',
     },
     'remove-exif-data': {
       metaTitle: 'Fotoğraflardan EXIF verisini sil – ücretsiz ve gizli',

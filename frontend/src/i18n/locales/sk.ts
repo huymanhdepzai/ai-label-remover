@@ -45,6 +45,7 @@ const sk: Messages = {
     process: 'Priebeh úprav',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Pozastaviť animáciu',
+    sceneSteps: ['Upraviť metadáta', 'Odstrániť EXIF', 'Vyčistiť dáta AI'],
     analyzing: 'číta sa: {count}',
     pending: 'pripravené: {count}',
     completed: 'vyprané: {count}',

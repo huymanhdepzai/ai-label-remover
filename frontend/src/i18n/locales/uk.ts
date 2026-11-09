@@ -45,6 +45,7 @@ const uk: Messages = {
     process: 'Процес обробки',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Призупинити анімацію',
+    sceneSteps: ['Змінити метадані', 'Видалити EXIF', 'Очистити дані ШІ'],
     analyzing: 'читається: {count}',
     pending: 'готово: {count}',
     completed: 'очищено: {count}',

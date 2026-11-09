@@ -45,6 +45,7 @@ const hi: Messages = {
     process: 'संपादन प्रक्रिया',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'एनिमेशन रोकें',
+    sceneSteps: ['मेटाडेटा संपादित करें', 'EXIF हटाएँ', 'AI डेटा साफ़ करें'],
     analyzing: 'पढ़ी जा रही {count}',
     pending: 'तैयार {count}',
     completed: 'धुली {count}',

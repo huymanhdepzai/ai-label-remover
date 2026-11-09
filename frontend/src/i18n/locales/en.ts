@@ -47,6 +47,8 @@ const en = {
     process: 'Editing process',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Pause animation',
+    /** Chip nổi trên cảnh bàn làm việc khi chưa có ảnh: ba bước chạy vòng lặp (giữ ngắn — chip một dòng). */
+    sceneSteps: ['Edit Metadata', 'Remove EXIF', 'Clean AI Data'],
     analyzing: 'reading {count}',
     pending: 'ready {count}',
     completed: 'washed {count}',

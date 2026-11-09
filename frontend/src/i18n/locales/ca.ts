@@ -45,6 +45,7 @@ const ca: Messages = {
     process: 'Procés d’edició',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Atura l’animació',
+    sceneSteps: ['Edita les metadades', 'Elimina l’EXIF', 'Neteja les dades d’IA'],
     analyzing: 'en lectura {count}',
     pending: 'a punt {count}',
     completed: 'netes {count}',

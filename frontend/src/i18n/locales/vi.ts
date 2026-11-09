@@ -45,6 +45,7 @@ const vi: Messages = {
     process: 'Quá trình chỉnh sửa',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Tạm dừng hiệu ứng',
+    sceneSteps: ['Sửa metadata', 'Xóa EXIF', 'Làm sạch dữ liệu AI'],
     analyzing: 'đang đọc {count}',
     pending: 'sẵn sàng {count}',
     completed: 'đã làm sạch {count}',

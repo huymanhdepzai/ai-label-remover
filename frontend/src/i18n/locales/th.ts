@@ -45,6 +45,7 @@ const th: Messages = {
     process: 'ขั้นตอนการแก้ไข',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'หยุดภาพเคลื่อนไหวชั่วคราว',
+    sceneSteps: ['แก้ไขเมทาดาทา', 'ลบ EXIF', 'ล้างข้อมูล AI'],
     analyzing: 'กำลังอ่าน {count}',
     pending: 'พร้อม {count}',
     completed: 'ล้างแล้ว {count}',

@@ -45,6 +45,7 @@ const hr: Messages = {
     process: 'Tijek uređivanja',
     /** Nút bật/tắt chuyển động của cảnh bàn làm việc (aria-pressed = đang dừng). */
     pauseAnimation: 'Pauziraj animaciju',
+    sceneSteps: ['Uredi metapodatke', 'Ukloni EXIF', 'Očisti AI podatke'],
     analyzing: 'čita se: {count}',
     pending: 'spremno: {count}',
     completed: 'isprano: {count}',

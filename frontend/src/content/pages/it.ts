@@ -131,7 +131,7 @@ const it: Pages = {
       ],
       faqHeading: 'Domande sul pulitore di tag IA',
       faq: [
-        { q: 'Un tag IA è la stessa cosa di un’etichetta IA?', a: 'Non proprio. Il tag è un dato dentro il file; l’etichetta è ciò che mostra la piattaforma, come “Info IA” su Instagram. Spesso le piattaforme creano l’etichetta a partire dal tag. Per evitarlo su una foto reale, vedi [Nessun tag IA](no-ai-tag).' },
+        { q: 'Un tag IA è la stessa cosa di un’etichetta IA?', a: 'Non proprio. Il tag è un dato dentro il file; l’etichetta è ciò che mostra la piattaforma, come “Info IA” su Instagram. Spesso le piattaforme creano l’etichetta a partire dal tag. Per evitarlo su una foto reale, vedi [No AI Tag](no-ai-tag).' },
         { q: 'Posso rimuovere solo i tag IA e tenere il resto?', a: 'Il pulitore rimuove interi blocchi di metadati invece di singoli campi, perché i tag IA sono sparsi in più blocchi. Rotazione, profilo colore ICC e dimensioni in pixel vengono sempre mantenuti, quindi l’immagine si vede esattamente come prima.' },
         { q: 'Pulire i tag IA riduce la qualità?', a: 'No. Nulla viene ricodificato: si rimuovono solo i metadati, mentre i dati dell’immagine restano identici.' },
         { q: 'Quali formati posso pulire?', a: 'JPG, PNG, WebP, GIF, HEIC/HEIF e AVIF — fino a 50 file alla volta, ciascuno fino a 25 MB. I prompt nei PNG si gestiscono anche con il [rimuovi metadati PNG](png-metadata-remover).' },
@@ -142,10 +142,10 @@ const it: Pages = {
       updated: '2026-11-06',
     },
     'no-ai-tag': {
-      metaTitle: 'Nessun tag IA – Pubblica foto reali senza “Info IA”',
+      metaTitle: 'No AI Tag – Pubblica foto reali senza l’etichetta “Info IA”',
       description: 'Hai un’etichetta “Info IA” su una foto vera? Rimuovi i dati C2PA e IPTC che la causano e pubblica senza tag IA. Senza perdita, gratis, nel browser.',
-      navLabel: 'Nessun tag IA',
-      h1: 'Nessun tag IA sulle tue foto reali',
+      navLabel: 'No AI Tag',
+      h1: 'No AI Tag – foto reali senza tag IA',
       lead: 'Un piccolo ritocco generativo in Photoshop o in un editor per smartphone può bastare perché Instagram, Facebook o Threads mettano un’etichetta “Info IA” su una foto autentica. Trascina il file qui sotto per vedere quali dati la attivano, poi condividi una copia pulita senza tag IA nei metadati.',
       sections: [
         {
@@ -174,21 +174,21 @@ const it: Pages = {
           ],
         },
         {
-          heading: 'Cosa “nessun tag IA” può e non può promettere',
+          heading: 'Cosa No AI Tag può e non può promettere',
           paragraphs: [
             'Rimuovere i metadati elimina il motivo legato al file, che è la causa nella maggior parte delle foto ritoccate. Non può rimuovere filigrane nei pixel come SynthID, e una piattaforma può comunque etichettare un post con il proprio rilevamento o chiederti di dichiararlo. Questa pagina è pensata per foto autentiche con piccoli ritocchi: se un’immagine è generata con l’IA e può trarre in inganno, dichiaralo.',
           ],
         },
       ],
-      faqHeading: 'Domande su “nessun tag IA”',
+      faqHeading: 'Domande su No AI Tag',
       faq: [
         { q: 'Rimuove l’etichetta “Info IA” da un post già pubblicato?', a: 'No. L’etichetta appartiene al post sulla piattaforma. Elimina o archivia il post, pulisci qui il file e carica la copia pulita.' },
-        { q: '“Nessun tag IA” è garantito?', a: 'No. Rimuove i metadati che le piattaforme leggono, ma possono usare anche altri segnali. Nella maggior parte delle foto ritoccate il motivo dell’etichetta sono proprio i metadati.' },
+        { q: 'No AI Tag garantisce il risultato?', a: 'No. Rimuove i metadati che le piattaforme leggono, ma possono usare anche altri segnali. Nella maggior parte delle foto ritoccate il motivo dell’etichetta sono proprio i metadati.' },
         { q: 'Funziona con le foto di iPhone e Android?', a: 'Sì. I file HEIC di iPhone e JPG di Android vengono puliti così come sono, senza conversione. C’è anche un [rimuovi metadati HEIC](heic-metadata-remover) dedicato.' },
         { q: 'E i tag IA su un’immagine interamente generata?', a: 'Il [pulitore di tag IA](ai-tag-cleaner) li mostra e li rimuove, ma in genere le regole delle piattaforme chiedono comunque di etichettare tu stesso le immagini IA realistiche.' },
       ],
       related: ['made-with-ai-label', 'what-is-c2pa-content-credentials', 'batch-remove-metadata'],
-      updated: '2026-11-06',
+      updated: '2026-11-09',
     },
     'remove-exif-data': {
       metaTitle: 'Rimuovere i dati EXIF dalle foto online, gratis',
